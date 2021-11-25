@@ -8,15 +8,38 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
+    "@jsdevtools/rehype-url-inspector": "^2.0.2",
+    "@tailwindcss/typography": "^0.4.1",
+    "classnames": "^2.3.1",
+    "date-fns": "^2.27.0",
     "next": "12.0.4",
+    "next-seo": "^4.28.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-compare-image": "^3.1.0",
+    "react-dom": "17.0.2",
+    "rehype-react": "^7.0.3",
+    "remark-gfm": "^3.0.1",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0"
   },
   "devDependencies": {
     "@types/node": "16.11.10",
     "@types/react": "17.0.36",
-    "eslint": "7.32.0",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^7.32.0",
     "eslint-config-next": "12.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "postcss": "^8.3.11",
+    "prettier": "^2.5.0",
+    "tailwindcss": "^2.2.19",
     "typescript": "4.5.2"
   }
 }

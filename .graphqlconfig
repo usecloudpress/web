@@ -1,0 +1,16 @@
+{
+  "name": "Remote Schema",
+  "schemaPath": "contentful-schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Contentful GraphQL Endpoint": {
+        "url": "https://graphql.contentful.com/content/v1/spaces/8qo8k89f0pe5",
+        "headers": {
+          "Authorization": "Bearer ${env:CONTENTFUL_ACCESS_TOKEN}",
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": true
+      }
+    }
+  }
+}
