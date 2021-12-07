@@ -62,6 +62,6 @@ export async function getStaticPaths() {
 
   return {
     paths: allDocs?.map(({ slug }: { slug: string }) => `/docs/${slug}`) ?? [],
-    fallback: true,
+    fallback: false,
   };
 }
