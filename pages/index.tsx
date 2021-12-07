@@ -48,7 +48,11 @@ const Home: NextPage = () => {
                 <ReactCompareSlider
                   itemOne={
                     <div>
-                      <Image src={compare1} alt="one" />
+                      <Image
+                        src={compare1}
+                        alt="Google Docs"
+                        placeholder="blur"
+                      />
                       <span
                         style={{
                           position: "absolute",
@@ -66,7 +70,7 @@ const Home: NextPage = () => {
                   }
                   itemTwo={
                     <div>
-                      <Image src={compare2} alt="one" />
+                      <Image src={compare2} alt="Website" placeholder="blur" />
                       <span
                         style={{
                           position: "absolute",
