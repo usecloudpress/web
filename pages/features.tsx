@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Layout from "../components/layout";
-import ReactCompareImage from "react-compare-image";
+import ImageComparison from "../components/image-comparison";
 import compare1 from "../public/images/compare-1.png";
 import compare2 from "../public/images/compare-2.png";
 import how2 from "../public/images/how-2.png";
@@ -123,13 +123,11 @@ export default function Features() {
               </p>
             </div>
             <div className="max-w-screen-lg mx-auto px-4 sm:px-6 pb-16 pt-4">
-              <ReactCompareImage
-                leftImage={compare1.src}
-                leftImageLabel="Google Docs"
-                rightImage={compare2.src}
-                rightImageLabel="Website"
-                sliderLineColor="#A0AEC0"
-                sliderLineWidth={3}
+              <ImageComparison
+                image1={compare1}
+                image1Label="Google Docs"
+                image2={compare2}
+                image2Label="Website"
               />
             </div>
             <div className="lg:grid lg:grid-cols-3 lg:gap-8">

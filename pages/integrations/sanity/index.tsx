@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Layout from "../../../components/layout";
 import { NextSeo } from "next-seo";
-import ReactCompareImage from "react-compare-image";
+import ImageComparison from "../../../components/image-comparison";
 import imageCompare1 from "./compare-1.png";
 import imageCompare2 from "./compare-2.png";
 import imageWrite from "./write.png";
@@ -39,13 +39,11 @@ export default function SanityPage() {
           <div className="flex-1 w-full bg-gray-50"></div>
         </div>
         <div className="max-w-screen-lg mx-auto px-4 sm:px-6 pb-5">
-          <ReactCompareImage
-            leftImage={imageCompare1.src}
-            leftImageLabel="Google Docs"
-            rightImage={imageCompare2.src}
-            rightImageLabel="Sanity"
-            sliderLineColor="#A0AEC0"
-            sliderLineWidth={3}
+          <ImageComparison
+            image1={imageCompare1}
+            image1Label="Google Docs"
+            image2={imageCompare2}
+            image2Label="Sanity"
           />
         </div>
       </div>
