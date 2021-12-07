@@ -1,8 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Layout from "../components/layout";
-import ReactCompareImage from "react-compare-image";
+import {
+  ReactCompareSlider,
+  ReactCompareSliderHandle,
+} from "react-compare-slider";
 import compare1 from "../public/images/compare-1.png";
 import compare2 from "../public/images/compare-2.png";
 import how1 from "../public/images/how-1.png";
@@ -41,13 +45,56 @@ const Home: NextPage = () => {
                 <div className="flex-1 w-full bg-gray-100"></div>
               </div>
               <div className="max-w-screen-lg mx-auto px-4 sm:px-6 pb-5">
-                <ReactCompareImage
-                  leftImage={compare1.src}
-                  leftImageLabel="Google Docs"
-                  rightImage={compare2.src}
-                  rightImageLabel="Website"
-                  sliderLineColor="#A0AEC0"
-                  sliderLineWidth={3}
+                <ReactCompareSlider
+                  itemOne={
+                    <div>
+                      <Image src={compare1} alt="one" />
+                      <span
+                        style={{
+                          position: "absolute",
+                          top: "50%",
+                          left: "40px",
+                          backgroundColor: "#000000AA",
+                          color: "white",
+                          padding: "5px 10px",
+                          borderRadius: 3,
+                        }}
+                      >
+                        Google Docs
+                      </span>
+                    </div>
+                  }
+                  itemTwo={
+                    <div>
+                      <Image src={compare2} alt="one" />
+                      <span
+                        style={{
+                          position: "absolute",
+                          top: "50%",
+                          right: "40px",
+                          backgroundColor: "#000000AA",
+                          color: "white",
+                          padding: "5px 10px",
+                          borderRadius: 3,
+                        }}
+                      >
+                        Website
+                      </span>
+                    </div>
+                  }
+                  handle={
+                    <ReactCompareSliderHandle
+                      buttonStyle={{
+                        backdropFilter: undefined,
+                        WebkitBackdropFilter: undefined,
+                        backgroundColor: "white",
+                        color: "#000",
+                        boxShadow: undefined,
+                        border: "3px solid #000",
+                      }}
+                      linesStyle={{ width: 3, color: "#000" }}
+                    />
+                  }
                 />
               </div>
             </div>
