@@ -24,6 +24,15 @@ export default function Integrations() {
                 />
               </a>
             </Link>
+            <Link href="/integrations/webflow/">
+              <a className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100">
+                <img
+                  className="max-h-12"
+                  src="/images/logos/webflow.svg"
+                  alt="Webflow logo"
+                />
+              </a>
+            </Link>
             <Link href="/integrations/contentful/">
               <a className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100">
                 <img
