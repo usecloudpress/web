@@ -1,6 +1,7 @@
 import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
+import Script from "next/script";
 import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -61,6 +62,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         ]}
       />
       <Component {...pageProps} />
+      <Script async defer src="https://sa.usecloudpress.com/latest.js" />
+      <noscript>
+        <img
+          src="https://sa.usecloudpress.com/noscript.gif"
+          alt=""
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </noscript>
     </>
   );
 }

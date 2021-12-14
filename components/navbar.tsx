@@ -19,6 +19,10 @@ const integrations = [
     href: "/integrations/sanity/",
   },
   {
+    name: "Webflow",
+    href: "/integrations/webflow/",
+  },
+  {
     name: "WordPress",
     href: "/integrations/wordpress/",
   },
