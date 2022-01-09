@@ -15,8 +15,7 @@ const faqs = [
       <>
         <p>
           <strong>Yes!</strong> Each time you export a document, you use 1
-          credit. For a more detailed explanation on how credits work in
-          Cloudpress, please{" "}
+          credit. To learn more, please{" "}
           <Link href="//docs/credit-usage">
             <a>refer to our documentation</a>
           </Link>
@@ -41,9 +40,19 @@ const faqs = [
       "We do not charge you for failed exports. We only deduct a credit when a document was exported successfully.",
   },
   {
+    question: "Can I get free credits to try it out?",
+    answer:
+      "We give you 5 free credits when you register for a new account with Cloudpress to see if it works for you.",
+  },
+  {
     question: "When do my credits expire?",
     answer:
       "Your credits never expire. Buy credits in bulk to save money, then use them at your leisure.",
+  },
+  {
+    question: "What happens when I run out of credits?",
+    answer:
+      "When you run out of credits, you will be unable to export documents. You will need to buy more credits to start exporting content again.",
   },
 ];
 
@@ -78,8 +87,7 @@ export default function Pricing() {
                   </h3>
                   <p className="mt-6 text-base text-gray-500">
                     Everyone gets access to all the features with no artificial
-                    limitations based on pricing tiers. It costs us money to
-                    export your content, therefore you only pay when you export.
+                    limitations based on pricing tiers.
                   </p>
                   <div className="mt-8">
                     <div className="flex items-center">
@@ -145,7 +153,7 @@ export default function Pricing() {
                   <p className="mt-4 text-sm">
                     <Link href="/docs/credit-usage">
                       <a className="font-medium text-gray-500 underline">
-                        Learn about how credits are used
+                        Learn more about credits
                       </a>
                     </Link>
                   </p>
@@ -155,9 +163,12 @@ export default function Pricing() {
                         href="https://app.usecloudpress.com/register"
                         className="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700"
                       >
-                        Create an Account
+                        Sign Up Now
                       </a>
                     </div>
+                  </div>
+                  <div className="mt-3 font-semibold text-gray-900">
+                    You get 5 free credits when you sign up for a new account
                   </div>
                 </div>
               </div>
