@@ -10,24 +10,13 @@ const includedFeatures = [
 ];
 const faqs = [
   {
-    question: "Does 1 export use 1 credit?",
+    question: "Does 1 credit = 1 export?",
     answer: (
       <>
         <p>
-          No, an export typically uses more than 1 credit. You use a credit each
-          time we upload or download content, meaning that each image inside
-          your document is counted separately. Also, a single image typically
-          consumes two credits - one for downloading the image, and another one
-          for uploading the image to your CMS.
-        </p>
-        <p>
-          As an example a document with 2 images will cost you 5 credits - 2
-          credits for downloading the images, 2 credits for uploading the
-          images, and 1 credit for uploading the text content of the document
-        </p>
-        <p>
-          For a more detailed explanation on how credits work in Cloudpress,
-          please{" "}
+          <strong>Yes!</strong> Each time you export a document, you use 1
+          credit. For a more detailed explanation on how credits work in
+          Cloudpress, please{" "}
           <Link href="//docs/credit-usage">
             <a>refer to our documentation</a>
           </Link>
@@ -35,6 +24,21 @@ const faqs = [
         </p>
       </>
     ),
+  },
+  {
+    question: "Can I re-export a document?",
+    answer: (
+      <p>
+        Yes, absolutely. When you re-export a document we will update the
+        previously exported content in your CMS. But, please note that{" "}
+        <strong>each time you export a document you will use 1 credit</strong>.
+      </p>
+    ),
+  },
+  {
+    question: "What happens when an export fails?",
+    answer:
+      "We do not charge you for failed exports. We only deduct a credit when a document was exported successfully.",
   },
   {
     question: "When do my credits expire?",
@@ -75,8 +79,7 @@ export default function Pricing() {
                   <p className="mt-6 text-base text-gray-500">
                     Everyone gets access to all the features with no artificial
                     limitations based on pricing tiers. It costs us money to
-                    export your content, therefore you only pay when you export
-                    content.
+                    export your content, therefore you only pay when you export.
                   </p>
                   <div className="mt-8">
                     <div className="flex items-center">
@@ -106,36 +109,35 @@ export default function Pricing() {
                   </div>
                 </div>
                 <div className="py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
+                  <p className="text-lg leading-6 font-semibold mb-4 text-gray-900">
+                    1 credit = 1 export
+                  </p>
                   <div className="flex justify-center">
                     <table className="w-72 lg:w-60 text-gray-700">
                       <tr>
+                        <td className="pb-3 text-left">50 credits</td>
+                        <td className="pb-3 text-right font-semibold">$50</td>
+                      </tr>
+                      <tr>
                         <td className="pb-3 text-left">100 credits</td>
-                        <td className="pb-3 text-right font-semibold">$25</td>
+                        <td className="pb-3 text-right font-semibold">$95</td>
                       </tr>
                       <tr>
                         <td className="pb-3 text-left">200 credits</td>
-                        <td className="pb-3 text-right font-semibold">$46</td>
+                        <td className="pb-3 text-right font-semibold">$185</td>
                       </tr>
                       <tr>
                         <td className="pb-3 text-left">500 credits</td>
-                        <td className="pb-3 text-right font-semibold">$110</td>
+                        <td className="pb-3 text-right font-semibold">$460</td>
                       </tr>
                       <tr>
                         <td className="pb-3 text-left">1,000 credits</td>
-                        <td className="pb-3 text-right font-semibold">$200</td>
+                        <td className="pb-3 text-right font-semibold">$910</td>
                       </tr>
                       <tr>
                         <td className="pb-3 text-left">2,000 credits</td>
-                        <td className="pb-3 text-right font-semibold">$350</td>
-                      </tr>
-                      <tr>
-                        <td className="pb-3 text-left">5,000 credits</td>
-                        <td className="pb-3 text-right font-semibold">$800</td>
-                      </tr>
-                      <tr>
-                        <td className="pb-3 text-left">10,000 Credits</td>
                         <td className="pb-3 text-right font-semibold">
-                          $1,500
+                          $1,900
                         </td>
                       </tr>
                     </table>
