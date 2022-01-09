@@ -4,6 +4,7 @@ import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeReact from "rehype-react";
+import rehypeRaw from "rehype-raw";
 import { inspectUrls } from "@jsdevtools/rehype-url-inspector";
 import CustomLink from "./custom-link";
 
@@ -17,7 +18,8 @@ const Markdown = ({ markdown }: Props) => {
   const processor = unified()
     .use(remarkParse)
     .use(remarkGfm)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
     .use(inspectUrls, {
       selectors: ["a[href]"],
       inspectEach({ url, node, propertyName }) {
