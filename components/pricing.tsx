@@ -1,4 +1,5 @@
 import { CheckCircleIcon } from "@heroicons/react/solid";
+import Link from "next/link";
 
 const includedFeatures = [
   "Link as many CMS accounts as you want",
@@ -9,20 +10,28 @@ const includedFeatures = [
 ];
 const faqs = [
   {
-    question: "Does an export of a document use 1 credit?",
+    question: "Does 1 export use 1 credit?",
     answer: (
       <>
-        <p className="mb-3">
-          No, typically not. You use a credit each time we upload or download
-          content, meaning that each image inside your document is counted
-          separately. Also, a single image typically consumes two credits - one
-          for downloading the image, and another one for uploading the image to
-          your CMS.
+        <p>
+          No, an export typically uses more than 1 credit. You use a credit each
+          time we upload or download content, meaning that each image inside
+          your document is counted separately. Also, a single image typically
+          consumes two credits - one for downloading the image, and another one
+          for uploading the image to your CMS.
         </p>
         <p>
           As an example a document with 2 images will cost you 5 credits - 2
           credits for downloading the images, 2 credits for uploading the
           images, and 1 credit for uploading the text content of the document
+        </p>
+        <p>
+          For a more detailed explanation on how credits work in Cloudpress,
+          please{" "}
+          <Link href="//docs/credit-usage">
+            <a>refer to our documentation</a>
+          </Link>
+          .
         </p>
       </>
     ),
@@ -131,11 +140,13 @@ export default function Pricing() {
                       </tr>
                     </table>
                   </div>
-                  {/*<p className="mt-4 text-sm">*/}
-                  {/*  <a href="#" className="font-medium text-gray-500 underline">*/}
-                  {/*    Learn about how credits are used*/}
-                  {/*  </a>*/}
-                  {/*</p>*/}
+                  <p className="mt-4 text-sm">
+                    <Link href="/docs/credit-usage">
+                      <a className="font-medium text-gray-500 underline">
+                        Learn about how credits are used
+                      </a>
+                    </Link>
+                  </p>
                   <div className="mt-6">
                     <div className="rounded-md shadow">
                       <a
@@ -177,7 +188,7 @@ export default function Pricing() {
                     <dt className="text-lg leading-6 font-medium text-gray-900">
                       {faq.question}
                     </dt>
-                    <dd className="mt-2 text-base text-gray-500">
+                    <dd className="mt-2 text-base text-gray-500 prose max-w-none">
                       {faq.answer}
                     </dd>
                   </div>
