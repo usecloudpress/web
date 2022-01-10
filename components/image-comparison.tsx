@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   ReactCompareSlider,
   ReactCompareSliderHandle,
@@ -21,7 +20,7 @@ export default function ImageComparison({
     <ReactCompareSlider
       itemOne={
         <div>
-          <Image src={image1} alt={image1Label} placeholder="blur" />
+          <img src={image1.src} alt={image1Label} />
           <span
             style={{
               position: "absolute",
@@ -39,7 +38,7 @@ export default function ImageComparison({
       }
       itemTwo={
         <div>
-          <Image src={image2} alt={image1Label} placeholder="blur" />
+          <img src={image2.src} alt={image1Label} />
           <span
             style={{
               position: "absolute",
