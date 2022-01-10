@@ -38,8 +38,22 @@ export default function BlogPost({ post }: Props) {
                   </div>
                 </div>
               </header>
-              <div className="prose mx-auto max-w-4xl">
-                <Markdown markdown={post.content} />
+              <div className="mx-auto max-w-4xl">
+                <div className="prose max-w-none">
+                  <Markdown markdown={post.content} />
+                </div>
+                <hr className="my-8" />
+                <div className="flex gap-8">
+                  <img
+                    className="w-16 h-16 rounded-full lg:w-20 lg:h-20"
+                    src={post.author.photo.url}
+                    alt=""
+                  />
+                  <div className="flex flex-col gap-2">
+                    <h5 className="font-semibold">{post.author.name}</h5>
+                    <div className="text-gray-500">{post.author.bio}</div>
+                  </div>
+                </div>
               </div>
             </article>
           </div>

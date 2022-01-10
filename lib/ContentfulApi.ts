@@ -33,6 +33,13 @@ export async function getBlogPost(slug: string, preview: boolean) {
                         featuredImage {
                             url
                         }
+                        author {
+                            name
+                            bio
+                            photo {
+                                url
+                            }
+                        }
                     }
                 }
             }
