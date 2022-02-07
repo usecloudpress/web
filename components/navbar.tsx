@@ -107,11 +107,6 @@ const Navbar = () => {
               )}
             </Popover>
 
-            <Link href="/#pricing">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Pricing
-              </a>
-            </Link>
             <Link href="/docs">
               <a className="text-base font-medium text-gray-500 hover:text-gray-900">
                 Documentation
