@@ -1,54 +1,30 @@
 import Link from "next/link";
 import Layout from "../../../components/layout";
 import { NextSeo } from "next-seo";
-import ImageComparison from "../../../components/image-comparison";
-
 import imageCompare1 from "./compare-1.png";
 import imageCompare2 from "./compare-2.png";
 import imageWrite from "./write.png";
 import imageAddOn from "./add-on.png";
 import imageFormatting from "./formatting.png";
 import imageImages from "./images.png";
-import imageModelConfiguration from "./model-configuration.png";
+import imageSchemaConfiguration from "./schema-configuration.png";
 import imageReexport from "./reexport.png";
+import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
+import IntegrationCta from "../../../components/integration-cta";
 
-export default function KenticoPage() {
+export default function SanityPage() {
+  const source = "google-docs";
+  const destination = "sanity";
+
   return (
     <Layout>
-      <NextSeo title="Export from Google Docs to Kontent by Kentico" />
-
-      {/* Heading */}
-      <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-36 lg:pb-40 lg:px-8">
-        <section className="xl mx-auto lg:max-w-4xl ">
-          <div className="text-center">
-            <h1 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl space-y-4">
-              Export from Google Docs
-              <br />
-              to Kontent by Kentico
-            </h1>
-            <p className="mt-8 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:text-2xl md:max-w-3xl">
-              Write and collaborate in Google Docs, then export your document to
-              Kontent by Kentico with the click of a button
-            </p>
-          </div>
-        </section>
-      </div>
-
-      <div className="relative">
-        <div className="absolute inset-0 flex flex-col">
-          <div className="flex-1"></div>
-          <div className="flex-1 w-full bg-gray-50"></div>
-        </div>
-        <div className="max-w-screen-lg mx-auto px-4 sm:px-6 pb-5">
-          <ImageComparison
-            image1={imageCompare1}
-            image1Label="Google Docs"
-            image2={imageCompare2}
-            image2Label="Kontent"
-          />
-        </div>
-      </div>
-
+      <NextSeo title="Export from Google Docs to Sanity" />
+      <IntegrationLandingPageHeader
+        source={source}
+        destination={destination}
+        imageCompare1={imageCompare1}
+        imageCompare2={imageCompare2}
+      />
       {/* Write in Google Docs */}
       <div className="bg-gray-50 py-24 px-4 sm:px-6 lg:py-40 lg:px-8">
         <section className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
@@ -99,8 +75,8 @@ export default function KenticoPage() {
                 </p>
                 <p>
                   Once your export has completed, you can easily navigate to the
-                  exported content in Kontent by Kentico to edit any additional
-                  fields or publish the content.
+                  exported content in Sanity to edit any additional fields or
+                  publish the content.
                 </p>
                 <p>
                   <Link href="/docs/introduction-to-the-google-docs-add-on/">
@@ -128,27 +104,27 @@ export default function KenticoPage() {
           <div className="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div className="relative">
               <h4 className="text-2xl leading-8 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                Works with your Content Model
+                Works with your schema
               </h4>
               <div className="mt-8 prose prose-lg lg:prose-xl leading-8">
                 <p>
-                  Cloudpress works with your Content Model. Simply connect your
-                  Kontent by Kentico account, tell Cloudpress which elements to
-                  use for the title and content of the exported document, and
-                  we’ll take care of the rest.
+                  Cloudpress works with your schema. Simply connect your Sanity
+                  account, tell Cloudpress which fields to use for the title and
+                  content of the exported document, and we’ll take care of the
+                  rest.
                 </p>
                 <p>
-                  <Link href="/docs/connect-kentico-kontent-account/">
+                  <Link href="/docs/connect-sanity-account/">
                     <a>Learn how</a>
                   </Link>{" "}
-                  to configure your Kontent by Kentico account.
+                  to configure your Sanity account.
                 </p>
               </div>
             </div>
             <div className="mt-10 -mx-4 relative lg:mt-0">
               <img
                 className="relative mx-auto shadow-xl"
-                src={imageModelConfiguration.src}
+                src={imageSchemaConfiguration.src}
                 alt=""
                 width="490"
               />
@@ -321,8 +297,7 @@ export default function KenticoPage() {
                 <p>
                   Cloudpress does not just work with text - your images are
                   taken along for the ride as well. Images are exported as
-                  Assets to Kontent by Kentico and linked correctly in the
-                  exported content.
+                  Assets to Sanity and linked correctly in the exported content.
                 </p>
               </div>
             </div>
@@ -354,7 +329,7 @@ export default function KenticoPage() {
                 <p>
                   No worries. Cloudpress will update the content of the
                   previously exported content without messing up any of the
-                  other elements you may have updated in Kontent by Kentico.
+                  other fields you may have updated in Sanity.
                 </p>
               </div>
             </div>
@@ -370,27 +345,7 @@ export default function KenticoPage() {
         </section>
       </div>
 
-      <div className="bg-gray-50">
-        <div className="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-          <h2 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-            <span className="block">
-              Ready to export your first document to Kontent by Kentico?
-            </span>
-            <span className="block mt-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-              Your first 5 exports are on us!
-            </span>
-          </h2>
-          <div className="mt-8 flex lg:shrink-0 lg:mt-0">
-            <div className="inline-flex rounded-md shadow">
-              <Link href="https://app.usecloudpress.com/register">
-                <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-brand-600 hover:bg-brand-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
-                  Sign Up Now
-                </a>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+      <IntegrationCta destination={destination} />
     </Layout>
   );
 }

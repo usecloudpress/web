@@ -8,23 +8,23 @@ import classNames from "classnames";
 const integrations = [
   {
     name: "Contentful",
-    href: "/integrations/contentful/",
+    href: "/integrations/export-google-docs-to-contentful/",
   },
   {
     name: "Kontent by Kentico",
-    href: "/integrations/kentico/",
+    href: "/integrations/export-google-docs-to-kontent-by-kentico/",
   },
   {
     name: "Sanity",
-    href: "/integrations/sanity/",
+    href: "/integrations/export-google-docs-to-sanity/",
   },
   {
     name: "Webflow",
-    href: "/integrations/webflow/",
+    href: "/integrations/export-google-docs-to-webflow/",
   },
   {
     name: "WordPress",
-    href: "/integrations/wordpress/",
+    href: "/integrations/export-google-docs-to-wordpress/",
   },
 ];
 
@@ -144,7 +144,7 @@ const Navbar = () => {
       >
         <Popover.Panel
           focus
-          className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+          className="absolute top-0 z-10 inset-x-0 p-2 transition transform origin-top-right md:hidden"
         >
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">

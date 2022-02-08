@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { NextSeo } from "next-seo";
 import Layout from "../../../components/layout";
-import ImageComparison from "../../../components/image-comparison";
-
 import imageCompare1 from "./compare-1.png";
 import imageCompare2 from "./compare-2.png";
 import imageWrite from "./write.png";
@@ -11,43 +9,23 @@ import imageFormatting from "./formatting.png";
 import imageImages from "./images.png";
 import imageModelConfiguration from "./model-configuration.png";
 import imageReexport from "./reexport.png";
+import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
+import IntegrationCta from "../../../components/integration-cta";
 
 export default function ContentfulPage() {
+  const source = "google-docs";
+  const destination = "contentful";
+
   return (
     <>
       <NextSeo title="Export from Google Docs to Contentful" />
       <Layout>
-        {/* Heading */}
-        <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-36 lg:pb-40 lg:px-8">
-          <section className="xl mx-auto lg:max-w-4xl ">
-            <div className="text-center">
-              <h1 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl space-y-4">
-                Export from Google Docs
-                <br />
-                to Contentful
-              </h1>
-              <p className="mt-8 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:text-2xl md:max-w-3xl">
-                Write and collaborate in Google Docs, then export your document
-                to Contentful with the click of a button
-              </p>
-            </div>
-          </section>
-        </div>
-
-        <div className="relative">
-          <div className="absolute inset-0 flex flex-col">
-            <div className="flex-1"></div>
-            <div className="flex-1 w-full bg-gray-50"></div>
-          </div>
-          <div className="max-w-screen-lg mx-auto px-4 sm:px-6 pb-5">
-            <ImageComparison
-              image1={imageCompare1}
-              image1Label="Google Docs"
-              image2={imageCompare2}
-              image2Label="Contentful"
-            />
-          </div>
-        </div>
+        <IntegrationLandingPageHeader
+          source={source}
+          destination={destination}
+          imageCompare1={imageCompare1}
+          imageCompare2={imageCompare2}
+        />
 
         {/* Write in Google Docs */}
         <div className="bg-gray-50 py-24 px-4 sm:px-6 lg:py-40 lg:px-8">
@@ -370,27 +348,7 @@ export default function ContentfulPage() {
           </section>
         </div>
 
-        <div className="bg-gray-50">
-          <div className="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-            <h2 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-              <span className="block">
-                Ready to export your first document to Contentful?
-              </span>
-              <span className="block mt-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-                Your first 5 exports are on us!
-              </span>
-            </h2>
-            <div className="mt-8 flex lg:shrink-0 lg:mt-0">
-              <div className="inline-flex rounded-md shadow">
-                <Link href="https://app.usecloudpress.com/register">
-                  <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-brand-600 hover:bg-brand-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
-                    Sign Up Now
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+        <IntegrationCta destination={destination} />
       </Layout>
     </>
   );
