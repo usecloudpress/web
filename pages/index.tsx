@@ -21,8 +21,8 @@ const Home: NextPage = () => {
       <Layout>
         {/* Hero */}
         <div className="bg-white">
-          <div className="relative overflow-hidden">
-            <div className="relative pt-6 pb-12 lg:pb-20">
+          <div className="overflow-hidden">
+            <div className="pt-6 pb-12 lg:pb-20">
               <div className="mt-10 mx-auto max-w-screen-xl px-4 sm:px-6 md:mt-16 lg:mt-20">
                 <div className="text-center">
                   <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
