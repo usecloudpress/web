@@ -79,8 +79,8 @@ const Home: NextPage = () => {
                 <p className="mt-3 text-lg leading-7 text-gray-500">
                   Both Google Docs and Notion are great for writing and
                   collaborating on content, and we know you already use them to
-                  create your content. You don't need to compromise on this and
-                  settle for a sub-par experience.
+                  create your content. You don&apos;t need to compromise on this
+                  and settle for a sub-par experience.
                 </p>
                 <p className="mt-6 text-base leading-6 text-gray-500">
                   <Link href="/blog/write-your-next-blog-post-in-google-docs/">
