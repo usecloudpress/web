@@ -251,7 +251,7 @@ export default function Features() {
                 Your first 5 exports are on us!
               </span>
             </h2>
-            <div className="mt-8 flex lg:flex-shrink-0 lg:mt-0">
+            <div className="mt-8 flex lg:shrink-0 lg:mt-0">
               <div className="inline-flex rounded-md shadow">
                 <Link href="https://app.usecloudpress.com/register">
                   <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-brand-600 hover:bg-brand-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">

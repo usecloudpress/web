@@ -10,8 +10,8 @@ export default function Integrations() {
               Works with your favourite CMS
             </h2>
             <p className="mt-3 max-w-3xl text-lg leading-7 text-gray-500">
-              Cloudpress supports exporting from Google Docs to a wide range of
-              Content Management Systems and publishing platforms
+              Cloudpress supports exporting content to a wide range of Content
+              Management Systems and publishing platforms
             </p>
           </div>
           <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">

@@ -138,7 +138,7 @@ export default function WordPressPage() {
                 </div>
                 <ul className="space-y-4 mt-5">
                   <li className="flex items-start">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <svg
                         className="h-6 w-6 text-brand-500"
                         fill="none"
@@ -158,7 +158,7 @@ export default function WordPressPage() {
                     </p>
                   </li>
                   <li className="flex items-start">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <svg
                         className="h-6 w-6 text-brand-500"
                         fill="none"
@@ -178,7 +178,7 @@ export default function WordPressPage() {
                     </p>
                   </li>
                   <li className="flex items-start">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <svg
                         className="h-6 w-6 text-brand-500"
                         fill="none"
@@ -198,7 +198,7 @@ export default function WordPressPage() {
                     </p>
                   </li>
                   <li className="flex items-start">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <svg
                         className="h-6 w-6 text-brand-500"
                         fill="none"
@@ -218,7 +218,7 @@ export default function WordPressPage() {
                     </p>
                   </li>
                   <li className="flex items-start">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <svg
                         className="h-6 w-6 text-brand-500"
                         fill="none"
@@ -238,7 +238,7 @@ export default function WordPressPage() {
                     </p>
                   </li>
                   <li className="flex items-start">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <svg
                         className="h-6 w-6 text-brand-500"
                         fill="none"
@@ -370,7 +370,7 @@ export default function WordPressPage() {
               Your first 5 exports are on us!
             </span>
           </h2>
-          <div className="mt-8 flex lg:flex-shrink-0 lg:mt-0">
+          <div className="mt-8 flex lg:shrink-0 lg:mt-0">
             <div className="inline-flex rounded-md shadow">
               <Link href="https://app.usecloudpress.com/register">
                 <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-brand-600 hover:bg-brand-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">

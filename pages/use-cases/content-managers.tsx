@@ -32,7 +32,7 @@ export default function ContentManagersPage() {
             <ul className="md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
               <li>
                 <div className="flex">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <div className="flex items-center justify-center h-8 w-8 text-brand-500">
                       <svg
                         className="w-8 h-8"
@@ -61,7 +61,7 @@ export default function ContentManagersPage() {
               </li>
               <li className="mt-10 md:mt-0">
                 <div className="flex">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <div className="flex items-center justify-center h-8 w-8 text-brand-500">
                       <svg
                         className="w-8 h-8"
@@ -90,7 +90,7 @@ export default function ContentManagersPage() {
               </li>
               <li className="mt-10 md:mt-0">
                 <div className="flex">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <div className="flex items-center justify-center h-8 w-8 text-brand-500">
                       <svg
                         className="w-8 h-8"
@@ -119,7 +119,7 @@ export default function ContentManagersPage() {
               </li>
               <li className="mt-10 md:mt-0">
                 <div className="flex">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <div className="flex items-center justify-center h-8 w-8 text-brand-500">
                       <svg
                         className="w-8 h-8"
@@ -148,7 +148,7 @@ export default function ContentManagersPage() {
               </li>
               <li className="mt-10 md:mt-0">
                 <div className="flex">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <div className="flex items-center justify-center h-8 w-8 text-brand-500">
                       <svg
                         className="w-8 h-8"
@@ -178,7 +178,7 @@ export default function ContentManagersPage() {
               </li>
               <li className="mt-10 md:mt-0">
                 <div className="flex">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <div className="flex items-center justify-center h-8 w-8 text-brand-500">
                       <svg
                         className="w-8 h-8"
@@ -219,7 +219,7 @@ export default function ContentManagersPage() {
               Your first 5 exports are on us!
             </span>
           </h2>
-          <div className="mt-8 flex lg:flex-shrink-0 lg:mt-0">
+          <div className="mt-8 flex lg:shrink-0 lg:mt-0">
             <div className="inline-flex rounded-md shadow">
               <Link href="https://app.usecloudpress.com/register">
                 <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-brand-600 hover:bg-brand-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
