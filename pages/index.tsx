@@ -74,12 +74,14 @@ const Home: NextPage = () => {
             <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
               <div className="relative">
                 <h4 className="text-2xl leading-8 font-bold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                  Don’t compromise on the writing and collaboration experience
+                  Use the writing tools{" "}
+                  <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                    you love
+                  </span>
                 </h4>
                 <p className="mt-3 text-lg leading-7 text-gray-500">
                   Both Google Docs and Notion are great for writing and
-                  collaborating on content, and we know you already use them to
-                  create your content. You don&apos;t need to compromise on this
+                  collaborating on content. You don&apos;t need to compromise
                   and settle for a sub-par experience.
                 </p>
                 <p className="mt-6 text-base leading-6 text-gray-500">
@@ -107,7 +109,10 @@ const Home: NextPage = () => {
               <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
                 <div className="lg:col-start-2">
                   <h4 className="text-2xl leading-8 font-bold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                    Perfect exports with one click
+                    Perfect exports with{" "}
+                    <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                      one click
+                    </span>
                   </h4>
                   <p className="mt-3 text-lg leading-7 text-gray-500">
                     Once you have completed your masterpiece, there is no need
@@ -139,15 +144,20 @@ const Home: NextPage = () => {
             <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
               <div className="relative">
                 <h4 className="text-2xl leading-8 font-bold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                  <span>Automate all the things</span>
-                  <span className="inline-flex items-center px-4 py-1 rounded-full text-xs font-bold leading-4 bg-brand-200 text-brand-800 ml-2">
-                    Coming Soon
+                  Automate{" "}
+                  <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                    all the things
                   </span>
                 </h4>
                 <p className="mt-3 text-lg leading-7 text-gray-500">
-                  Is clicking a button still slowing you down? Put your content
-                  publishing on autopilot with our automation tools and API.
+                  Is clicking a button still slowing you down?{" "}
+                  <span className="bg-yellow-100">Coming soon</span>, you will
+                  be able to put your content publishing on autopilot with our
+                  automation tools and API.
                 </p>
+                <span className="inline-flex items-center px-4 py-1 rounded-full text-xs font-bold leading-4 bg-brand-200 text-brand-800 mt-4">
+                  Coming Soon
+                </span>
               </div>
 
               <div className="mt-10 -mx-4 relative lg:mt-0">
