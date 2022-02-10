@@ -11,6 +11,8 @@ import imageModelConfiguration from "./model-configuration.png";
 import imageReexport from "./reexport.png";
 import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
 import IntegrationCta from "../../../components/integration-cta";
+import ExportFeatureBlockWithImage from "../../../components/feature-block-with-image";
+import FeatureListItem from "../../../components/feature-listitem";
 
 export default function KenticoPage() {
   const source = "google-docs";
@@ -27,325 +29,181 @@ export default function KenticoPage() {
         imageCompare2={imageCompare2}
       />
 
-      {/* Write in Google Docs */}
-      <div className="bg-gray-50 py-24 px-4 sm:px-6 lg:py-40 lg:px-8">
-        <section className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
-          <div className="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-            <div className="relative">
-              <h4 className="text-2xl leading-8 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                Write in Google Docs
-              </h4>
-              <div className="mt-8 prose prose-lg lg:prose-xl leading-8">
-                <p>
-                  Keep using the powerful editing and collaboration features
-                  that make Google Docs such a great writing tool.
-                </p>
-                <p>
-                  <Link href="/blog/write-your-next-blog-post-in-google-docs/">
-                    <a>Read more</a>
-                  </Link>{" "}
-                  about why we think Google Docs is a great choice for writing
-                  content.
-                </p>
-              </div>
-            </div>
-            <div className="mt-10 -mx-4 relative lg:mt-0">
-              <img
-                className="relative mx-auto shadow-xl"
-                src={imageWrite.src}
-                alt=""
-                width="490"
-              />
-            </div>
-          </div>
-        </section>
-      </div>
+      <div className="py-16 bg-gradient-to-b from-brand-100 to-white overflow-hidden lg:pb-24">
+        {/* Write in Google Docs */}
+        <ExportFeatureBlockWithImage
+          image={imageWrite}
+          imageAlignment="left"
+          title={
+            <>
+              Write in{" "}
+              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                Google Docs
+              </span>
+            </>
+          }
+          content={
+            <>
+              <p>
+                Keep using the powerful editing and collaboration features that
+                makes Google Docs such a great writing tool.
+              </p>
+              <p>
+                <Link href="/blog/write-your-next-blog-post-in-google-docs/">
+                  <a>Read more</a>
+                </Link>{" "}
+                about why we think Google Docs is a great choice for writing
+                content.
+              </p>
+            </>
+          }
+        />
 
-      {/* Export with one click */}
-      <div className="bg-white py-24 px-4 sm:px-6 lg:py-40 lg:px-8">
-        <section className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
-          <div className="relative lg:grid lg:grid-cols-2 lg:grid-flow-row-dense lg:gap-8 lg:items-center">
-            <div className="lg:col-start-2">
-              <h4 className="text-2xl leading-8 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                Export with one click
-              </h4>
-              <div className="mt-8 prose prose-lg lg:prose-xl leading-8">
-                <p>
-                  Export your content without ever leaving Google Docs with our
-                  Add-On. Just click the export button and wait for the export
-                  to finish.
-                </p>
-                <p>
-                  Once your export has completed, you can easily navigate to the
-                  exported content in Kontent by Kentico to edit any additional
-                  fields or publish the content.
-                </p>
-                <p>
-                  <Link href="/docs/introduction-to-the-google-docs-add-on/">
-                    <a>Learn more</a>
-                  </Link>{" "}
-                  about our Google Docs Add-on.
-                </p>
-              </div>
-            </div>
-            <div className="mt-10 -mx-4 relative lg:mt-0">
-              <img
-                className="relative mx-auto shadow-xl"
-                src={imageAddOn.src}
-                alt=""
-                width="490"
-              />
-            </div>
-          </div>
-        </section>
-      </div>
+        {/* Export with one click */}
+        <ExportFeatureBlockWithImage
+          image={imageAddOn}
+          imageAlignment="right"
+          title={
+            <>
+              Export with{" "}
+              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                one click
+              </span>
+            </>
+          }
+          content={
+            <>
+              <p>
+                Using our Google Docs Add-On, you can export your content
+                without ever leaving Google Docs. Just click the export button
+                and wait for the export to finish.
+              </p>
+              <p>
+                Once your export has completed, you can easily navigate to the
+                exported content in Kontent by Kentico to edit any additional
+                fields or publish the content.
+              </p>
+              <p>
+                <Link href="/docs/introduction-to-the-google-docs-add-on">
+                  <a>Learn more</a>
+                </Link>{" "}
+                about our Google Docs Add-on.
+              </p>
+            </>
+          }
+        />
 
-      {/* Works with your Content Model */}
-      <div className="bg-gray-50 py-24 px-4 sm:px-6 lg:py-40 lg:px-8">
-        <section className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
-          <div className="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-            <div className="relative">
-              <h4 className="text-2xl leading-8 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                Works with your Content Model
-              </h4>
-              <div className="mt-8 prose prose-lg lg:prose-xl leading-8">
-                <p>
-                  Cloudpress works with your Content Model. Simply connect your
-                  Kontent by Kentico account, tell Cloudpress which elements to
-                  use for the title and content of the exported document, and
-                  we’ll take care of the rest.
-                </p>
-                <p>
-                  <Link href="/docs/connect-kentico-kontent-account/">
-                    <a>Learn how</a>
-                  </Link>{" "}
-                  to configure your Kontent by Kentico account.
-                </p>
-              </div>
-            </div>
-            <div className="mt-10 -mx-4 relative lg:mt-0">
-              <img
-                className="relative mx-auto shadow-xl"
-                src={imageModelConfiguration.src}
-                alt=""
-                width="490"
-              />
-            </div>
-          </div>
-        </section>
-      </div>
+        {/* Works with your Content Model */}
+        <ExportFeatureBlockWithImage
+          image={imageModelConfiguration}
+          imageAlignment="left"
+          title={
+            <>
+              Works with{" "}
+              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                your Content Model
+              </span>
+            </>
+          }
+          content={
+            <>
+              <p>
+                Cloudpress works with your Content Model. Simply connect your
+                Kontent by Kentico account, tell Cloudpress which elements to
+                use for the title and content of the exported document, and
+                we’ll take care of the rest.
+              </p>
+              <p>
+                <Link href="/docs/connect-kentico-kontent-account/">
+                  <a>Learn how</a>
+                </Link>{" "}
+                to configure your Kontent by Kentico account.
+              </p>
+            </>
+          }
+        />
 
-      {/* Preserve your formatting */}
-      <div className="bg-white py-24 px-4 sm:px-6 lg:py-40 lg:px-8">
-        <section className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
-          <div className="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-            <div className="relative">
-              <h4 className="text-2xl leading-8 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                Preserve your formatting
-              </h4>
-              <div className="mt-8">
-                <div className="prose prose-lg lg:prose-xl leading-8">
-                  <p>
-                    Cloudpress does a great job of preserving your formatting
-                    and handles all the common formatting styles used in Google
-                    Docs, such as
-                  </p>
-                </div>
-                <ul className="space-y-4 mt-5">
-                  <li className="flex items-start">
-                    <div className="shrink-0">
-                      <svg
-                        className="h-6 w-6 text-brand-500"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <p className="ml-3 text-xl leading-6 text-gray-600">
-                      Headings
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="shrink-0">
-                      <svg
-                        className="h-6 w-6 text-brand-500"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <p className="ml-3 text-xl leading-6 text-gray-600">
-                      Bold text
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="shrink-0">
-                      <svg
-                        className="h-6 w-6 text-brand-500"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <p className="ml-3 text-xl leading-6 text-gray-600">
-                      Italic text
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="shrink-0">
-                      <svg
-                        className="h-6 w-6 text-brand-500"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <p className="ml-3 text-xl leading-6 text-gray-600">
-                      Tables
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="shrink-0">
-                      <svg
-                        className="h-6 w-6 text-brand-500"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <p className="ml-3 text-xl leading-6 text-gray-600">
-                      Lists
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="shrink-0">
-                      <svg
-                        className="h-6 w-6 text-brand-500"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <p className="ml-3 text-xl leading-6 text-gray-600">
-                      And more...
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="mt-10 -mx-4 relative lg:mt-0">
-              <img
-                className="relative mx-auto shadow-xl"
-                src={imageFormatting.src}
-                alt=""
-                width="490"
-              />
-            </div>
-          </div>
-        </section>
-      </div>
+        {/* Preserve your formatting */}
+        <ExportFeatureBlockWithImage
+          image={imageFormatting}
+          imageAlignment="right"
+          title={
+            <>
+              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                Preserve
+              </span>{" "}
+              your formatting
+            </>
+          }
+          content={
+            <>
+              <p>
+                Cloudpress does a great job of preserving your formatting and
+                handles all the common formatting styles used in Google Docs,
+                such as
+              </p>
+              <ul className="space-y-4 mt-5">
+                <FeatureListItem text="Headings" />
+                <FeatureListItem text="Bold text" />
+                <FeatureListItem text="Italic text" />
+                <FeatureListItem text="Tables" />
+                <FeatureListItem text="Lists" />
+                <FeatureListItem text="And more..." />
+              </ul>
+            </>
+          }
+        />
 
-      {/* Export your images too */}
-      <div className="bg-gray-50 py-24 px-4 sm:px-6 lg:py-40 lg:px-8">
-        <section className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
-          <div className="relative lg:grid lg:grid-cols-2 lg:grid-flow-row-dense lg:gap-8 lg:items-center">
-            <div className="lg:col-start-2">
-              <h4 className="text-2xl leading-8 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                Export your images too
-              </h4>
-              <div className="mt-8 prose prose-lg lg:prose-xl leading-8">
-                <p>
-                  Cloudpress does not just work with text - your images are
-                  taken along for the ride as well. Images are exported as
-                  Assets to Kontent by Kentico and linked correctly in the
-                  exported content.
-                </p>
-              </div>
-            </div>
-            <div className="mt-10 -mx-4 relative lg:mt-0">
-              <img
-                className="relative mx-auto shadow-xl"
-                src={imageImages.src}
-                alt=""
-                width="490"
-              />
-            </div>
-          </div>
-        </section>
-      </div>
+        {/* Export your images too */}
+        <ExportFeatureBlockWithImage
+          image={imageImages}
+          imageAlignment="left"
+          title={
+            <>
+              Export your{" "}
+              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                images
+              </span>{" "}
+              too
+            </>
+          }
+          content={
+            <>
+              <p>
+                Cloudpress does not just work with text - your images are taken
+                along for the ride as well. Images are exported as Assets to
+                Kontent by Kentico and linked correctly in the exported content.
+              </p>
+            </>
+          }
+        />
 
-      {/* Re-export content */}
-      <div className="bg-white py-24 px-4 sm:px-6 lg:py-40 lg:px-8">
-        <section className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
-          <div className="relative lg:grid lg:grid-cols-2 lg:grid-flow-row-dense lg:gap-8 lg:items-center">
-            <div className="lg:col-start-2">
-              <h4 className="text-2xl leading-8 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                Re-export content
-              </h4>
-              <div className="mt-8 prose prose-lg lg:prose-xl leading-8">
-                <p>
-                  Made changes and want to re-export your content from Google
-                  Docs?
-                </p>
-                <p>
-                  No worries. Cloudpress will update the content of the
-                  previously exported content without messing up any of the
-                  other elements you may have updated in Kontent by Kentico.
-                </p>
-              </div>
-            </div>
-            <div className="mt-10 -mx-4 relative lg:mt-0">
-              <img
-                className="relative mx-auto shadow-xl"
-                src={imageReexport.src}
-                alt=""
-                width="490"
-              />
-            </div>
-          </div>
-        </section>
+        {/* Re-export content */}
+        <ExportFeatureBlockWithImage
+          image={imageReexport}
+          imageAlignment="right"
+          title={
+            <>
+              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                Re-export
+              </span>{" "}
+              content
+            </>
+          }
+          content={
+            <>
+              <p>
+                Made changes and want to re-export your content from Google
+                Docs?
+              </p>
+              <p>
+                No worries. Cloudpress will update the content of the previously
+                exported content without messing up any of the other fields you
+                may have updated in Kontent by Kentico.
+              </p>
+            </>
+          }
+        />
       </div>
 
       <IntegrationCta destination={destination} />

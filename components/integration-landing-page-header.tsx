@@ -64,7 +64,7 @@ export default function IntegrationLandingPageHeader({
       <div className="relative">
         <div className="absolute inset-0 flex flex-col">
           <div className="flex-1"></div>
-          <div className="flex-1 w-full bg-gray-50"></div>
+          <div className="flex-1 w-full bg-brand-100"></div>
         </div>
         <div className="max-w-screen-lg mx-auto px-4 sm:px-6 pb-5">
           <ImageComparison
