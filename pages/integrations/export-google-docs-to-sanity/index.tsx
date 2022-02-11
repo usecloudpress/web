@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Layout from "../../../components/layout";
 import { NextSeo } from "next-seo";
-import imageCompare1 from "./compare-1.png";
-import imageCompare2 from "./compare-2.png";
+import imageCompare1 from "../../../public/images/terracotta-army-google-docs.png";
+import imageCompare2 from "../../../public/images/terracotta-army-sanity.png";
 import imageWrite from "./write.png";
 import imageAddOn from "./add-on.png";
 import imageFormatting from "./formatting.png";
@@ -12,7 +12,6 @@ import imageReexport from "./reexport.png";
 import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
 import IntegrationCta from "../../../components/integration-cta";
 import ExportFeatureBlockWithImage from "../../../components/feature-block-with-image";
-import imageModelConfiguration from "../export-google-docs-to-contentful/model-configuration.png";
 import FeatureListItem from "../../../components/feature-listitem";
 
 export default function SanityPage() {

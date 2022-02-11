@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { NextSeo } from "next-seo";
 import Layout from "../../../components/layout";
-import imageCompare1 from "./compare-1.png";
-import imageCompare2 from "./compare-2.png";
+import imageCompare1 from "../../../public/images/terracotta-army-google-docs.png";
+import imageCompare2 from "../../../public/images/terracotta-army-contentful.png";
 import imageWrite from "./write.png";
 import imageAddOn from "./add-on.png";
 import imageFormatting from "./formatting.png";

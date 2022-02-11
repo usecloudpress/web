@@ -1,10 +1,11 @@
 import Layout from "../../../components/layout";
 import { NextSeo } from "next-seo";
-import imageCompare1 from "./compare-1.png";
-import imageCompare2 from "./compare-2.png";
+import imageCompare1 from "../../../public/images/terracotta-army-google-docs.png";
+import imageCompare2 from "../../../public/images/terracotta-army-webflow.png";
 import Link from "next/link";
 import imageWrite from "./write.png";
 import imageAddOn from "./add-on.png";
+import imageSchemaConfiguration from "./schema-mapping.png";
 import imageFormatting from "./formatting.png";
 import imageReexport from "./reexport.png";
 import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
@@ -90,10 +91,40 @@ export default function WebflowPage() {
           }
         />
 
+        {/* Works with your Schema */}
+        <ExportFeatureBlockWithImage
+          image={imageSchemaConfiguration}
+          imageAlignment="left"
+          title={
+            <>
+              Works with{" "}
+              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                your schema
+              </span>
+            </>
+          }
+          content={
+            <>
+              <p>
+                Cloudpress works with your collection schema. Simply connect
+                your Sanity account, tell Cloudpress which collection and field
+                to use for the content of the exported document, and we’ll take
+                care of the rest.
+              </p>
+              <p>
+                <Link href="/docs/connect-sanity-account/">
+                  <a>Learn how</a>
+                </Link>{" "}
+                to configure your Sanity account.
+              </p>
+            </>
+          }
+        />
+
         {/* Preserve your formatting */}
         <ExportFeatureBlockWithImage
           image={imageFormatting}
-          imageAlignment="left"
+          imageAlignment="right"
           title={
             <>
               <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
@@ -124,7 +155,7 @@ export default function WebflowPage() {
         {/* Re-export content */}
         <ExportFeatureBlockWithImage
           image={imageReexport}
-          imageAlignment="right"
+          imageAlignment="left"
           title={
             <>
               <span className="underline underline-offset-2 decoration-brand-500 decoration-4">

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Layout from "../../../components/layout";
 import { NextSeo } from "next-seo";
-import imageCompare1 from "./compare-1.png";
-import imageCompare2 from "./compare-2.png";
+import imageCompare1 from "../../../public/images/terracotta-army-google-docs.png";
+import imageCompare2 from "../../../public/images/terracotta-army-wordpress.png";
 import imageWrite from "./write.png";
 import imageAddOn from "./add-on.png";
 import imageFormatting from "./formatting.png";
@@ -164,10 +164,10 @@ export default function WordPressPage() {
           content={
             <>
               <p>
-                We don’t pick sides in the Gutenberg debate and make sure your
-                content looks great regardless of which side you favour. If
-                you’re a fan of Gutenberg, we will ensure that all your content
-                is exported properly as Gutenberg blocks.
+                When exporting your content to WordPress, Cloudpress will
+                automatically convert the content to the corresponding Gutenberg
+                blocks, ensuring that your content renders correctly in
+                WordPress.
               </p>
             </>
           }

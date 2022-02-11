@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Layout from "../components/layout";
 import ImageComparison from "../components/image-comparison";
-import compare1 from "../public/images/compare-1.png";
-import compare2 from "../public/images/compare-2.png";
+import compare1 from "../public/images/terracotta-army-google-docs.png";
+import compare2 from "../public/images/terracotta-army-travel-diaries.png";
 import how2 from "../public/images/how-2.png";
 import Integrations from "../components/integrations";
 
