@@ -64,13 +64,6 @@ export default function Integrations() {
                 />
               </a>
             </Link>
-            <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-              <img
-                className="max-h-12"
-                src="/images/logos/dev.svg"
-                alt="dev.to logo"
-              />
-            </div>
           </div>
         </div>
       </div>
