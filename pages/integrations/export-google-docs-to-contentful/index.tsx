@@ -14,7 +14,7 @@ import IntegrationCta from "../../../components/integration-cta";
 import ExportFeatureBlockWithImage from "../../../components/feature-block-with-image";
 import FeatureListItem from "../../../components/feature-listitem";
 
-export default function ContentfulPage() {
+export default function Page() {
   const source = "google-docs";
   const destination = "contentful";
 
@@ -101,7 +101,7 @@ export default function ContentfulPage() {
               <>
                 Works with{" "}
                 <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                  your Content Model
+                  your content Model
                 </span>
               </>
             }

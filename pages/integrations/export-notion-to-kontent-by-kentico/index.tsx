@@ -1,26 +1,25 @@
-import Link from "next/link";
 import Layout from "../../../components/layout";
 import { NextSeo } from "next-seo";
-import imageCompare1 from "../../../public/images/terracotta-army-google-docs.png";
-import imageCompare2 from "../../../public/images/terracotta-army-sanity.png";
+import imageCompare1 from "../../../public/images/terracotta-army-notion.png";
+import imageCompare2 from "../../../public/images/terracotta-army-kontent-by-kentico.png";
 import imageWrite from "./write.png";
-import imageAddOn from "./add-on.png";
+import imageExport from "./export.png";
+import imageModelConfiguration from "./model-configuration.png";
 import imageFormatting from "./formatting.png";
 import imageImages from "./images.png";
-import imageSchemaConfiguration from "./schema-configuration.png";
-import imageReexport from "./reexport.png";
 import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
 import IntegrationCta from "../../../components/integration-cta";
 import ExportFeatureBlockWithImage from "../../../components/feature-block-with-image";
 import FeatureListItem from "../../../components/feature-listitem";
+import Link from "next/link";
 
 export default function Page() {
-  const source = "google-docs";
-  const destination = "sanity";
+  const source = "notion";
+  const destination = "kontent-by-kentico";
 
   return (
     <Layout>
-      <NextSeo title="Export from Google Docs to Sanity" />
+      <NextSeo title="Export content from Notion to Kontent by Kentico" />
       <IntegrationLandingPageHeader
         source={source}
         destination={destination}
@@ -29,38 +28,33 @@ export default function Page() {
       />
 
       <div className="py-16 bg-gradient-to-b from-brand-100 to-white overflow-hidden lg:pb-24">
-        {/* Write in Google Docs */}
+        {/* Write in Notion */}
         <ExportFeatureBlockWithImage
           image={imageWrite}
           imageAlignment="left"
           title={
             <>
-              Write in{" "}
+              Write and collaborate{" "}
               <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                Google Docs
+                in Notion
               </span>
             </>
           }
           content={
             <>
               <p>
-                Keep using the powerful editing and collaboration features that
-                makes Google Docs such a great writing tool.
+                We understand that you love the block-based editor and
+                collaboration features of Notion and may prefer it over the
+                content editing experience in Kontent by Kentico.
               </p>
-              <p>
-                <Link href="/blog/write-your-next-blog-post-in-google-docs/">
-                  <a>Read more</a>
-                </Link>{" "}
-                about why we think Google Docs is a great choice for writing
-                content.
-              </p>
+              <p>With Cloudpress, you can keep using the tools you love ❤</p>
             </>
           }
         />
 
         {/* Export with one click */}
         <ExportFeatureBlockWithImage
-          image={imageAddOn}
+          image={imageExport}
           imageAlignment="right"
           title={
             <>
@@ -73,50 +67,43 @@ export default function Page() {
           content={
             <>
               <p>
-                Using our Google Docs Add-On, you can export your content
-                without ever leaving Google Docs. Just click the export button
-                and wait for the export to finish.
+                Using the Cloudpress web app, you can export your content with
+                the click of a button.
               </p>
               <p>
-                Once your export has completed, you can easily navigate to the
-                exported content in Sanity to edit any additional fields or
-                publish the content.
-              </p>
-              <p>
-                <Link href="/docs/introduction-to-the-google-docs-add-on">
-                  <a>Learn more</a>
-                </Link>{" "}
-                about our Google Docs Add-on.
+                If you make changes to the Notion document you can easily export
+                it again, and Cloudpress will update the content of the
+                previously exported item in Kontent by Kentico.
               </p>
             </>
           }
         />
 
-        {/* Works with your Content Model */}
+        {/* Works with your Schema */}
         <ExportFeatureBlockWithImage
-          image={imageSchemaConfiguration}
+          image={imageModelConfiguration}
           imageAlignment="left"
           title={
             <>
               Works with{" "}
               <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                your schema
+                your content model
               </span>
             </>
           }
           content={
             <>
               <p>
-                Cloudpress works with your schema. Simply connect your Sanity
-                account, tell Cloudpress which fields to use for the title and
-                content of the exported document, and we’ll take care of the
-                rest.
+                Cloudpress works with your Content Model. Simply connect your
+                Kontent by Kentico account, tell Cloudpress which elements to
+                use for the title and content of the exported document, and
+                we’ll take care of the rest.
               </p>
               <p>
-                <Link href="/docs/connect-sanity-account/">
+                <Link href="/docs/connect-kentico-kontent-account/">
                   <a>Learn how</a>
                 </Link>{" "}
-                to configure your Sanity account.
+                to configure your Kontent by Kentico account.
               </p>
             </>
           }
@@ -128,18 +115,20 @@ export default function Page() {
           imageAlignment="right"
           title={
             <>
+              We{" "}
               <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                Preserve
+                understand
               </span>{" "}
-              your formatting
+              Notion blocks
             </>
           }
           content={
             <>
               <p>
-                Cloudpress does a great job of preserving your formatting and
-                handles all the common formatting styles used in Google Docs,
-                such as
+                Cloudpress understands how to work with Notion blocks and
+                convert them to the correct format for Kontent by Kentico. It
+                handles all the common block types and formatting used in
+                Notion, such as
               </p>
               <ul className="space-y-4 mt-5">
                 <FeatureListItem text="Headings" />
@@ -171,40 +160,12 @@ export default function Page() {
               <p>
                 Cloudpress does not just work with text - your images are taken
                 along for the ride as well. Images are exported as Assets to
-                Sanity and linked correctly in the exported content.
-              </p>
-            </>
-          }
-        />
-
-        {/* Re-export content */}
-        <ExportFeatureBlockWithImage
-          image={imageReexport}
-          imageAlignment="right"
-          title={
-            <>
-              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                Re-export
-              </span>{" "}
-              content
-            </>
-          }
-          content={
-            <>
-              <p>
-                Made changes and want to re-export your content from Google
-                Docs?
-              </p>
-              <p>
-                No worries. Cloudpress will update the content of the previously
-                exported content without messing up any of the other fields you
-                may have updated in Sanity.
+                Kontent by Kentico and linked correctly in the exported content.
               </p>
             </>
           }
         />
       </div>
-
       <IntegrationCta destination={destination} />
     </Layout>
   );

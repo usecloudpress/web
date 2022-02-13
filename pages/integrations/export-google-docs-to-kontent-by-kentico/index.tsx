@@ -14,7 +14,7 @@ import IntegrationCta from "../../../components/integration-cta";
 import ExportFeatureBlockWithImage from "../../../components/feature-block-with-image";
 import FeatureListItem from "../../../components/feature-listitem";
 
-export default function KenticoPage() {
+export default function Page() {
   const source = "google-docs";
   const destination = "kontent-by-kentico";
 
@@ -101,7 +101,7 @@ export default function KenticoPage() {
             <>
               Works with{" "}
               <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                your Content Model
+                your content model
               </span>
             </>
           }

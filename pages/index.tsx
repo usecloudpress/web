@@ -9,7 +9,7 @@ import how2 from "../public/images/how-2.png";
 import how3 from "../public/images/how-3.png";
 import Integrations from "../components/integrations";
 import ImageComparison from "../components/image-comparison";
-import Pricing from "../components/pricing";
+import GenericCta from "../components/generic-cta";
 
 const Home: NextPage = () => {
   return (
@@ -176,7 +176,7 @@ const Home: NextPage = () => {
         <Integrations />
 
         {/* Pricing */}
-        <Pricing />
+        <GenericCta />
       </Layout>
     </>
   );
