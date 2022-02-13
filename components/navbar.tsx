@@ -9,22 +9,27 @@ const integrations = [
   {
     name: "Contentful",
     href: "/integrations/export-google-docs-to-contentful/",
+    logo: "contentful.png",
   },
   {
     name: "Kontent by Kentico",
     href: "/integrations/export-google-docs-to-kontent-by-kentico/",
+    logo: "kontent.png",
   },
   {
     name: "Sanity",
     href: "/integrations/export-google-docs-to-sanity/",
+    logo: "sanity.png",
   },
   {
     name: "Webflow",
     href: "/integrations/export-google-docs-to-webflow/",
+    logo: "webflow.png",
   },
   {
     name: "WordPress",
     href: "/integrations/export-google-docs-to-wordpress/",
+    logo: "wordpress.png",
   },
 ];
 
@@ -91,6 +96,11 @@ const Navbar = () => {
                           {integrations.map((item) => (
                             <Link key={item.name} href={item.href}>
                               <a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
+                                <img
+                                  className="w-6 h-6"
+                                  src={`/images/logos/square/${item.logo}`}
+                                  alt={`${item.name} logo`}
+                                />
                                 <div className="ml-4">
                                   <p className="text-base font-medium text-gray-900">
                                     {item.name}
