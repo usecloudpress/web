@@ -37,7 +37,7 @@ type AssetLinkingCollections {
     entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
 }
 
-"The author of a particular piece of content [See type definition](https://app.contentful.com/spaces/8qo8k89f0pe5/content_types/author)"
+"The author of a particular piece of content [See type definition](https://app.export-google-docs-to-contentful.com/spaces/8qo8k89f0pe5/content_types/author)"
 type Author implements Entry {
     bio(locale: String): String
     contentfulMetadata: ContentfulMetadata!
@@ -61,7 +61,7 @@ type AuthorLinkingCollections {
     genericContentCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): GenericContentCollection
 }
 
-"Blog posts [See type definition](https://app.contentful.com/spaces/8qo8k89f0pe5/content_types/blogPost)"
+"Blog posts [See type definition](https://app.export-google-docs-to-contentful.com/spaces/8qo8k89f0pe5/content_types/blogPost)"
 type BlogPost implements Entry {
     author(locale: String, preview: Boolean): Author
     content(locale: String): String
@@ -95,14 +95,14 @@ type ContentfulMetadata {
 """
 
 Represents a tag entity for finding and organizing content easily.
-Find out more here: https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-tags
+Find out more here: https://www.export-google-docs-to-contentful.com/developers/docs/references/content-delivery-api/#/reference/content-tags
 """
 type ContentfulTag {
     id: String
     name: String
 }
 
-"Documentation articles [See type definition](https://app.contentful.com/spaces/8qo8k89f0pe5/content_types/documentation)"
+"Documentation articles [See type definition](https://app.export-google-docs-to-contentful.com/spaces/8qo8k89f0pe5/content_types/documentation)"
 type Documentation implements Entry {
     categoryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): DocumentationCategoryCollection
     content(locale: String): String
@@ -115,7 +115,7 @@ type Documentation implements Entry {
     title(locale: String): String
 }
 
-"The category that a specific piece of documentation belongs to [See type definition](https://app.contentful.com/spaces/8qo8k89f0pe5/content_types/documentationCategory)"
+"The category that a specific piece of documentation belongs to [See type definition](https://app.export-google-docs-to-contentful.com/spaces/8qo8k89f0pe5/content_types/documentationCategory)"
 type DocumentationCategory implements Entry {
     contentfulMetadata: ContentfulMetadata!
     linkedFrom(allowedLocales: [String]): DocumentationCategoryLinkingCollections
@@ -155,7 +155,7 @@ type EntryCollection {
     total: Int!
 }
 
-"Generic type for all types of contentGeneric type for all types of content [See type definition](https://app.contentful.com/spaces/8qo8k89f0pe5/content_types/genericContent)"
+"Generic type for all types of contentGeneric type for all types of content [See type definition](https://app.export-google-docs-to-contentful.com/spaces/8qo8k89f0pe5/content_types/genericContent)"
 type GenericContent implements Entry {
     author(locale: String, preview: Boolean): Author
     body(locale: String): String

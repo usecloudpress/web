@@ -2,14 +2,14 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/layout";
-import compare1 from "../public/images/compare-1.png";
-import compare2 from "../public/images/compare-2.png";
+import compare1 from "../public/images/terracotta-army-google-docs.png";
+import compare2 from "../public/images/terracotta-army-travel-diaries.png";
 import how1 from "../public/images/how-1.png";
 import how2 from "../public/images/how-2.png";
 import how3 from "../public/images/how-3.png";
 import Integrations from "../components/integrations";
 import ImageComparison from "../components/image-comparison";
-import Pricing from "../components/pricing";
+import GenericCta from "../components/generic-cta";
 
 const Home: NextPage = () => {
   return (
@@ -25,9 +25,9 @@ const Home: NextPage = () => {
             <div className="pt-6 pb-12 lg:pb-20">
               <div className="mt-10 mx-auto max-w-screen-xl px-4 sm:px-6 md:mt-16 lg:mt-20">
                 <div className="text-center">
-                  <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+                  <h1 className="text-4xl tracking-tight leading-snug font-extrabold text-gray-900 md:text-6xl md:leading-snug space-y-4">
                     Export content from{" "}
-                    <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text">
+                    <span className="bg-gradient-to-r from-cyan-500 to-brand-500 text-transparent bg-clip-text">
                       Google Docs
                     </span>
                     <br />
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
             <div className="relative">
               <div className="absolute inset-0 flex flex-col">
                 <div className="flex-1"></div>
-                <div className="flex-1 w-full bg-indigo-50"></div>
+                <div className="flex-1 w-full bg-brand-100"></div>
               </div>
               <div className="max-w-screen-lg mx-auto px-4 sm:px-6 pb-5">
                 <ImageComparison
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
         </div>
 
         {/* How it works  */}
-        <div className="py-16 bg-gradient-to-b from-indigo-50 via-yellow to-white overflow-hidden lg:pb-24">
+        <div className="py-16 bg-gradient-to-b from-brand-100 to-white overflow-hidden lg:pb-24">
           <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
             <div className="relative">
               <h3 className="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
@@ -176,7 +176,7 @@ const Home: NextPage = () => {
         <Integrations />
 
         {/* Pricing */}
-        <Pricing />
+        <GenericCta />
       </Layout>
     </>
   );

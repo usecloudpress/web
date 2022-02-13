@@ -19,7 +19,7 @@ export default function Integrations() {
             </p>
           </div>
           <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
-            <Link href="/integrations/wordpress/">
+            <Link href="/integrations/export-google-docs-to-wordpress">
               <a className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100">
                 <img
                   className="max-h-12"
@@ -28,7 +28,7 @@ export default function Integrations() {
                 />
               </a>
             </Link>
-            <Link href="/integrations/webflow/">
+            <Link href="/integrations/export-google-docs-to-webflow">
               <a className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100">
                 <img
                   className="max-h-12"
@@ -37,7 +37,7 @@ export default function Integrations() {
                 />
               </a>
             </Link>
-            <Link href="/integrations/contentful/">
+            <Link href="/integrations/export-google-docs-to-contentful">
               <a className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100">
                 <img
                   className="max-h-12"
@@ -46,7 +46,7 @@ export default function Integrations() {
                 />
               </a>
             </Link>
-            <Link href="/integrations/kentico/">
+            <Link href="/integrations/export-google-docs-to-kontent-by-kentico">
               <a className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100">
                 <img
                   className="max-h-12"
@@ -55,7 +55,7 @@ export default function Integrations() {
                 />
               </a>
             </Link>
-            <Link href="/integrations/sanity/">
+            <Link href="/integrations/export-google-docs-to-sanity">
               <a className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100">
                 <img
                   className="max-h-12"
@@ -64,13 +64,6 @@ export default function Integrations() {
                 />
               </a>
             </Link>
-            <div className="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-              <img
-                className="max-h-12"
-                src="/images/logos/dev.svg"
-                alt="dev.to logo"
-              />
-            </div>
           </div>
         </div>
       </div>
