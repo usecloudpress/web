@@ -11,11 +11,18 @@ export default function Footer() {
                 <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
                   Product
                 </h4>
-                <ul className="mt-4">
+                <ul className="mt-4 space-y-4">
                   <li>
-                    <Link href="/features/">
+                    <Link href="/features">
                       <a className="text-base leading-6 text-gray-300 hover:text-white">
                         Features
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/pricing">
+                      <a className="text-base leading-6 text-gray-300 hover:text-white">
+                        Pricing
                       </a>
                     </Link>
                   </li>
@@ -25,16 +32,16 @@ export default function Footer() {
                 <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
                   Use Cases
                 </h4>
-                <ul className="mt-4">
+                <ul className="mt-4 space-y-4">
                   <li>
-                    <Link href="/use-cases/content-managers/">
+                    <Link href="/use-cases/content-managers">
                       <a className="text-base leading-6 text-gray-300 hover:text-white">
                         Content Managers
                       </a>
                     </Link>
                   </li>
-                  <li className="mt-4">
-                    <Link href="/use-cases/content-writers/">
+                  <li>
+                    <Link href="/use-cases/content-writers">
                       <a className="text-base leading-6 text-gray-300 hover:text-white">
                         Content Writers
                       </a>
@@ -48,7 +55,7 @@ export default function Footer() {
                 <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
                   Resources
                 </h4>
-                <ul className="mt-4">
+                <ul className="mt-4 space-y-4">
                   <li>
                     <Link href="/docs/">
                       <a className="text-base leading-6 text-gray-300 hover:text-white">
@@ -56,7 +63,7 @@ export default function Footer() {
                       </a>
                     </Link>
                   </li>
-                  <li className="mt-4">
+                  <li>
                     <Link href="/blog/">
                       <a className="text-base leading-6 text-gray-300 hover:text-white">
                         Blog
@@ -69,15 +76,15 @@ export default function Footer() {
                 <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
                   Legal
                 </h4>
-                <ul className="mt-4">
-                  <li className="mt-4">
+                <ul className="mt-4 space-y-4">
+                  <li>
                     <Link href="/privacy/">
                       <a className="text-base leading-6 text-gray-300 hover:text-white">
                         Privacy
                       </a>
                     </Link>
                   </li>
-                  <li className="mt-4">
+                  <li>
                     <Link href="/terms/">
                       <a className="text-base leading-6 text-gray-300 hover:text-white">
                         Terms

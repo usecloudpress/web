@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import Script from "next/script";
 import { useRouter } from "next/router";
+import "../global.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const CANONICAL_DOMAIN = "https://www.usecloudpress.com";

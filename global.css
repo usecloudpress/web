@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    .price-strikethrough:before {
+        @apply bg-red-500 absolute rotate-12 w-32 h-1 left-16 top-2 origin-bottom-left shadow-sm;
+
+        content: "";
+    }
+
+    .price-strikethrough-mobile:before {
+        @apply bg-red-500 absolute rotate-12 w-28 h-1 left-4 top-12 origin-top-left shadow-sm;
+
+        content: "";
+    }
+}
