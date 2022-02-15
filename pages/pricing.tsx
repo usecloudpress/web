@@ -6,8 +6,31 @@ import { CheckIcon, MinusIcon } from "@heroicons/react/solid";
 import { InformationCircleIcon } from "@heroicons/react/outline";
 import * as Tooltip from "@radix-ui/react-tooltip";
 
+type PricingTier = {
+  name: "Solo" | "Pro";
+  href: string;
+  priceMonthly: number;
+  description: string;
+};
+
+type TierAvailability = {
+  Solo?: boolean | string;
+  Pro?: boolean | string;
+};
+
+type Feature = {
+  name: string;
+  description?: string;
+  tiers: TierAvailability;
+};
+
+type FeatureSection = {
+  name: string;
+  features: Feature[];
+};
+
 const ctaText = "Sign Up";
-const tiers = [
+const tiers: PricingTier[] = [
   {
     name: "Solo",
     href: "https://app.usecloudpress.com/register",
@@ -22,7 +45,7 @@ const tiers = [
       "For companies and agencies that want to automate up their content publication pipeline",
   },
 ];
-const sections = [
+const sections: FeatureSection[] = [
   {
     name: "Quotas",
     features: [
