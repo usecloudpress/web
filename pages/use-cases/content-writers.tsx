@@ -117,7 +117,7 @@ export default function ContentWritersPage() {
                       application for{" "}
                       <a
                         className="text-brand-600 hover:text-brand-500"
-                        href="https://itunes.apple.com/app/apple-store/id842842640?mt=8"
+                        href="https://apps.apple.com/app/apple-store/id842842640"
                         target="_blank"
                         rel="nofollow noreferrer"
                       >
