@@ -4,120 +4,202 @@ export default function Footer() {
   return (
     <div className="bg-gray-800">
       <div className="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="grid grid-cols-2 gap-8 xl:col-span-2">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
-                  Product
-                </h4>
-                <ul className="mt-4 space-y-4">
-                  <li>
-                    <Link href="/features">
-                      <a className="text-base leading-6 text-gray-300 hover:text-white">
-                        Features
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/pricing">
-                      <a className="text-base leading-6 text-gray-300 hover:text-white">
-                        Pricing
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="mt-12 md:mt-0">
-                <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
-                  Use Cases
-                </h4>
-                <ul className="mt-4 space-y-4">
-                  <li>
-                    <Link href="/use-cases/content-managers">
-                      <a className="text-base leading-6 text-gray-300 hover:text-white">
-                        Content Managers
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/use-cases/content-writers">
-                      <a className="text-base leading-6 text-gray-300 hover:text-white">
-                        Content Writers
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+        <div className="grid grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 xl:grid-cols-1 col-span-2 gap-8 xl:col-span-1">
+            <div>
+              <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
+                Product
+              </h4>
+              <ul className="mt-2 space-y-2">
+                <li>
+                  <Link href="/features">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Features
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pricing">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Pricing
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+              <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase mt-8">
+                Resources
+              </h4>
+              <ul className="mt-2 space-y-2">
+                <li>
+                  <Link href="/docs/">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Documentation
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Blog
+                    </a>
+                  </Link>
+                </li>
+              </ul>
             </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
-                  Resources
-                </h4>
-                <ul className="mt-4 space-y-4">
-                  <li>
-                    <Link href="/docs/">
-                      <a className="text-base leading-6 text-gray-300 hover:text-white">
-                        Documentation
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/blog/">
-                      <a className="text-base leading-6 text-gray-300 hover:text-white">
-                        Blog
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="mt-12 md:mt-0">
-                <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
-                  Legal
-                </h4>
-                <ul className="mt-4 space-y-4">
-                  <li>
-                    <Link href="/privacy/">
-                      <a className="text-base leading-6 text-gray-300 hover:text-white">
-                        Privacy
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/terms/">
-                      <a className="text-base leading-6 text-gray-300 hover:text-white">
-                        Terms
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+            <div>
+              <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
+                Use Cases
+              </h4>
+              <ul className="mt-2 space-y-2">
+                <li>
+                  <Link href="/use-cases/content-managers">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Content Managers
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/use-cases/content-writers">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Content Writers
+                    </a>
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
-          <div className="mt-8 xl:mt-0">
-            <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
-              Address
-            </h4>
-            <p className="mt-4 text-gray-300 text-base leading-6">
-              Unit 346, 3/F, Peninsula Centre
-              <br />
-              67 Mody Road, Tsim Sha Tsui
-              <br />
-              Kowloon, Hong Kong
-              <br />
-            </p>
-            <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase mt-8">
-              Contact
-            </h4>
-            <p className="mt-4 text-gray-300 text-base leading-6">
-              <a
-                href="mailto:hello@usecloudpress.com"
-                className="text-base leading-6 text-gray-300 hover:text-white"
-              >
-                hello@usecloudpress.com
-              </a>
-            </p>
+          <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
+                Google Docs Integrations
+              </h4>
+              <ul className="mt-2 space-y-2">
+                <li>
+                  <Link href="/integrations/export-google-docs-to-contentful">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Export Google Docs to Contentful
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/integrations/export-google-docs-to-kontent-by-kentico">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Export Google Docs to Kontent by Kentico
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/integrations/export-google-docs-to-sanity">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Export Google Docs to Sanity
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/integrations/export-google-docs-to-webflow">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Export Google Docs to Webflow
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/integrations/export-google-docs-to-wordpress">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Export Google Docs to WordPress
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
+                Notion Integrations
+              </h4>
+              <ul className="mt-2 space-y-2">
+                <li>
+                  <Link href="/integrations/export-notion-to-contentful">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Export Notion to Contentful
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/integrations/export-notion-to-kontent-by-kentico">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Export Notion to Kontent by Kentico
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/integrations/export-notion-to-sanity">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Export Notion to Sanity
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/integrations/export-notion-to-webflow">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Export Notion to Webflow
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/integrations/export-notion-to-wordpress">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Export Notion to WordPress
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
+                Contact
+              </h4>
+              <p className="mt-2 text-gray-300 text-base leading-6">
+                <a
+                  href="mailto:hello@usecloudpress.com"
+                  className="text-base leading-6 text-gray-300 hover:text-white"
+                >
+                  hello@usecloudpress.com
+                </a>
+              </p>
+              <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase mt-8">
+                Legal
+              </h4>
+              <ul className="mt-2 space-y-2">
+                <li>
+                  <Link href="/privacy/">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Privacy
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms/">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Terms
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase">
+                Address
+              </h4>
+              <p className="mt-2 text-gray-300 text-base leading-6">
+                Unit 346, 3/F, Peninsula Centre
+                <br />
+                67 Mody Road, Tsim Sha Tsui
+                <br />
+                Kowloon, Hong Kong
+                <br />
+              </p>
+            </div>
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
