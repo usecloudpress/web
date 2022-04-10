@@ -84,9 +84,9 @@ export default function Features() {
                       <div>
                         <h5 className="text-lg leading-6 font-medium text-gray-900">
                           Automation
-                          <span className="inline-flex items-center px-4 py-1 rounded-full text-xs font-medium leading-4 bg-brand-200 text-brand-800 ml-2">
+                          {/* <span className="inline-flex items-center px-4 py-1 rounded-full text-xs font-medium leading-4 bg-brand-200 text-brand-800 ml-2">
                             Coming Soon
-                          </span>
+                          </span> */}
                         </h5>
                         <p className="mt-2 text-base leading-6 text-gray-500">
                           With our API and Zapier integration, you can automate
