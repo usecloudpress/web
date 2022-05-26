@@ -6,6 +6,7 @@ import compare1 from "../public/images/terracotta-army-google-docs.png";
 import compare2 from "../public/images/terracotta-army-travel-diaries.png";
 import how1 from "../public/images/how-1.png";
 import how2 from "../public/images/how-2.png";
+import how3 from "../public/images/how-3.png";
 import Integrations from "../components/integrations";
 import ImageComparison from "../components/image-comparison";
 import GenericCta from "../components/generic-cta";
@@ -140,7 +141,7 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            {/* <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+            <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
               <div className="relative">
                 <h4 className="text-2xl leading-8 font-bold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
                   Automate{" "}
@@ -149,14 +150,18 @@ const Home: NextPage = () => {
                   </span>
                 </h4>
                 <p className="mt-3 text-lg leading-7 text-gray-500">
-                  Is clicking a button still slowing you down?{" "}
-                  <span className="bg-yellow-100">Coming soon</span>, you will
-                  be able to put your content publishing on autopilot with our
-                  automation tools and API.
+                  Is clicking a button still slowing you down? Put your content
+                  publishing on autopilot with our API and{" "}
+                  <a
+                    href="https://www.make.com/en/integrations/cloudpress"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-brand-600 hover:text-brand-500 font-semibold"
+                  >
+                    Make integration
+                  </a>{" "}
+                  .
                 </p>
-                <span className="inline-flex items-center px-4 py-1 rounded-full text-xs font-bold leading-4 bg-brand-200 text-brand-800 mt-4">
-                  Coming Soon
-                </span>
               </div>
 
               <div className="mt-10 -mx-4 relative lg:mt-0">
@@ -167,7 +172,7 @@ const Home: NextPage = () => {
                   alt=""
                 />
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
 

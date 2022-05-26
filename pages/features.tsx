@@ -84,14 +84,19 @@ export default function Features() {
                       <div>
                         <h5 className="text-lg leading-6 font-medium text-gray-900">
                           Automation
-                          {/* <span className="inline-flex items-center px-4 py-1 rounded-full text-xs font-medium leading-4 bg-brand-200 text-brand-800 ml-2">
-                            Coming Soon
-                          </span> */}
                         </h5>
                         <p className="mt-2 text-base leading-6 text-gray-500">
-                          With our API and Zapier integration, you can automate
-                          the exporting of your content without any human
-                          intervention.
+                          With our API and{" "}
+                          <a
+                            href="https://www.make.com/en/integrations/cloudpress"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-brand-600 hover:text-brand-500 font-semibold"
+                          >
+                            Make integration
+                          </a>
+                          , you can automate the exporting of your content
+                          without any human intervention.
                         </p>
                       </div>
                     </div>
