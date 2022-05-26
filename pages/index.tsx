@@ -37,10 +37,11 @@ const Home: NextPage = () => {
                     </span>{" "}
                     to your CMS
                   </h1>
-                  <p className="mt-8 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-16 md:text-2xl md:max-w-3xl">
-                    Keep using the writing tools that you love, then export your
-                    masterpiece with the click of a button to your blog or
-                    website
+                  <p className="mt-8 max-w-lg mx-auto text-base text-gray-500 sm:text-lg md:mt-16 md:text-2xl md:max-w-6xl">
+                    Stop wasting time by manually copy-and-pasting content from
+                    your writing app to your Content Management System. Save
+                    yourself the frustration by automating your content
+                    publishing workflow.
                   </p>
                 </div>
               </div>
@@ -67,7 +68,7 @@ const Home: NextPage = () => {
           <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
             <div className="relative">
               <h3 className="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-                🚀 Supercharge your content publishing workflow 🚀
+                🚀 How you can supercharge your content publishing workflow 🚀
               </h3>
             </div>
 

@@ -52,10 +52,11 @@ export default function IntegrationLandingPageHeader({
                 destination={destination}
               />
             </h1>
-            <h2 className="mt-8 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:text-2xl md:max-w-3xl">
+            <h2 className="mt-8 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:text-2xl md:max-w-6xl">
               Write and collaborate in {sourceIntegration!.name}, then export
               your content to {destinationIntegration!.name} with the click of a
-              button
+              button. Or even better - put your entire content publishing
+              workflow on autopilot with our powerful API and automation tools.
             </h2>
           </div>
         </section>
