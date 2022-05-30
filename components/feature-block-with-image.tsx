@@ -5,7 +5,7 @@ type Props = {
   content: React.ReactNode;
   image: StaticImageData;
   imageAlt?: string;
-  imageAlignment: "left" | "right";
+  imageAlignment: "left" | "right" | "bottom";
 };
 
 export default function ExportFeatureBlockWithImage({
@@ -20,7 +20,10 @@ export default function ExportFeatureBlockWithImage({
       <section className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:max-w-screen-xl">
         <div
           className={classNames(
-            "lg:grid lg:grid-cols-2 lg:gap-20 lg:items-center",
+            {
+              "lg:grid lg:grid-cols-2 lg:gap-20 lg:items-center":
+                imageAlignment === "left" || imageAlignment === "right",
+            },
             { "lg:grid-flow-row-dense": imageAlignment === "left" }
           )}
         >
@@ -30,11 +33,15 @@ export default function ExportFeatureBlockWithImage({
             })}
           >
             <div>
-              <div className="mt-6">
+              <div
+                className={classNames("mt-6", {
+                  "text-center lg:mb-12": imageAlignment === "bottom",
+                })}
+              >
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
                   {title}
                 </h2>
-                <div className="mt-8 prose prose-lg lg:prose-xl leading-8">
+                <div className="mt-8 prose prose-lg lg:prose-xl max-w-none leading-8">
                   {content}
                 </div>
               </div>
@@ -47,7 +54,7 @@ export default function ExportFeatureBlockWithImage({
           >
             <div className="">
               <img
-                className="mx-auto shadow-2xl"
+                className="mx-auto drop-shadow-2xl"
                 src={image.src}
                 alt={imageAlt}
               />

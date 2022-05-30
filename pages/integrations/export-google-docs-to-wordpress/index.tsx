@@ -9,6 +9,7 @@ import imageFormatting from "./formatting.png";
 import imageImages from "./images.png";
 import imageGutenberg from "./gutenberg.png";
 import imageReexport from "./reexport.png";
+import imageAutoEmbed from "./auto-embed.png";
 import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
 import IntegrationCta from "../../../components/integration-cta";
 import ExportFeatureBlockWithImage from "../../../components/feature-block-with-image";
@@ -168,6 +169,29 @@ export default function Page() {
                 automatically convert the content to the corresponding Gutenberg
                 blocks, ensuring that your content renders correctly in
                 WordPress.
+              </p>
+            </>
+          }
+        />
+
+        {/* Auto-detects embeds */}
+        <ExportFeatureBlockWithImage
+          image={imageAutoEmbed}
+          imageAlignment="bottom"
+          title={
+            <>
+              Auto-detects{" "}
+              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                embeds
+              </span>
+            </>
+          }
+          content={
+            <>
+              <p>
+                Cloudpress can auto-detect links to content on sites like
+                Twitter, Instagram, TikTok, YouTube, and more, and converts them
+                to the correct embed blocks in WordPress.
               </p>
             </>
           }

@@ -6,11 +6,12 @@ import imageWrite from "./write.png";
 import imageExport from "./export.png";
 import imageFormatting from "./formatting.png";
 import imageImages from "./images.png";
+import imageGutenberg from "./gutenberg.png";
+import imageAutoEmbed from "./auto-embed.png";
 import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
 import IntegrationCta from "../../../components/integration-cta";
 import ExportFeatureBlockWithImage from "../../../components/feature-block-with-image";
 import FeatureListItem from "../../../components/feature-listitem";
-import imageGutenberg from "../export-google-docs-to-wordpress/gutenberg.png";
 
 export default function Page() {
   const source = "notion";
@@ -155,6 +156,29 @@ export default function Page() {
                 automatically convert the content to the corresponding Gutenberg
                 blocks, ensuring that your content renders correctly in
                 WordPress.
+              </p>
+            </>
+          }
+        />
+
+        {/* Auto-detects embeds */}
+        <ExportFeatureBlockWithImage
+          image={imageAutoEmbed}
+          imageAlignment="bottom"
+          title={
+            <>
+              Converts your{" "}
+              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                embeds
+              </span>
+            </>
+          }
+          content={
+            <>
+              <p>
+                Cloudpress knows how to handle Notion embeds for content on
+                websites like Twitter, Instagram, TikTok, YouTube, and more, and
+                converts them to the correct embed blocks in WordPress.
               </p>
             </>
           }
