@@ -7,7 +7,7 @@ import { InformationCircleIcon } from "@heroicons/react/outline";
 import * as Tooltip from "@radix-ui/react-tooltip";
 
 type PricingTier = {
-  name: "Solo" | "Pro";
+  name: "Solo" | "Pro" | "Scale";
   href: string;
   priceMonthly: number;
   description: string;
@@ -16,6 +16,7 @@ type PricingTier = {
 type TierAvailability = {
   Solo?: boolean | string;
   Pro?: boolean | string;
+  Scale?: boolean | string;
 };
 
 type Feature = {
@@ -42,7 +43,14 @@ const tiers: PricingTier[] = [
     href: "https://app.usecloudpress.com/register",
     priceMonthly: 49,
     description:
-      "For companies and agencies that want to automate up their content publication pipeline",
+      "For companies that want to automate their content publication pipeline",
+  },
+  {
+    name: "Scale",
+    href: "https://app.usecloudpress.com/register",
+    priceMonthly: 149,
+    description:
+      "For larger companies and agencies that want to automate their content publication pipeline",
   },
 ];
 const sections: FeatureSection[] = [
@@ -50,22 +58,21 @@ const sections: FeatureSection[] = [
     name: "Quotas",
     features: [
       {
-        name: "Credits",
-        description:
-          "Each time you export a document or run a job, you use one credit",
-        tiers: { Solo: "50", Pro: "200" },
+        name: "Export Credits",
+        description: "Each time you export a document, you use one credit",
+        tiers: { Solo: "50", Pro: "200", Scale: "1000" },
       },
       {
         name: "Source Connections",
         description:
           "The number of connected accounts from which you can export content",
-        tiers: { Solo: "Unlimited", Pro: "Unlimited" },
+        tiers: { Solo: "Unlimited", Pro: "Unlimited", Scale: "Unlimited" },
       },
       {
         name: "Destination Connections",
         description:
           "The number of connected accounts to which you can export content",
-        tiers: { Solo: "Unlimited", Pro: "Unlimited" },
+        tiers: { Solo: "Unlimited", Pro: "Unlimited", Scale: "Unlimited" },
       },
     ],
   },
@@ -74,15 +81,15 @@ const sections: FeatureSection[] = [
     features: [
       {
         name: "Export content",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Solo: true, Pro: true, Scale: true },
       },
       {
         name: "Export images",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Solo: true, Pro: true, Scale: true },
       },
       {
         name: "Preserve content formatting",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Solo: true, Pro: true, Scale: true },
       },
     ],
   },
@@ -91,31 +98,31 @@ const sections: FeatureSection[] = [
     features: [
       {
         name: "Google Docs",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Solo: true, Pro: true, Scale: true },
       },
       {
         name: "Notion",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Solo: true, Pro: true, Scale: true },
       },
       {
         name: "Contentful",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Solo: true, Pro: true, Scale: true },
       },
       {
-        name: "Content by Kentico",
-        tiers: { Solo: true, Pro: true },
+        name: "Kontent by Kentico",
+        tiers: { Solo: true, Pro: true, Scale: true },
       },
       {
         name: "Sanity",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Solo: true, Pro: true, Scale: true },
       },
       {
         name: "Webflow",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Solo: true, Pro: true, Scale: true },
       },
       {
         name: "WordPress",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Solo: true, Pro: true, Scale: true },
       },
     ],
   },
@@ -125,21 +132,21 @@ const sections: FeatureSection[] = [
       {
         name: "REST API",
         description: "Export content using the Cloudpress REST API",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Pro: true, Scale: true },
       },
       {
         name: "Zapier",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Pro: true, Scale: true },
       },
       {
         name: "Integromat",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Pro: true, Scale: true },
       },
       {
-        name: "Jobs",
+        name: "Collections",
         description:
-          "Jobs allow you to export a collection of pages, for example and entire folder on Google Docs",
-        tiers: { Pro: true },
+          "Collections allow you to export a collection of documents, for example a Notion database or a folder on Google Drive",
+        tiers: { Pro: true, Scale: true },
       },
     ],
   },
@@ -148,7 +155,7 @@ const sections: FeatureSection[] = [
     features: [
       {
         name: "Additional users",
-        tiers: { Solo: "Unlimited", Pro: "Unlimited" },
+        tiers: { Solo: "Unlimited", Pro: "Unlimited", Scale: "Unlimited" },
       },
     ],
   },
@@ -157,7 +164,7 @@ const sections: FeatureSection[] = [
     features: [
       {
         name: "Email support",
-        tiers: { Solo: true, Pro: true },
+        tiers: { Solo: true, Pro: true, Scale: true },
       },
     ],
   },
@@ -378,7 +385,7 @@ export default function PricingPage() {
                     <tr>
                       <th
                         className="bg-gray-50 py-3 pl-6 text-sm font-medium text-gray-900 text-left"
-                        colSpan={3}
+                        colSpan={4}
                         scope="colgroup"
                       >
                         {section.name}
