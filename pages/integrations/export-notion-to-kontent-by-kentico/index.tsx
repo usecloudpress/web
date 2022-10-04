@@ -100,7 +100,7 @@ export default function Page() {
                 we’ll take care of the rest.
               </p>
               <p>
-                <Link href="/docs/connect-kentico-kontent-account/">
+                <Link href="/docs/connect-kontent-account">
                   <a>Learn how</a>
                 </Link>{" "}
                 to configure your Kontent by Kentico account.
