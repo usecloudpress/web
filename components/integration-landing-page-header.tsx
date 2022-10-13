@@ -2,6 +2,7 @@ import InlineIntegrationDropdown from "./inline-integration-dropdown";
 import ImageComparison from "./image-comparison";
 import { Integration, thisIntegration } from "../lib/Integrations";
 import { useEffect, useState } from "react";
+import { StaticImageData } from "next/image";
 
 type Props = {
   source: string;

@@ -1,5 +1,5 @@
 import { Popover } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { usePopper } from "react-popper";
 import { useEffect, useState } from "react";
 import Link from "next/link";

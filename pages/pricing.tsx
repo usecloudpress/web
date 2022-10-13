@@ -2,8 +2,8 @@ import { NextSeo } from "next-seo";
 import Layout from "../components/layout";
 import { Fragment } from "react";
 import classNames from "classnames";
-import { CheckIcon, MinusIcon } from "@heroicons/react/solid";
-import { InformationCircleIcon } from "@heroicons/react/outline";
+import { CheckIcon, MinusIcon } from "@heroicons/react/24/solid";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import * as Tooltip from "@radix-ui/react-tooltip";
 
 type PricingTier = {
@@ -255,18 +255,20 @@ export default function PricingPage() {
                             <div className="flex content-center">
                               <span>{feature.name}</span>
                               {feature.description && (
-                                <Tooltip.Root delayDuration={0}>
-                                  <Tooltip.Trigger>
-                                    <InformationCircleIcon className="h-5 w-5 inline ml-1 text-gray-400 cursor-pointer" />
-                                  </Tooltip.Trigger>
-                                  <Tooltip.Content
-                                    className="px-2 py-1.5 text-sm leading-4 font-normal shadow-sm rounded-md pointer-events-none break-words border bg-neutral-700 border-neutral-600 text-neutral-100"
-                                    side="bottom"
-                                    align="center"
-                                  >
-                                    {feature.description}
-                                  </Tooltip.Content>
-                                </Tooltip.Root>
+                                <Tooltip.Provider delayDuration={0}>
+                                  <Tooltip.Root>
+                                    <Tooltip.Trigger>
+                                      <InformationCircleIcon className="h-5 w-5 inline ml-1 text-gray-400 cursor-pointer" />
+                                    </Tooltip.Trigger>
+                                    <Tooltip.Content
+                                      className="px-2 py-1.5 text-sm leading-4 font-normal shadow-sm rounded-md pointer-events-none break-words border bg-neutral-700 border-neutral-600 text-neutral-100"
+                                      side="bottom"
+                                      align="center"
+                                    >
+                                      {feature.description}
+                                    </Tooltip.Content>
+                                  </Tooltip.Root>
+                                </Tooltip.Provider>
                               )}
                             </div>
                           </th>
@@ -400,18 +402,20 @@ export default function PricingPage() {
                           <div className="flex content-center">
                             <span>{feature.name}</span>
                             {feature.description && (
-                              <Tooltip.Root delayDuration={0}>
-                                <Tooltip.Trigger>
-                                  <InformationCircleIcon className="h-5 w-5 inline ml-1 text-gray-400 cursor-pointer" />
-                                </Tooltip.Trigger>
-                                <Tooltip.Content
-                                  className="px-2 py-1.5 text-sm leading-4 font-normal shadow-sm rounded-md pointer-events-none break-words border bg-neutral-700 border-neutral-600 text-neutral-100"
-                                  side="right"
-                                  sideOffset={5}
-                                >
-                                  {feature.description}
-                                </Tooltip.Content>
-                              </Tooltip.Root>
+                              <Tooltip.Provider delayDuration={0}>
+                                <Tooltip.Root>
+                                  <Tooltip.Trigger>
+                                    <InformationCircleIcon className="h-5 w-5 inline ml-1 text-gray-400 cursor-pointer" />
+                                  </Tooltip.Trigger>
+                                  <Tooltip.Content
+                                    className="px-2 py-1.5 text-sm leading-4 font-normal shadow-sm rounded-md pointer-events-none break-words border bg-neutral-700 border-neutral-600 text-neutral-100"
+                                    side="right"
+                                    sideOffset={5}
+                                  >
+                                    {feature.description}
+                                  </Tooltip.Content>
+                                </Tooltip.Root>
+                              </Tooltip.Provider>
                             )}
                           </div>
                         </th>

@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { StaticImageData } from "next/image";
 
 type Props = {
   title: React.ReactNode;
