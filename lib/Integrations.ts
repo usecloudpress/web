@@ -18,8 +18,8 @@ const allIntegrations: Integration[] = [
     kind: "destination",
   },
   {
-    slug: "kontent-by-kentico",
-    name: "Kontent by Kentico",
+    slug: "kontent-ai",
+    name: "Kontent.ai",
     logo: "kontent.png",
     kind: "destination",
   },

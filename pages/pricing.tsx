@@ -109,7 +109,7 @@ const sections: FeatureSection[] = [
         tiers: { Solo: true, Pro: true, Scale: true },
       },
       {
-        name: "Kontent by Kentico",
+        name: "Kontent.ai",
         tiers: { Solo: true, Pro: true, Scale: true },
       },
       {

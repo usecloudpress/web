@@ -46,7 +46,7 @@ export default function Integrations() {
                 />
               </a>
             </Link>
-            <Link href="/integrations/export-google-docs-to-kontent-by-kentico">
+            <Link href="/integrations/export-google-docs-to-kontent-ai">
               <a className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100">
                 <img
                   className="max-h-12"

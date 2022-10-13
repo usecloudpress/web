@@ -12,8 +12,8 @@ const integrations = [
     logo: "contentful.png",
   },
   {
-    name: "Kontent by Kentico",
-    href: "/integrations/export-google-docs-to-kontent-by-kentico/",
+    name: "Kontent.ai",
+    href: "/integrations/export-google-docs-to-kontent-ai/",
     logo: "kontent.png",
   },
   {

@@ -82,9 +82,9 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/integrations/export-google-docs-to-kontent-by-kentico">
+                  <Link href="/integrations/export-google-docs-to-kontent-ai">
                     <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Export Google Docs to Kontent by Kentico
+                      Export Google Docs to Kontent.ai
                     </a>
                   </Link>
                 </li>
@@ -124,9 +124,9 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/integrations/export-notion-to-kontent-by-kentico">
+                  <Link href="/integrations/export-notion-to-kontent-ai">
                     <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Export Notion to Kontent by Kentico
+                      Export Notion to Kontent.ai
                     </a>
                   </Link>
                 </li>
