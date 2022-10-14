@@ -41,13 +41,14 @@ export default function Documentation({ doc }: Props) {
 
 type Params = {
   params: {
-    slug: string;
+    slug: string[];
   };
   preview: boolean;
 };
 
 export async function getStaticProps({ params, preview = false }: Params) {
-  const doc = await getDocumentation(params.slug, true);
+  const fullSlug = params.slug.join("/");
+  const doc = await getDocumentation(fullSlug, true);
 
   return {
     props: {
