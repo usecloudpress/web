@@ -1,4 +1,4 @@
-import Layout from "../../components/layout";
+import Layout from "../../components/layouts/layout";
 import Link from "next/link";
 import { getRecentBlogPosts } from "../../lib/ContentfulApi";
 import DateFormatter from "../../components/date-formatter";

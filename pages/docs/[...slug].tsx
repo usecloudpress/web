@@ -1,7 +1,8 @@
 import { getAllDocumentation, getDocumentation } from "../../lib/ContentfulApi";
-import Layout from "../../components/layout";
-import Markdown from "../../components/markdown";
+import Markdown from "../../components/markdown/markdown";
 import { NextSeo } from "next-seo";
+import DocumentationLayout from "../../components/layouts/documentationLayout";
+import { generateContent } from "../../components/markdown/helpers";
 
 type Props = {
   doc: any;
@@ -9,13 +10,18 @@ type Props = {
 };
 
 export default function Documentation({ doc }: Props) {
+  const { content } = generateContent(doc.content);
+  // console.log(content);
+  // const headings = collectHeadings(content);
+  // console.log("Headings", headings);
+
   return (
     <>
       <NextSeo
         title={doc.metaTitle || doc.title}
         description={doc.metaDescription}
       />
-      <Layout>
+      <DocumentationLayout>
         <div className="bg-white pt-8 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-20 lg:px-8">
           <div className="mx-auto lg:max-w-7xl">
             <article>
@@ -29,12 +35,12 @@ export default function Documentation({ doc }: Props) {
                 </div>
               </header>
               <div className="prose mx-auto max-w-4xl">
-                <Markdown markdown={doc.content} />
+                <Markdown content={content} />
               </div>
             </article>
           </div>
         </div>
-      </Layout>
+      </DocumentationLayout>
     </>
   );
 }

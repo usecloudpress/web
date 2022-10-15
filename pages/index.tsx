@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 import compare1 from "../public/images/terracotta-army-google-docs.png";
 import compare2 from "../public/images/terracotta-army-travel-diaries.png";
 import how1 from "../public/images/how-1.png";

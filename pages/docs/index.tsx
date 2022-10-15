@@ -1,7 +1,7 @@
-import Layout from "../../components/layout";
 import { getDocumentationIndex } from "../../lib/ContentfulApi";
 import DocumentationCard from "../../components/documentation-card";
 import { NextSeo } from "next-seo";
+import DocumentationLayout from "../../components/layouts/documentationLayout";
 
 type Props = {
   categories: any;
@@ -15,7 +15,7 @@ export default function Index({ categories }: Props) {
         title="Cloudpress documentation"
         description="Find documentation to help you use Cloudpress"
       />
-      <Layout>
+      <DocumentationLayout>
         <div className="mx-auto max-w-7xl">
           <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
             <div className="divide-y-2 divide-gray-200">
@@ -41,7 +41,7 @@ export default function Index({ categories }: Props) {
             </div>
           </div>
         </div>
-      </Layout>
+      </DocumentationLayout>
     </>
   );
 }

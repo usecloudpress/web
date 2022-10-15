@@ -1,4 +1,4 @@
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 import { NextSeo } from "next-seo";
 
 export default function TermsPage() {

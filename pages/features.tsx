@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 import ImageComparison from "../components/image-comparison";
 import compare1 from "../public/images/terracotta-army-google-docs.png";
 import compare2 from "../public/images/terracotta-army-travel-diaries.png";
