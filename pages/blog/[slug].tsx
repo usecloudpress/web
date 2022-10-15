@@ -1,6 +1,6 @@
 import { getAllBlogPosts, getBlogPost } from "../../lib/ContentfulApi";
-import Layout from "../../components/layouts/layout";
-import Markdown from "../../components/markdown/markdown";
+import Layout from "../../components/layouts/Layout";
+import Markdown from "../../components/markdown/Markdown";
 import DateFormatter from "../../components/date-formatter";
 import { NextSeo } from "next-seo";
 import { generateContent } from "../../components/markdown/helpers";

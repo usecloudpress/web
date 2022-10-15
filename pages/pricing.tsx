@@ -1,5 +1,5 @@
 import { NextSeo } from "next-seo";
-import Layout from "../components/layouts/layout";
+import Layout from "../components/layouts/Layout";
 import { Fragment } from "react";
 import { CheckIcon, MinusIcon } from "@heroicons/react/24/solid";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";

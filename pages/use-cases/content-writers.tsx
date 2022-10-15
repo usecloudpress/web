@@ -1,4 +1,4 @@
-import Layout from "../../components/layouts/layout";
+import Layout from "../../components/layouts/Layout";
 import { NextSeo } from "next-seo";
 import GenericCta from "../../components/generic-cta";
 

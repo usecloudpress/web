@@ -1,5 +1,5 @@
 import React from "react";
-import CustomLink from "./custom-link";
+import CustomLink from "./CustomLink";
 import Markdoc, { RenderableTreeNode } from "@markdoc/markdoc";
 
 type Props = {

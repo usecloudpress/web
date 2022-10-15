@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { NextSeo } from "next-seo";
-import Layout from "../../../components/layouts/layout";
+import Layout from "../../../components/layouts/Layout";
 import imageCompare1 from "../../../public/images/terracotta-army-google-docs.png";
 import imageCompare2 from "../../../public/images/terracotta-army-contentful.png";
 import imageWrite from "./write.png";

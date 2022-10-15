@@ -1,7 +1,7 @@
 import { getDocumentationIndex } from "../../lib/ContentfulApi";
 import DocumentationCard from "../../components/documentation-card";
 import { NextSeo } from "next-seo";
-import DocumentationLayout from "../../components/layouts/documentationLayout";
+import DocumentationLayout from "../../components/layouts/DocumentationLayout";
 
 type Props = {
   categories: any;

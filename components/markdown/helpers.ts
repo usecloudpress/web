@@ -7,7 +7,7 @@ import { slugifyWithCounter } from "@sindresorhus/slugify";
 
 export function generateContent(markdown?: string): {
   content: RenderableTreeNode;
-  headings: TocItem[];
+  tableOfContents: TocItem[];
 } {
   const ast = Markdoc.parse(markdown ?? "");
   const content = Markdoc.transform(ast, {
@@ -38,12 +38,11 @@ export function generateContent(markdown?: string): {
     },
   });
 
-  const headings = collectHeadings(content);
-  console.log("Headings:", headings);
-  return { content, headings };
+  const tableOfContents = collectHeadings(content);
+  return { content, tableOfContents };
 }
 
-interface TocItem {
+export interface TocItem {
   id: string;
   title: string;
   level: number;

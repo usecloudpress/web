@@ -1,7 +1,7 @@
 import { getAllDocumentation, getDocumentation } from "../../lib/ContentfulApi";
-import Markdown from "../../components/markdown/markdown";
+import Markdown from "../../components/markdown/Markdown";
 import { NextSeo } from "next-seo";
-import DocumentationLayout from "../../components/layouts/documentationLayout";
+import DocumentationLayout from "../../components/layouts/DocumentationLayout";
 import { generateContent } from "../../components/markdown/helpers";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function Documentation({ doc }: Props) {
-  const { content } = generateContent(doc.content);
+  const { content, tableOfContents } = generateContent(doc.content);
   // console.log(content);
   // const headings = collectHeadings(content);
   // console.log("Headings", headings);
@@ -21,7 +21,7 @@ export default function Documentation({ doc }: Props) {
         title={doc.metaTitle || doc.title}
         description={doc.metaDescription}
       />
-      <DocumentationLayout title={doc.title}>
+      <DocumentationLayout title={doc.title} tableOfContents={tableOfContents} >
         <Markdown content={content} />
       </DocumentationLayout>
     </>
