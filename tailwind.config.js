@@ -2,7 +2,10 @@ const colors = require("tailwindcss/colors");
 const brandColor = colors.blue;
 
 module.exports = {
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -11,6 +14,8 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            "code::before": { content: "none" },
+            "code::after": { content: "none" },
             a: {
               color: brandColor["600"],
               textDecoration: "none",
@@ -24,6 +29,9 @@ module.exports = {
             },
           },
         },
+      },
+      maxWidth: {
+        "8xl": "88rem",
       },
     },
   },

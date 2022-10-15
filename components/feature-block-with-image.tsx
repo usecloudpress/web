@@ -1,5 +1,5 @@
-import classNames from "classnames";
 import { StaticImageData } from "next/image";
+import clsx from "clsx";
 
 type Props = {
   title: React.ReactNode;
@@ -20,7 +20,7 @@ export default function ExportFeatureBlockWithImage({
     <div className="mx-4">
       <section className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:max-w-screen-xl">
         <div
-          className={classNames(
+          className={clsx(
             {
               "lg:grid lg:grid-cols-2 lg:gap-20 lg:items-center":
                 imageAlignment === "left" || imageAlignment === "right",
@@ -29,13 +29,13 @@ export default function ExportFeatureBlockWithImage({
           )}
         >
           <div
-            className={classNames("mb-12 lg:mb-0", {
+            className={clsx("mb-12 lg:mb-0", {
               "lg:col-start-2": imageAlignment === "left",
             })}
           >
             <div>
               <div
-                className={classNames("mt-6", {
+                className={clsx("mt-6", {
                   "text-center lg:mb-12": imageAlignment === "bottom",
                 })}
               >
@@ -49,7 +49,7 @@ export default function ExportFeatureBlockWithImage({
             </div>
           </div>
           <div
-            className={classNames({
+            className={clsx({
               "lg:col-start-1": imageAlignment === "left",
             })}
           >

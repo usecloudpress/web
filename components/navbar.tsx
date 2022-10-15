@@ -3,7 +3,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import classNames from "classnames";
+import clsx from "clsx";
 
 const integrations = [
   {
@@ -66,14 +66,14 @@ const Navbar = () => {
               {({ open }) => (
                 <>
                   <Popover.Button
-                    className={classNames(
+                    className={clsx(
                       open ? "text-gray-900" : "text-gray-500",
                       "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500"
                     )}
                   >
                     <span>Integrations</span>
                     <ChevronDownIcon
-                      className={classNames(
+                      className={clsx(
                         open ? "text-gray-600" : "text-gray-400",
                         "ml-2 h-5 w-5 group-hover:text-gray-500"
                       )}

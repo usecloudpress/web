@@ -1,10 +1,10 @@
 import { NextSeo } from "next-seo";
 import Layout from "../components/layouts/layout";
 import { Fragment } from "react";
-import classNames from "classnames";
 import { CheckIcon, MinusIcon } from "@heroicons/react/24/solid";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import clsx from "clsx";
 
 type PricingTier = {
   name: "Solo" | "Pro" | "Scale";
@@ -306,7 +306,7 @@ export default function PricingPage() {
                 ))}
 
                 <div
-                  className={classNames(
+                  className={clsx(
                     tierIdx < tiers.length - 1 ? "py-5 border-b" : "pt-5",
                     "border-t border-gray-200 px-4"
                   )}
