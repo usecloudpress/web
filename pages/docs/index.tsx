@@ -15,7 +15,7 @@ export default function Index({ categories }: Props) {
         title="Cloudpress documentation"
         description="Find documentation to help you use Cloudpress"
       />
-      <DocumentationLayout>
+      <DocumentationLayout title="Documentation" tableOfContents={[]}>
         <div className="mx-auto max-w-7xl">
           <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
             <div className="divide-y-2 divide-gray-200">

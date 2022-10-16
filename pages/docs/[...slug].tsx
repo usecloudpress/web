@@ -11,9 +11,6 @@ type Props = {
 
 export default function Documentation({ doc }: Props) {
   const { content, tableOfContents } = generateContent(doc.content);
-  // console.log(content);
-  // const headings = collectHeadings(content);
-  // console.log("Headings", headings);
 
   return (
     <>
@@ -21,7 +18,7 @@ export default function Documentation({ doc }: Props) {
         title={doc.metaTitle || doc.title}
         description={doc.metaDescription}
       />
-      <DocumentationLayout title={doc.title} tableOfContents={tableOfContents} >
+      <DocumentationLayout title={doc.title} tableOfContents={tableOfContents}>
         <Markdown content={content} />
       </DocumentationLayout>
     </>

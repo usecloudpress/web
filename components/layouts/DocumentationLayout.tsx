@@ -5,6 +5,8 @@ import { Prose } from "../Prose";
 import { TocItem } from "../markdown/helpers";
 import Link from "next/link";
 import clsx from "clsx";
+import { DocsSection, getDocumentationSection } from "../docs/navigationLinks";
+import { useRouter } from "next/router";
 
 type Props = {
   title: string;
@@ -65,10 +67,20 @@ const DocumentationLayout = ({
   tableOfContents = [],
   children,
 }: Props) => {
-  const currentSection = useTableOfContents(tableOfContents);
+  let docsSection: DocsSection | undefined;
+  const sectionRegex = /^\/docs\/([a-zA-Z-])*/;
+  const router = useRouter();
+  const matches = router.asPath.match(sectionRegex);
+  if (matches) {
+    docsSection = getDocumentationSection(matches[0]);
+  }
+  const navigationSection = docsSection?.items.find((section) =>
+    section.items.find((item) => item.href === router.asPath)
+  );
+  const currentContentSection = useTableOfContents(tableOfContents);
 
   function isActive(section: TocItem): boolean {
-    if (section.id === currentSection) {
+    if (section.id === currentContentSection) {
       return true;
     }
     if (!section.children) {
@@ -85,16 +97,26 @@ const DocumentationLayout = ({
           <div className="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-slate-800" />
           <div className="absolute top-28 bottom-0 right-0 hidden w-px bg-slate-800" />
           <div className="sticky top-[4.5rem] -ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto overflow-x-hidden py-16 pl-0.5">
-            <Navigation className="w-64 pr-8 xl:w-72 xl:pr-16" />
+            <Navigation
+              section={docsSection}
+              className="w-64 pr-8 xl:w-72 xl:pr-16"
+            />
           </div>
         </div>
         <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
           <article>
-            {title && (
+            {(title || navigationSection) && (
               <header className="mb-9 space-y-1">
-                <h1 className="font-semibold text-3xl tracking-tight text-slate-900">
-                  {title}
-                </h1>
+                {navigationSection && (
+                  <p className="font-display text-sm font-semibold text-blue-500">
+                    {navigationSection.title}
+                  </p>
+                )}
+                {title && (
+                  <h1 className="font-semibold text-3xl tracking-tight text-slate-900">
+                    {title}
+                  </h1>
+                )}
               </header>
             )}
             <Prose>{children}</Prose>

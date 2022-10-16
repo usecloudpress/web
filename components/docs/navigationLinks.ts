@@ -1,30 +1,22 @@
-interface DocsSection {
+export interface DocsSection {
   title: string;
   href: string;
-  items: (NavigationItem | HeaderItem)[];
+  items: NavigationSection[];
 }
 
 interface NavigationItem {
   title: string;
   href: string;
   isExternal?: boolean;
-  items?: NavigationItem[];
 }
 
-interface HeaderItem {
+interface NavigationSection {
   title: string;
+  items: NavigationItem[];
 }
 
-export function isNavigationItem(
-  item: NavigationItem | HeaderItem
-): item is NavigationItem {
-  return (item as NavigationItem).href !== undefined;
-}
-
-export function isHeaderItem(
-  item: NavigationItem | HeaderItem
-): item is HeaderItem {
-  return !isNavigationItem(item);
+export function getDocumentationSection(name: string): DocsSection | undefined {
+  return navigationItems.find((i) => i.href === name);
 }
 
 const navigationItems: DocsSection[] = [
@@ -33,12 +25,17 @@ const navigationItems: DocsSection[] = [
     href: "/docs/quick-start",
     items: [
       {
-        title: "Register an account",
-        href: "/docs/quick-start/register-an-account",
-      },
-      {
         title: "Getting started",
-        href: "/docs/quick-start/getting-started-with-cloudpress",
+        items: [
+          {
+            title: "Register an account",
+            href: "/docs/quick-start/register-an-account",
+          },
+          {
+            title: "Getting started",
+            href: "/docs/quick-start/getting-started-with-cloudpress",
+          },
+        ],
       },
     ],
   },
@@ -47,8 +44,7 @@ const navigationItems: DocsSection[] = [
     href: "/docs/reference",
     items: [
       {
-        title: "Overview",
-        href: "/docs/reference/overview",
+        title: "Introduction",
         items: [
           {
             title: "How Cloudpress works",
@@ -58,8 +54,11 @@ const navigationItems: DocsSection[] = [
       },
       {
         title: "Connections",
-        href: "/docs/reference/connections",
         items: [
+          {
+            title: "Introduction",
+            href: "/docs/reference/connections/introduction",
+          },
           {
             title: "Add a connection",
             href: "/docs/reference/connections/add-connection",
@@ -80,8 +79,11 @@ const navigationItems: DocsSection[] = [
       },
       {
         title: "Export content",
-        href: "/docs/reference/export",
         items: [
+          {
+            title: "Introduction",
+            href: "/docs/reference/export/introduction",
+          },
           {
             title: "Export a Google Doc",
             href: "/docs/reference/export/export-google-doc",
@@ -91,5 +93,3 @@ const navigationItems: DocsSection[] = [
     ],
   },
 ];
-
-export default navigationItems;
