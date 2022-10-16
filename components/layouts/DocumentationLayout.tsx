@@ -7,6 +7,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { DocsSection, getDocumentationSection } from "../docs/navigationLinks";
 import { useRouter } from "next/router";
+import Header from "../docs/Header";
 
 type Props = {
   title: string;
@@ -91,6 +92,8 @@ const DocumentationLayout = ({
 
   return (
     <>
+      <Header section={docsSection} />
+
       <div className="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <div className="hidden lg:relative lg:block lg:flex-none">
           <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50" />
