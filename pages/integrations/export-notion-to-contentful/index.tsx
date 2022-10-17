@@ -100,10 +100,10 @@ export default function Page() {
                 care of the rest.
               </p>
               <p>
-                <Link href="/docs/connect-contentful-account/">
+                <Link href="/docs/integrations/contentful/connect-account">
                   <a>Learn how</a>
                 </Link>{" "}
-                to configure your Contentful account.
+                to connect your Contentful account.
               </p>
             </>
           }

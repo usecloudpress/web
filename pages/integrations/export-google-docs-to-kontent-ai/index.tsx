@@ -84,7 +84,7 @@ export default function Page() {
                 publish the content.
               </p>
               <p>
-                <Link href="/docs/introduction-to-the-google-docs-add-on">
+                <Link href="/docs/integrations/google-docs/introduction">
                   <a>Learn more</a>
                 </Link>{" "}
                 about our Google Docs Add-on.
@@ -114,10 +114,10 @@ export default function Page() {
                 care of the rest.
               </p>
               <p>
-                <Link href="/docs/connect-kontent-account">
+                <Link href="/docs/integrations/kontent/connect-account">
                   <a>Learn how</a>
                 </Link>{" "}
-                to configure your Kontent.ai account.
+                to connect your Kontent.ai account.
               </p>
             </>
           }

@@ -100,7 +100,7 @@ export default function Page() {
                 care of the rest.
               </p>
               <p>
-                <Link href="/docs/connect-kontent-account">
+                <Link href="/docs/integrations/kontent/connect-account">
                   <a>Learn how</a>
                 </Link>{" "}
                 to configure your Kontent.ai account.

@@ -197,7 +197,7 @@ const navigationItems: DocsSection[] = [
           },
           {
             title: "Connect account",
-            href: "/docs/",
+            href: "/docs/integrations/wordpress/connect-account",
           },
         ],
       },
@@ -248,7 +248,7 @@ const navigationItems: DocsSection[] = [
             href: "/docs/integrations/kontent/introduction",
           },
           {
-            title: "Connec account",
+            title: "Connect account",
             href: "/docs/integrations/kontent/connect-account",
           },
         ],

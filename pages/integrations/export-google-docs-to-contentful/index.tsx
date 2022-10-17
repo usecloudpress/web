@@ -84,7 +84,7 @@ export default function Page() {
                   or publish the content.
                 </p>
                 <p>
-                  <Link href="/docs/introduction-to-the-google-docs-add-on">
+                  <Link href="/docs/integrations/google-docs/introduction">
                     <a>Learn more</a>
                   </Link>{" "}
                   about our Google Docs Add-on.
@@ -114,10 +114,10 @@ export default function Page() {
                   we’ll take care of the rest.
                 </p>
                 <p>
-                  <Link href="/docs/connect-contentful-account/">
+                  <Link href="/docs/integrations/contentful/connect-account">
                     <a>Learn how</a>
                   </Link>{" "}
-                  to configure your Contentful account.
+                  to connect your Contentful account.
                 </p>
               </>
             }
