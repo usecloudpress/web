@@ -1,4 +1,4 @@
-import Layout from "../../../components/layout";
+import Layout from "../../../components/layouts/Layout";
 import { NextSeo } from "next-seo";
 import imageCompare1 from "../../../public/images/terracotta-army-notion.png";
 import imageCompare2 from "../../../public/images/terracotta-army-webflow.png";

@@ -1,4 +1,4 @@
-import Layout from "../../../components/layout";
+import Layout from "../../../components/layouts/Layout";
 import { NextSeo } from "next-seo";
 import imageCompare1 from "../../../public/images/terracotta-army-notion.png";
 import imageCompare2 from "../../../public/images/terracotta-army-sanity.png";
@@ -100,7 +100,7 @@ export default function Page() {
                 rest.
               </p>
               <p>
-                <Link href="/docs/connect-sanity-account/">
+                <Link href="/docs/integrations/sanity/connect-account">
                   <a>Learn how</a>
                 </Link>{" "}
                 to configure your Sanity account.

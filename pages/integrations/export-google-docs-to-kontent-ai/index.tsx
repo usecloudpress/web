@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Layout from "../../../components/layout";
+import Layout from "../../../components/layouts/Layout";
 import { NextSeo } from "next-seo";
 import imageCompare1 from "../../../public/images/terracotta-army-google-docs.png";
 import imageCompare2 from "../../../public/images/terracotta-army-kontent-ai.png";
@@ -84,7 +84,7 @@ export default function Page() {
                 publish the content.
               </p>
               <p>
-                <Link href="/docs/introduction-to-the-google-docs-add-on">
+                <Link href="/docs/integrations/google-docs/introduction">
                   <a>Learn more</a>
                 </Link>{" "}
                 about our Google Docs Add-on.
@@ -114,10 +114,10 @@ export default function Page() {
                 care of the rest.
               </p>
               <p>
-                <Link href="/docs/connect-kontent-account">
+                <Link href="/docs/integrations/kontent/connect-account">
                   <a>Learn how</a>
                 </Link>{" "}
-                to configure your Kontent.ai account.
+                to connect your Kontent.ai account.
               </p>
             </>
           }

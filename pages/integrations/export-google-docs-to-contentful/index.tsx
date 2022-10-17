@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { NextSeo } from "next-seo";
-import Layout from "../../../components/layout";
+import Layout from "../../../components/layouts/Layout";
 import imageCompare1 from "../../../public/images/terracotta-army-google-docs.png";
 import imageCompare2 from "../../../public/images/terracotta-army-contentful.png";
 import imageWrite from "./write.png";
@@ -84,7 +84,7 @@ export default function Page() {
                   or publish the content.
                 </p>
                 <p>
-                  <Link href="/docs/introduction-to-the-google-docs-add-on">
+                  <Link href="/docs/integrations/google-docs/introduction">
                     <a>Learn more</a>
                   </Link>{" "}
                   about our Google Docs Add-on.
@@ -114,10 +114,10 @@ export default function Page() {
                   we’ll take care of the rest.
                 </p>
                 <p>
-                  <Link href="/docs/connect-contentful-account/">
+                  <Link href="/docs/integrations/contentful/connect-account">
                     <a>Learn how</a>
                   </Link>{" "}
-                  to configure your Contentful account.
+                  to connect your Contentful account.
                 </p>
               </>
             }

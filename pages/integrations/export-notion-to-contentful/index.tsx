@@ -1,4 +1,4 @@
-import Layout from "../../../components/layout";
+import Layout from "../../../components/layouts/Layout";
 import { NextSeo } from "next-seo";
 import imageCompare1 from "../../../public/images/terracotta-army-notion.png";
 import imageCompare2 from "../../../public/images/terracotta-army-contentful.png";
@@ -100,10 +100,10 @@ export default function Page() {
                 care of the rest.
               </p>
               <p>
-                <Link href="/docs/connect-contentful-account/">
+                <Link href="/docs/integrations/contentful/connect-account">
                   <a>Learn how</a>
                 </Link>{" "}
-                to configure your Contentful account.
+                to connect your Contentful account.
               </p>
             </>
           }

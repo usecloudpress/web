@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Layout from "../../../components/layout";
+import Layout from "../../../components/layouts/Layout";
 import { NextSeo } from "next-seo";
 import imageCompare1 from "../../../public/images/terracotta-army-google-docs.png";
 import imageCompare2 from "../../../public/images/terracotta-army-wordpress.png";
@@ -84,7 +84,7 @@ export default function Page() {
                 publish the content.
               </p>
               <p>
-                <Link href="/docs/introduction-to-the-google-docs-add-on">
+                <Link href="/docs/integrations/google-docs/introduction">
                   <a>Learn more</a>
                 </Link>{" "}
                 about our Google Docs Add-on.

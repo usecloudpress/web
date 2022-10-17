@@ -1,8 +1,9 @@
 import { getAllBlogPosts, getBlogPost } from "../../lib/ContentfulApi";
-import Layout from "../../components/layout";
-import Markdown from "../../components/markdown";
+import Layout from "../../components/layouts/Layout";
+import Markdown from "../../components/markdown/Markdown";
 import DateFormatter from "../../components/date-formatter";
 import { NextSeo } from "next-seo";
+import { generateContent } from "../../components/markdown/helpers";
 
 type Props = {
   post: any;
@@ -10,6 +11,8 @@ type Props = {
 };
 
 export default function BlogPost({ post }: Props) {
+  const { content } = generateContent(post.content);
+
   return (
     <>
       <NextSeo
@@ -40,7 +43,7 @@ export default function BlogPost({ post }: Props) {
               </header>
               <div className="mx-auto max-w-4xl">
                 <div className="prose max-w-none">
-                  <Markdown markdown={post.content} />
+                  <Markdown content={content} />
                 </div>
                 <hr className="my-8" />
                 <div className="flex gap-8">
