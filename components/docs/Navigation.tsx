@@ -91,13 +91,13 @@ export function Navigation({ className, section }: Props) {
         />
       </ul>
       <div className="my-4 w-full border-t border-t-2 border-slate-200" />
-      <ul className="space-y-9">
+      <ul className="space-y-3">
         {section?.items.map((section) => (
           <li key={section.title}>
             <h2 className="font-display font-semibold text-slate-900">
               {section.title}
             </h2>
-            <ul className="mt-2 space-y-2 border-l-2 border-slate-100 lg:mt-4 lg:space-y-4 lg:border-slate-200">
+            <ul className="mt-2 space-y-2 border-l-2 border-slate-100 lg:mt-4 lg:space-y-3 lg:border-slate-200">
               {section.items.map((link) => (
                 <li key={link.href} className="relative">
                   <Link href={link.href}>

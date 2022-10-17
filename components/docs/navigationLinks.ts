@@ -88,6 +88,169 @@ const navigationItems: DocsSection[] = [
             title: "Export a Google Doc",
             href: "/docs/reference/export/export-google-doc",
           },
+          {
+            title: "Export a notion page",
+            href: "/docs/reference/export/notion-page",
+          },
+          {
+            title: "Export additional fields",
+            href: "/docs/reference/export/additional-fields",
+          },
+          {
+            title: "View job history",
+            href: "/docs/reference/export/view-job-history",
+          },
+          {
+            title: "View job detail",
+            href: "/docs/reference/export/view-job-detail",
+          },
+        ],
+      },
+      {
+        title: "Cloudpress account",
+        items: [
+          {
+            title: "Change account name",
+            href: "/docs/reference/manage-cloudpress-account/change-account-name",
+          },
+          {
+            title: "Manage users",
+            href: "/docs/reference/manage-cloudpress-account/manage-users",
+          },
+          {
+            title: "Switch between accounts",
+            href: "/docs/reference/manage-cloudpress-account/switch-between-accounts",
+          },
+        ],
+      },
+      {
+        title: "Cloudpress account",
+        items: [
+          {
+            title: "Change personal details",
+            href: "/docs/reference/manage-user-profile/change-personal-details",
+          },
+          {
+            title: "Change password",
+            href: "/docs/reference/manage-user-profile/change-your-password",
+          },
+          {
+            title: "Personal access token",
+            href: "/docs/reference/manage-user-profile/get-personal-access-token",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Integrations",
+    href: "/docs/integrations",
+    items: [
+      {
+        title: "Google Docs",
+        items: [
+          {
+            title: "Introduction",
+            href: "/docs/integrations/google-docs/introduction",
+          },
+          {
+            title: "Install",
+            href: "/docs/integrations/google-docs/install-add-on",
+          },
+          {
+            title: "Configure",
+            href: "/docs/integrations/google-docs/configure-add-on",
+          },
+          {
+            title: "Export a document",
+            href: "/docs/integrations/google-docs/export-a-document",
+          },
+          {
+            title: "Troubleshoot",
+            href: "/docs/integrations/google-docs/troubleshoot",
+          },
+        ],
+      },
+      {
+        title: "Notion",
+        items: [
+          {
+            title: "Introduction",
+            href: "/docs/integrations/notion/introduction",
+          },
+          {
+            title: "Connect account",
+            href: "/docs/integrations/notion/connect-account",
+          },
+          {
+            title: "Export content",
+            href: "/docs/integrations/notion/export-content",
+          },
+        ],
+      },
+      {
+        title: "WordPress",
+        items: [
+          {
+            title: "Introduction",
+            href: "/docs/integrations/wordpress/introduction",
+          },
+          {
+            title: "Connect account",
+            href: "/docs/",
+          },
+        ],
+      },
+      {
+        title: "Contentful",
+        items: [
+          {
+            title: "Introduction",
+            href: "/docs/integrations/contentful/introduction",
+          },
+          {
+            title: "Connect account",
+            href: "/docs/integrations/contentful/connect-account",
+          },
+        ],
+      },
+      {
+        title: "Webflow",
+        items: [
+          {
+            title: "Introduction",
+            href: "/docs/integrations/webflow/introduction",
+          },
+          {
+            title: "Connect account",
+            href: "/docs/integrations/webflow/connect-account",
+          },
+        ],
+      },
+      {
+        title: "Sanity",
+        items: [
+          {
+            title: "Introduction",
+            href: "/docs/integrations/sanity/introduction",
+          },
+          {
+            title: "Connect account",
+            href: "/docs/integrations/sanity/connect-account",
+          },
+        ],
+      },
+      {
+        title: "Kontent.ai",
+        items: [
+          {
+            title: "Introduction",
+            href: "/docs/integrations/kontent/introduction",
+          },
+          {
+            title: "Connec account",
+            href: "/docs/integrations/kontent/connect-account",
+          },
         ],
       },
     ],
