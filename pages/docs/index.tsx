@@ -1,54 +1,116 @@
-import { getDocumentationIndex } from "../../lib/ContentfulApi";
-import DocumentationCard from "../../components/documentation-card";
 import { NextSeo } from "next-seo";
 import DocumentationLayout from "../../components/layouts/DocumentationLayout";
+import { Prose } from "../../components/Prose";
+import { QuickLink, QuickLinks } from "../../components/docs/QuickLinks";
+import { IntegrationsIcon } from "../../components/icons";
+import { BookOpenIcon, RocketLaunchIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
-type Props = {
-  categories: any;
-  preview?: boolean;
-};
-
-export default function Index({ categories }: Props) {
+export default function Index() {
   return (
     <>
       <NextSeo
         title="Cloudpress documentation"
         description="Find documentation to help you use Cloudpress"
       />
-      <DocumentationLayout title="Documentation" tableOfContents={[]}>
-        <div className="mx-auto max-w-7xl">
-          <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-            <div className="divide-y-2 divide-gray-200">
-              <div>
-                <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-                  Documentation
-                </h2>
-                <div className="mt-3 sm:mt-4">
-                  <p className="text-xl text-gray-500">
-                    Find documentation to help you use Cloudpress.
-                  </p>
-                </div>
-              </div>
-              <div className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
-                {categories &&
-                  categories.map((category: any) => (
-                    <DocumentationCard
-                      category={category}
-                      key={category.slug}
-                    />
-                  ))}
-              </div>
-            </div>
-          </div>
-        </div>
+      <DocumentationLayout
+        title="Cloudpress Documentation"
+        tableOfContents={[
+          {
+            title: "Introduction",
+            id: "introduction",
+            level: 2,
+            children: [],
+          },
+          {
+            title: "Quick starts",
+            id: "quick-starts",
+            level: 2,
+            children: [],
+          },
+          {
+            title: "Reference",
+            id: "reference",
+            level: 2,
+            children: [],
+          },
+          {
+            title: "Integrations",
+            id: "integrations",
+            level: 2,
+            children: [],
+          },
+        ]}
+      >
+        <Prose>
+          <h2 id="introduction">Introduction</h2>
+          <p>
+            Welcome to the Cloudpress documentation. The documentation is
+            divided into the following three main sections.
+          </p>
+          <QuickLinks>
+            <QuickLink
+              title="Quick starts"
+              description="Step-by-step guides to get you started with Cloudpress."
+              href="/docs/quick-start"
+              icon={<RocketLaunchIcon className="w-8 h-8 text-slate-600" />}
+            />
+            <QuickLink
+              title="Reference"
+              description="Get more in-depth information on how to get the most out of Cloudpress."
+              href="/docs/quick-start"
+              icon={<BookOpenIcon className="w-8 h-8 text-slate-600" />}
+            />
+            <QuickLink
+              title="Integrations"
+              description="Learn about the products that Cloudpress integrate with."
+              href="/docs/quick-start"
+              icon={<IntegrationsIcon className="w-8 h-8 text-slate-600" />}
+            />
+          </QuickLinks>
+          <p>
+            You will find links to these sections in the navigation sidebar on
+            the left, allowing you to quickly jump between these sections,
+            depending on the information you&apos;re after.
+          </p>
+          <p>
+            Let&apos;s look at what you can expect to find in each of these
+            sections in more detail.
+          </p>
+          <h2 id="quick-start">Quick starts</h2>
+          <p>
+            If you&apos;re new around here, the best place to get started would
+            be to refer to the{" "}
+            <Link href="/docs/quick-start">
+              <a>Quick start</a>
+            </Link>{" "}
+            section. This will walk you through the process of creating an
+            account with Cloudpress, linking your Content Management System
+            (CMS) account, and exporting your first document.
+          </p>
+          <h2 id="reference">Reference</h2>
+          <p>
+            The{" "}
+            <Link href="/docs/reference">
+              <a>Reference section</a>
+            </Link>{" "}
+            will take you beyond the basics and help you to get the most out of
+            Cloudpress. You will learn about all features in Cloudpress that
+            allows you to completely automate your content publishing workflow.
+          </p>
+          <h2 id="integrations">Integrations</h2>
+          <p>
+            The{" "}
+            <Link href="/docs/integrations">
+              <a>Integrations section</a>
+            </Link>{" "}
+            is where you can find in-depth information about how to integrate
+            your CMS with Cloudpress. You will also find information on
+            installing and using the Cloudpress Google Docs Add-on, as well as
+            connecting your Notion account.
+          </p>
+        </Prose>
       </DocumentationLayout>
     </>
   );
-}
-
-export async function getStaticProps({ preview = false }) {
-  const categories = (await getDocumentationIndex(preview)) ?? [];
-  return {
-    props: { preview, categories },
-  };
 }

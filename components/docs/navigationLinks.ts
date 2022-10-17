@@ -21,7 +21,7 @@ export function getDocumentationSection(name: string): DocsSection | undefined {
 
 const navigationItems: DocsSection[] = [
   {
-    title: "Quick start",
+    title: "Quick starts",
     href: "/docs/quick-start",
     items: [
       {

@@ -42,15 +42,20 @@ function useTableOfContents(tableOfContents: TocItem[]) {
 
     function onScroll() {
       const top = window.scrollY;
-      let current = headings[0]!.id;
-      for (const heading of headings) {
-        if (top >= heading!.top) {
-          current = heading!.id;
-        } else {
-          break;
+      const currentHeading = headings[0];
+      if (currentHeading) {
+        let currentHeadingId = currentHeading.id;
+        for (const heading of headings) {
+          if (heading) {
+            if (top >= heading.top ?? 0) {
+              currentHeadingId = heading!.id;
+            } else {
+              break;
+            }
+          }
         }
+        setCurrentSection(currentHeadingId);
       }
-      setCurrentSection(current);
     }
 
     window.addEventListener("scroll", onScroll, { passive: true });
