@@ -58,13 +58,13 @@ export default function Index() {
             <QuickLink
               title="Reference"
               description="Get more in-depth information on how to get the most out of Cloudpress."
-              href="/docs/quick-start"
+              href="/docs/reference"
               icon={<BookOpenIcon className="w-8 h-8 text-slate-600" />}
             />
             <QuickLink
               title="Integrations"
               description="Learn about the products that Cloudpress integrate with."
-              href="/docs/quick-start"
+              href="/docs/integrations"
               icon={<IntegrationsIcon className="w-8 h-8 text-slate-600" />}
             />
           </QuickLinks>
