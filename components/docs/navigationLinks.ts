@@ -93,7 +93,7 @@ const navigationItems: DocsSection[] = [
             href: "/docs/reference/export/notion-page",
           },
           {
-            title: "Export additional fields",
+            title: "Set additional field values",
             href: "/docs/reference/export/additional-fields",
           },
           {
@@ -166,6 +166,10 @@ const navigationItems: DocsSection[] = [
             href: "/docs/integrations/google-docs/export-a-document",
           },
           {
+            title: "Set additional field values",
+            href: "/docs/integrations/google-docs/additional-fields",
+          },
+          {
             title: "Troubleshoot",
             href: "/docs/integrations/google-docs/troubleshoot",
           },
@@ -186,6 +190,10 @@ const navigationItems: DocsSection[] = [
             title: "Export content",
             href: "/docs/integrations/notion/export-content",
           },
+          {
+            title: "Set additional field values",
+            href: "/docs/integrations/notion/additional-fields",
+          },
         ],
       },
       {
@@ -198,6 +206,10 @@ const navigationItems: DocsSection[] = [
           {
             title: "Connect account",
             href: "/docs/integrations/wordpress/connect-account",
+          },
+          {
+            title: "Set additional field values",
+            href: "/docs/integrations/wordpress/additional-fields",
           },
         ],
       },
@@ -212,6 +224,10 @@ const navigationItems: DocsSection[] = [
             title: "Connect account",
             href: "/docs/integrations/contentful/connect-account",
           },
+          {
+            title: "Set additional field values",
+            href: "/docs/integrations/contentful/additional-fields",
+          },
         ],
       },
       {
@@ -224,6 +240,10 @@ const navigationItems: DocsSection[] = [
           {
             title: "Connect account",
             href: "/docs/integrations/webflow/connect-account",
+          },
+          {
+            title: "Set additional field values",
+            href: "/docs/integrations/webflow/additional-fields",
           },
         ],
       },
@@ -238,6 +258,10 @@ const navigationItems: DocsSection[] = [
             title: "Connect account",
             href: "/docs/integrations/sanity/connect-account",
           },
+          {
+            title: "Set additional field values",
+            href: "/docs/integrations/sanity/additional-fields",
+          },
         ],
       },
       {
@@ -250,6 +274,10 @@ const navigationItems: DocsSection[] = [
           {
             title: "Connect account",
             href: "/docs/integrations/kontent/connect-account",
+          },
+          {
+            title: "Set additional field values",
+            href: "/docs/integrations/kontent/additional-fields",
           },
         ],
       },
