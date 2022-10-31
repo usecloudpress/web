@@ -10,6 +10,7 @@ import imageImages from "./images.png";
 import imageGutenberg from "./gutenberg.png";
 import imageReexport from "./reexport.png";
 import imageAutoEmbed from "./auto-embed.png";
+import imageExportFields from "./export-fields.png";
 import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
 import IntegrationCta from "../../../components/integration-cta";
 import ExportFeatureBlockWithImage from "../../../components/feature-block-with-image";
@@ -88,6 +89,31 @@ export default function Page() {
                   <a>Learn more</a>
                 </Link>{" "}
                 about our Google Docs Add-on.
+              </p>
+            </>
+          }
+        />
+
+        {/* Exports additional post settings */}
+        <ExportFeatureBlockWithImage
+          image={imageExportFields}
+          imageAlignment="bottom"
+          title={
+            <>
+              Exports{" "}
+              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
+                additional
+              </span>{" "}
+              post settings
+            </>
+          }
+          content={
+            <>
+              <p>
+                Add values for additional post settings like the category,
+                featured image, etc., to the top of your document in a property
+                table, and Cloudpress will automatically update the related
+                fields in WordPress.
               </p>
             </>
           }

@@ -3,7 +3,7 @@ type Props = {
 };
 export default function FeatureListItem({ text }: Props) {
   return (
-    <li className="flex items-start">
+    <li className="flex items-start not-prose">
       <div className="shrink-0">
         <svg
           className="h-6 w-6 text-brand-500"
