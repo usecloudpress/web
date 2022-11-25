@@ -1,181 +1,151 @@
 import { NextSeo } from "next-seo";
 import Layout from "../components/layouts/Layout";
-import { Fragment } from "react";
-import { CheckIcon, MinusIcon } from "@heroicons/react/24/solid";
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
-import * as Tooltip from "@radix-ui/react-tooltip";
+import { InformationCircleIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { Disclosure } from "@headlessui/react";
+import ChevronDownIcon from "@heroicons/react/24/outline/ChevronDownIcon";
 
-type PricingTier = {
-  name: "Solo" | "Pro" | "Scale";
-  href: string;
-  priceMonthly: number;
-  description: string;
-};
-
-type TierAvailability = {
-  Solo?: boolean | string;
-  Pro?: boolean | string;
-  Scale?: boolean | string;
-};
-
-type Feature = {
-  name: string;
-  description?: string;
-  tiers: TierAvailability;
-};
-
-type FeatureSection = {
-  name: string;
-  features: Feature[];
-};
-
-const ctaText = "Sign Up";
-const tiers: PricingTier[] = [
+const faqs = [
   {
-    name: "Solo",
-    href: "https://app.usecloudpress.com/register",
-    priceMonthly: 19,
-    description: "Ideal for solo bloggers and small websites",
+    question: "Do the prices include VAT/Tax?",
+    answer:
+      "No, the above prices do not include VAT or other taxes. Taxes are calculated during checkout based on your country and region.",
   },
   {
-    name: "Pro",
-    href: "https://app.usecloudpress.com/register",
-    priceMonthly: 49,
-    description:
-      "For companies that want to automate their content publication pipeline",
+    question: "What is a credit?",
+    answer:
+      "Cloudpress uses a credit system to record usage. You receive credits by buying a credit bundle or a subscription, which includes the number of credits indicated in the pricing table above. Each time you export a document, we deduct 1 credit.",
   },
   {
-    name: "Scale",
-    href: "https://app.usecloudpress.com/register",
-    priceMonthly: 149,
-    description:
-      "For larger companies and agencies that want to automate their content publication pipeline",
-  },
-];
-const sections: FeatureSection[] = [
-  {
-    name: "Quotas",
-    features: [
-      {
-        name: "Export Credits",
-        description: "Each time you export a document, you use one credit",
-        tiers: { Solo: "50", Pro: "200", Scale: "1000" },
-      },
-      {
-        name: "Source Connections",
-        description:
-          "The number of connected accounts from which you can export content",
-        tiers: { Solo: "Unlimited", Pro: "Unlimited", Scale: "Unlimited" },
-      },
-      {
-        name: "Destination Connections",
-        description:
-          "The number of connected accounts to which you can export content",
-        tiers: { Solo: "Unlimited", Pro: "Unlimited", Scale: "Unlimited" },
-      },
-    ],
+    question: "Do credits expire?",
+    answer:
+      "The credits you receive when you purchase a credit bundle never expire. Credits received as part of a subscription expire at the end of each calendar month and do not carry over to the next calendar month.",
   },
   {
-    name: "Features",
-    features: [
-      {
-        name: "Export content",
-        tiers: { Solo: true, Pro: true, Scale: true },
-      },
-      {
-        name: "Export images",
-        tiers: { Solo: true, Pro: true, Scale: true },
-      },
-      {
-        name: "Preserve content formatting",
-        tiers: { Solo: true, Pro: true, Scale: true },
-      },
-    ],
+    question: "Do you have a free trial?",
+    answer:
+      "Yes! You receive 5 free credits to try Cloudpress out when you sign up. The trial has no functional limitations other than that you are limited to 5 exports. After that, you must buy a credit bundle or subscription to export more documents.",
   },
   {
-    name: "Integrations",
-    features: [
-      {
-        name: "Google Docs",
-        tiers: { Solo: true, Pro: true, Scale: true },
-      },
-      {
-        name: "Notion",
-        tiers: { Solo: true, Pro: true, Scale: true },
-      },
-      {
-        name: "Contentful",
-        tiers: { Solo: true, Pro: true, Scale: true },
-      },
-      {
-        name: "Kontent.ai",
-        tiers: { Solo: true, Pro: true, Scale: true },
-      },
-      {
-        name: "Sanity",
-        tiers: { Solo: true, Pro: true, Scale: true },
-      },
-      {
-        name: "Webflow",
-        tiers: { Solo: true, Pro: true, Scale: true },
-      },
-      {
-        name: "WordPress",
-        tiers: { Solo: true, Pro: true, Scale: true },
-      },
-    ],
-  },
-  {
-    name: "Automation",
-    features: [
-      {
-        name: "REST API",
-        description: "Export content using the Cloudpress REST API",
-        tiers: { Pro: true, Scale: true },
-      },
-      {
-        name: "Zapier",
-        tiers: { Pro: true, Scale: true },
-      },
-      {
-        name: "Integromat",
-        tiers: { Pro: true, Scale: true },
-      },
-      {
-        name: "Collections",
-        description:
-          "Collections allow you to export a collection of documents, for example a Notion database or a folder on Google Drive",
-        tiers: { Pro: true, Scale: true },
-      },
-    ],
-  },
-  {
-    name: "User Management",
-    features: [
-      {
-        name: "Additional users",
-        tiers: { Solo: "Unlimited", Pro: "Unlimited", Scale: "Unlimited" },
-      },
-    ],
-  },
-  {
-    name: "Support",
-    features: [
-      {
-        name: "Email support",
-        tiers: { Solo: true, Pro: true, Scale: true },
-      },
-    ],
+    question: "Which features are included in each plan?",
+    answer:
+      "You have access to all the features of Cloudpress regardless of whether you buy a credit bundle or subscription.",
   },
 ];
 
-function FreeDuringBeta() {
+function Faqs() {
   return (
-    <div className="mt-4">
-      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-100 text-brand-800">
-        Free during the beta
-      </span>
+    <div className="mx-auto max-w-7xl py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-3xl divide-y-2 divide-gray-200">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Frequently asked questions
+        </h2>
+        <dl className="mt-6 space-y-6 divide-y divide-gray-200">
+          {faqs.map((faq) => (
+            <Disclosure as="div" key={faq.question} className="pt-6">
+              {({ open }) => (
+                <>
+                  <dt className="text-lg">
+                    <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-400">
+                      <span className="font-medium text-gray-900">
+                        {faq.question}
+                      </span>
+                      <span className="ml-6 flex h-7 items-center">
+                        <ChevronDownIcon
+                          className={clsx(
+                            open ? "-rotate-180" : "rotate-0",
+                            "h-6 w-6 transform"
+                          )}
+                          aria-hidden="true"
+                        />
+                      </span>
+                    </Disclosure.Button>
+                  </dt>
+                  <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                    <p className="text-base text-gray-500">{faq.answer}</p>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
+          ))}
+        </dl>
+      </div>
+    </div>
+  );
+}
+
+interface PricingColumnProps {
+  title: string;
+  description: string;
+  products: { credits: number; price: number; suffix?: string }[];
+  highlight?: { borderClass: string; labelClass: string; label: string };
+}
+
+function PricingColumn({
+  title,
+  description,
+  products,
+  highlight,
+}: PricingColumnProps) {
+  return (
+    <div className="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm relative flex">
+      {highlight && (
+        <>
+          {/*<div
+            className={clsx(
+              "pointer-events-none absolute inset-0 rounded-lg border-2",
+              highlight.borderClass
+            )}
+            aria-hidden="true"
+          ></div>*/}
+          <div className="absolute inset-x-0 top-0 translate-y-px transform">
+            <div className="flex -translate-y-1/2 transform justify-center">
+              <span
+                className={clsx(
+                  "inline-flex rounded-full px-4 py-1 text-base font-semibold text-white",
+                  highlight.labelClass
+                )}
+              >
+                {highlight.label}
+              </span>
+            </div>
+          </div>
+        </>
+      )}
+      <div className="p-6 pt-8 flex flex-col w-full">
+        <h2 className="text-lg font-semibold leading-6 text-gray-900">
+          {title}
+        </h2>
+        <p className="mt-4 text-sm text-gray-500">{description}</p>
+        <ul className="mt-6 space-y-4 grow">
+          {products.map((p) => (
+            <li key={p.credits} className="grid grid-cols-2">
+              <div>
+                {p.credits} Credits {p.suffix && "per month"}
+              </div>
+              <div className="text-right">
+                <span className="font-bold">${p.price}</span>
+                {p.suffix && (
+                  <span className="text-slate-500">/{p.suffix}</span>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div className="flex flex-col gap-y-4 mt-8 ">
+          <p className="text-slate-600 text-center">
+            Sign up today and you will receive{" "}
+            <span className="font-bold">5 free credits</span> to try out
+            Cloudpress!
+          </p>
+          <a
+            href="https://app.usecloudpress.com/register"
+            className="block w-full rounded-md border border-gray-800 bg-gray-800 py-2 text-center text-sm font-semibold text-white hover:bg-gray-900"
+          >
+            Start a free trial
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
@@ -185,294 +155,117 @@ export default function PricingPage() {
     <Layout>
       <NextSeo title="Cloudpress pricing plans" />
       <div className="bg-white">
-        <div className="max-w-7xl mx-auto pt-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto pt-24 px-4 sm:px-6 lg:px-8">
           <div className="sm:flex sm:flex-col sm:align-center">
             <h1 className="text-5xl font-extrabold text-gray-900 sm:text-center">
-              Pricing Plans
+              Pricing
             </h1>
             <p className="mt-5 text-xl text-gray-500 sm:text-center">
-              Cloudpress is currently in beta and paid pricing plans will only
-              come into effect at a later stage. The pricing plans below are not
-              finalized, but they will give you an idea of what the pricing will
-              be like.
+              All Cloudpress features are included regardless of the bundle or
+              subscription plan you choose. You pay only for exporting content.
             </p>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:px-8">
-          {/* xs to lg */}
-          <div className="max-w-2xl mx-auto space-y-16 lg:hidden">
-            {tiers.map((tier, tierIdx) => (
-              <section key={tier.name}>
-                <div className="px-4 mb-8 relative">
-                  <h2 className="text-lg leading-6 font-medium text-gray-900">
-                    {tier.name}
-                  </h2>
-                  <p className="mt-4 price-strikethrough-mobile">
-                    <span className="text-4xl font-extrabold text-gray-900">
-                      ${tier.priceMonthly}
-                    </span>{" "}
-                    <span className="text-base font-medium text-gray-500">
-                      /mo
-                    </span>
-                  </p>
-                  <FreeDuringBeta />
-                  <p className="mt-4 text-sm text-gray-500">
-                    {tier.description}
-                  </p>
-                  <a
-                    href={tier.href}
-                    className="mt-6 block border border-transparent rounded-md bg-brand-600 w-full py-2 text-sm font-semibold text-white text-center hover:bg-brand-700"
-                  >
-                    {ctaText}
-                  </a>
-                </div>
-
-                {sections.map((section) => (
-                  <table key={section.name} className="w-full">
-                    <caption className="bg-gray-50 border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
-                      {section.name}
-                    </caption>
-                    <thead>
-                      <tr>
-                        <th className="sr-only" scope="col">
-                          Feature
-                        </th>
-                        <th className="sr-only" scope="col">
-                          Included
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-200">
-                      {section.features.map((feature) => (
-                        <tr
-                          key={feature.name}
-                          className="border-t border-gray-200"
-                        >
-                          <th
-                            className="py-5 px-4 text-sm font-normal text-gray-500 text-left"
-                            scope="row"
-                          >
-                            <div className="flex content-center">
-                              <span>{feature.name}</span>
-                              {feature.description && (
-                                <Tooltip.Provider delayDuration={0}>
-                                  <Tooltip.Root>
-                                    <Tooltip.Trigger>
-                                      <InformationCircleIcon className="h-5 w-5 inline ml-1 text-gray-400 cursor-pointer" />
-                                    </Tooltip.Trigger>
-                                    <Tooltip.Content
-                                      className="px-2 py-1.5 text-sm leading-4 font-normal shadow-sm rounded-md pointer-events-none break-words border bg-neutral-700 border-neutral-600 text-neutral-100"
-                                      side="bottom"
-                                      align="center"
-                                    >
-                                      {feature.description}
-                                    </Tooltip.Content>
-                                  </Tooltip.Root>
-                                </Tooltip.Provider>
-                              )}
-                            </div>
-                          </th>
-                          <td className="py-5 pr-4">
-                            {typeof feature.tiers[tier.name] === "string" ? (
-                              <span className="block text-sm text-gray-700 text-right">
-                                {feature.tiers[tier.name]}
-                              </span>
-                            ) : (
-                              <>
-                                {feature.tiers[tier.name] === true ? (
-                                  <CheckIcon
-                                    className="ml-auto h-5 w-5 text-green-500"
-                                    aria-hidden="true"
-                                  />
-                                ) : (
-                                  <MinusIcon
-                                    className="ml-auto h-5 w-5 text-gray-400"
-                                    aria-hidden="true"
-                                  />
-                                )}
-
-                                <span className="sr-only">
-                                  {feature.tiers[tier.name] === true
-                                    ? "Yes"
-                                    : "No"}
-                                </span>
-                              </>
-                            )}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                ))}
-
-                <div
-                  className={clsx(
-                    tierIdx < tiers.length - 1 ? "py-5 border-b" : "pt-5",
-                    "border-t border-gray-200 px-4"
-                  )}
-                >
-                  <a
-                    href={tier.href}
-                    className="block w-full bg-brand-600 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-brand-700"
-                  >
-                    {ctaText}
-                  </a>
-                </div>
-              </section>
-            ))}
+        <div className="max-w-7xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:px-8 px-4">
+          <div className="space-y-4 grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-3">
+            <PricingColumn
+              title="Credit Bundles"
+              description="Credit bundles allow you to export content without any long term financial commitment."
+              products={[
+                { credits: 20, price: 20 },
+                { credits: 50, price: 69 },
+                { credits: 100, price: 129 },
+                { credits: 200, price: 219 },
+                { credits: 500, price: 509 },
+                { credits: 1000, price: 999 },
+              ]}
+            />
+            <PricingColumn
+              title="Monthly Subscription"
+              description="Save money on exports by committing to a monthly subscription."
+              highlight={{
+                borderClass: "border-blue-600",
+                labelClass: "bg-blue-600",
+                label: "Commit and Save",
+              }}
+              products={[
+                { credits: 25, price: 19, suffix: "month" },
+                {
+                  credits: 50,
+                  price: 29,
+                  suffix: "month",
+                },
+                {
+                  credits: 100,
+                  price: 49,
+                  suffix: "month",
+                },
+                {
+                  credits: 200,
+                  price: 95,
+                  suffix: "month",
+                },
+                {
+                  credits: 300,
+                  price: 145,
+                  suffix: "month",
+                },
+                {
+                  credits: 400,
+                  price: 180,
+                  suffix: "month",
+                },
+                {
+                  credits: 500,
+                  price: 219,
+                  suffix: "month",
+                },
+              ]}
+            />
+            <PricingColumn
+              title="Annual Subscription"
+              description="Get 2 months free when you commit to an annual subscription"
+              highlight={{
+                borderClass: "border-green-600",
+                labelClass: "bg-green-600",
+                label: "2 Months Free",
+              }}
+              products={[
+                { credits: 25, price: 190, suffix: "year" },
+                {
+                  credits: 50,
+                  price: 290,
+                  suffix: "year",
+                },
+                {
+                  credits: 100,
+                  price: 490,
+                  suffix: "year",
+                },
+                {
+                  credits: 200,
+                  price: 950,
+                  suffix: "year",
+                },
+                {
+                  credits: 300,
+                  price: 1450,
+                  suffix: "year",
+                },
+                {
+                  credits: 400,
+                  price: 1800,
+                  suffix: "year",
+                },
+                {
+                  credits: 500,
+                  price: 2190,
+                  suffix: "year",
+                },
+              ]}
+            />
           </div>
-
-          {/* lg+ */}
-          <div className="hidden lg:block">
-            <table className="w-full h-px table-fixed">
-              <caption className="sr-only">Pricing plan comparison</caption>
-              <thead>
-                <tr>
-                  <th
-                    className="pb-4 px-6 text-sm font-medium text-gray-900 text-left"
-                    scope="col"
-                  >
-                    <span className="sr-only">Feature by</span>
-                    <span>Plans</span>
-                  </th>
-                  {tiers.map((tier) => (
-                    <th
-                      key={tier.name}
-                      className="w-1/4 pb-4 px-6 text-lg leading-6 font-bold text-gray-900 text-center"
-                      scope="col"
-                    >
-                      {tier.name}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody className="border-t border-gray-200 divide-y divide-gray-200">
-                <tr>
-                  <th
-                    className="py-8 px-6 text-sm font-medium text-gray-900 text-left align-top"
-                    scope="row"
-                  >
-                    Pricing
-                  </th>
-                  {tiers.map((tier) => (
-                    <td
-                      key={tier.name}
-                      className="h-full py-8 px-6 align-top text-center"
-                    >
-                      <div className="relative h-full table">
-                        <p className="price-strikethrough">
-                          <span className="text-4xl font-extrabold text-gray-900">
-                            ${tier.priceMonthly}
-                          </span>{" "}
-                          <span className="text-base font-medium text-gray-500">
-                            /mo
-                          </span>
-                        </p>
-                        <FreeDuringBeta />
-                        <p className="mt-4 mb-16 text-sm text-gray-500">
-                          {tier.description}
-                        </p>
-                        <a
-                          href={tier.href}
-                          className="absolute bottom-0 flex-grow block w-full bg-brand-600 border border-transparent rounded-md 5 py-2 text-sm font-semibold text-white text-center hover:bg-brand-700"
-                        >
-                          {ctaText}
-                        </a>
-                      </div>
-                    </td>
-                  ))}
-                </tr>
-                {sections.map((section) => (
-                  <Fragment key={section.name}>
-                    <tr>
-                      <th
-                        className="bg-gray-50 py-3 pl-6 text-sm font-medium text-gray-900 text-left"
-                        colSpan={4}
-                        scope="colgroup"
-                      >
-                        {section.name}
-                      </th>
-                    </tr>
-                    {section.features.map((feature) => (
-                      <tr key={feature.name}>
-                        <th
-                          className="py-5 px-6 text-sm font-normal text-gray-500 text-left"
-                          scope="row"
-                        >
-                          <div className="flex content-center">
-                            <span>{feature.name}</span>
-                            {feature.description && (
-                              <Tooltip.Provider delayDuration={0}>
-                                <Tooltip.Root>
-                                  <Tooltip.Trigger>
-                                    <InformationCircleIcon className="h-5 w-5 inline ml-1 text-gray-400 cursor-pointer" />
-                                  </Tooltip.Trigger>
-                                  <Tooltip.Content
-                                    className="px-2 py-1.5 text-sm leading-4 font-normal shadow-sm rounded-md pointer-events-none break-words border bg-neutral-700 border-neutral-600 text-neutral-100"
-                                    side="right"
-                                    sideOffset={5}
-                                  >
-                                    {feature.description}
-                                  </Tooltip.Content>
-                                </Tooltip.Root>
-                              </Tooltip.Provider>
-                            )}
-                          </div>
-                        </th>
-                        {tiers.map((tier) => (
-                          <td key={tier.name} className="py-5 px-6 text-center">
-                            {typeof feature.tiers[tier.name] === "string" ? (
-                              <span className="block text-sm text-gray-700">
-                                {feature.tiers[tier.name]}
-                              </span>
-                            ) : (
-                              <>
-                                {feature.tiers[tier.name] === true ? (
-                                  <CheckIcon
-                                    className="h-5 w-5 text-green-500 inline"
-                                    aria-hidden="true"
-                                  />
-                                ) : (
-                                  <MinusIcon
-                                    className="h-5 w-5 text-gray-400 inline"
-                                    aria-hidden="true"
-                                  />
-                                )}
-
-                                <span className="sr-only">
-                                  {feature.tiers[tier.name] === true
-                                    ? "Included"
-                                    : "Not included"}{" "}
-                                  in {tier.name}
-                                </span>
-                              </>
-                            )}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </Fragment>
-                ))}
-              </tbody>
-              <tfoot>
-                <tr className="border-t border-gray-200">
-                  <th className="sr-only" scope="row">
-                    Choose your plan
-                  </th>
-                  {tiers.map((tier) => (
-                    <td key={tier.name} className="pt-5 px-6">
-                      <a
-                        href={tier.href}
-                        className="block w-full bg-brand-600 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-brand-700"
-                      >
-                        {ctaText}
-                      </a>
-                    </td>
-                  ))}
-                </tr>
-              </tfoot>
-            </table>
-          </div>
+          <Faqs />
         </div>
       </div>
     </Layout>
