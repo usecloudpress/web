@@ -110,6 +110,10 @@ const navigationItems: DocsSection[] = [
         title: "Cloudpress account",
         items: [
           {
+            title: "Billing and usage",
+            href: "/docs/reference/manage-cloudpress-account/billing-and-usage",
+          },
+          {
             title: "Change account name",
             href: "/docs/reference/manage-cloudpress-account/change-account-name",
           },
