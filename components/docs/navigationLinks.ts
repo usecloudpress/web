@@ -128,7 +128,7 @@ const navigationItems: DocsSection[] = [
         ],
       },
       {
-        title: "Cloudpress account",
+        title: "User Profile",
         items: [
           {
             title: "Change personal details",
