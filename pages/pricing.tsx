@@ -1,6 +1,5 @@
 import { NextSeo } from "next-seo";
 import Layout from "../components/layouts/Layout";
-import { InformationCircleIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import { Disclosure } from "@headlessui/react";
 import ChevronDownIcon from "@heroicons/react/24/outline/ChevronDownIcon";

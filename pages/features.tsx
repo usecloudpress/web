@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Layout from "../components/layouts/Layout";
 import ImageComparison from "../components/image-comparison";
 import compare1 from "../public/images/terracotta-army-google-docs.png";
