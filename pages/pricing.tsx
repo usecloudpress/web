@@ -171,7 +171,7 @@ export default function PricingPage() {
               title="Credit Bundles"
               description="Credit bundles allow you to export content without any long term financial commitment."
               products={[
-                { credits: 20, price: 20 },
+                { credits: 20, price: 29 },
                 { credits: 50, price: 69 },
                 { credits: 100, price: 129 },
                 { credits: 200, price: 219 },
