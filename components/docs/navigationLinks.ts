@@ -85,12 +85,12 @@ const navigationItems: DocsSection[] = [
             href: "/docs/reference/export/introduction",
           },
           {
-            title: "Export a Google Doc",
-            href: "/docs/reference/export/export-google-doc",
+            title: "Use Export Content page",
+            href: "/docs/reference/export/using-export-content-page",
           },
           {
-            title: "Export a notion page",
-            href: "/docs/reference/export/notion-page",
+            title: "Use Google Workspace Add-on",
+            href: "/docs/reference/export/using-google-workspace-add-on",
           },
           {
             title: "Set additional field values",
