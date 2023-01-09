@@ -25,7 +25,7 @@ export default function IntegrationCta({ destination }: Props) {
             ?
           </span>
           <span className="block text-brand-600">
-            Sign up for Cloudpress today and get 5 free trial credits to try it
+            Sign up for Cloudpress today and get 5 free trial exports to try it
             out!
           </span>
         </h2>

@@ -7,7 +7,7 @@ export default function GenericCta() {
         <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
           <span className="text-brand-600">Ready to dive in?</span>{" "}
           <span>
-            Sign up today and we&apos;ll give you 5 free credits to try
+            Sign up today and we&apos;ll give you 5 free exports to try
             Cloudpress out.
           </span>
         </h2>
