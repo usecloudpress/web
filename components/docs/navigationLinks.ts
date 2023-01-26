@@ -249,6 +249,10 @@ const navigationItems: DocsSection[] = [
             title: "Set additional field values",
             href: "/docs/integrations/webflow/additional-fields",
           },
+          {
+            title: "Known issues",
+            href: "/docs/integrations/webflow/known-issues",
+          },
         ],
       },
       {
