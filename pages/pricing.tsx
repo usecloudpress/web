@@ -301,7 +301,7 @@ export default function PricingPage() {
                     <div className="rounded-md shadow">
                       <a
                         href="https://app.usecloudpress.com/register"
-                        className="flex items-center justify-center rounded-md border border-transparent bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"
+                        className="flex items-center justify-center rounded-md border border-transparent text-white bg-brand-600 hover:bg-brand-500  px-5 py-3 text-base font-medium text-white"
                       >
                         Start your free trial
                       </a>
