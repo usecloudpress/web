@@ -165,7 +165,7 @@ export default function PricingPage() {
               <div className="mx-auto max-w-lg border rounded-lg border-slate-200 lg:flex lg:max-w-none">
                 <div className="flex-1 bg-white px-6 py-8 lg:p-12">
                   <h3 className="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">
-                    Subscriptions
+                    Subscription
                   </h3>
                   <p className="mt-6 text-base text-gray-500">
                     Our subscription plans give you access to all the features
@@ -321,8 +321,9 @@ export default function PricingPage() {
                     </h3>
                     <div className="mt-2 text-base leading-7 text-slate-600">
                       For occasional users, or users with low volume, we also
-                      offer export bundles that allow you to buy export credits
-                      up-front and use at your own pace. Pricing starts at{" "}
+                      offer pay-as-you-go bundles that allow you to buy export
+                      credits up-front and use at your own pace. Pricing starts
+                      at{" "}
                       <span className="font-bold text-slate-900">
                         $29 (USD)
                       </span>{" "}
