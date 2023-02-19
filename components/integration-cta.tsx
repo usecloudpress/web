@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Integration, thisIntegration } from "../lib/Integrations";
 import CtaButton from "./ctaButton";

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import CtaButton from "./ctaButton";
 
 export default function GenericCta() {
