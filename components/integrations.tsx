@@ -23,7 +23,7 @@ export default function Integrations() {
               and we can look into adding support for it.
             </p>
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
             <Link href="/integrations/export-google-docs-to-wordpress">
               <a className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100">
                 <img

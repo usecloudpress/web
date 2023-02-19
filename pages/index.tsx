@@ -155,7 +155,7 @@ const Home: NextPage = () => {
               alt="Shopify"
             />
             <blockquote className="mt-10 mx-4 lg:mx-0">
-              <div className="mx-auto max-w-3xl text-center text-xl font-medium leading-9 text-gray-900">
+              <div className="mx-auto max-w-3xl text-center text-lg md:text-xl font-medium leading-loose text-gray-900">
                 <p>
                   &ldquo;This past week, Cloudpress reduced our Google Docs to
                   Contentful upload time from 8 hours per week to only 1 hour
@@ -252,7 +252,7 @@ const Home: NextPage = () => {
 
         <section className="bg-blue-700 py-24 sm:py-32">
           <div className="max-w-4xl mx-auto">
-            <div className="prose prose-xl max-w-none text-white">
+            <div className="prose prose-xl max-w-none text-white mx-4 lg:mx-0">
               <p>
                 You&apos;d rather write content, run your business, or do other
                 creative work. Instead, you have to spend time struggling with
