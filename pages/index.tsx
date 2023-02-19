@@ -97,7 +97,7 @@ const Home: NextPage = () => {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-5xl sm:text-center">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Shrink your content publishing checklist
+                Reduce your content publishing checklist
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-800">
                 With Cloudpress you spend less time copying and fixing your
