@@ -30,12 +30,12 @@ const faqs = [
   {
     question: "Do you have a free trial?",
     answer:
-      "Yes! You receive 5 free exports to try Cloudpress out when you sign up. The trial has no functional limitations other than that you are limited to 5 exports. After that, you must buy an export bundle or subscription to export more documents.",
+      "Yes! You receive 5 free exports to try Cloudpress out when you sign up. Once your trial exports are used, you must buy an export bundle or subscription to export more documents.",
   },
   {
     question: "Which features are included in each plan?",
     answer:
-      "You have access to all the features of Cloudpress regardless of whether you buy an export bundle or subscription.",
+      "Our automation features like Collections are limited to users with a subscription.",
   },
 ];
 
@@ -149,10 +149,10 @@ export default function PricingPage() {
       <div className="bg-white">
         <div className="max-w-3xl mx-auto pt-24 px-4 sm:px-6 lg:px-8">
           <div className="sm:flex sm:flex-col sm:align-center">
-            <h1 className="text-5xl font-extrabold text-gray-900 sm:text-center">
+            <h1 className="text-5xl font-bold text-gray-900 sm:text-center">
               Pricing
             </h1>
-            <p className="mt-5 text-xl text-gray-500 sm:text-center">
+            <p className="mt-5 text-xl text-gray-800 sm:text-center">
               Simple pricing based on the number of documents you export each
               month.
             </p>

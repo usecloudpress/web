@@ -11,6 +11,9 @@ module.exports = {
       colors: {
         brand: brandColor,
       },
+      fontFamily: {
+        'script': ['Nanum Pen Script', 'sans-serif']
+      },
       typography: {
         DEFAULT: {
           css: {

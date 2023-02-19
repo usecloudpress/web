@@ -14,7 +14,7 @@ export default function Features() {
         <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-36 lg:pb-40 lg:px-8">
           <section className="xl mx-auto lg:max-w-4xl ">
             <div className="text-center">
-              <h1 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl space-y-4">
+              <h1 className="text-4xl tracking-tight leading-10 font-bold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl space-y-4">
                 <span className="block">Features that will</span>
                 <span className="block">save you time</span>
               </h1>

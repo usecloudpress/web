@@ -6,16 +6,21 @@ export default function Integrations() {
       <div className="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div>
-            <h2 className="text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
-              Works with your{" "}
-              <span className="underline underline-offset-4 decoration-4 decoration-brand-500">
-                favourite
-              </span>{" "}
-              CMS
+            <h2 className="text-3xl leading-9 font-bold text-gray-900 sm:text-4xl sm:leading-10">
+              Works with your CMS
             </h2>
-            <p className="mt-3 max-w-3xl text-lg leading-7 text-gray-500">
+            <p className="mt-3 max-w-3xl text-lg leading-7 text-gray-800">
               Cloudpress supports exporting content to a wide range of Content
-              Management Systems and publishing platforms
+              Management Systems and publishing platforms.
+            </p>
+            <p className="mt-3 max-w-3xl text-lg leading-7 text-gray-800">
+              Don&apos;t see yours on the list?{" "}
+              <Link href="mailto:hello@usecloudpress.com">
+                <a className="font-semibold leading-7 text-blue-600">
+                  Let us know
+                </a>
+              </Link>{" "}
+              and we can look into adding support for it.
             </p>
           </div>
           <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">

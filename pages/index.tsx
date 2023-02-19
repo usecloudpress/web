@@ -1,16 +1,61 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import Layout from "../components/layouts/Layout";
 import compare1 from "../public/images/terracotta-army-google-docs.png";
 import compare2 from "../public/images/terracotta-army-travel-diaries.png";
-import how1 from "../public/images/how-1.png";
-import how2 from "../public/images/how-2.png";
-import how3 from "../public/images/how-3.png";
 import Integrations from "../components/integrations";
 import ImageComparison from "../components/image-comparison";
 import GenericCta from "../components/generic-cta";
+import {
+  CheckCircleIcon,
+  CursorArrowRaysIcon,
+} from "@heroicons/react/24/solid";
+import React from "react";
+import {
+  ConnectionIcon,
+  ExportIcon,
+  HandDrawnArrowIcon,
+} from "../components/icons";
+import Link from "next/link";
+import CtaButton from "../components/ctaButton";
 
+function ToDoListItem({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="p-3 border border-gray-200 bg-gray-50 rounded-lg font-semibold flex gap-x-3 items-center text-gray-900">
+      <CheckCircleIcon className="w-8 h-8 text-gray-800" />
+      {children}
+    </li>
+  );
+}
+
+const gettingStartedSteps = [
+  {
+    name: "Sign up",
+    description:
+      "Sign up for a free Cloudpress account. You just need a username and password and takes less than a minute.",
+    href: "/docs/quick-start/register-an-account",
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: "Connect your accounts",
+    description:
+      "Connect your Content Management System account and, if you want to export from Notion, your Notion account as well.",
+    href: "/docs/reference/connections/add-connection",
+    icon: ConnectionIcon,
+  },
+  {
+    name: "Export content",
+    description: (
+      <>
+        Start exporting your content and see you Cloudpress speeds up the
+        process. We give you{" "}
+        <span className="font-bold">five free exports</span> to try it out.
+      </>
+    ),
+    href: "/docs/reference/export/introduction",
+    icon: ExportIcon,
+  },
+];
 const Home: NextPage = () => {
   return (
     <>
@@ -20,37 +65,22 @@ const Home: NextPage = () => {
       </Head>
       <Layout>
         {/* Hero */}
-        <div className="bg-white">
+        <section className="bg-gradient-to-b from-gray-100 to-white">
           <div className="overflow-hidden">
             <div className="pt-6 pb-12 lg:pb-20">
               <div className="mt-10 mx-auto max-w-screen-xl px-4 sm:px-6 md:mt-16 lg:mt-20">
                 <div className="text-center">
-                  <h1 className="text-4xl tracking-tight leading-snug font-extrabold text-gray-900 md:text-6xl md:leading-snug space-y-4">
-                    Export content from{" "}
-                    <span className="bg-gradient-to-r from-cyan-500 to-brand-500 text-transparent bg-clip-text">
-                      Google Docs
-                    </span>
-                    <br />
-                    or{" "}
-                    <span className="bg-gradient-to-r from-indigo-500 to-purple-500 text-transparent bg-clip-text">
-                      Notion
-                    </span>{" "}
-                    to your CMS
+                  <h1 className="text-5xl font-bold tracking-tight leading-snug text-gray-900 sm:text-6xl xl:text-7xl">
+                    Export content from Google Docs and Notion to your CMS
                   </h1>
-                  <p className="mt-8 max-w-lg mx-auto text-base text-gray-500 sm:text-lg md:mt-16 md:text-2xl md:max-w-6xl">
-                    Stop wasting time by manually copy-and-pasting content from
-                    your writing app to your Content Management System. Save
-                    yourself the frustration by automating your content
-                    publishing workflow.
+                  <p className="mt-8 max-w-lg mx-auto text-xl text-gray-800 md:mt-16 md:text-3xl md:max-w-6xl">
+                    Automate the export of perfectly formatted content, so you
+                    have more time for doing work that matters
                   </p>
                 </div>
               </div>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 flex flex-col">
-                <div className="flex-1"></div>
-                <div className="flex-1 w-full bg-brand-100"></div>
-              </div>
               <div className="max-w-screen-lg mx-auto px-4 sm:px-6 pb-5">
                 <ImageComparison
                   image1={compare1}
@@ -61,126 +91,196 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* How it works  */}
-        <div className="py-16 bg-gradient-to-b from-brand-100 to-white overflow-hidden lg:pb-24">
-          <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
-            <div className="relative">
-              <h3 className="text-center text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-                🚀 How you can supercharge your content publishing workflow 🚀
-              </h3>
+        <section className="bg-white pt-12 sm:pt-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-5xl sm:text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Shrink your content publishing checklist
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-800">
+                With Cloudpress you spend less time copying and fixing your
+                content, and more time on the creative stuff
+              </p>
             </div>
-
-            <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-              <div className="relative">
-                <h4 className="text-2xl leading-8 font-bold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                  Use the writing tools{" "}
-                  <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                    you love
-                  </span>
-                </h4>
-                <p className="mt-3 text-lg leading-7 text-gray-500">
-                  Both Google Docs and Notion are great for writing and
-                  collaborating on content. You don&apos;t need to compromise
-                  and settle for a sub-par experience.
-                </p>
-                <p className="mt-6 text-base leading-6 text-gray-500">
-                  <Link href="/blog/write-your-next-blog-post-in-google-docs/">
-                    <a className="text-brand-600 hover:text-brand-500 font-semibold">
-                      Read more
-                    </a>
-                  </Link>{" "}
-                  about why we think Google Docs is a great choice for writing
-                  content.
-                </p>
+            <div className="flex mt-16 max-w-3xl mx-auto gap-x-4 flex-col sm:flex-row">
+              <div className="flex-1">
+                <ul className="flex flex-col gap-y-2">
+                  <li className="text-center mb-3">
+                    <h3 className="text-xl font-bold">Before Cloudpress</h3>
+                  </li>
+                  <ToDoListItem>Write content</ToDoListItem>
+                  <ToDoListItem>Copy content to CMS</ToDoListItem>
+                  <ToDoListItem>Fix formatting errors</ToDoListItem>
+                  <ToDoListItem>Upload and relink images</ToDoListItem>
+                  <ToDoListItem>Create embeds for YouTube videos</ToDoListItem>
+                  <ToDoListItem>Upload featured image</ToDoListItem>
+                  <ToDoListItem>Set category and author</ToDoListItem>
+                  <ToDoListItem>Publish</ToDoListItem>
+                </ul>
               </div>
-
-              <div className="mt-10 -mx-4 relative lg:mt-0">
-                <img
-                  className="relative mx-auto shadow-xl"
-                  width="490"
-                  src={how1.src}
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div className="relative mt-12 sm:mt-16 lg:mt-24">
-              <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
-                <div className="lg:col-start-2">
-                  <h4 className="text-2xl leading-8 font-bold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                    Perfect exports with{" "}
-                    <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                      one click
-                    </span>
-                  </h4>
-                  <p className="mt-3 text-lg leading-7 text-gray-500">
-                    Once you have completed your masterpiece, there is no need
-                    to struggle with copy-and-paste. With the click of a button,
-                    you can export your content to your CMS with all your
-                    formatting and images perfectly preserved.
-                  </p>
-                  <p className="mt-6 text-base leading-6 text-gray-500">
-                    <Link href="/blog/our-new-google-workspace-add-on">
-                      <a className="text-brand-600 hover:text-brand-500 font-semibold">
-                        Learn more
-                      </a>
-                    </Link>{" "}
-                    about our Google Docs Add-on.
-                  </p>
-                </div>
-
-                <div className="mt-10 -mx-4 relative lg:mt-0 lg:col-start-1">
-                  <img
-                    className="relative mx-auto shadow-xl"
-                    width="490"
-                    src={how2.src}
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-              <div className="relative">
-                <h4 className="text-2xl leading-8 font-bold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
-                  Automate{" "}
-                  <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                    all the things
-                  </span>
-                </h4>
-                <p className="mt-3 text-lg leading-7 text-gray-500">
-                  Is clicking a button still slowing you down? Put your content
-                  publishing on autopilot with our API and{" "}
-                  <a
-                    href="https://www.make.com/en/integrations/cloudpress"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-brand-600 hover:text-brand-500 font-semibold"
-                  >
-                    Make integration
-                  </a>{" "}
-                  .
-                </p>
-              </div>
-
-              <div className="mt-10 -mx-4 relative lg:mt-0">
-                <img
-                  className="relative mx-auto shadow-xl"
-                  width="490"
-                  src={how3.src}
-                  alt=""
-                />
+              <div className="flex-1 mt-8 sm:mt-0">
+                <ul className="flex flex-col gap-y-2 h-full">
+                  <li className="text-center mb-3">
+                    <h3 className="text-xl font-bold">With Cloudpress</h3>
+                  </li>
+                  <ToDoListItem>Write content</ToDoListItem>
+                  <ToDoListItem>Click export button</ToDoListItem>
+                  <li className="border border-green-200 bg-green-50 rounded-lg grow">
+                    <div className="flex flex-col h-full p-4 min-h-[200px] gap-y-4">
+                      <div className="flex-1 flex items-start justify-center">
+                        <HandDrawnArrowIcon className="w-20 h-20" />
+                      </div>
+                      <div className="text-center px-10 font-script text-3xl">
+                        more time for running your business and doing creative
+                        work
+                      </div>
+                      <div className="flex-1 flex items-end justify-center">
+                        <HandDrawnArrowIcon className="w-20 h-20 rotate-180" />
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        <section className="bg-white py-12 sm:py-16">
+          <div className="relative">
+            <img
+              className="mx-auto h-12"
+              src="/images/logos/shopify.svg"
+              alt="Shopify"
+            />
+            <blockquote className="mt-10 mx-4 lg:mx-0">
+              <div className="mx-auto max-w-3xl text-center text-xl font-medium leading-9 text-gray-900">
+                <p>
+                  &ldquo;This past week, Cloudpress reduced our Google Docs to
+                  Contentful upload time from 8 hours per week to only 1 hour
+                  with perfect formatting. Cloudpress enabled the launch of a
+                  campaign in less time than we anticipated and allowed us to
+                  launch even more initiatives that we expected to work on later
+                  this year. It&apos;s freeing us from the tactical so we can
+                  focus on the strategic -- ultimately helping us drive more
+                  impact with the limited time we have.&rdquo;
+                </p>
+              </div>
+              <footer className="mt-8">
+                <div className="md:flex md:items-center md:justify-center">
+                  {/*<div className="md:flex-shrink-0">
+                    <img
+                      className="mx-auto h-10 w-10 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      alt=""
+                    />
+                  </div>*/}
+                  <div className="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
+                    <div className="text-base font-medium text-gray-900">
+                      Vanessa Hojda
+                    </div>
+
+                    <svg
+                      className="mx-1 hidden h-5 w-5 text-blue-600 md:block"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M11 0h3L9 20H6l5-20z" />
+                    </svg>
+
+                    <div className="text-base font-medium text-gray-500">
+                      Senior Content Marketing Manager, Shopify
+                    </div>
+                  </div>
+                </div>
+              </footer>
+            </blockquote>
+          </div>
+          <div className="text-center mt-10">
+            <CtaButton />
+          </div>
+        </section>
+
+        <section className="bg-gray-100 py-24 pb-12 sm:py-32 sm:pb-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl sm:text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Start exporting in three easy steps
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-800">
+                Getting started with Cloudpress and exporting your first
+                document takes three easy steps
+              </p>
+            </div>
+            <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+              <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                {gettingStartedSteps.map((step) => (
+                  <div key={step.name} className="flex flex-col">
+                    <dt className="text-base font-semibold leading-7 text-gray-900">
+                      <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
+                        <step.icon
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      {step.name}
+                    </dt>
+                    <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                      <p className="flex-auto">{step.description}</p>
+                      <p className="mt-6">
+                        <Link href={step.href}>
+                          <a className="text-base font-semibold leading-7 text-blue-600">
+                            Read the documentation{" "}
+                            <span aria-hidden="true">→</span>
+                          </a>
+                        </Link>
+                      </p>
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+          <div className="text-center mt-12 sm:mt-20">
+            <CtaButton />
+          </div>
+        </section>
 
         {/* Integrations */}
         <Integrations />
 
-        {/* Pricing */}
+        <section className="bg-blue-700 py-24 sm:py-32">
+          <div className="max-w-4xl mx-auto">
+            <div className="prose prose-xl max-w-none text-white">
+              <p>
+                You&apos;d rather write content, run your business, or do other
+                creative work. Instead, you have to spend time struggling with
+                getting your content from Google Docs and Notion into your CMS,
+                wasting time correcting formatting, reuploading images, and
+                doing other menial tasks to get your content published.
+              </p>
+              <p className="font-bold">
+                It shouldn&apos;t be this complicated, right?
+              </p>
+              <p>
+                We hear you,{" "}
+                <span className="font-bold">and we&apos;ve got your back</span>.
+                At Cloudpress, we automate exporting your content from Google
+                Docs and Notion. We&apos;ll ensure that the content is perfectly
+                formatted in your CMS, and also take care of things like
+                uploading images and setting additional fields like the author,
+                category, and tags.
+              </p>
+              <p>
+                This frees up your time to do the work that matters. The work
+                that moves your business forward.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
         <GenericCta />
       </Layout>
     </>

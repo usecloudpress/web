@@ -39,7 +39,7 @@ export default function IntegrationLandingPageHeader({
       <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-36 lg:pb-40 lg:px-8">
         <section className="xl mx-auto lg:max-w-4xl ">
           <div className="text-center">
-            <h1 className="text-4xl tracking-tight leading-snug font-extrabold text-gray-900 md:text-6xl md:leading-snug space-y-4">
+            <h1 className="text-4xl tracking-tight leading-snug font-bold text-gray-900 md:text-6xl md:leading-snug space-y-4">
               Export content from{" "}
               <InlineIntegrationDropdown
                 kind="source"
@@ -53,7 +53,7 @@ export default function IntegrationLandingPageHeader({
                 destination={destination}
               />
             </h1>
-            <h2 className="mt-8 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:text-2xl md:max-w-6xl">
+            <h2 className="mt-8 max-w-md mx-auto text-base text-gray-800 sm:text-lg md:text-2xl md:max-w-6xl">
               Write and collaborate in {sourceIntegration!.name}, then export
               your content to {destinationIntegration!.name} with the click of a
               button. Or even better - put your entire content publishing
