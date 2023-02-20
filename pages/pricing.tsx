@@ -64,7 +64,7 @@ const tiers: {
     id: "tier-payasyougo",
     featured: false,
     description:
-      "For occasional users or users with a low volume who do not want to make a monthly commitment.",
+      "For solo bloggers with few monthly exports who do not want to make a monthly commitment.",
   },
   {
     name: "Subscription",
@@ -72,7 +72,7 @@ const tiers: {
     id: "tier-subscription",
     featured: true,
     description:
-      "Biggest savings for users with higher volumes who make a monthly commitment. Also get access to our automation features to further speed up your publishing workflow.",
+      "For users with a higher number of exports. Get access to all the Cloudpress features.",
   },
 ];
 const sections: {
@@ -198,11 +198,11 @@ const sections: {
     features: [
       {
         name: "Users",
-        tiers: { PayAsYouGo: "Unlimited", Subscription: "Unlimited" },
+        tiers: { PayAsYouGo: "1", Subscription: "Unlimited" },
       },
       {
         name: "Roles",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { PayAsYouGo: false, Subscription: true },
       },
     ],
   },
@@ -501,7 +501,7 @@ export default function PricingPage() {
                   </p>
                   <div className="mt-8">
                     <div className="flex items-center">
-                      <h4 className="flex-shrink-0 bg-white pr-4 text-base font-semibold text-blue-600">
+                      <h4 className="flex-shrink-0 bg-white pr-4 text-base font-semibold text-gray-900">
                         What&apos;s included
                       </h4>
                       <div className="flex-1 border-t-2 border-gray-200" />
@@ -513,8 +513,8 @@ export default function PricingPage() {
                           className="flex items-start lg:col-span-1"
                         >
                           <div className="flex-shrink-0">
-                            <CheckCircleIcon
-                              className="h-5 w-5 text-green-400"
+                            <CheckIcon
+                              className="h-5 w-5 text-blue-600"
                               aria-hidden="true"
                             />
                           </div>
