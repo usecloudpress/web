@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { Disclosure, Listbox, RadioGroup } from "@headlessui/react";
 import ChevronDownIcon from "@heroicons/react/24/outline/ChevronDownIcon";
 import { CheckCircleIcon, ChevronUpDownIcon } from "@heroicons/react/24/solid";
+import { CheckIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 
 const toPascalCase = (str: string) =>
@@ -33,9 +34,186 @@ const faqs = [
       "Yes! You receive 5 free exports to try Cloudpress out when you sign up. Once your trial exports are used, you must buy an export bundle or subscription to export more documents.",
   },
   {
-    question: "Which features are included in each plan?",
-    answer:
-      "Our automation features like Collections are limited to users with a subscription.",
+    question:
+      "What's are the differences between the subscription and pay-as-you go bundles?",
+    answer: (
+      <>
+        Yes. The pay-as-you-go bundles target occasional users or users with a
+        low volume. A great example of this may be a solo blogger who posts 4 or
+        5 blog posts a month.
+        <br />
+        <br />
+        Therefore, features targeting users with a high export volume are only
+        available to users with subscriptions - for example, our automation
+        features like Collections, the Cloupress API, and Make.com integration.
+      </>
+    ),
+  },
+];
+
+const tiers: {
+  name: "PayAsYouGo" | "Subscription";
+  title: string;
+  id: string;
+  featured: boolean;
+  description: string;
+}[] = [
+  {
+    name: "PayAsYouGo",
+    title: "Pay-as-you-go",
+    id: "tier-payasyougo",
+    featured: false,
+    description:
+      "For occasional users or users with a low volume who do not want to make a monthly commitment.",
+  },
+  {
+    name: "Subscription",
+    title: "Subscription",
+    id: "tier-subscription",
+    featured: true,
+    description:
+      "Biggest savings for users with higher volumes who make a monthly commitment. Also get access to our automation features to further speed up your publishing workflow.",
+  },
+];
+const sections: {
+  name: string;
+  features: {
+    name: string;
+    tiers: { PayAsYouGo: string | boolean; Subscription: string | boolean };
+  }[];
+}[] = [
+  {
+    name: "Connections",
+    features: [
+      {
+        name: "Source connections",
+        tiers: {
+          PayAsYouGo: "Unlimited",
+          Subscription: "Unlimited",
+        },
+      },
+      {
+        name: "Destination connections",
+        tiers: {
+          PayAsYouGo: "Unlimited",
+          Subscription: "Unlimited",
+        },
+      },
+    ],
+  },
+  {
+    name: "Export clients",
+    features: [
+      {
+        name: "Export Content page",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+      {
+        name: "Google Workspace Add-on",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+      {
+        name: "Cloudpress API",
+        tiers: { PayAsYouGo: false, Subscription: true },
+      },
+    ],
+  },
+  {
+    name: "Content export features",
+    features: [
+      {
+        name: "Export content with correct formatting",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+      {
+        name: "Export images",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+      {
+        name: "Advanced formatting",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+      {
+        name: "Generates embeds",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+      {
+        name: "Exports additional field values",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+    ],
+  },
+  {
+    name: "Integrations",
+    features: [
+      {
+        name: "Google Docs",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+      {
+        name: "Notion",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+      {
+        name: "WordPress",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+      {
+        name: "Webflow",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+      {
+        name: "Contentful",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+      {
+        name: "Sanity",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+      {
+        name: "Kontent.ai",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+    ],
+  },
+  {
+    name: "Automation",
+    features: [
+      {
+        name: "Collections",
+        tiers: { PayAsYouGo: false, Subscription: true },
+      },
+      {
+        name: "Cloudpress API",
+        tiers: { PayAsYouGo: false, Subscription: true },
+      },
+      {
+        name: "Make.com integration",
+        tiers: { PayAsYouGo: false, Subscription: true },
+      },
+    ],
+  },
+  {
+    name: "User Management",
+    features: [
+      {
+        name: "Users",
+        tiers: { PayAsYouGo: "Unlimited", Subscription: "Unlimited" },
+      },
+      {
+        name: "Roles",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+    ],
+  },
+  {
+    name: "Support",
+    features: [
+      {
+        name: "Email support",
+        tiers: { PayAsYouGo: true, Subscription: true },
+      },
+    ],
   },
 ];
 
@@ -84,6 +262,155 @@ const subscriptionPlans: SubscriptionPlan[] = [
     annually: 2190,
   },
 ];
+
+function FeatureComparison() {
+  return (
+    <section className="relative bg-white lg:pt-14 hidden md:block">
+      <div className="mx-auto max-w-7xl py-12 px-6 sm:pb-24 sm:pt-8 lg:px-8">
+        <div aria-labelledby="comparison-heading">
+          <h2 className="text-center text-4xl font-bold pb-12">
+            Feature comparison
+          </h2>
+
+          <div className="grid grid-cols-3 gap-x-8 border-t border-gray-900/10 before:block">
+            {tiers.map((tier) => (
+              <div key={tier.id} aria-hidden="true" className="-mt-px">
+                <div
+                  className={clsx(
+                    tier.featured ? "border-blue-600" : "border-transparent",
+                    "border-t-2 pt-10"
+                  )}
+                >
+                  <p
+                    className={clsx(
+                      tier.featured ? "text-blue-600" : "text-gray-900",
+                      "text-sm font-semibold leading-6"
+                    )}
+                  >
+                    {tier.title}
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-gray-600">
+                    {tier.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-4 space-y-16">
+            {sections.map((section) => (
+              <div key={section.name}>
+                <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                  {section.name}
+                </h3>
+                <div className="relative -mx-8 mt-2">
+                  {/* Fake card backgrounds */}
+                  <div
+                    className="absolute inset-y-0 inset-x-8 grid grid-cols-3 gap-x-8 before:block"
+                    aria-hidden="true"
+                  >
+                    <div className="h-full w-full rounded-lg bg-gray-50 shadow-sm" />
+                    <div className="h-full w-full rounded-lg bg-gray-50 shadow-sm" />
+                  </div>
+
+                  <table className="relative w-full border-separate border-spacing-x-8">
+                    <thead>
+                      <tr className="text-left">
+                        <th scope="col">
+                          <span className="sr-only">Feature</span>
+                        </th>
+                        {tiers.map((tier) => (
+                          <th key={tier.id} scope="col">
+                            <span className="sr-only">{tier.name} tier</span>
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {section.features.map((feature, featureIdx) => (
+                        <tr key={feature.name}>
+                          <th
+                            scope="row"
+                            className="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900"
+                          >
+                            {feature.name}
+                            {featureIdx !== section.features.length - 1 ? (
+                              <div className="absolute inset-x-8 mt-3 h-px bg-gray-200" />
+                            ) : null}
+                          </th>
+                          {tiers.map((tier) => (
+                            <td
+                              key={tier.id}
+                              className="relative w-1/4 px-4 py-0 text-center"
+                            >
+                              <span className="relative h-full w-full py-3">
+                                {typeof feature.tiers[tier.name] ===
+                                "string" ? (
+                                  <span
+                                    className={clsx(
+                                      tier.featured
+                                        ? "font-semibold text-blue-600"
+                                        : "text-gray-900",
+                                      "text-sm leading-6"
+                                    )}
+                                  >
+                                    {feature.tiers[tier.name]}
+                                  </span>
+                                ) : (
+                                  <>
+                                    {feature.tiers[tier.name] === true ? (
+                                      <CheckIcon
+                                        className="mx-auto h-5 w-5 text-blue-600"
+                                        aria-hidden="true"
+                                      />
+                                    ) : (
+                                      <XMarkIcon
+                                        className="mx-auto h-5 w-5 text-gray-400"
+                                        aria-hidden="true"
+                                      />
+                                    )}
+
+                                    <span className="sr-only">
+                                      {feature.tiers[tier.name] === true
+                                        ? "Yes"
+                                        : "No"}
+                                    </span>
+                                  </>
+                                )}
+                              </span>
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+
+                  {/* Fake card borders */}
+                  <div
+                    className="pointer-events-none absolute inset-y-0 inset-x-8 grid grid-cols-3 gap-x-8 before:block"
+                    aria-hidden="true"
+                  >
+                    {tiers.map((tier) => (
+                      <div
+                        key={tier.id}
+                        className={clsx(
+                          tier.featured
+                            ? "ring-2 ring-blue-600"
+                            : "ring-1 ring-gray-900/10",
+                          "rounded-lg"
+                        )}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function Faqs() {
   return (
@@ -159,7 +486,7 @@ export default function PricingPage() {
           </div>
         </div>
 
-        <div className="mt-8 bg-white sm:mt-12">
+        <section className="mt-8 mb-16 bg-white sm:mt-12">
           <div className="relative">
             <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
               <div className="mx-auto max-w-lg border rounded-lg border-slate-200 lg:flex lg:max-w-none">
@@ -334,10 +661,13 @@ export default function PricingPage() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="max-w-7xl mx-auto bg-white py-4 sm:px-6 lg:px-8 px-4">
+        </section>
+
+        <FeatureComparison />
+
+        <section className="max-w-7xl mx-auto bg-white py-4 sm:px-6 lg:px-8 px-4">
           <Faqs />
-        </div>
+        </section>
       </div>
     </Layout>
   );
