@@ -3,7 +3,7 @@ import Layout from "../components/layouts/Layout";
 import clsx from "clsx";
 import { Disclosure, Listbox, RadioGroup } from "@headlessui/react";
 import ChevronDownIcon from "@heroicons/react/24/outline/ChevronDownIcon";
-import { CheckCircleIcon, ChevronUpDownIcon } from "@heroicons/react/24/solid";
+import { ChevronUpDownIcon } from "@heroicons/react/24/solid";
 import { CheckIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 
