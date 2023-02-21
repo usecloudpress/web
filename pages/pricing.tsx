@@ -19,9 +19,25 @@ const faqs = [
       "No, the above prices do not include VAT or other taxes. Taxes are calculated during checkout based on your country and region.",
   },
   {
-    question: "What counts as an export?",
+    question: "What are connections?",
     answer:
-      "Each time you export a document, we count it as an export. If you re-export a document, that counts as a separate export.",
+      "A connection is a link you establish between Cloudpress and your CMS or Notion. You export documents from/to a connection.",
+  },
+  {
+    question:
+      "What counts as an export? How about when I re-export a document?",
+    answer: (
+      <>
+        Each time you export a document to a CMS connection for the first time,
+        we count it as an export. Re-exporting a previously exported document
+        does not count as an export.
+        <br />
+        <br />
+        In other words, you can export a document to the same CMS connection
+        multiple times and only use a single export credit. However, exporting
+        the same document to a different CMS connection counts as a new export.
+      </>
+    ),
   },
   {
     question: "Do export credits expire?",
@@ -38,9 +54,9 @@ const faqs = [
       "What's are the differences between the subscription and pay-as-you go bundles?",
     answer: (
       <>
-        Yes. The pay-as-you-go bundles target occasional users or users with a
-        low volume. A great example of this may be a solo blogger who posts 4 or
-        5 blog posts a month.
+        The pay-as-you-go bundles target occasional users or users with a low
+        volume. A great example of this may be a solo blogger who posts 4 or 5
+        blog posts a month.
         <br />
         <br />
         Therefore, features targeting users with a high export volume are only
