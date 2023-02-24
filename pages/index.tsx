@@ -6,10 +6,7 @@ import compare2 from "../public/images/terracotta-army-travel-diaries.png";
 import Integrations from "../components/integrations";
 import ImageComparison from "../components/image-comparison";
 import GenericCta from "../components/generic-cta";
-import {
-  CheckCircleIcon,
-  CursorArrowRaysIcon,
-} from "@heroicons/react/24/solid";
+import { CheckIcon, CursorArrowRaysIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import {
   ConnectionIcon,
@@ -22,7 +19,7 @@ import CtaButton from "../components/ctaButton";
 function ToDoListItem({ children }: { children: React.ReactNode }) {
   return (
     <li className="p-3 border border-gray-200 bg-gray-50 rounded-lg font-semibold flex gap-x-3 items-center text-gray-900">
-      <CheckCircleIcon className="w-8 h-8 text-gray-800" />
+      <CheckIcon className="w-8 h-8 text-gray-800" />
       {children}
     </li>
   );
@@ -97,7 +94,7 @@ const Home: NextPage = () => {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-5xl sm:text-center">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Reduce your content publishing checklist
+                Reduce the size of your content publishing checklist
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-800">
                 With Cloudpress you spend less time copying and fixing your
@@ -108,7 +105,7 @@ const Home: NextPage = () => {
               <div className="flex-1">
                 <ul className="flex flex-col gap-y-2">
                   <li className="text-center mb-3">
-                    <h3 className="text-xl font-bold">Before Cloudpress</h3>
+                    <h3 className="text-2xl font-bold">Before Cloudpress</h3>
                   </li>
                   <ToDoListItem>Write content</ToDoListItem>
                   <ToDoListItem>Copy content to CMS</ToDoListItem>
@@ -123,7 +120,7 @@ const Home: NextPage = () => {
               <div className="flex-1 mt-8 sm:mt-0">
                 <ul className="flex flex-col gap-y-2 h-full">
                   <li className="text-center mb-3">
-                    <h3 className="text-xl font-bold">With Cloudpress</h3>
+                    <h3 className="text-2xl font-bold">With Cloudpress</h3>
                   </li>
                   <ToDoListItem>Write content</ToDoListItem>
                   <ToDoListItem>Click export button</ToDoListItem>
