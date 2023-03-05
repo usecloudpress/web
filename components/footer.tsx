@@ -44,6 +44,13 @@ export default function Footer() {
                     </a>
                   </Link>
                 </li>
+                <li>
+                  <Link href="/changelog/">
+                    <a className="text-base leading-6 text-gray-300 hover:text-white">
+                      Changelog
+                    </a>
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>

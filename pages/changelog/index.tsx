@@ -1,0 +1,69 @@
+import { getChangelog } from "../../lib/ContentfulApi";
+import { NextSeo } from "next-seo";
+import Layout from "../../components/layouts/Layout";
+import DateFormatter from "../../components/date-formatter";
+import Markdown from "../../components/markdown/Markdown";
+import { generateContent } from "../../components/markdown/helpers";
+
+type Props = {
+  entries: any;
+  preview?: boolean;
+};
+
+function ChangeLogEntry({ entry }: { entry: any }) {
+  const { content } = generateContent(entry.description);
+  return (
+    <section className="md:flex">
+      <h2 className="pl-7 text-sm leading-6 text-slate-500 md:w-1/4 md:pl-0 md:pr-12 md:text-right">
+        <DateFormatter dateString={entry.date} />
+      </h2>
+      <div className="relative pt-2 pl-7 md:w-3/4 md:pt-0 md:pl-12 pb-16">
+        <div className="absolute bottom-0 left-0 w-px bg-slate-200 -top-3 md:top-2.5"></div>
+        <div className="absolute -top-[1.0625rem] -left-1 h-[0.5625rem] w-[0.5625rem] rounded-full border-2 border-slate-300 bg-white md:top-[0.4375rem]"></div>
+        <div className="max-w-none prose-h3:mb-4 prose-h3:text-base prose-h3:leading-6 prose-sm prose prose-slate prose-a:font-semibold prose-a:text-sky-500 hover:prose-a:text-sky-600">
+          <h3>{entry.title}</h3>
+          <Markdown content={content} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default function Index({ entries }: Props) {
+  return (
+    <>
+      <NextSeo
+        title="Cloudpress changelog"
+        description="Stay up to date with all of the latest additions and improvements we've made to Cloudpress"
+      />
+      <Layout>
+        <div className="mx-auto max-w-7xl">
+          <div className="bg-white py-24 px-6 sm:py-32 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Changelog
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Stay up to date with all of the latest additions and
+                improvements we&apos;ve made to Cloudpress.
+              </p>
+            </div>
+          </div>
+          <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-20">
+            {entries &&
+              entries.map((entry: any) => (
+                <ChangeLogEntry key={entry.date} entry={entry} />
+              ))}
+          </div>
+        </div>
+      </Layout>
+    </>
+  );
+}
+
+export async function getStaticProps({ preview = false }) {
+  const entries = (await getChangelog(preview)) ?? [];
+  return {
+    props: { preview, entries: entries },
+  };
+}

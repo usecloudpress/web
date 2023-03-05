@@ -68,6 +68,25 @@ export async function getAllDocumentation(preview: boolean) {
   return extractDocumentationEntries(entries);
 }
 
+export async function getChangelog(preview: boolean) {
+  const entries = await fetchGraphQL(
+    /* GraphQL */
+    `
+      query {
+        changelogCollection {
+          items {
+            title
+            description
+            date
+          }
+        }
+      }
+    `,
+    preview
+  );
+  return extractChangelogEntries(entries);
+}
+
 export async function getDocumentation(slug: string, preview: boolean) {
   const entries = await fetchGraphQL(
     /* GraphQL */
@@ -148,6 +167,10 @@ function extractDocumentation(fetchResponse: any) {
   const collection = extractDocumentationEntries(fetchResponse);
 
   return collection?.[0];
+}
+
+function extractChangelogEntries(fetchResponse: any) {
+  return fetchResponse?.data?.changelogCollection?.items;
 }
 
 function extractDocumentationEntries(fetchResponse: any) {
