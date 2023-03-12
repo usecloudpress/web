@@ -1,16 +1,10 @@
 import { NextSeo } from "next-seo";
 import Layout from "../components/layouts/Layout";
 import clsx from "clsx";
-import { Disclosure, Listbox, RadioGroup } from "@headlessui/react";
+import { Disclosure, RadioGroup } from "@headlessui/react";
 import ChevronDownIcon from "@heroicons/react/24/outline/ChevronDownIcon";
-import { ChevronUpDownIcon } from "@heroicons/react/24/solid";
 import { CheckIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
-
-const toPascalCase = (str: string) =>
-  (str.match(/[a-zA-Z0-9]+/g) || [])
-    .map((w) => `${w.charAt(0).toUpperCase()}${w.slice(1)}`)
-    .join("");
 
 const faqs = [
   {
@@ -21,7 +15,7 @@ const faqs = [
   {
     question: "What are connections?",
     answer:
-      "A connection is a link you establish between Cloudpress and your CMS or Notion. You export documents from/to a connection.",
+      "A connection is a link you establish between Cloudpress and Notion or Cloudpress and a specific type of content on your CMS. You export documents from/to a connection.",
   },
   {
     question:
@@ -29,8 +23,8 @@ const faqs = [
     answer: (
       <>
         Each time you export a document to a CMS connection for the first time,
-        we count it as an export. Re-exporting a previously exported document
-        does not count as an export.
+        we count it as an export. Re-exporting a previously exported document to
+        the same connection does not count as an export.
         <br />
         <br />
         In other words, you can export a document to the same CMS connection
@@ -68,34 +62,78 @@ const faqs = [
 ];
 
 const tiers: {
-  name: "PayAsYouGo" | "Subscription";
+  name: "Solo" | "Pro" | "Agency";
   title: string;
   id: string;
   featured: boolean;
+  price: {
+    monthly: string;
+    annually: string;
+  };
   description: string;
+  features: string[];
+  mostPopular: boolean;
 }[] = [
   {
-    name: "PayAsYouGo",
-    title: "Pay-as-you-go",
-    id: "tier-payasyougo",
+    name: "Solo",
+    title: "Solo",
+    id: "tier-solo",
     featured: false,
+    price: { monthly: "$29", annually: "$290" },
     description:
-      "For solo bloggers with few monthly exports who do not want to make a monthly commitment.",
+      "For solo bloggers with a limited number of exports each month.",
+    features: [
+      "50 exports per month",
+      "1 CMS connection",
+      "Automation features",
+      "1 user",
+    ],
+    mostPopular: false,
   },
   {
-    name: "Subscription",
-    title: "Subscription",
-    id: "tier-subscription",
+    name: "Pro",
+    title: "Pro",
+    id: "tier-pro",
     featured: true,
+    price: { monthly: "$49", annually: "$490" },
     description:
-      "For users with a higher number of exports. Get access to all the Cloudpress features.",
+      "For companies that want to export a lot of documents to multiple CMSs.",
+    features: [
+      "Unlimited exports",
+      "10 CMS connections",
+      "Automation features",
+      "Unlimited users",
+      "User roles",
+    ],
+    mostPopular: true,
+  },
+  {
+    name: "Agency",
+    title: "Agency",
+    id: "tier-agency",
+    featured: false,
+    price: { monthly: "$89", annually: "$890" },
+    description:
+      "For agencies that export to multiple CMSs on behalf of clients.",
+    features: [
+      "Unlimited exports",
+      "Unlimited CMS connections",
+      "Automation features",
+      "Unlimited users",
+      "User roles",
+    ],
+    mostPopular: false,
   },
 ];
 const sections: {
   name: string;
   features: {
     name: string;
-    tiers: { PayAsYouGo: string | boolean; Subscription: string | boolean };
+    tiers: {
+      Solo: string | boolean;
+      Pro: string | boolean;
+      Agency: string | boolean;
+    };
   }[];
 }[] = [
   {
@@ -104,15 +142,17 @@ const sections: {
       {
         name: "Source connections",
         tiers: {
-          PayAsYouGo: "Unlimited",
-          Subscription: "Unlimited",
+          Solo: "Unlimited",
+          Pro: "Unlimited",
+          Agency: "Unlimited",
         },
       },
       {
-        name: "Destination connections",
+        name: "CMS connections",
         tiers: {
-          PayAsYouGo: "Unlimited",
-          Subscription: "Unlimited",
+          Solo: "1",
+          Pro: "10",
+          Agency: "Unlimited",
         },
       },
     ],
@@ -122,15 +162,19 @@ const sections: {
     features: [
       {
         name: "Export Content page",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: {
+          Solo: true,
+          Pro: true,
+          Agency: true,
+        },
       },
       {
         name: "Google Workspace Add-on",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "Cloudpress API",
-        tiers: { PayAsYouGo: false, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
     ],
   },
@@ -139,23 +183,23 @@ const sections: {
     features: [
       {
         name: "Export content with correct formatting",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "Export images",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "Advanced formatting",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "Generates embeds",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "Exports additional field values",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
     ],
   },
@@ -164,31 +208,31 @@ const sections: {
     features: [
       {
         name: "Google Docs",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "Notion",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "WordPress",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "Webflow",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "Contentful",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "Sanity",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "Kontent.ai",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
     ],
   },
@@ -197,15 +241,15 @@ const sections: {
     features: [
       {
         name: "Collections",
-        tiers: { PayAsYouGo: false, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "Cloudpress API",
-        tiers: { PayAsYouGo: false, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
         name: "Make.com integration",
-        tiers: { PayAsYouGo: false, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
     ],
   },
@@ -214,11 +258,15 @@ const sections: {
     features: [
       {
         name: "Users",
-        tiers: { PayAsYouGo: "1", Subscription: "Unlimited" },
+        tiers: {
+          Solo: "1",
+          Pro: "Unlimited",
+          Agency: "Unlimited",
+        },
       },
       {
         name: "Roles",
-        tiers: { PayAsYouGo: false, Subscription: true },
+        tiers: { Solo: false, Pro: true, Agency: true },
       },
     ],
   },
@@ -227,57 +275,120 @@ const sections: {
     features: [
       {
         name: "Email support",
-        tiers: { PayAsYouGo: true, Subscription: true },
+        tiers: { Solo: true, Pro: true, Agency: true },
       },
     ],
   },
 ];
 
-type BillingInterval = "monthly" | "annually";
-
-interface SubscriptionPlan {
-  exports: number;
-  monthly: number;
-  annually: number;
-}
-
-const subscriptionPlans: SubscriptionPlan[] = [
-  {
-    exports: 25,
-    monthly: 19,
-    annually: 190,
-  },
-  {
-    exports: 50,
-    monthly: 29,
-    annually: 290,
-  },
-  {
-    exports: 100,
-    monthly: 49,
-    annually: 490,
-  },
-  {
-    exports: 200,
-    monthly: 95,
-    annually: 950,
-  },
-  {
-    exports: 300,
-    monthly: 145,
-    annually: 1450,
-  },
-  {
-    exports: 400,
-    monthly: 180,
-    annually: 1800,
-  },
-  {
-    exports: 500,
-    monthly: 219,
-    annually: 2190,
-  },
+const frequencies: {
+  value: "monthly" | "annually";
+  label: string;
+  priceSuffix: string;
+}[] = [
+  { value: "monthly", label: "Monthly", priceSuffix: "/month" },
+  { value: "annually", label: "Annually", priceSuffix: "/year" },
 ];
+
+function PricingTable() {
+  const [frequency, setFrequency] = useState(frequencies[0]);
+
+  return (
+    <div className="bg-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mt-16 flex justify-center">
+          <RadioGroup
+            value={frequency}
+            onChange={setFrequency}
+            className="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-slate-200"
+          >
+            <RadioGroup.Label className="sr-only">
+              Payment frequency
+            </RadioGroup.Label>
+            {frequencies.map((option) => (
+              <RadioGroup.Option
+                key={option.value}
+                value={option}
+                className={({ checked }) =>
+                  clsx(
+                    checked ? "bg-blue-600 text-white" : "text-slate-500",
+                    "cursor-pointer rounded-full py-1 px-2.5"
+                  )
+                }
+              >
+                <span>{option.label}</span>
+              </RadioGroup.Option>
+            ))}
+          </RadioGroup>
+        </div>
+        <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          {tiers.map((tier) => (
+            <div
+              key={tier.id}
+              className={clsx(
+                tier.mostPopular
+                  ? "ring-2 ring-blue-600"
+                  : "ring-1 ring-slate-200",
+                "rounded-lg p-8 xl:p-10"
+              )}
+            >
+              <div className="flex items-center justify-between gap-x-4">
+                <h3
+                  id={tier.id}
+                  className={clsx(
+                    tier.mostPopular ? "text-blue-600" : "text-slate-900",
+                    "text-lg font-semibold leading-8"
+                  )}
+                >
+                  {tier.name}
+                </h3>
+                {tier.mostPopular ? (
+                  <p className="rounded-full bg-blue-600/10 py-1 px-2.5 text-xs font-semibold leading-5 text-blue-600">
+                    Most popular
+                  </p>
+                ) : null}
+              </div>
+              <p className="mt-4 text-sm leading-6 text-slate-600">
+                {tier.description}
+              </p>
+              <p className="mt-6 flex items-baseline gap-x-1">
+                <span className="text-4xl font-bold tracking-tight text-slate-900">
+                  {tier.price[frequency.value]}
+                </span>
+                <span className="text-sm font-semibold leading-6 text-slate-600">
+                  {frequency.priceSuffix}
+                </span>
+              </p>
+              <a
+                href="https://app.usecloudpress.com/register"
+                aria-describedby={tier.id}
+                className={clsx(
+                  tier.mostPopular
+                    ? "bg-blue-600 text-white shadow-sm hover:bg-blue-500"
+                    : "text-blue-600 ring-1 ring-inset ring-blue-200 hover:ring-blue-300",
+                  "mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                )}
+              >
+                Start a free trial
+              </a>
+              <ul className="mt-8 space-y-3 text-sm leading-6 text-slate-600 xl:mt-10">
+                {tier.features.map((feature) => (
+                  <li key={feature} className="flex gap-x-3">
+                    <CheckIcon
+                      className="h-6 w-5 flex-none text-blue-600"
+                      aria-hidden="true"
+                    />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function FeatureComparison() {
   return (
@@ -288,7 +399,7 @@ function FeatureComparison() {
             Feature comparison
           </h2>
 
-          <div className="grid grid-cols-3 gap-x-8 border-t border-gray-900/10 before:block">
+          <div className="grid grid-cols-4 gap-x-8 border-t border-slate-900/10 before:block">
             {tiers.map((tier) => (
               <div key={tier.id} aria-hidden="true" className="-mt-px">
                 <div
@@ -299,13 +410,13 @@ function FeatureComparison() {
                 >
                   <p
                     className={clsx(
-                      tier.featured ? "text-blue-600" : "text-gray-900",
+                      tier.featured ? "text-blue-600" : "text-slate-900",
                       "text-sm font-semibold leading-6"
                     )}
                   >
                     {tier.title}
                   </p>
-                  <p className="mt-1 text-sm leading-6 text-gray-600">
+                  <p className="mt-1 text-sm leading-6 text-slate-600">
                     {tier.description}
                   </p>
                 </div>
@@ -316,17 +427,18 @@ function FeatureComparison() {
           <div className="mt-4 space-y-16">
             {sections.map((section) => (
               <div key={section.name}>
-                <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                <h3 className="text-sm font-semibold leading-6 text-slate-900">
                   {section.name}
                 </h3>
                 <div className="relative -mx-8 mt-2">
                   {/* Fake card backgrounds */}
                   <div
-                    className="absolute inset-y-0 inset-x-8 grid grid-cols-3 gap-x-8 before:block"
+                    className="absolute inset-y-0 inset-x-8 grid grid-cols-4 gap-x-8 before:block"
                     aria-hidden="true"
                   >
-                    <div className="h-full w-full rounded-lg bg-gray-50 shadow-sm" />
-                    <div className="h-full w-full rounded-lg bg-gray-50 shadow-sm" />
+                    <div className="h-full w-full rounded-lg bg-slate-50 shadow-sm" />
+                    <div className="h-full w-full rounded-lg bg-slate-50 shadow-sm" />
+                    <div className="h-full w-full rounded-lg bg-slate-50 shadow-sm" />
                   </div>
 
                   <table className="relative w-full border-separate border-spacing-x-8">
@@ -347,11 +459,11 @@ function FeatureComparison() {
                         <tr key={feature.name}>
                           <th
                             scope="row"
-                            className="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-gray-900"
+                            className="w-1/4 py-3 pr-4 text-left text-sm font-normal leading-6 text-slate-900"
                           >
                             {feature.name}
                             {featureIdx !== section.features.length - 1 ? (
-                              <div className="absolute inset-x-8 mt-3 h-px bg-gray-200" />
+                              <div className="absolute inset-x-8 mt-3 h-px bg-slate-200" />
                             ) : null}
                           </th>
                           {tiers.map((tier) => (
@@ -366,7 +478,7 @@ function FeatureComparison() {
                                     className={clsx(
                                       tier.featured
                                         ? "font-semibold text-blue-600"
-                                        : "text-gray-900",
+                                        : "text-slate-900",
                                       "text-sm leading-6"
                                     )}
                                   >
@@ -381,7 +493,7 @@ function FeatureComparison() {
                                       />
                                     ) : (
                                       <XMarkIcon
-                                        className="mx-auto h-5 w-5 text-gray-400"
+                                        className="mx-auto h-5 w-5 text-slate-400"
                                         aria-hidden="true"
                                       />
                                     )}
@@ -403,7 +515,7 @@ function FeatureComparison() {
 
                   {/* Fake card borders */}
                   <div
-                    className="pointer-events-none absolute inset-y-0 inset-x-8 grid grid-cols-3 gap-x-8 before:block"
+                    className="pointer-events-none absolute inset-y-0 inset-x-8 grid grid-cols-4 gap-x-8 before:block"
                     aria-hidden="true"
                   >
                     {tiers.map((tier) => (
@@ -412,7 +524,7 @@ function FeatureComparison() {
                         className={clsx(
                           tier.featured
                             ? "ring-2 ring-blue-600"
-                            : "ring-1 ring-gray-900/10",
+                            : "ring-1 ring-slate-900/10",
                           "rounded-lg"
                         )}
                       />
@@ -431,18 +543,18 @@ function FeatureComparison() {
 function Faqs() {
   return (
     <div className="mx-auto max-w-7xl py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-3xl divide-y-2 divide-gray-200">
-        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+      <div className="mx-auto max-w-3xl divide-y-2 divide-slate-200">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
           Frequently asked questions
         </h2>
-        <dl className="mt-6 space-y-6 divide-y divide-gray-200">
+        <dl className="mt-6 space-y-6 divide-y divide-slate-200">
           {faqs.map((faq) => (
             <Disclosure as="div" key={faq.question} className="pt-6">
               {({ open }) => (
                 <>
                   <dt className="text-lg">
-                    <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-400">
-                      <span className="font-medium text-gray-900">
+                    <Disclosure.Button className="flex w-full items-start justify-between text-left text-slate-400">
+                      <span className="font-medium text-slate-900">
                         {faq.question}
                       </span>
                       <span className="ml-6 flex h-7 items-center">
@@ -457,7 +569,7 @@ function Faqs() {
                     </Disclosure.Button>
                   </dt>
                   <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                    <p className="text-base text-gray-500">{faq.answer}</p>
+                    <p className="text-base text-slate-500">{faq.answer}</p>
                   </Disclosure.Panel>
                 </>
               )}
@@ -470,214 +582,53 @@ function Faqs() {
 }
 
 export default function PricingPage() {
-  const [billingInterval, setBillingInterval] =
-    useState<BillingInterval>("monthly");
-  const [selectedPlan, setSelectedPlan] = useState<SubscriptionPlan>(
-    subscriptionPlans[0]
-  );
-
-  const includedFeatures = [
-    "Export from Google Docs",
-    "Export from Notion",
-    "Connect unlimited CMS accounts",
-    "Collections",
-    "Make.com integration",
-    "API access",
-    "Unlimited users",
-  ];
-
   return (
     <Layout>
       <NextSeo title="Cloudpress pricing plans" />
       <div className="bg-white">
         <div className="max-w-3xl mx-auto pt-24 px-4 sm:px-6 lg:px-8">
           <div className="sm:flex sm:flex-col sm:align-center">
-            <h1 className="text-5xl font-bold text-gray-900 sm:text-center">
+            <h1 className="text-5xl font-bold text-slate-900 sm:text-center">
               Pricing
             </h1>
-            <p className="mt-5 text-xl text-gray-800 sm:text-center">
-              Simple pricing based on the number of documents you export each
-              month.
+            <p className="mt-5 text-xl text-slate-800 sm:text-center">
+              We offer three plans to cater for everyone from solo bloggers to
+              large agencies managing exports of behalf of multiple clients.
             </p>
           </div>
         </div>
 
-        <section className="mt-8 mb-16 bg-white sm:mt-12">
-          <div className="relative">
-            <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="mx-auto max-w-lg border rounded-lg border-slate-200 lg:flex lg:max-w-none">
-                <div className="flex-1 bg-white px-6 py-8 lg:p-12">
-                  <h3 className="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">
-                    Subscription
-                  </h3>
-                  <p className="mt-6 text-base text-gray-500">
-                    Our subscription plans give you access to all the features
-                    of Cloudpress. You can select a pricing plan based on the
-                    number of documents you export each month.
-                  </p>
-                  <div className="mt-8">
-                    <div className="flex items-center">
-                      <h4 className="flex-shrink-0 bg-white pr-4 text-base font-semibold text-gray-900">
-                        What&apos;s included
-                      </h4>
-                      <div className="flex-1 border-t-2 border-gray-200" />
-                    </div>
-                    <ul className="mt-8 space-y-5 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5 lg:space-y-0">
-                      {includedFeatures.map((feature) => (
-                        <li
-                          key={feature}
-                          className="flex items-start lg:col-span-1"
-                        >
-                          <div className="flex-shrink-0">
-                            <CheckIcon
-                              className="h-5 w-5 text-blue-600"
-                              aria-hidden="true"
-                            />
-                          </div>
-                          <p className="ml-3 text-sm text-gray-700">
-                            {feature}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="bg-gray-50 py-8 px-6 text-center lg:flex lg:flex-shrink-0 lg:flex-col lg:justify-center lg:p-12">
-                  <div className="relative">
-                    <RadioGroup
-                      value={billingInterval}
-                      onChange={setBillingInterval}
-                      className="grid grid-cols-2"
-                    >
-                      {["monthly", "annually"].map((interval) => (
-                        <RadioGroup.Option
-                          key={interval}
-                          value={interval}
-                          className={clsx(
-                            "cursor-pointer border border-gray-300 py-[calc(theme(spacing.2)-1px)] px-[calc(theme(spacing.3)-1px)] text-sm text-gray-700 outline-2 outline-offset-2 transition-colors hover:border-gray-400",
-                            interval === "monthly"
-                              ? "rounded-l-lg"
-                              : "-ml-px rounded-r-lg"
-                          )}
-                        >
-                          {toPascalCase(interval)}
-                        </RadioGroup.Option>
-                      ))}
-                    </RadioGroup>
-                    <div
-                      aria-hidden="true"
-                      className={clsx(
-                        "pointer-events-none absolute inset-0 z-10 grid grid-cols-2 overflow-hidden rounded-lg bg-blue-600 transition-all duration-300",
-                        billingInterval === "monthly"
-                          ? "[clip-path:inset(0_50%_0_0)]"
-                          : "[clip-path:inset(0_0_0_calc(50%-1px))]"
-                      )}
-                    >
-                      {["monthly", "annually"].map((interval) => (
-                        <div
-                          key={interval}
-                          className={clsx(
-                            "py-2 text-center text-sm font-semibold text-white [&:not(:focus-visible)]:focus:outline-none",
-                            interval === "annually" && "-ml-px"
-                          )}
-                        >
-                          {toPascalCase(interval)}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="mt-8 flex items-center justify-center text-5xl font-bold tracking-tight text-gray-900">
-                    <span>
-                      $
-                      {billingInterval === "monthly"
-                        ? selectedPlan.monthly
-                        : selectedPlan.annually}
-                    </span>
-                    <span className="ml-3 text-xl font-medium tracking-normal text-gray-500">
-                      USD
-                    </span>
-                  </div>
-                  <div className="mt-8">
-                    <Listbox value={selectedPlan} onChange={setSelectedPlan}>
-                      <div className="relative">
-                        <Listbox.Button className="relative w-full cursor-default border border-slate-300 bg-white py-2 pl-3 pr-10 text-left hover:border-slate-500 hover:shadow-md focus:border-black focus:outline-none focus:ring-1 focus:ring-black">
-                          <span className="block truncate">
-                            {selectedPlan.exports} exports / month
-                          </span>
-                          <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
-                            <ChevronUpDownIcon
-                              className="h-5 w-5 text-gray-400"
-                              aria-hidden="true"
-                            />
-                          </span>
-                        </Listbox.Button>
-                        <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                          {subscriptionPlans.map((item) => (
-                            <Listbox.Option
-                              key={item.exports}
-                              value={item}
-                              className={({ active }) =>
-                                clsx(
-                                  { "bg-slate-100": active },
-                                  "relative cursor-default select-none py-2 pl-3 pr-9 text-slate-900"
-                                )
-                              }
-                            >
-                              <div className="flex flex-col gap-y-1 items-start">
-                                <span className="block truncate font-bold">
-                                  $
-                                  {billingInterval === "monthly"
-                                    ? item.monthly
-                                    : item.annually}
-                                </span>
-                                <span className="block truncate">
-                                  {item.exports} exports / month
-                                </span>
-                              </div>
-                            </Listbox.Option>
-                          ))}
-                        </Listbox.Options>
-                      </div>
-                    </Listbox>
-                  </div>
-                  <div className="mt-6">
-                    <div className="rounded-md shadow">
-                      <a
-                        href="https://app.usecloudpress.com/register"
-                        className="flex items-center justify-center rounded-md border border-transparent text-white bg-brand-600 hover:bg-brand-500  px-5 py-3 text-base font-medium text-white"
-                      >
-                        Start your free trial
-                      </a>
-                    </div>
-                  </div>
-                  <div className="mt-4 text-sm font-medium text-slate-900">
-                    You get <span className="font-bold">5 free exports</span> to
-                    try Cloudpress out!
-                  </div>
-                </div>
-              </div>
-              <div className="mx-auto max-w-lg lg:max-w-7xl mt-4">
-                <div className="flex flex-col gap-6 rounded-lg p-8 border border-slate-200 sm:p-10 lg:flex-row lg:items-center lg:gap-8">
-                  <div className="lg:min-w-0 lg:flex-1">
-                    <h3 className="text-lg font-semibold leading-8 tracking-tight text-slate-900">
-                      Pay-as-you-go bundles
-                    </h3>
-                    <div className="mt-2 text-base leading-7 text-slate-600">
-                      For occasional users, or users with low volume, we also
-                      offer pay-as-you-go bundles that allow you to buy export
-                      credits up-front and use at your own pace. Pricing starts
-                      at{" "}
-                      <span className="font-bold text-slate-900">
-                        $29 (USD)
-                      </span>{" "}
-                      for 20 export credits.
-                    </div>
-                  </div>
-                </div>
+        <PricingTable />
+
+        <div className="mx-auto max-w-lg lg:max-w-7xl mt-4 px-6 lg:px-8">
+          <div className="flex flex-col gap-6 rounded-lg p-8 border border-slate-200 sm:p-10 lg:flex-row lg:items-center lg:gap-8">
+            <div className="lg:min-w-0 lg:flex-1">
+              <h3 className="text-lg font-semibold leading-8 tracking-tight text-slate-900">
+                Pay-as-you-go bundles
+              </h3>
+              <div className="mt-2 text-base leading-7 text-slate-600">
+                For occasional users, or users with low volume, we also offer
+                pay-as-you-go bundles that allow you to buy export credits
+                up-front and use at your own pace. Pay-as-you-go bundles are
+                limited to{" "}
+                <span className="font-bold text-slate-900">
+                  a single user account
+                </span>
+                , allow you to connect{" "}
+                <span className="font-bold text-slate-900">
+                  a single CMS account
+                </span>
+                , and{" "}
+                <span className="font-bold text-slate-900">
+                  excludes all our automation features
+                </span>
+                . Pricing starts at{" "}
+                <span className="font-bold text-slate-900">$45 (USD)</span> for
+                20 export credits.
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
         <FeatureComparison />
 
