@@ -215,6 +215,10 @@ const navigationItems: DocsSection[] = [
             title: "Set additional field values",
             href: "/docs/integrations/wordpress/additional-fields",
           },
+          {
+            title: "Troubleshooting",
+            href: "/docs/integrations/wordpress/troubleshooting",
+          },
         ],
       },
       {
