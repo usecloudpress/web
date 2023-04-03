@@ -73,7 +73,7 @@ export async function getChangelog(preview: boolean) {
     /* GraphQL */
     `
       query {
-        changelogCollection {
+        changelogCollection(order: date_DESC) {
           items {
             title
             description
