@@ -4,12 +4,17 @@ import Markdoc, {
   Tag,
 } from "@markdoc/markdoc";
 import { slugifyWithCounter } from "@sindresorhus/slugify";
+import { Parser } from "htmlparser2";
 
 export function generateContent(markdown?: string): {
   content: RenderableTreeNode;
   tableOfContents: TocItem[];
 } {
-  const ast = Markdoc.parse(markdown ?? "");
+  const tokenizer = new Markdoc.Tokenizer({ html: true });
+  const tokens = tokenizer.tokenize(markdown ?? "");
+  const processed = processTokens(tokens);
+  // const doc = Markdoc.parse(processed);
+  const ast = Markdoc.parse(processed);
   const content = Markdoc.transform(ast, {
     nodes: {
       heading: {
@@ -34,6 +39,19 @@ export function generateContent(markdown?: string): {
       link: {
         ...defaultNodes.link,
         render: "CustomLink",
+      },
+    },
+    tags: {
+      "html-tag": {
+        attributes: {
+          name: { type: String, required: true },
+          attrs: { type: Object },
+        },
+        transform(node, config) {
+          const { name, attrs } = node.attributes;
+          const children = node.transformChildren(config);
+          return new Markdoc.Tag(name, attrs, children);
+        },
       },
     },
   });
@@ -104,4 +122,50 @@ function generateID(
     .filter((child) => typeof child === "string")
     .join(" ");
   return slugify(nodeText);
+}
+
+function processTokens(tokens: any) {
+  const output = [];
+
+  const parser = new Parser({
+    onopentag(name: any, attrs: any) {
+      output.push({
+        type: "tag_open",
+        nesting: 1,
+        meta: {
+          tag: "html-tag",
+          attributes: [
+            { type: "attribute", name: "name", value: name },
+            { type: "attribute", name: "attrs", value: attrs },
+          ],
+        },
+      });
+    },
+
+    ontext(content: any) {
+      if (typeof content === "string" && content.trim().length > 0)
+        output.push({ type: "text", content });
+    },
+
+    onclosetag() {
+      output.push({
+        type: "tag_close",
+        nesting: -1,
+        meta: { tag: "html_close" },
+      });
+    },
+  });
+
+  for (const token of tokens) {
+    if (token.type.startsWith("html")) {
+      parser.write(token.content);
+      continue;
+    }
+
+    if (token.type === "inline") token.children = processTokens(token.children);
+
+    output.push(token);
+  }
+
+  return output;
 }

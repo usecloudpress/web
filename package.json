@@ -17,6 +17,7 @@
     "@sindresorhus/slugify": "^2.1.1",
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
+    "htmlparser2": "^8.0.2",
     "next": "^12.3.1",
     "next-seo": "^5.5.0",
     "react": "^18.2.0",
