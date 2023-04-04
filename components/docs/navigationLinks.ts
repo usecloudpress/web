@@ -107,6 +107,36 @@ const navigationItems: DocsSection[] = [
         ],
       },
       {
+        title: "Collections",
+        items: [
+          {
+            title: "Introduction",
+            href: "/docs/reference/collections/introduction",
+          },
+          {
+            title: "Add a Collection",
+            href: "/docs/reference/collections/add-collection",
+          },
+          {
+            title: "Map Collection fields",
+            href: "/docs/reference/collections/map-fields",
+          },
+          {
+            title: "Specify a filter",
+            href: "/docs/reference/collections/specify-filter",
+          },
+          {
+            title: "Export a Collection",
+            href: "/docs/reference/collections/export",
+          },
+          {
+            title: "Delete a Collection",
+            href: "/docs/reference/collections/delete",
+          },
+        ],
+      },
+
+      {
         title: "Cloudpress account",
         items: [
           {
