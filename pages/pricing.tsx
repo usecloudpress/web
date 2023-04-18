@@ -5,6 +5,7 @@ import { Disclosure, RadioGroup } from "@headlessui/react";
 import ChevronDownIcon from "@heroicons/react/24/outline/ChevronDownIcon";
 import { CheckIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
+import Testimonials from "../components/testimonials";
 
 const faqs = [
   {
@@ -629,6 +630,8 @@ export default function PricingPage() {
             </div>
           </div>
         </div>
+
+        <Testimonials />
 
         <FeatureComparison />
 

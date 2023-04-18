@@ -3,7 +3,6 @@ import Head from "next/head";
 import Layout from "../components/layouts/Layout";
 import compare1 from "../public/images/terracotta-army-google-docs.png";
 import compare2 from "../public/images/terracotta-army-travel-diaries.png";
-import vanessa from "../public/images/testimonials/vanessa-hojda.jpeg";
 import Integrations from "../components/integrations";
 import ImageComparison from "../components/image-comparison";
 import GenericCta from "../components/generic-cta";
@@ -16,6 +15,7 @@ import {
 } from "../components/icons";
 import Link from "next/link";
 import CtaButton from "../components/ctaButton";
+import Testimonials from "../components/testimonials";
 
 function ToDoListItem({ children }: { children: React.ReactNode }) {
   return (
@@ -145,60 +145,7 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section className="bg-white py-12 sm:py-16">
-          <div className="relative">
-            <img
-              className="mx-auto h-12"
-              src="/images/logos/shopify.svg"
-              alt="Shopify"
-            />
-            <blockquote className="mt-10 mx-4 lg:mx-0">
-              <div className="mx-auto max-w-3xl text-center text-lg md:text-xl font-medium leading-loose text-gray-900">
-                <p>
-                  &ldquo;This past week, Cloudpress reduced our Google Docs to
-                  Contentful upload time from 8 hours per week to only 1 hour
-                  with perfect formatting. Cloudpress enabled the launch of a
-                  campaign in less time than we anticipated and allowed us to
-                  launch even more initiatives that we expected to work on later
-                  this year. It&apos;s freeing us from the tactical so we can
-                  focus on the strategic -- ultimately helping us drive more
-                  impact with the limited time we have.&rdquo;
-                </p>
-              </div>
-              <footer className="mt-8">
-                <div className="md:flex md:items-center md:justify-center">
-                  <div className="md:flex-shrink-0">
-                    <img
-                      className="mx-auto h-10 w-10 rounded-full"
-                      src={vanessa.src}
-                      alt=""
-                    />
-                  </div>
-                  <div className="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
-                    <div className="text-base font-medium text-gray-900">
-                      Vanessa Hojda
-                    </div>
-
-                    <svg
-                      className="mx-1 hidden h-5 w-5 text-blue-600 md:block"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M11 0h3L9 20H6l5-20z" />
-                    </svg>
-
-                    <div className="text-base font-medium text-gray-500">
-                      Senior Content Marketing Manager, Shopify
-                    </div>
-                  </div>
-                </div>
-              </footer>
-            </blockquote>
-          </div>
-          <div className="text-center mt-10">
-            <CtaButton />
-          </div>
-        </section>
+        <Testimonials />
 
         <section className="bg-gray-100 py-24 pb-12 sm:py-32 sm:pb-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
