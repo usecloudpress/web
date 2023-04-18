@@ -3,6 +3,7 @@ import Head from "next/head";
 import Layout from "../components/layouts/Layout";
 import compare1 from "../public/images/terracotta-army-google-docs.png";
 import compare2 from "../public/images/terracotta-army-travel-diaries.png";
+import vanessa from "../public/images/testimonials/vanessa-hojda.jpeg";
 import Integrations from "../components/integrations";
 import ImageComparison from "../components/image-comparison";
 import GenericCta from "../components/generic-cta";
@@ -166,13 +167,13 @@ const Home: NextPage = () => {
               </div>
               <footer className="mt-8">
                 <div className="md:flex md:items-center md:justify-center">
-                  {/*<div className="md:flex-shrink-0">
+                  <div className="md:flex-shrink-0">
                     <img
                       className="mx-auto h-10 w-10 rounded-full"
-                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      src={vanessa.src}
                       alt=""
                     />
-                  </div>*/}
+                  </div>
                   <div className="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
                     <div className="text-base font-medium text-gray-900">
                       Vanessa Hojda
