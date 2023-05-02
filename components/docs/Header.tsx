@@ -38,7 +38,12 @@ export default function Header({ section }: Props) {
           <MobileNavigation section={section} />
         </div>
         <div className="flex flex-grow basis-0 items-center">
-          <Link href="/docs" aria-label="Home page" className="hidden">
+          <Link
+            href="/docs"
+            aria-label="Home page"
+            className="hidden"
+            legacyBehavior
+          >
             <div>
               <img
                 className="h-9 md:hidden"
@@ -56,12 +61,10 @@ export default function Header({ section }: Props) {
         <div className="-my-5 mr-6 sm:mr-8 md:mr-0">{/*<Search />*/}</div>
         <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
           <Link href="/" className="group" aria-label="GitHub">
-            <a className="hidden md:block">
-              <span className="flex items-center">
-                Cloudpress website
-                <ArrowTopRightOnSquareIcon className="ml-2 w-5 h-5" />
-              </span>
-            </a>
+            <span className="flex items-center">
+              Cloudpress website
+              <ArrowTopRightOnSquareIcon className="ml-2 w-5 h-5" />
+            </span>
           </Link>
         </div>
       </div>

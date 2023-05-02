@@ -49,7 +49,7 @@ export default function Page() {
               </p>
               <p>
                 <Link href="/blog/write-your-next-blog-post-in-google-docs/">
-                  <a>Read more</a>
+                  Read more
                 </Link>{" "}
                 about why we think Google Docs is a great choice for writing
                 content.
@@ -84,7 +84,7 @@ export default function Page() {
               </p>
               <p>
                 <Link href="/docs/integrations/google-docs/introduction">
-                  <a>Learn more</a>
+                  Learn more
                 </Link>{" "}
                 about our Google Docs Add-on.
               </p>
@@ -114,7 +114,7 @@ export default function Page() {
               </p>
               <p>
                 <Link href="/docs/integrations/sanity/connect-account">
-                  <a>Learn how</a>
+                  Learn how
                 </Link>{" "}
                 to connect your Sanity account.
               </p>

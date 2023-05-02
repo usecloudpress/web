@@ -40,14 +40,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
-              <a>
-                <span className="sr-only"> Cloudpress</span>
-                <img
-                  className="h-8 w-auto sm:h-10"
-                  src="/cloudpress-logo.svg"
-                  alt="Cloudpress Logo"
-                />
-              </a>
+              <span className="sr-only"> Cloudpress</span>
+              <img
+                className="h-8 w-auto sm:h-10"
+                src="/cloudpress-logo.svg"
+                alt="Cloudpress Logo"
+              />
             </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
@@ -57,10 +55,11 @@ const Navbar = () => {
             </Popover.Button>
           </div>
           <Popover.Group as="nav" className="hidden md:flex space-x-6">
-            <Link href="/features">
-              <a className="text-base font-medium text-gray-700 hover:text-gray-700 p-2 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-                Features
-              </a>
+            <Link
+              href="/features"
+              className="text-base font-medium text-gray-700 hover:text-gray-700 p-2 hover:text-gray-900 hover:bg-gray-100 rounded-md"
+            >
+              Features
             </Link>
             <Popover className="relative">
               {({ open }) => (
@@ -94,19 +93,21 @@ const Navbar = () => {
                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div className="relative grid bg-white gap-6 p-6">
                           {integrations.map((item) => (
-                            <Link key={item.name} href={item.href}>
-                              <a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50">
-                                <img
-                                  className="w-6 h-6"
-                                  src={`/images/logos/square/${item.logo}`}
-                                  alt={`${item.name} logo`}
-                                />
-                                <div className="ml-4">
-                                  <p className="text-base font-medium text-gray-900">
-                                    {item.name}
-                                  </p>
-                                </div>
-                              </a>
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
+                            >
+                              <img
+                                className="w-6 h-6"
+                                src={`/images/logos/square/${item.logo}`}
+                                alt={`${item.name} logo`}
+                              />
+                              <div className="ml-4">
+                                <p className="text-base font-medium text-gray-900">
+                                  {item.name}
+                                </p>
+                              </div>
                             </Link>
                           ))}
                         </div>
@@ -117,32 +118,37 @@ const Navbar = () => {
               )}
             </Popover>
 
-            <Link href="/pricing">
-              <a className="text-base font-medium text-gray-700 hover:text-gray-700 p-2 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-                Pricing
-              </a>
+            <Link
+              href="/pricing"
+              className="text-base font-medium text-gray-700 hover:text-gray-700 p-2 hover:text-gray-900 hover:bg-gray-100 rounded-md"
+            >
+              Pricing
             </Link>
-            <Link href="/docs">
-              <a className="text-base font-medium text-gray-700 hover:text-gray-700 p-2 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-                Documentation
-              </a>
+            <Link
+              href="/docs"
+              className="text-base font-medium text-gray-700 hover:text-gray-700 p-2 hover:text-gray-900 hover:bg-gray-100 rounded-md"
+            >
+              Documentation
             </Link>
-            <Link href="/blog">
-              <a className="text-base font-medium text-gray-700 hover:text-gray-700 p-2 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-                Blog
-              </a>
+            <Link
+              href="/blog"
+              className="text-base font-medium text-gray-700 hover:text-gray-700 p-2 hover:text-gray-900 hover:bg-gray-100 rounded-md"
+            >
+              Blog
             </Link>
           </Popover.Group>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Link href="https://app.usecloudpress.com/login">
-              <a className="whitespace-nowrap text-base font-medium text-gray-700 hover:text-gray-700 p-2 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-                Log in
-              </a>
+            <Link
+              href="https://app.usecloudpress.com/login"
+              className="whitespace-nowrap text-base font-medium text-gray-700 hover:text-gray-700 p-2 hover:text-gray-900 hover:bg-gray-100 rounded-md"
+            >
+              Log in
             </Link>
-            <Link href="https://app.usecloudpress.com/register">
-              <a className="ml-6 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-brand-600 hover:bg-brand-700">
-                Start your free trial
-              </a>
+            <Link
+              href="https://app.usecloudpress.com/register"
+              className="ml-6 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-brand-600 hover:bg-brand-700"
+            >
+              Start your free trial
             </Link>
           </div>
         </div>
@@ -180,50 +186,56 @@ const Navbar = () => {
               </div>
               <div className="mt-6">
                 <nav className="grid gap-y-8">
-                  <Link href="/features">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        Features
-                      </span>
-                    </a>
+                  <Link
+                    href="/features"
+                    className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                  >
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      Features
+                    </span>
                   </Link>
-                  <Link href="/pricing">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        Pricing
-                      </span>
-                    </a>
+                  <Link
+                    href="/pricing"
+                    className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                  >
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      Pricing
+                    </span>
                   </Link>
-                  <Link href="/docs">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        Documentation
-                      </span>
-                    </a>
+                  <Link
+                    href="/docs"
+                    className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                  >
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      Documentation
+                    </span>
                   </Link>
-                  <Link href="/blog">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        Blog
-                      </span>
-                    </a>
+                  <Link
+                    href="/blog"
+                    className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                  >
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      Blog
+                    </span>
                   </Link>
                 </nav>
               </div>
             </div>
             <div className="py-6 px-5 space-y-6">
               <div>
-                <Link href="https://app.usecloudpress.com/register">
-                  <a className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-brand-600 hover:bg-brand-700">
-                    Start your free trial
-                  </a>
+                <Link
+                  href="https://app.usecloudpress.com/register"
+                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-brand-600 hover:bg-brand-700"
+                >
+                  Start your free trial
                 </Link>
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
                   Existing customer?{" "}
-                  <Link href="https://app.usecloudpress.com/login">
-                    <a className="text-brand-600 hover:text-brand-500">
-                      Log in
-                    </a>
+                  <Link
+                    href="https://app.usecloudpress.com/login"
+                    className="text-brand-600 hover:text-brand-500"
+                  >
+                    Log in
                   </Link>
                 </p>
               </div>

@@ -101,7 +101,7 @@ export default function Page() {
               </p>
               <p>
                 <Link href="/docs/integrations/sanity/connect-account">
-                  <a>Learn how</a>
+                  Learn how
                 </Link>{" "}
                 to configure your Sanity account.
               </p>

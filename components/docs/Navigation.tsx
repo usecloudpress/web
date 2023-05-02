@@ -24,20 +24,19 @@ function DocumentationSection({
 }) {
   return (
     <li>
-      <Link href={slug}>
-        <a
-          className={clsx(
-            "-m-3 p-3 flex items-center rounded-md hover:bg-gray-50",
-            currentSection?.href === slug
-              ? "text-blue-500"
-              : "text-slate-500 hover:text-slate-700"
-          )}
-        >
-          <div className="flex gap-x-2 items-center">
-            <div className="rounded-md p-1 ring-1 ring-slate-200">{logo}</div>
-            <span className="font-semibold">{title}</span>
-          </div>
-        </a>
+      <Link
+        href={slug}
+        className={clsx(
+          "-m-3 p-3 flex items-center rounded-md hover:bg-gray-50",
+          currentSection?.href === slug
+            ? "text-blue-500"
+            : "text-slate-500 hover:text-slate-700"
+        )}
+      >
+        <div className="flex gap-x-2 items-center">
+          <div className="rounded-md p-1 ring-1 ring-slate-200">{logo}</div>
+          <span className="font-semibold">{title}</span>
+        </div>
       </Link>
     </li>
   );
@@ -83,17 +82,16 @@ export function Navigation({ className, section }: Props) {
             <ul className="mt-2 space-y-2 border-l-2 border-slate-100 lg:mt-4 lg:space-y-3 lg:border-slate-200">
               {section.items.map((link) => (
                 <li key={link.href} className="relative">
-                  <Link href={link.href}>
-                    <a
-                      className={clsx(
-                        "block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full",
-                        link.href === currentPath
-                          ? "font-semibold text-blue-500 before:bg-blue-500"
-                          : "text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block"
-                      )}
-                    >
-                      {link.title}
-                    </a>
+                  <Link
+                    href={link.href}
+                    className={clsx(
+                      "block w-full pl-3.5 before:pointer-events-none before:absolute before:-left-1 before:top-1/2 before:h-1.5 before:w-1.5 before:-translate-y-1/2 before:rounded-full",
+                      link.href === currentPath
+                        ? "font-semibold text-blue-500 before:bg-blue-500"
+                        : "text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block"
+                    )}
+                  >
+                    {link.title}
                   </Link>
                 </li>
               ))}

@@ -2,7 +2,7 @@ import {
   ReactCompareSlider,
   ReactCompareSliderHandle,
 } from "react-compare-slider";
-import { StaticImageData } from "next/image";
+import { StaticImageData } from "next/legacy/image";
 
 interface Props {
   image1: StaticImageData;

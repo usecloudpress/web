@@ -38,24 +38,27 @@ export default function Index({ posts }: Props) {
                       <p className="text-sm text-gray-500">
                         <DateFormatter dateString={post.date} />
                       </p>
-                      <Link href={`/blog/${post.slug}`}>
-                        <a className="mt-2 block">
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="mt-2 block"
+                        legacyBehavior
+                      >
+                        <>
                           <p className="text-xl font-semibold text-gray-900">
                             {post.title}
                           </p>
                           <p className="mt-3 text-base text-gray-500">
                             {post.excerpt}
                           </p>
-                        </a>
+                        </>
                       </Link>
                       <div className="mt-3">
-                        <Link href={`/blog/${post.slug}`}>
-                          <a
-                            className="text-base font-semibold text-brand-600
-                                                       hover:text-brand-500"
-                          >
-                            Read full story
-                          </a>
+                        <Link
+                          href={`/blog/${post.slug}`}
+                          className="text-base font-semibold text-brand-600
+                                                   hover:text-brand-500"
+                        >
+                          Read full story
                         </Link>
                       </div>
                     </div>

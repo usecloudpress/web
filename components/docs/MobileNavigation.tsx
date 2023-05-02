@@ -84,7 +84,12 @@ export function MobileNavigation({ section }: Props) {
             >
               <CloseIcon className="h-6 w-6 stroke-slate-500" />
             </button>
-            <Link href="/docs" className="ml-6" aria-label="Home page">
+            <Link
+              href="/docs"
+              className="ml-6"
+              aria-label="Home page"
+              legacyBehavior
+            >
               <img
                 className="h-9"
                 src="/cloudpress-docs-symbol-logo.svg"

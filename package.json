@@ -18,7 +18,7 @@
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
     "htmlparser2": "^8.0.2",
-    "next": "^12.3.1",
+    "next": "^13.3.4",
     "next-seo": "^5.5.0",
     "react": "^18.2.0",
     "react-compare-slider": "^2.2.0",
@@ -26,6 +26,7 @@
     "react-popper": "^2.3.0"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^13.3.4",
     "@tailwindcss/typography": "^0.5.7",
     "@types/node": "^18.8.5",
     "@types/react": "^18.0.21",
@@ -33,7 +34,7 @@
     "@typescript-eslint/parser": "^5.40.0",
     "autoprefixer": "^10.4.12",
     "eslint": "^8.25.0",
-    "eslint-config-next": "^12.3.1",
+    "eslint-config-next": "^13.3.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
