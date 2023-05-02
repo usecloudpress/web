@@ -130,37 +130,37 @@ const DocumentationLayout = ({
             <Prose>{children}</Prose>
           </article>
           {/*<dl className="mt-12 flex border-t border-slate-200 pt-6">
-            {previousPage && (
-              <div>
-                <dt className="font-display text-sm font-medium text-slate-900">
-                  Previous
-                </dt>
-                <dd className="mt-1">
-                  <Link
-                    href={previousPage.href}
-                    className="text-base font-semibold text-slate-500 hover:text-slate-600"
-                  >
-                    <span aria-hidden="true">&larr;</span> {previousPage.title}
-                  </Link>
-                </dd>
-              </div>
-            )}
-            {nextPage && (
-              <div className="ml-auto text-right">
-                <dt className="font-display text-sm font-medium text-slate-900">
-                  Next
-                </dt>
-                <dd className="mt-1">
-                  <Link
-                    href={nextPage.href}
-                    className="text-base font-semibold text-slate-500 hover:text-slate-600"
-                  >
-                    {nextPage.title} <span aria-hidden="true">&rarr;</span>
-                  </Link>
-                </dd>
-              </div>
-            )}
-          </dl>*/}
+          {previousPage && (
+            <div>
+              <dt className="font-display text-sm font-medium text-slate-900">
+                Previous
+              </dt>
+              <dd className="mt-1">
+                <Link
+                  href={previousPage.href}
+                  className="text-base font-semibold text-slate-500 hover:text-slate-600"
+                >
+                  <span aria-hidden="true">&larr;</span> {previousPage.title}
+                </Link>
+              </dd>
+            </div>
+          )}
+          {nextPage && (
+            <div className="ml-auto text-right">
+              <dt className="font-display text-sm font-medium text-slate-900">
+                Next
+              </dt>
+              <dd className="mt-1">
+                <Link
+                  href={nextPage.href}
+                  className="text-base font-semibold text-slate-500 hover:text-slate-600"
+                >
+                  {nextPage.title} <span aria-hidden="true">&rarr;</span>
+                </Link>
+              </dd>
+            </div>
+          )}
+        </dl>*/}
         </div>
         <div className="hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
           <nav aria-labelledby="on-this-page-title" className="w-56">
@@ -176,32 +176,30 @@ const DocumentationLayout = ({
                   {tableOfContents.map((section) => (
                     <li key={section.id}>
                       <h3>
-                        <Link href={`#${section.id}`}>
-                          <a
-                            className={clsx(
-                              isActive(section)
-                                ? "text-blue-500"
-                                : "font-normal text-slate-500 hover:text-slate-700"
-                            )}
-                          >
-                            {section.title}
-                          </a>
+                        <Link
+                          href={`#${section.id}`}
+                          className={clsx(
+                            isActive(section)
+                              ? "text-blue-500"
+                              : "font-normal text-slate-500 hover:text-slate-700"
+                          )}
+                        >
+                          {section.title}
                         </Link>
                       </h3>
                       {section.children.length > 0 && (
                         <ol className="mt-2 space-y-3 pl-5 text-slate-500">
                           {section.children.map((subSection) => (
                             <li key={subSection.id}>
-                              <Link href={`#${subSection.id}`}>
-                                <a
-                                  className={
-                                    isActive(subSection)
-                                      ? "text-blue-500"
-                                      : "hover:text-slate-600"
-                                  }
-                                >
-                                  {subSection.title}
-                                </a>
+                              <Link
+                                href={`#${subSection.id}`}
+                                className={
+                                  isActive(subSection)
+                                    ? "text-blue-500"
+                                    : "hover:text-slate-600"
+                                }
+                              >
+                                {subSection.title}
                               </Link>
                             </li>
                           ))}

@@ -174,11 +174,15 @@ const Home: NextPage = () => {
                     <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
                       <p className="flex-auto">{step.description}</p>
                       <p className="mt-6">
-                        <Link href={step.href}>
-                          <a className="text-base font-semibold leading-7 text-blue-600">
+                        <Link
+                          href={step.href}
+                          className="text-base font-semibold leading-7 text-blue-600"
+                          legacyBehavior
+                        >
+                          <>
                             Read the documentation{" "}
                             <span aria-hidden="true">→</span>
-                          </a>
+                          </>
                         </Link>
                       </p>
                     </dd>

@@ -6,7 +6,7 @@ module.exports = {
   },
   parserOptions: { ecmaVersion: 8 },
   ignorePatterns: ['node_modules/*', '.next/*', '.out/*', '!.prettierrc.js'],
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', 'next'],
   overrides: [
     {
       files: ['**/*.ts', '**/*.tsx'],
@@ -20,11 +20,9 @@ module.exports = {
       extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:react/recommended',
-        'plugin:react-hooks/recommended',
-        'plugin:jsx-a11y/recommended',
         'prettier',
         'plugin:prettier/recommended',
+        'plugin:@next/next/recommended'
       ],
       rules: {
         'react/prop-types': 'off',

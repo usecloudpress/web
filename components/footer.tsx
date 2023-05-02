@@ -12,17 +12,19 @@ export default function Footer() {
               </h4>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <Link href="/features">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Features
-                    </a>
+                  <Link
+                    href="/features"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Features
                   </Link>
                 </li>
                 <li>
-                  <Link href="/pricing">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Pricing
-                    </a>
+                  <Link
+                    href="/pricing"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Pricing
                   </Link>
                 </li>
               </ul>
@@ -31,24 +33,27 @@ export default function Footer() {
               </h4>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <Link href="/docs/">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Documentation
-                    </a>
+                  <Link
+                    href="/docs/"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Documentation
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog/">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Blog
-                    </a>
+                  <Link
+                    href="/blog/"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="/changelog/">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Changelog
-                    </a>
+                  <Link
+                    href="/changelog/"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Changelog
                   </Link>
                 </li>
               </ul>
@@ -59,17 +64,19 @@ export default function Footer() {
               </h4>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <Link href="/use-cases/content-managers">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Content Managers
-                    </a>
+                  <Link
+                    href="/use-cases/content-managers"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Content Managers
                   </Link>
                 </li>
                 <li>
-                  <Link href="/use-cases/content-writers">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Content Writers
-                    </a>
+                  <Link
+                    href="/use-cases/content-writers"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Content Writers
                   </Link>
                 </li>
               </ul>
@@ -82,38 +89,43 @@ export default function Footer() {
               </h4>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <Link href="/integrations/export-google-docs-to-contentful">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Export Google Docs to Contentful
-                    </a>
+                  <Link
+                    href="/integrations/export-google-docs-to-contentful"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Export Google Docs to Contentful
                   </Link>
                 </li>
                 <li>
-                  <Link href="/integrations/export-google-docs-to-kontent-ai">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Export Google Docs to Kontent.ai
-                    </a>
+                  <Link
+                    href="/integrations/export-google-docs-to-kontent-ai"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Export Google Docs to Kontent.ai
                   </Link>
                 </li>
                 <li>
-                  <Link href="/integrations/export-google-docs-to-sanity">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Export Google Docs to Sanity
-                    </a>
+                  <Link
+                    href="/integrations/export-google-docs-to-sanity"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Export Google Docs to Sanity
                   </Link>
                 </li>
                 <li>
-                  <Link href="/integrations/export-google-docs-to-webflow">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Export Google Docs to Webflow
-                    </a>
+                  <Link
+                    href="/integrations/export-google-docs-to-webflow"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Export Google Docs to Webflow
                   </Link>
                 </li>
                 <li>
-                  <Link href="/integrations/export-google-docs-to-wordpress">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Export Google Docs to WordPress
-                    </a>
+                  <Link
+                    href="/integrations/export-google-docs-to-wordpress"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Export Google Docs to WordPress
                   </Link>
                 </li>
               </ul>
@@ -124,38 +136,43 @@ export default function Footer() {
               </h4>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <Link href="/integrations/export-notion-to-contentful">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Export Notion to Contentful
-                    </a>
+                  <Link
+                    href="/integrations/export-notion-to-contentful"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Export Notion to Contentful
                   </Link>
                 </li>
                 <li>
-                  <Link href="/integrations/export-notion-to-kontent-ai">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Export Notion to Kontent.ai
-                    </a>
+                  <Link
+                    href="/integrations/export-notion-to-kontent-ai"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Export Notion to Kontent.ai
                   </Link>
                 </li>
                 <li>
-                  <Link href="/integrations/export-notion-to-sanity">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Export Notion to Sanity
-                    </a>
+                  <Link
+                    href="/integrations/export-notion-to-sanity"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Export Notion to Sanity
                   </Link>
                 </li>
                 <li>
-                  <Link href="/integrations/export-notion-to-webflow">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Export Notion to Webflow
-                    </a>
+                  <Link
+                    href="/integrations/export-notion-to-webflow"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Export Notion to Webflow
                   </Link>
                 </li>
                 <li>
-                  <Link href="/integrations/export-notion-to-wordpress">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Export Notion to WordPress
-                    </a>
+                  <Link
+                    href="/integrations/export-notion-to-wordpress"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Export Notion to WordPress
                   </Link>
                 </li>
               </ul>
@@ -179,17 +196,19 @@ export default function Footer() {
               </h4>
               <ul className="mt-2 space-y-2">
                 <li>
-                  <Link href="/privacy/">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Privacy
-                    </a>
+                  <Link
+                    href="/privacy/"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Privacy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms/">
-                    <a className="text-base leading-6 text-gray-300 hover:text-white">
-                      Terms
-                    </a>
+                  <Link
+                    href="/terms/"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Terms
                   </Link>
                 </li>
               </ul>

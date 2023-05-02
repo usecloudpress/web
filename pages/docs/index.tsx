@@ -80,34 +80,25 @@ export default function Index() {
           <h2 id="quick-start">Quick starts</h2>
           <p>
             If you&apos;re new around here, the best place to get started would
-            be to refer to the{" "}
-            <Link href="/docs/quick-start">
-              <a>Quick start</a>
-            </Link>{" "}
+            be to refer to the <Link href="/docs/quick-start">Quick start</Link>{" "}
             section. This will walk you through the process of creating an
             account with Cloudpress, linking your Content Management System
             (CMS) account, and exporting your first document.
           </p>
           <h2 id="reference">Reference</h2>
           <p>
-            The{" "}
-            <Link href="/docs/reference">
-              <a>Reference section</a>
-            </Link>{" "}
-            will take you beyond the basics and help you to get the most out of
+            The <Link href="/docs/reference">Reference section</Link> will take
+            you beyond the basics and help you to get the most out of
             Cloudpress. You will learn about all features in Cloudpress that
             allows you to completely automate your content publishing workflow.
           </p>
           <h2 id="integrations">Integrations</h2>
           <p>
-            The{" "}
-            <Link href="/docs/integrations">
-              <a>Integrations section</a>
-            </Link>{" "}
-            is where you can find in-depth information about how to integrate
-            your CMS with Cloudpress. You will also find information on
-            installing and using the Cloudpress Google Docs Add-on, as well as
-            connecting your Notion account.
+            The <Link href="/docs/integrations">Integrations section</Link> is
+            where you can find in-depth information about how to integrate your
+            CMS with Cloudpress. You will also find information on installing
+            and using the Cloudpress Google Docs Add-on, as well as connecting
+            your Notion account.
           </p>
         </Prose>
       </DocumentationLayout>

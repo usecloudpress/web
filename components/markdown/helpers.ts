@@ -13,7 +13,6 @@ export function generateContent(markdown?: string): {
   const tokenizer = new Markdoc.Tokenizer({ html: true });
   const tokens = tokenizer.tokenize(markdown ?? "");
   const processed = processTokens(tokens);
-  // const doc = Markdoc.parse(processed);
   const ast = Markdoc.parse(processed);
   const content = Markdoc.transform(ast, {
     nodes: {

@@ -65,17 +65,17 @@ export default function InlineIntegrationDropdown({
                 ? `/integrations/export-${item.slug}-to-${destination}`
                 : `/integrations/export-${source}-to-${item.slug}`;
             return (
-              <Link href={slug} key={slug}>
-                <a className="hover:bg-gray-100 p-3 flex items-start gap-3">
-                  <img
-                    className="w-8 h-8"
-                    src={`/images/logos/square/${item.logo}`}
-                    alt={`${item.name} logo`}
-                  />
-                  <p className="text-xl font-medium text-gray-900">
-                    {item.name}
-                  </p>
-                </a>
+              <Link
+                href={slug}
+                key={slug}
+                className="hover:bg-gray-100 p-3 flex items-start gap-3"
+              >
+                <img
+                  className="w-8 h-8"
+                  src={`/images/logos/square/${item.logo}`}
+                  alt={`${item.name} logo`}
+                />
+                <p className="text-xl font-medium text-gray-900">{item.name}</p>
               </Link>
             );
           })}

@@ -9,7 +9,7 @@ export default function CustomLink({ children, href = "" }: Props) {
   }
   return href && (href.startsWith("/") || href === "") ? (
     <Link href={href}>
-      <a>{children}</a>
+      <>{children}</>
     </Link>
   ) : (
     <a href={href} target="_blank" rel="noopener noreferrer">
