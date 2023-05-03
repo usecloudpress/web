@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix"
@@ -20,6 +21,7 @@
     "htmlparser2": "^8.0.2",
     "next": "^13.3.4",
     "next-seo": "^5.5.0",
+    "next-sitemap": "^4.0.9",
     "react": "^18.2.0",
     "react-compare-slider": "^2.2.0",
     "react-dom": "^18.2.0",
