@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import { Dialog } from "@headlessui/react";
 import { Navigation } from "./Navigation";
 import { DocsSection } from "./navigationLinks";
+import CloudpressDocsSymbolLogo from "../../public/cloudpress-docs-symbol-logo.svg";
+import Image from "next/image";
 
 function MenuIcon(props: any) {
   return (
@@ -90,10 +92,11 @@ export function MobileNavigation({ section }: Props) {
               aria-label="Home page"
               legacyBehavior
             >
-              <img
+              <Image
                 className="h-9"
-                src="/cloudpress-docs-symbol-logo.svg"
-                alt="Cloudpress Doc Logo"
+                src={CloudpressDocsSymbolLogo}
+                alt="Cloudpress Docs Logo"
+                style={{ objectFit: "contain" }}
               />
             </Link>
           </div>

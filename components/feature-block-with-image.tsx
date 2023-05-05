@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/legacy/image";
+import Image, { StaticImageData } from "next/legacy/image";
 import clsx from "clsx";
 
 type Props = {
@@ -54,10 +54,10 @@ export default function ExportFeatureBlockWithImage({
             })}
           >
             <div className="">
-              <img
-                className="mx-auto drop-shadow-2xl"
-                src={image.src}
+              <Image
+                src={image}
                 alt={imageAlt}
+                className="mx-auto drop-shadow-2xl"
               />
             </div>
           </div>
