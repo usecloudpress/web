@@ -2,7 +2,7 @@ import {
   ReactCompareSlider,
   ReactCompareSliderHandle,
 } from "react-compare-slider";
-import { StaticImageData } from "next/legacy/image";
+import Image, { StaticImageData } from "next/legacy/image";
 
 interface Props {
   image1: StaticImageData;
@@ -21,7 +21,7 @@ export default function ImageComparison({
     <ReactCompareSlider
       itemOne={
         <div>
-          <img src={image1.src} alt={image1Label} />
+          <Image src={image1} alt={image1Label} />
           <span
             style={{
               position: "absolute",
@@ -39,7 +39,7 @@ export default function ImageComparison({
       }
       itemTwo={
         <div>
-          <img src={image2.src} alt={image1Label} />
+          <Image src={image2} alt={image2Label} />
           <span
             style={{
               position: "absolute",

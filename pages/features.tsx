@@ -5,6 +5,7 @@ import compare2 from "../public/images/terracotta-army-travel-diaries.png";
 import how2 from "../public/images/how-2.png";
 import Integrations from "../components/integrations";
 import GenericCta from "../components/generic-cta";
+import Image from "next/image";
 
 export default function Features() {
   return (
@@ -104,12 +105,7 @@ export default function Features() {
                 </ul>
               </div>
               <div className="mt-10 -mx-4 relative lg:mt-0">
-                <img
-                  className="relative mx-auto"
-                  src={how2.src}
-                  alt=""
-                  width="490"
-                />
+                <Image className="relative mx-auto" src={how2} alt="" />
               </div>
             </div>
           </section>

@@ -4,6 +4,9 @@ import Link from "next/link";
 import { DocsSection } from "./navigationLinks";
 import { MobileNavigation } from "./MobileNavigation";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import CloudpressDocsSymbolLogo from "../../public/cloudpress-docs-symbol-logo.svg";
+import CloudpressDocsTextLogo from "../../public/cloudpress-docs-text-logo.svg";
+import Image from "next/image";
 
 interface Props {
   section: DocsSection | undefined;
@@ -44,16 +47,18 @@ export default function Header({ section }: Props) {
             className="hidden"
             legacyBehavior
           >
-            <div>
-              <img
-                className="h-9 md:hidden"
-                src="/cloudpress-docs-symbol-logo.svg"
+            <div className="flex justify-start">
+              <Image
+                className="h-9 md:hidden flex-1"
+                src={CloudpressDocsSymbolLogo}
                 alt="Cloudpress Doc Logo"
+                style={{ objectFit: "contain" }}
               />
-              <img
+              <Image
                 className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100 md:block"
-                src="/cloudpress-docs-text-logo.svg"
+                src={CloudpressDocsTextLogo}
                 alt="Cloudpress Doc Logo"
+                style={{ objectFit: "contain" }}
               />
             </div>
           </Link>

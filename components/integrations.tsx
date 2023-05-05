@@ -1,4 +1,10 @@
 import Link from "next/link";
+import contentfulLogo from "../public/images/logos/contentful.png";
+import kontentLogo from "../public/images/logos/kontent.png";
+import sanityLogo from "../public/images/logos/sanity.png";
+import webflowLogo from "../public/images/logos/webflow.png";
+import wordPressLogo from "../public/images/logos/wordpress.png";
+import Image from "next/image";
 
 export default function Integrations() {
   return (
@@ -29,50 +35,55 @@ export default function Integrations() {
               href="/integrations/export-google-docs-to-wordpress"
               className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100"
             >
-              <img
+              <Image
                 className="max-h-12"
-                src="/images/logos/wordpress.svg"
+                src={wordPressLogo}
                 alt="WordPress logo"
+                style={{ objectFit: "contain" }}
               />
             </Link>
             <Link
               href="/integrations/export-google-docs-to-webflow"
               className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100"
             >
-              <img
+              <Image
                 className="max-h-12"
-                src="/images/logos/webflow.svg"
+                src={webflowLogo}
                 alt="Webflow logo"
+                style={{ objectFit: "contain" }}
               />
             </Link>
             <Link
               href="/integrations/export-google-docs-to-contentful"
               className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100"
             >
-              <img
+              <Image
                 className="max-h-12"
-                src="/images/logos/contentful.svg"
+                src={contentfulLogo}
                 alt="Contentful logo"
+                style={{ objectFit: "contain" }}
               />
             </Link>
             <Link
               href="/integrations/export-google-docs-to-kontent-ai"
               className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100"
             >
-              <img
+              <Image
                 className="max-h-12"
-                src="/images/logos/kontent.svg"
+                src={kontentLogo}
                 alt="Kontent logo"
+                style={{ objectFit: "contain" }}
               />
             </Link>
             <Link
               href="/integrations/export-google-docs-to-sanity"
               className="col-span-1 flex justify-center py-8 px-8 bg-gray-50 hover:bg-brand-100"
             >
-              <img
+              <Image
                 className="max-h-12"
-                src="/images/logos/sanity.svg"
+                src={sanityLogo}
                 alt="Sanity logo"
+                style={{ objectFit: "contain" }}
               />
             </Link>
           </div>

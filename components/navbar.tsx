@@ -4,32 +4,39 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import clsx from "clsx";
+import Image from "next/image";
+import CloudpressLogo from "../public/cloudpress-logo.svg";
+import ContentfulLogo from "../public/images/logos/square/contentful.png";
+import KontentLogo from "../public/images/logos/square/kontent.png";
+import SanityLogo from "../public/images/logos/square/sanity.png";
+import WebflowLogo from "../public/images/logos/square/webflow.png";
+import WordPressLogo from "../public/images/logos/square/wordpress.png";
 
 const integrations = [
   {
-    name: "Contentful",
-    href: "/integrations/export-google-docs-to-contentful/",
-    logo: "contentful.png",
-  },
-  {
-    name: "Kontent.ai",
-    href: "/integrations/export-google-docs-to-kontent-ai/",
-    logo: "kontent.png",
-  },
-  {
-    name: "Sanity",
-    href: "/integrations/export-google-docs-to-sanity/",
-    logo: "sanity.png",
+    name: "WordPress",
+    href: "/integrations/export-google-docs-to-wordpress/",
+    logo: WordPressLogo,
   },
   {
     name: "Webflow",
     href: "/integrations/export-google-docs-to-webflow/",
-    logo: "webflow.png",
+    logo: WebflowLogo,
   },
   {
-    name: "WordPress",
-    href: "/integrations/export-google-docs-to-wordpress/",
-    logo: "wordpress.png",
+    name: "Contentful",
+    href: "/integrations/export-google-docs-to-contentful/",
+    logo: ContentfulLogo,
+  },
+  {
+    name: "Sanity",
+    href: "/integrations/export-google-docs-to-sanity/",
+    logo: SanityLogo,
+  },
+  {
+    name: "Kontent.ai",
+    href: "/integrations/export-google-docs-to-kontent-ai/",
+    logo: KontentLogo,
   },
 ];
 
@@ -41,9 +48,9 @@ const Navbar = () => {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
               <span className="sr-only"> Cloudpress</span>
-              <img
+              <Image
                 className="h-8 w-auto sm:h-10"
-                src="/cloudpress-logo.svg"
+                src={CloudpressLogo}
                 alt="Cloudpress Logo"
               />
             </Link>
@@ -98,9 +105,9 @@ const Navbar = () => {
                               href={item.href}
                               className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                             >
-                              <img
+                              <Image
                                 className="w-6 h-6"
-                                src={`/images/logos/square/${item.logo}`}
+                                src={item.logo}
                                 alt={`${item.name} logo`}
                               />
                               <div className="ml-4">
@@ -171,9 +178,9 @@ const Navbar = () => {
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
                 <div>
-                  <img
+                  <Image
                     className="h-8 w-auto"
-                    src="/cloudpress-logo.svg"
+                    src={CloudpressLogo}
                     alt="Cloudpress Logo"
                   />
                 </div>
