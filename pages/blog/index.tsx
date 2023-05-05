@@ -1,6 +1,6 @@
 import Layout from "../../components/layouts/Layout";
 import Link from "next/link";
-import { getRecentBlogPosts } from "../../lib/ContentfulApi";
+import { getAllBlogPosts } from "../../lib/ContentfulApi";
 import DateFormatter from "../../components/date-formatter";
 import { NextSeo } from "next-seo";
 
@@ -73,7 +73,7 @@ export default function Index({ posts }: Props) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const recentPosts = (await getRecentBlogPosts(preview)) ?? [];
+  const recentPosts = (await getAllBlogPosts(preview)) ?? [];
   return {
     props: { preview, posts: recentPosts },
   };
