@@ -49,7 +49,7 @@ const Navbar = () => {
             <Link href="/">
               <span className="sr-only">Cloudpress</span>
               <Image
-                className="h-8 w-auto"
+                className="h-8 w-auto sm:h-10"
                 src={CloudpressLogo}
                 alt="Cloudpress Logo"
               />
