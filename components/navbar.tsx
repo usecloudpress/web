@@ -5,7 +5,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import clsx from "clsx";
 import Image from "next/image";
-import CloudpressLogo from "../public/cloudpress-logo.svg";
+import CloudpressLogo from "../public/cloudpress-text-logo.svg";
 import ContentfulLogo from "../public/images/logos/square/contentful.png";
 import KontentLogo from "../public/images/logos/square/kontent.png";
 import SanityLogo from "../public/images/logos/square/sanity.png";
@@ -47,9 +47,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
-              <span className="sr-only"> Cloudpress</span>
+              <span className="sr-only">Cloudpress</span>
               <Image
-                className="h-8 w-auto sm:h-10"
+                className="h-8 w-auto"
                 src={CloudpressLogo}
                 alt="Cloudpress Logo"
               />
