@@ -4,6 +4,7 @@ import Layout from "../../components/layouts/Layout";
 import DateFormatter from "../../components/date-formatter";
 import Markdown from "../../components/markdown/Markdown";
 import { generateContent } from "../../components/markdown/helpers";
+import PageHeaderSection from "../../components/page-header-section";
 
 type Props = {
   entries: any;
@@ -37,18 +38,12 @@ export default function Index({ entries }: Props) {
         description="Stay up to date with all of the latest additions and improvements we've made to Cloudpress"
       />
       <Layout>
+        <PageHeaderSection
+          heading="Latest product updates"
+          subHeading="Changelog"
+          supportingText="Stay up to date with all of the latest additions and improvements we've made to Cloudpress."
+        />
         <div className="mx-auto max-w-7xl">
-          <div className="bg-white py-24 px-6 sm:py-32 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Changelog
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Stay up to date with all of the latest additions and
-                improvements we&apos;ve made to Cloudpress.
-              </p>
-            </div>
-          </div>
           <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-20">
             {entries &&
               entries.map((entry: any) => (
