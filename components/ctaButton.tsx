@@ -1,12 +1,14 @@
-import Link from "next/link";
+import { LinkButton } from "./buttons";
+import React from "react";
 
 export default function CtaButton() {
   return (
-    <Link
+    <LinkButton
       href="https://app.usecloudpress.com/register"
-      className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700"
+      variant="primary"
+      size="xl"
     >
       Start your free trial
-    </Link>
+    </LinkButton>
   );
 }
