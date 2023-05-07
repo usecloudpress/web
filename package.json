@@ -16,6 +16,7 @@
     "@popperjs/core": "^2.11.6",
     "@radix-ui/react-tooltip": "^1.0.0",
     "@sindresorhus/slugify": "^2.1.1",
+    "classnames": "^2.3.2",
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
     "htmlparser2": "^8.0.2",

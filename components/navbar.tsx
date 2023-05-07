@@ -11,6 +11,7 @@ import KontentLogo from "../public/images/logos/square/kontent.png";
 import SanityLogo from "../public/images/logos/square/sanity.png";
 import WebflowLogo from "../public/images/logos/square/webflow.png";
 import WordPressLogo from "../public/images/logos/square/wordpress.png";
+import { LinkButton } from "./buttons";
 
 const integrations = [
   {
@@ -145,18 +146,21 @@ const Navbar = () => {
             </Link>
           </Popover.Group>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Link
+            <LinkButton
               href="https://app.usecloudpress.com/login"
-              className="whitespace-nowrap text-base font-medium text-gray-700 hover:text-gray-700 p-2 hover:text-gray-900 hover:bg-gray-100 rounded-md"
+              size="md"
+              variant="default"
             >
               Log in
-            </Link>
-            <Link
+            </LinkButton>
+            <LinkButton
               href="https://app.usecloudpress.com/register"
-              className="ml-6 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-brand-600 hover:bg-brand-700"
+              size="md"
+              variant="primary"
+              className="ml-2"
             >
               Start your free trial
-            </Link>
+            </LinkButton>
           </div>
         </div>
       </div>
