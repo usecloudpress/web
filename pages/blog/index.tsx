@@ -26,11 +26,11 @@ export default function Index({ posts }: Props) {
         <div className="mx-auto max-w-7xl">
           <div className="pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8">
             <div className="divide-y-2 divide-gray-200">
-              <div className="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
+              <div className="mt-6 pt-10 grid gap-x-8 gap-y-16 lg:grid-cols-3">
                 {posts &&
                   posts.map((post: any) => (
                     <div key={post.slug}>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-xs text-gray-500">
                         <DateFormatter dateString={post.date} />
                       </p>
                       <Link
@@ -42,7 +42,7 @@ export default function Index({ posts }: Props) {
                           <p className="text-xl font-semibold text-gray-900">
                             {post.title}
                           </p>
-                          <p className="mt-3 text-base text-gray-500">
+                          <p className="mt-3 text-sm text-gray-600">
                             {post.excerpt}
                           </p>
                         </>
@@ -50,7 +50,7 @@ export default function Index({ posts }: Props) {
                       <div className="mt-3">
                         <Link
                           href={`/blog/${post.slug}`}
-                          className="text-base font-semibold text-brand-600
+                          className="text-sm font-semibold text-brand-600
                                                    hover:text-brand-500"
                         >
                           Read full story
