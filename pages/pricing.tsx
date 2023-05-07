@@ -6,6 +6,7 @@ import ChevronDownIcon from "@heroicons/react/24/outline/ChevronDownIcon";
 import { CheckIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 import Testimonials from "../components/testimonials";
+import PageHeaderSection from "../components/page-header-section";
 
 const faqs = [
   {
@@ -587,17 +588,11 @@ export default function PricingPage() {
     <Layout>
       <NextSeo title="Cloudpress pricing plans" />
       <div className="bg-white">
-        <div className="max-w-3xl mx-auto pt-24 px-4 sm:px-6 lg:px-8">
-          <div className="sm:flex sm:flex-col sm:align-center">
-            <h1 className="text-5xl font-bold text-slate-900 sm:text-center">
-              Pricing
-            </h1>
-            <p className="mt-5 text-xl text-slate-800 sm:text-center">
-              We offer three plans to cater for everyone from solo bloggers to
-              large agencies managing exports of behalf of multiple clients.
-            </p>
-          </div>
-        </div>
+        <PageHeaderSection
+          heading="Pricing plans for teams of all sizes"
+          subHeading="Pricing"
+          supportingText="We offer three plans to cater for everyone from solo bloggers to large agencies managing exports of behalf of multiple clients."
+        />
 
         <PricingTable />
 

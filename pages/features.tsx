@@ -6,22 +6,18 @@ import how2 from "../public/images/how-2.png";
 import Integrations from "../components/integrations";
 import GenericCta from "../components/generic-cta";
 import Image from "next/image";
+import PageHeaderSection from "../components/page-header-section";
 
 export default function Features() {
   return (
     <>
       <Layout>
         {/* Heading */}
-        <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-36 lg:pb-40 lg:px-8">
-          <section className="xl mx-auto lg:max-w-4xl ">
-            <div className="text-center">
-              <h1 className="text-4xl tracking-tight leading-10 font-bold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl space-y-4">
-                <span className="block">Features that will</span>
-                <span className="block">save you time</span>
-              </h1>
-            </div>
-          </section>
-        </div>
+        <PageHeaderSection
+          heading="Overflowing with time-saving features"
+          subHeading="Features"
+          supportingText="Cloudpress will help you export perfectly formatted content faster, giving you more time to do the work that matters"
+        />
 
         {/* Seamless integration */}
         <div className="bg-gray-50 pt-8 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-20 lg:px-8">
