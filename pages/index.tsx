@@ -7,7 +7,7 @@ import Integrations from "../components/integrations";
 import ImageComparison from "../components/image-comparison";
 import GenericCta from "../components/generic-cta";
 import { CheckIcon, CursorArrowRaysIcon } from "@heroicons/react/24/solid";
-import React from "react";
+import React, { useState } from "react";
 import {
   ConnectionIcon,
   ExportIcon,
@@ -16,6 +16,11 @@ import {
 import Link from "next/link";
 import CtaButton from "../components/ctaButton";
 import Testimonials from "../components/testimonials";
+import HeroSection from "../components/hero-section";
+import { Button, LinkButton } from "../components/buttons";
+import { PlayCircleIcon } from "@heroicons/react/24/outline";
+import ModalVideo from "react-modal-video";
+import "node_modules/react-modal-video/scss/modal-video.scss";
 
 function ToDoListItem({ children }: { children: React.ReactNode }) {
   return (
@@ -55,6 +60,8 @@ const gettingStartedSteps = [
   },
 ];
 const Home: NextPage = () => {
+  const [isVideoOpen, setVideoOpen] = useState(false);
+
   return (
     <>
       <Head>
@@ -62,34 +69,47 @@ const Home: NextPage = () => {
         <link rel="preload" href={compare2.src} as="image" />
       </Head>
       <Layout>
-        {/* Hero */}
-        <section className="bg-gradient-to-b from-gray-100 to-white">
-          <div className="overflow-hidden">
-            <div className="pt-6 pb-12 lg:pb-20">
-              <div className="mt-10 mx-auto max-w-screen-xl px-4 sm:px-6 md:mt-16 lg:mt-20">
-                <div className="text-center">
-                  <h1 className="text-5xl font-bold tracking-tight leading-snug text-gray-900 sm:text-6xl xl:text-7xl">
-                    Export content from Google Docs and Notion to your CMS
-                  </h1>
-                  <p className="mt-8 max-w-lg mx-auto text-xl text-gray-800 md:mt-16 md:text-3xl md:max-w-6xl">
-                    Automate the export of perfectly formatted content, so you
-                    have more time for doing work that matters
-                  </p>
+        <HeroSection
+          heading="Export content from Google Docs and Notion to your CMS"
+          supportingText="Automate the export of perfectly formatted content, so you have more time for doing work that matters"
+          heroImage={
+            <>
+              <ImageComparison
+                image1={compare1}
+                image1Label="Google Docs"
+                image2={compare2}
+                image2Label="Website"
+              />
+            </>
+          }
+          heroActionButtons={
+            <>
+              <Button
+                onClick={() => setVideoOpen(true)}
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <PlayCircleIcon className="w-6 h-6" />
+                  Watch a demo
                 </div>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="max-w-screen-lg mx-auto px-4 sm:px-6 pb-5">
-                <ImageComparison
-                  image1={compare1}
-                  image1Label="Google Docs"
-                  image2={compare2}
-                  image2Label="Website"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+              </Button>
+              <LinkButton
+                href="https://app.usecloudpress.com/register"
+                variant="primary"
+                size="xl"
+              >
+                Start your free trial
+              </LinkButton>
+            </>
+          }
+        />
+        <ModalVideo
+          channel="youtube"
+          isOpen={isVideoOpen}
+          videoId="IWtqIA30rbw"
+          onClose={() => setVideoOpen(false)}
+        />
 
         <section className="bg-white pt-12 sm:pt-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
