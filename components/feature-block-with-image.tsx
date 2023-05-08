@@ -9,7 +9,7 @@ type Props = {
   imageAlignment: "left" | "right" | "bottom";
 };
 
-export default function ExportFeatureBlockWithImage({
+export default function FeatureBlockWithImage({
   title,
   content,
   image,
@@ -18,7 +18,7 @@ export default function ExportFeatureBlockWithImage({
 }: Props) {
   return (
     <div className="mx-4">
-      <section className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:max-w-screen-xl">
+      <section className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:max-w-screen-xl">
         <div
           className={clsx(
             {
@@ -35,14 +35,14 @@ export default function ExportFeatureBlockWithImage({
           >
             <div>
               <div
-                className={clsx("mt-6", {
+                className={clsx({
                   "text-center lg:mb-12": imageAlignment === "bottom",
                 })}
               >
-                <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
+                <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900">
                   {title}
                 </h2>
-                <div className="mt-8 prose prose-lg lg:prose-xl max-w-none leading-8">
+                <div className="mt-8 prose prose-base sm:prose-lg max-w-none leading-8 text-gray-600">
                   {content}
                 </div>
               </div>
@@ -53,12 +53,8 @@ export default function ExportFeatureBlockWithImage({
               "lg:col-start-1": imageAlignment === "left",
             })}
           >
-            <div className="">
-              <Image
-                src={image}
-                alt={imageAlt}
-                className="mx-auto drop-shadow-2xl"
-              />
+            <div>
+              <Image src={image} alt={imageAlt} className="mx-auto" />
             </div>
           </div>
         </div>

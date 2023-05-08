@@ -11,15 +11,15 @@ export default function Integrations() {
     <div className="bg-white">
       <div className="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-          <div>
-            <h2 className="text-3xl leading-9 font-bold text-gray-900 sm:text-4xl sm:leading-10">
+          <div className="prose-base sm:prose-lg gap-x-3">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 tracking-tight leading-tight sm:leading-tight">
               Works with your CMS
             </h2>
-            <p className="mt-3 max-w-3xl text-lg leading-7 text-gray-800">
+            <p>
               Cloudpress supports exporting content to a wide range of Content
               Management Systems and publishing platforms.
             </p>
-            <p className="mt-3 max-w-3xl text-lg leading-7 text-gray-800">
+            <p>
               Don&apos;t see yours on the list?{" "}
               <Link
                 href="mailto:hello@usecloudpress.com"
