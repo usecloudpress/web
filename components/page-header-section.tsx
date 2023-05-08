@@ -19,11 +19,11 @@ export default function PageHeaderSection({
                 <p className="self-stretch flex-grow-0 flex-shrink-0 text-sm sm:text-base font-semibold text-left text-blue-600">
                   {subHeading}
                 </p>
-                <p className="self-stretch flex-grow-0 flex-shrink-0 sm:text-5xl text-4xl font-semibold text-left text-slate-900">
+                <p className="sm:text-5xl text-4xl font-semibold text-left text-gray-900 leading-tight sm:leading-tight">
                   {heading}
                 </p>
               </div>
-              <p className="self-stretch flex-grow-0 flex-shrink-0 text-lg sm:text-xl text-left text-slate-700">
+              <p className="text-lg sm:text-xl text-left text-gray-600 leading-normal sm:leading-normal">
                 {supportingText}
               </p>
             </div>

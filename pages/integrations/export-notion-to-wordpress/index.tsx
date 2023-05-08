@@ -10,8 +10,8 @@ import imageGutenberg from "./gutenberg.png";
 import imageAutoEmbed from "./auto-embed.png";
 import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
 import IntegrationCta from "../../../components/integration-cta";
-import ExportFeatureBlockWithImage from "../../../components/feature-block-with-image";
-import FeatureListItem from "../../../components/feature-listitem";
+import FeatureBlockWithImage from "../../../components/feature-block-with-image";
+import FeatureListItem from "../../../components/feature-list-item";
 
 export default function Page() {
   const source = "notion";
@@ -29,7 +29,7 @@ export default function Page() {
 
       <div className="py-16 bg-gradient-to-b from-brand-100 to-white overflow-hidden lg:pb-24">
         {/* Write in Notion */}
-        <ExportFeatureBlockWithImage
+        <FeatureBlockWithImage
           image={imageWrite}
           imageAlignment="left"
           title={
@@ -53,7 +53,7 @@ export default function Page() {
         />
 
         {/* Export with one click */}
-        <ExportFeatureBlockWithImage
+        <FeatureBlockWithImage
           image={imageExport}
           imageAlignment="right"
           title={
@@ -80,7 +80,7 @@ export default function Page() {
         />
 
         {/* Preserve your formatting */}
-        <ExportFeatureBlockWithImage
+        <FeatureBlockWithImage
           image={imageFormatting}
           imageAlignment="left"
           title={
@@ -112,7 +112,7 @@ export default function Page() {
         />
 
         {/* Export your images too */}
-        <ExportFeatureBlockWithImage
+        <FeatureBlockWithImage
           image={imageImages}
           imageAlignment="right"
           title={
@@ -138,7 +138,7 @@ export default function Page() {
         />
 
         {/* Works with Gutenberg */}
-        <ExportFeatureBlockWithImage
+        <FeatureBlockWithImage
           image={imageGutenberg}
           imageAlignment="left"
           title={
@@ -162,7 +162,7 @@ export default function Page() {
         />
 
         {/* Auto-detects embeds */}
-        <ExportFeatureBlockWithImage
+        <FeatureBlockWithImage
           image={imageAutoEmbed}
           imageAlignment="bottom"
           title={

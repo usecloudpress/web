@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
+
 interface HeroSectionProps {
-  heading: string;
+  heading: string | ReactNode;
   supportingText: string;
   heroImage: JSX.Element;
   heroActionButtons?: JSX.Element;
@@ -46,11 +48,11 @@ export default function HeroSection({
                   </svg>
                 </div>
               </div>*/}
-              <p className="self-stretch flex-grow-0 flex-shrink-0 max-w-5xl text-4xl sm:text-6xl font-semibold text-center text-gray-900">
+              <p className="max-w-5xl text-4xl sm:text-6xl font-semibold text-center text-gray-900 leading-tight sm:leading-tight">
                 {heading}
               </p>
             </div>
-            <p className="flex-grow-0 flex-shrink-0 max-w-3xl text-lg sm:text-xl text-center text-gray-600">
+            <p className="max-w-3xl text-lg sm:text-xl text-center text-gray-600 leading-normal sm:leading-normal">
               {supportingText}
             </p>
           </div>

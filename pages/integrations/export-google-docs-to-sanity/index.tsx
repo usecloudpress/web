@@ -11,8 +11,8 @@ import imageSchemaConfiguration from "./schema-configuration.png";
 import imageReexport from "./reexport.png";
 import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
 import IntegrationCta from "../../../components/integration-cta";
-import ExportFeatureBlockWithImage from "../../../components/feature-block-with-image";
-import FeatureListItem from "../../../components/feature-listitem";
+import FeatureBlockWithImage from "../../../components/feature-block-with-image";
+import FeatureListItem from "../../../components/feature-list-item";
 
 export default function Page() {
   const source = "google-docs";
@@ -30,7 +30,7 @@ export default function Page() {
 
       <div className="py-16 bg-gradient-to-b from-brand-100 to-white overflow-hidden lg:pb-24">
         {/* Write in Google Docs */}
-        <ExportFeatureBlockWithImage
+        <FeatureBlockWithImage
           image={imageWrite}
           imageAlignment="left"
           title={
@@ -59,7 +59,7 @@ export default function Page() {
         />
 
         {/* Export with one click */}
-        <ExportFeatureBlockWithImage
+        <FeatureBlockWithImage
           image={imageAddOn}
           imageAlignment="right"
           title={
@@ -93,7 +93,7 @@ export default function Page() {
         />
 
         {/* Works with your Content Model */}
-        <ExportFeatureBlockWithImage
+        <FeatureBlockWithImage
           image={imageSchemaConfiguration}
           imageAlignment="left"
           title={
@@ -123,7 +123,7 @@ export default function Page() {
         />
 
         {/* Preserve your formatting */}
-        <ExportFeatureBlockWithImage
+        <FeatureBlockWithImage
           image={imageFormatting}
           imageAlignment="right"
           title={
@@ -154,7 +154,7 @@ export default function Page() {
         />
 
         {/* Export your images too */}
-        <ExportFeatureBlockWithImage
+        <FeatureBlockWithImage
           image={imageImages}
           imageAlignment="left"
           title={
@@ -178,7 +178,7 @@ export default function Page() {
         />
 
         {/* Re-export content */}
-        <ExportFeatureBlockWithImage
+        <FeatureBlockWithImage
           image={imageReexport}
           imageAlignment="right"
           title={
