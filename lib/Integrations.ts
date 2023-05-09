@@ -55,7 +55,7 @@ export const thisIntegration = (
   kind: IntegrationKind,
   source: string,
   destination: string
-) => {
+): Integration => {
   const comparisonSlug = kind === "source" ? source : destination;
   return allIntegrations.filter((i) => i.slug === comparisonSlug)[0];
 };
@@ -64,7 +64,7 @@ export const otherIntegrations = (
   kind: IntegrationKind,
   source: string,
   destination: string
-) => {
+): Integration[] => {
   const comparisonSlug = kind === "source" ? source : destination;
   return allIntegrations.filter(
     (i) => i.kind === kind && i.slug !== comparisonSlug

@@ -1,7 +1,6 @@
 import InlineIntegrationDropdown from "./inline-integration-dropdown";
 import ImageComparison from "./image-comparison";
-import { Integration, thisIntegration } from "../lib/Integrations";
-import { useEffect, useState } from "react";
+import { thisIntegration } from "../lib/Integrations";
 import { StaticImageData } from "next/legacy/image";
 
 type Props = {
@@ -17,17 +16,12 @@ export default function IntegrationLandingPageHeader({
   imageCompare1,
   imageCompare2,
 }: Props) {
-  const [sourceIntegration, setSourceIntegration] =
-    useState<Integration | null>(null);
-  const [destinationIntegration, setDestinationIntegration] =
-    useState<Integration | null>(null);
-
-  useEffect(() => {
-    setSourceIntegration(thisIntegration("source", source, destination));
-    setDestinationIntegration(
-      thisIntegration("destination", source, destination)
-    );
-  }, [source, destination]);
+  const sourceIntegration = thisIntegration("source", source, destination);
+  const destinationIntegration = thisIntegration(
+    "destination",
+    source,
+    destination
+  );
 
   if (sourceIntegration === null || destinationIntegration === null) {
     return <div />;
@@ -54,8 +48,8 @@ export default function IntegrationLandingPageHeader({
               />
             </h1>
             <h2 className="mt-8 max-w-md mx-auto text-base text-gray-800 sm:text-lg md:text-2xl md:max-w-6xl">
-              Write and collaborate in {sourceIntegration!.name}, then export
-              your content to {destinationIntegration!.name} with the click of a
+              Write and collaborate in {sourceIntegration.name}, then export
+              your content to {destinationIntegration.name} with the click of a
               button. Or even better - put your entire content publishing
               workflow on autopilot with our powerful API and automation tools.
             </h2>
