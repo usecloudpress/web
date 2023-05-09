@@ -25,7 +25,7 @@ export default function Page() {
   return (
     <Layout>
       <NextSeo
-        title="Export content from Google Docs to WordPress"
+        title="Export perfectly formatted content from Google Docs to WordPress"
         description="Automate the export of perfectly formatted content from Google Docs to WordPress, so you have more time for doing work that matters"
       />
       <IntegrationHeroSection

@@ -2,16 +2,19 @@ import Layout from "../../../components/layouts/Layout";
 import { NextSeo } from "next-seo";
 import imageCompare1 from "../../../public/images/terracotta-army-notion.png";
 import imageCompare2 from "../../../public/images/terracotta-army-wordpress.png";
-import imageWrite from "./write.png";
-import imageExport from "./export.png";
-import imageFormatting from "./formatting.png";
-import imageImages from "./images.png";
-import imageGutenberg from "./gutenberg.png";
-import imageAutoEmbed from "./auto-embed.png";
-import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
+import BulkExportImage from "./bulk-export-content-from-notion-to-wordpress.png";
+import ConvertEmbedsImage from "./convert-notion-blocks-to-wordpress-embeds.png";
+import CorrectFormattingImage from "./converts-notion-formatting-to-correct-gutenberg-blocks.png";
+import GutenbergOrClassicImage from "./export-as-gutenberg-or-classic.png";
+import PostOrPageImage from "./export-as-wordpress-post-or-page.png";
+import ExportImagesImage from "./export-images-from-notion-to-wordpress.png";
+import DraftOrPublishedImage from "./export-wordpress-posts-as-draft-or-published.png";
+import MapPropertiesImage from "./map-notion-database-properties-to-wordpress-fields.png";
+import QuicklyNavigateImage from "./quickly-navigate-to-exported-content-in-wordpress.png";
 import IntegrationCta from "../../../components/integration-cta";
+import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureBlockWithImage from "../../../components/feature-block-with-image";
-import FeatureListItem from "../../../components/feature-list-item";
+import FeatureList from "../../../components/feature-list";
 
 export default function Page() {
   const source = "notion";
@@ -19,171 +22,210 @@ export default function Page() {
 
   return (
     <Layout>
-      <NextSeo title="Export content from Notion to WordPress" />
-      <IntegrationLandingPageHeader
+      <NextSeo
+        title="Export perfectly formatted content from Notion to WordPress"
+        description="Automate the export of perfectly formatted content from Notion to WordPress, so you have more time for doing work that matters"
+      />
+      <IntegrationHeroSection
         source={source}
         destination={destination}
         imageCompare1={imageCompare1}
         imageCompare2={imageCompare2}
       />
 
-      <div className="py-16 bg-gradient-to-b from-brand-100 to-white overflow-hidden lg:pb-24">
-        {/* Write in Notion */}
-        <FeatureBlockWithImage
-          image={imageWrite}
-          imageAlignment="left"
-          title={
-            <>
-              Write and collaborate{" "}
-              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                in Notion
-              </span>
-            </>
-          }
-          content={
-            <>
-              <p>
-                We understand that you love the block-based editor and
-                collaboration features of Notion and may prefer it over the
-                content editing experience in WordPress.
-              </p>
-              <p>With Cloudpress, you can keep using the tools you love ❤</p>
-            </>
-          }
-        />
+      <FeatureBlockWithImage
+        title="Preserves formatting"
+        content={
+          <>
+            <p>
+              Cloudpress understands Notion blocks and does a great job of
+              preserving your formatting. It handles all common formatting
+              styles, such as headings, bold, italic, and underlined text,
+              lists, tables, code blocks, and more…
+            </p>
+            <FeatureList
+              features={[
+                "Supports all the common formatting styles",
+                "Supports tables with headers",
+                "Supports advanced formatting like code blocks - ideal for programmers that share source code on their blogs",
+              ]}
+            />
+          </>
+        }
+        image={CorrectFormattingImage}
+        imageAlignment="right"
+      />
 
-        {/* Export with one click */}
-        <FeatureBlockWithImage
-          image={imageExport}
-          imageAlignment="right"
-          title={
-            <>
-              Export with{" "}
-              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                one click
-              </span>
-            </>
-          }
-          content={
-            <>
-              <p>
-                Using the Cloudpress web app, you can export your content with
-                the click of a button.
-              </p>
-              <p>
-                If you make changes to the Notion document you can easily export
-                it again, and Cloudpress will update the content of the
-                previously exported post in WordPress.
-              </p>
-            </>
-          }
-        />
+      <FeatureBlockWithImage
+        title="Exports your images"
+        content={
+          <>
+            <p>
+              Cloudpress uploads all the images in your document to the media
+              library in WordPress and will create the correct image block in
+              your content linking back to the image in the media library.
+            </p>
+            <FeatureList
+              features={[
+                "Preserves your image name for SEO purposes",
+                "Supports alt text for SEO purposes",
+              ]}
+            />
+          </>
+        }
+        image={ExportImagesImage}
+        imageAlignment="left"
+      />
 
-        {/* Preserve your formatting */}
-        <FeatureBlockWithImage
-          image={imageFormatting}
-          imageAlignment="left"
-          title={
-            <>
-              We{" "}
-              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                understand
-              </span>{" "}
-              Notion blocks
-            </>
-          }
-          content={
-            <>
-              <p>
-                Cloudpress understands how to work with Notion blocks and
-                convert them to the correct format for WordPress. It handles all
-                the common block types and formatting used in Notion, such as
-              </p>
-              <ul className="space-y-4 mt-5">
-                <FeatureListItem text="Headings" />
-                <FeatureListItem text="Bold text" />
-                <FeatureListItem text="Italic text" />
-                <FeatureListItem text="Tables" />
-                <FeatureListItem text="Lists" />
-                <FeatureListItem text="And more..." />
-              </ul>
-            </>
-          }
-        />
+      <FeatureBlockWithImage
+        title="Gutenberg or Classic, your choice"
+        content={
+          <>
+            <p>
+              By default, Cloudpress will convert all your content to the
+              correct Gutenberg blocks to ensure your content is rendered
+              correctly. However, if you prefer to use the classic editor, we
+              also support that.
+            </p>
+            <FeatureList
+              features={[
+                "Exports to Gutenberg by default",
+                "Allows switching to classic blocks",
+                "Full formatting support for both Gutenberg and classic blocks",
+              ]}
+            />
+          </>
+        }
+        image={GutenbergOrClassicImage}
+        imageAlignment="right"
+      />
 
-        {/* Export your images too */}
-        <FeatureBlockWithImage
-          image={imageImages}
-          imageAlignment="right"
-          title={
-            <>
-              Export your{" "}
-              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                images
-              </span>{" "}
-              too
-            </>
-          }
-          content={
-            <>
-              <p>
-                Cloudpress does not just work with text - your images are taken
-                along for the ride as well. Images are exported to your
-                WordPress image library and added to your post on WordPress. It
-                will even preserve Alt Text added to the images in your document
-                to improve your SEO.
-              </p>
-            </>
-          }
-        />
+      <FeatureBlockWithImage
+        title="Handles Notion embeds"
+        content={
+          <>
+            <p>
+              Cloudpress handles Notion embeds correctly and ensures that they
+              are converted to the correct Gutenberg embed blocks in WordPress
+            </p>
+            <FeatureList
+              features={[
+                "Supports common embeds like Twitter, TikTok, YouTube, Spotify, and many more",
+                "Uses the WordPress API to create the correct Gutenberg embed blocks",
+              ]}
+            />
+          </>
+        }
+        image={ConvertEmbedsImage}
+        imageAlignment="left"
+      />
 
-        {/* Works with Gutenberg */}
-        <FeatureBlockWithImage
-          image={imageGutenberg}
-          imageAlignment="left"
-          title={
-            <>
-              Works with{" "}
-              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                Gutenberg
-              </span>
-            </>
-          }
-          content={
-            <>
-              <p>
-                When exporting your content to WordPress, Cloudpress will
-                automatically convert the content to the corresponding Gutenberg
-                blocks, ensuring that your content renders correctly in
-                WordPress.
-              </p>
-            </>
-          }
-        />
+      <FeatureBlockWithImage
+        title="Supports posts and pages"
+        content={
+          <>
+            <p>
+              Cloudpress supports exporting content from Notion to both
+              WordPress posts and pages.
+            </p>
+            <FeatureList
+              features={[
+                "Export to posts",
+                "Export to pages",
+                "Full formatting support for both posts and pages",
+              ]}
+            />
+          </>
+        }
+        image={PostOrPageImage}
+        imageAlignment="right"
+      />
 
-        {/* Auto-detects embeds */}
-        <FeatureBlockWithImage
-          image={imageAutoEmbed}
-          imageAlignment="bottom"
-          title={
-            <>
-              Converts your{" "}
-              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                embeds
-              </span>
-            </>
-          }
-          content={
-            <>
-              <p>
-                Cloudpress knows how to handle Notion embeds for content on
-                websites like Twitter, Instagram, TikTok, YouTube, and more, and
-                converts them to the correct embed blocks in WordPress.
-              </p>
-            </>
-          }
-        />
-      </div>
+      <FeatureBlockWithImage
+        title="Bulk export documents"
+        content={
+          <>
+            <p>
+              If you have a lot of documents you want to export or update, you
+              can use our bulk export feature in the Cloudpress web application.
+            </p>
+            <FeatureList
+              features={[
+                "Export multiple documents at once",
+                "Specify how each document should be processed",
+              ]}
+            />
+          </>
+        }
+        image={BulkExportImage}
+        imageAlignment="left"
+      />
+
+      <FeatureBlockWithImage
+        title="Export Notion databases"
+        content={
+          <>
+            <p>
+              Cloudpress allows you to export your entire Notion database to
+              WordPress. It exports the content, and you can map properties from
+              your database to fields in WordPress.
+            </p>
+            <FeatureList
+              features={[
+                "Supports the majority of Notion property types, including selects and images",
+                "Supports taxonomies like categories and tags and can look up the correct item based on the name",
+                "Allows exporting a subset of pages from the database based on filter criteria",
+              ]}
+            />
+          </>
+        }
+        image={MapPropertiesImage}
+        imageAlignment="right"
+      />
+
+      <FeatureBlockWithImage
+        title="Draft or published, your choice"
+        content={
+          <>
+            <p>
+              Cloudpress can export your content as drafts or publish the
+              content. In the case of content that is re-exported, Cloudpress
+              can preserve the current publication status of your content.
+            </p>
+            <FeatureList
+              features={[
+                "Exports new content as drafts or publish it",
+                "Preserve the state of existing content or explicitly set it to draft or published",
+              ]}
+            />
+          </>
+        }
+        image={DraftOrPublishedImage}
+        imageAlignment="left"
+      />
+
+      <FeatureBlockWithImage
+        title="Quickly navigate to exported content"
+        content={
+          <>
+            <p>
+              Once your export has been completed, you can easily navigate to
+              the exported content in your CMS to review and publish the
+              content.
+            </p>
+            <FeatureList
+              features={[
+                "Navigate directly to edit the document in WordPress",
+                "Navigate directly to view the published or preview versions of the content",
+                "Navigate directly to view the export log",
+              ]}
+            />
+          </>
+        }
+        image={QuicklyNavigateImage}
+        imageAlignment="right"
+      />
+
       <IntegrationCta destination={destination} />
     </Layout>
   );
