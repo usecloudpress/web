@@ -54,6 +54,7 @@ export default function Page() {
           </>
         }
         image={OneClickExportImage}
+        imageAlt="One click exports from Google Docs to Webflow"
         imageAlignment="right"
       />
 
@@ -76,6 +77,7 @@ export default function Page() {
           </>
         }
         image={PreserveFormattingImage}
+        imageAlt="Converts Google Docs content to correct format in Webflow"
         imageAlignment="left"
       />
 
@@ -96,6 +98,7 @@ export default function Page() {
           </>
         }
         image={ExportImagesImage}
+        imageAlt="Export images from Google Docs to Webflow"
         imageAlignment="right"
       />
 
@@ -118,6 +121,7 @@ export default function Page() {
           </>
         }
         image={CollectionSchemaImage}
+        imageAlt="Works with your Webflow CMS Collections"
         imageAlignment="left"
       />
 
@@ -139,6 +143,7 @@ export default function Page() {
           </>
         }
         image={AutomaticEmbedsImage}
+        imageAlt="Automatically creates embeds in Webflow from links in Google Docs"
         imageAlignment="right"
       />
 
@@ -162,6 +167,7 @@ export default function Page() {
           </>
         }
         image={AdditionalFieldsImage}
+        imageAlt="Update additional fields from Google Docs to Webflow"
         imageAlignment="left"
       />
 
@@ -182,6 +188,7 @@ export default function Page() {
           </>
         }
         image={BulkExportImage}
+        imageAlt="Bulk export documents from Google Docs to Webflow"
         imageAlignment="right"
       />
 
@@ -203,6 +210,7 @@ export default function Page() {
           </>
         }
         image={AutomateExportsImage}
+        imageAlt="Automate exports from Google Docs to Webflow"
         imageAlignment="left"
       />
 
@@ -224,6 +232,7 @@ export default function Page() {
           </>
         }
         image={DraftOrPublishedImage}
+        imageAlt="Export your content as draft or published in Webflow"
         imageAlignment="right"
       />
 
@@ -245,6 +254,7 @@ export default function Page() {
           </>
         }
         image={NavigateToWebflowImage}
+        imageAlt="Quickly navigate from Google Docs to exported content in Webflow"
         imageAlignment="left"
       />
 

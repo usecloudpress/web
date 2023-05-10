@@ -50,6 +50,7 @@ export default function Page() {
           </>
         }
         image={OneClickExportImage}
+        imageAlt="One click exports from Google Docs to Kontent.ai"
         imageAlignment="right"
       />
 
@@ -71,6 +72,7 @@ export default function Page() {
           </>
         }
         image={ConvertsFormattingImage}
+        imageAlt="Preserves formatting from Google Docs to Kontent.ai"
         imageAlignment="left"
       />
 
@@ -93,6 +95,7 @@ export default function Page() {
           </>
         }
         image={ExportsImagesImage}
+        imageAlt="Exports images from Google Docs to assets in Kontent.ai"
         imageAlignment="right"
       />
 
@@ -112,6 +115,7 @@ export default function Page() {
           </>
         }
         image={ContentModelImage}
+        imageAlt="Works with your Kontent.ai content model"
         imageAlignment="left"
       />
 
@@ -132,6 +136,7 @@ export default function Page() {
           </>
         }
         image={BulkExportImage}
+        imageAlt="Bulk export content from Google Docs to Kontent.ai"
         imageAlignment="right"
       />
 
@@ -153,6 +158,7 @@ export default function Page() {
           </>
         }
         image={AutomateExportsImage}
+        imageAlt="Automate exports from Google Docs to Kontent.ai"
         imageAlignment="left"
       />
 
@@ -174,6 +180,7 @@ export default function Page() {
           </>
         }
         image={DraftOrPublishedImage}
+        imageAlt="Export content as draft or published"
         imageAlignment="right"
       />
 
@@ -195,6 +202,7 @@ export default function Page() {
           </>
         }
         image={QuickNavigationImage}
+        imageAlt="Quickly navigate from Google Docs to exported content in Kontent.ai"
         imageAlignment="left"
       />
 

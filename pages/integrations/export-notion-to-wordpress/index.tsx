@@ -53,6 +53,7 @@ export default function Page() {
           </>
         }
         image={CorrectFormattingImage}
+        imageAlt="Convert formatting from Notion to WordPress Gutenberg blocks"
         imageAlignment="right"
       />
 
@@ -74,6 +75,7 @@ export default function Page() {
           </>
         }
         image={ExportImagesImage}
+        imageAlt="Export images from Notion to WordPress media library"
         imageAlignment="left"
       />
 
@@ -97,6 +99,7 @@ export default function Page() {
           </>
         }
         image={GutenbergOrClassicImage}
+        imageAlt="Export content as Gutenberg or Classic blocks"
         imageAlignment="right"
       />
 
@@ -117,6 +120,7 @@ export default function Page() {
           </>
         }
         image={ConvertEmbedsImage}
+        imageAlt="Convert Notion embeds to correct Gutenberg embed blocks"
         imageAlignment="left"
       />
 
@@ -138,6 +142,7 @@ export default function Page() {
           </>
         }
         image={PostOrPageImage}
+        imageAlt="Exports content in WordPress as posts or pages"
         imageAlignment="right"
       />
 
@@ -158,6 +163,7 @@ export default function Page() {
           </>
         }
         image={BulkExportImage}
+        imageAlt="Bulk export documents from Notion to WordPress"
         imageAlignment="left"
       />
 
@@ -180,6 +186,7 @@ export default function Page() {
           </>
         }
         image={MapPropertiesImage}
+        imageAlt="Export Notion database to WordPress"
         imageAlignment="right"
       />
 
@@ -201,6 +208,7 @@ export default function Page() {
           </>
         }
         image={DraftOrPublishedImage}
+        imageAlt="Export content as draft or published in WordPress"
         imageAlignment="left"
       />
 
@@ -223,6 +231,7 @@ export default function Page() {
           </>
         }
         image={QuicklyNavigateImage}
+        imageAlt="Quickly navigate to exported Notion content in WordPress"
         imageAlignment="right"
       />
 

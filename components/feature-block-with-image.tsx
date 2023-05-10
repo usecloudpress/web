@@ -5,7 +5,7 @@ type Props = {
   title: React.ReactNode;
   content: React.ReactNode;
   image: StaticImageData;
-  imageAlt?: string;
+  imageAlt: string;
   imageAlignment: "left" | "right" | "bottom";
 };
 
@@ -54,7 +54,7 @@ export default function FeatureBlockWithImage({
             })}
           >
             <div>
-              <Image src={image} alt={imageAlt ?? ""} className="mx-auto" />
+              <Image src={image} alt={imageAlt} className="mx-auto" />
             </div>
           </div>
         </div>

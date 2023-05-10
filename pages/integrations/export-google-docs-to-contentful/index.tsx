@@ -53,6 +53,7 @@ export default function Page() {
             </>
           }
           image={OneClickExportImage}
+          imageAlt="One-click export from Google Docs to Contentful"
           imageAlignment="right"
         />
 
@@ -76,6 +77,7 @@ export default function Page() {
             </>
           }
           image={ConvertFormattingImage}
+          imageAlt="Preserves formatting from Google Docs to Contentful"
           imageAlignment="left"
         />
 
@@ -98,6 +100,7 @@ export default function Page() {
             </>
           }
           image={ExportsImagesImage}
+          imageAlt="Export images from Google Docs as assets to Contentful"
           imageAlignment="right"
         />
 
@@ -118,6 +121,7 @@ export default function Page() {
             </>
           }
           image={ContentModelImage}
+          imageAlt="Works with your Contentful content model"
           imageAlignment="left"
         />
 
@@ -140,6 +144,7 @@ export default function Page() {
             </>
           }
           image={RichTextOrLongTextImage}
+          imageAlt="Supports Contentful rich text and long text"
           imageAlignment="right"
         />
 
@@ -162,6 +167,7 @@ export default function Page() {
             </>
           }
           image={EmbedsImage}
+          imageAlt="Automatically creates embeds from links in your document"
           imageAlignment="left"
         />
 
@@ -185,6 +191,7 @@ export default function Page() {
             </>
           }
           image={AdditionalFieldsImage}
+          imageAlt="Updates additional fields in Contentful"
           imageAlignment="right"
         />
 
@@ -206,6 +213,7 @@ export default function Page() {
             </>
           }
           image={BulkExportImage}
+          imageAlt="Bulk export documents from Google Docs to Contentful"
           imageAlignment="left"
         />
 
@@ -227,6 +235,7 @@ export default function Page() {
             </>
           }
           image={AutomateExportsImage}
+          imageAlt="Automate exports from Google Docs to Contentful"
           imageAlignment="right"
         />
 
@@ -248,6 +257,7 @@ export default function Page() {
             </>
           }
           image={DraftOrPublishedImage}
+          imageAlt="Export content as draft or published"
           imageAlignment="left"
         />
 
@@ -269,6 +279,7 @@ export default function Page() {
             </>
           }
           image={QuicklyNavigateImage}
+          imageAlt="Quickly navigate to exported content in Contentful from Google Docs"
           imageAlignment="right"
         />
 

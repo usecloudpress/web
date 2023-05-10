@@ -49,6 +49,7 @@ export default function Page() {
           </>
         }
         image={ConvertsFormattingImage}
+        imageAlt="Converts formatting from Notion to Contentful Rich Text or markdown"
         imageAlignment="right"
       />
 
@@ -71,6 +72,7 @@ export default function Page() {
           </>
         }
         image={ExportsImagesImage}
+        imageAlt="Export images from Notion to Contentful assets"
         imageAlignment="left"
       />
 
@@ -90,6 +92,7 @@ export default function Page() {
           </>
         }
         image={ContentModelImage}
+        imageAlt="Works with your Contentful content model"
         imageAlignment="right"
       />
 
@@ -112,6 +115,7 @@ export default function Page() {
           </>
         }
         image={RichTextOrLongTextImage}
+        imageAlt="Supports Contentful rich text and long text (markdown)"
         imageAlignment="left"
       />
 
@@ -133,6 +137,7 @@ export default function Page() {
           </>
         }
         image={NotionEmbedsImage}
+        imageAlt="Convert Notion embeds to correct embed code in Contentful"
         imageAlignment="right"
       />
 
@@ -155,6 +160,7 @@ export default function Page() {
           </>
         }
         image={NotionDatabaseImage}
+        imageAlt="Export Notion database to Contentful"
         imageAlignment="left"
       />
 
@@ -175,6 +181,7 @@ export default function Page() {
           </>
         }
         image={BulkExportImage}
+        imageAlt="Bulk export documents from Notion to Contentful"
         imageAlignment="right"
       />
 
@@ -196,6 +203,7 @@ export default function Page() {
           </>
         }
         image={DraftOrPublishedImage}
+        imageAlt="Export content in Contentful as draft or published"
         imageAlignment="left"
       />
 
@@ -217,6 +225,7 @@ export default function Page() {
           </>
         }
         image={QuicklyNavigateImage}
+        imageAlt="Quickly navigate to exported Notion content in Contentful"
         imageAlignment="right"
       />
 

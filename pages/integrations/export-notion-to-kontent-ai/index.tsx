@@ -45,6 +45,7 @@ export default function Page() {
           </>
         }
         image={PreservesFormattingImage}
+        imageAlt="Convert formatting from Notion to Kontent.ai"
         imageAlignment="right"
       />
 
@@ -67,6 +68,7 @@ export default function Page() {
           </>
         }
         image={ExportsImagesImage}
+        imageAlt="Export images from Notion to asstes in Kontent.ai"
         imageAlignment="left"
       />
 
@@ -86,6 +88,7 @@ export default function Page() {
           </>
         }
         image={ContentModelImage}
+        imageAlt="Works with your content model in Kontent.ai"
         imageAlignment="right"
       />
 
@@ -106,6 +109,7 @@ export default function Page() {
           </>
         }
         image={BulkExportImage}
+        imageAlt="Bulk export documents from Notion to Kontent.ai"
         imageAlignment="left"
       />
 
@@ -127,6 +131,7 @@ export default function Page() {
           </>
         }
         image={DraftOrPublishedImage}
+        imageAlt="Export your content in Kontent.ai as draft or published"
         imageAlignment="right"
       />
 
@@ -148,6 +153,7 @@ export default function Page() {
           </>
         }
         image={QuicklyNavigateImage}
+        imageAlt="Quickly navigate to exported Notion content in Kontent.ai"
         imageAlignment="left"
       />
 

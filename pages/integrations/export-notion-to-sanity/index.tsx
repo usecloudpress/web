@@ -44,6 +44,7 @@ export default function Page() {
           </>
         }
         image={PreservesFormattingImage}
+        imageAlt="Convert Notion formatting to Sanity.io Portable Text"
         imageAlignment="right"
       />
 
@@ -66,6 +67,7 @@ export default function Page() {
           </>
         }
         image={ExportsImagesImage}
+        imageAlt="Export images from Notion to Sanity.io assets"
         imageAlignment="left"
       />
 
@@ -83,6 +85,7 @@ export default function Page() {
           </>
         }
         image={SanitySchemaImage}
+        imageAlt="Works with your Santiy.ion schema and document types"
         imageAlignment="right"
       />
 
@@ -103,6 +106,7 @@ export default function Page() {
           </>
         }
         image={BulkExportImage}
+        imageAlt="Bulk export documents from Notion to Sanity.io"
         imageAlignment="left"
       />
 

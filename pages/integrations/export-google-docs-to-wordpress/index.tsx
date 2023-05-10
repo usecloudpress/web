@@ -55,6 +55,7 @@ export default function Page() {
           </>
         }
         image={OneClickExportImage}
+        imageAlt="One click exports from Google Docs to WordPress"
         imageAlignment="right"
       />
 
@@ -77,6 +78,7 @@ export default function Page() {
           </>
         }
         image={PreservesFormattingImage}
+        imageAlt="Converts Google Docs formatting to correct WordPress Gutenberg blocks"
         imageAlignment="left"
       />
 
@@ -98,6 +100,7 @@ export default function Page() {
           </>
         }
         image={ExportsImagesImage}
+        imageAlt="Export images from Google Docs to WordPress media library"
         imageAlignment="right"
       />
 
@@ -121,6 +124,7 @@ export default function Page() {
           </>
         }
         image={GutenbergOrClassicImage}
+        imageAlt="Export content as Gutenberg or Classic blocks"
         imageAlignment="left"
       />
 
@@ -142,6 +146,7 @@ export default function Page() {
           </>
         }
         image={EmbedsImage}
+        imageAlt="Automatically create embed blocks from links in Google Docs"
         imageAlignment="right"
       />
 
@@ -163,6 +168,7 @@ export default function Page() {
           </>
         }
         image={PostOrPageImage}
+        imageAlt="Export content as WordPress posts or pages"
         imageAlignment="left"
       />
 
@@ -185,6 +191,7 @@ export default function Page() {
           </>
         }
         image={SetsAdditionalFieldsImage}
+        imageAlt="Update additonal fields in WordPress"
         imageAlignment="right"
       />
 
@@ -205,6 +212,7 @@ export default function Page() {
           </>
         }
         image={BulkExportsImage}
+        imageAlt="Bulk export documents from Google Docs to WordPress"
         imageAlignment="left"
       />
 
@@ -226,6 +234,7 @@ export default function Page() {
           </>
         }
         image={AutomateExportsImage}
+        imageAlt="Automate exports from Google Docs to WordPress"
         imageAlignment="right"
       />
 
@@ -247,6 +256,7 @@ export default function Page() {
           </>
         }
         image={DraftOrPublishedImage}
+        imageAlt="Export content in WordPress as drafts or published content"
         imageAlignment="left"
       />
 
@@ -269,6 +279,7 @@ export default function Page() {
           </>
         }
         image={QuicklyNavigateImage}
+        imageAlt="Quickly navigate from Google Docs to exported content in WordPress"
         imageAlignment="right"
       />
 

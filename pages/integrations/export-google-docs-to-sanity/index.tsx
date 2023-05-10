@@ -46,6 +46,7 @@ export default function Page() {
           </>
         }
         image={OneClickExportImage}
+        imageAlt="One click exports from Google Docs to Sanity.io"
         imageAlignment="right"
       />
 
@@ -68,6 +69,7 @@ export default function Page() {
           </>
         }
         image={PreservesFormattingImage}
+        imageAlt="Converts Google Docs formatting to Sanity.io Portable Text"
         imageAlignment="left"
       />
 
@@ -90,6 +92,7 @@ export default function Page() {
           </>
         }
         image={ExportsImagesImage}
+        imageAlt="Exports images from Google Docs as assets in Sanity.io"
         imageAlignment="right"
       />
 
@@ -107,6 +110,7 @@ export default function Page() {
           </>
         }
         image={SanitySchemaImage}
+        imageAlt="Works with your Sanity.io schema and document types"
         imageAlignment="left"
       />
 
@@ -127,6 +131,7 @@ export default function Page() {
           </>
         }
         image={AdditionalFieldsImage}
+        imageAlt="Update additional fields from Google Docs to Sanity.io"
         imageAlignment="right"
       />
 
@@ -147,6 +152,7 @@ export default function Page() {
           </>
         }
         image={BulkExportImage}
+        imageAlt="Bulk export content from Google Docs to Sanity"
         imageAlignment="left"
       />
 
@@ -169,6 +175,7 @@ export default function Page() {
           </>
         }
         image={AutomateExportsImage}
+        imageAlt="Automate exports from Google Docs to Sanity.io"
         imageAlignment="right"
       />
 

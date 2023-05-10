@@ -51,6 +51,7 @@ export default function Page() {
           </>
         }
         image={PreserveFormattingImage}
+        imageAlt="Converts formatting from Notion to Webflow"
         imageAlignment="right"
       />
 
@@ -71,6 +72,7 @@ export default function Page() {
           </>
         }
         image={ExportImagesImage}
+        imageAlt="Export images from Notion to Webflow"
         imageAlignment="left"
       />
 
@@ -93,6 +95,7 @@ export default function Page() {
           </>
         }
         image={CollectionSchemaImage}
+        imageAlt="Works with your Webflow CMS Collection"
         imageAlignment="right"
       />
 
@@ -113,6 +116,7 @@ export default function Page() {
           </>
         }
         image={EmbedsImage}
+        imageAlt="Converts Notion embeds to correct embed code in Webflow"
         imageAlignment="left"
       />
 
@@ -135,6 +139,7 @@ export default function Page() {
           </>
         }
         image={MapPropertiesImage}
+        imageAlt="Export Notion database to Webflow"
         imageAlignment="right"
       />
 
@@ -155,6 +160,7 @@ export default function Page() {
           </>
         }
         image={BulkExportImage}
+        imageAlt="Bulk export documents from Notion to Webflow"
         imageAlignment="left"
       />
 
@@ -176,6 +182,7 @@ export default function Page() {
           </>
         }
         image={DraftOrPublishedImage}
+        imageAlt="Export content in Webflow as draft or published"
         imageAlignment="right"
       />
 
@@ -197,6 +204,7 @@ export default function Page() {
           </>
         }
         image={QuicklyNavigateImage}
+        imageAlt="Quickly navigate to exported Notion documents in Webflow"
         imageAlignment="left"
       />
 

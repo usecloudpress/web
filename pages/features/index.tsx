@@ -52,6 +52,7 @@ export default function Page() {
             </>
           }
           image={ImageOneClickExport}
+          imageAlt="One click exports from Google Docs to your CMS"
           imageAlignment="right"
         />
 
@@ -76,6 +77,7 @@ export default function Page() {
             </>
           }
           image={ImagePreservesFormatting}
+          imageAlt="Preserves the formatting of your content"
           imageAlignment="left"
         />
 
@@ -98,6 +100,7 @@ export default function Page() {
             </>
           }
           image={ImageExportsImages}
+          imageAlt="Exports the images in your document to your CMS"
           imageAlignment="right"
         />
 
@@ -120,6 +123,7 @@ export default function Page() {
             </>
           }
           image={ImageAutoEmbeds}
+          imageAlt="Automatically creates embeds from links in your documents"
           imageAlignment="left"
         />
 
@@ -145,6 +149,7 @@ export default function Page() {
             </>
           }
           image={ImageSetsAdditionalFields}
+          imageAlt="Updates additional fields in your CMS"
           imageAlignment="right"
         />
 
@@ -168,6 +173,7 @@ export default function Page() {
             </>
           }
           image={ImageBulkExport}
+          imageAlt="Bulk export documents to your CMS"
           imageAlignment="left"
         />
 
@@ -190,6 +196,7 @@ export default function Page() {
             </>
           }
           image={ImageAutomateExports}
+          imageAlt="Automate export of content from Google Docs to your CMS"
           imageAlignment="right"
         />
 
@@ -212,6 +219,7 @@ export default function Page() {
             </>
           }
           image={ImageExportDraftOrPublished}
+          imageAlt="Export your content as draft or published"
           imageAlignment="left"
         />
 
@@ -234,6 +242,7 @@ export default function Page() {
             </>
           }
           image={ImageQuicklyNavigate}
+          imageAlt="Quickly navigate to the exported content in your CMS"
           imageAlignment="right"
         />
 
