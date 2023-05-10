@@ -2,16 +2,16 @@ import Layout from "../../../components/layouts/Layout";
 import { NextSeo } from "next-seo";
 import imageCompare1 from "../../../public/images/terracotta-army-notion.png";
 import imageCompare2 from "../../../public/images/terracotta-army-kontent-ai.png";
-import imageWrite from "./write.png";
-import imageExport from "./export.png";
-import imageModelConfiguration from "./model-configuration.png";
-import imageFormatting from "./formatting.png";
-import imageImages from "./images.png";
-import IntegrationLandingPageHeader from "../../../components/integration-landing-page-header";
+import BulkExportImage from "./bulk-export.png";
+import ContentModelImage from "./content-model.png";
+import PreservesFormattingImage from "./converts-google-docs-formatting-to-contentful.png";
+import DraftOrPublishedImage from "./draft-or-published.png";
+import ExportsImagesImage from "./exports-images.png";
+import QuicklyNavigateImage from "./quickly-navigate.png";
 import IntegrationCta from "../../../components/integration-cta";
+import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureBlockWithImage from "../../../components/feature-block-with-image";
-import FeatureListItem from "../../../components/feature-list-item";
-import Link from "next/link";
+import FeatureList from "../../../components/feature-list";
 
 export default function Page() {
   const source = "notion";
@@ -20,152 +20,137 @@ export default function Page() {
   return (
     <Layout>
       <NextSeo title="Export content from Notion to Kontent.ai" />
-      <IntegrationLandingPageHeader
+      <IntegrationHeroSection
         source={source}
         destination={destination}
         imageCompare1={imageCompare1}
         imageCompare2={imageCompare2}
       />
 
-      <div className="py-16 bg-gradient-to-b from-brand-100 to-white overflow-hidden lg:pb-24">
-        {/* Write in Notion */}
-        <FeatureBlockWithImage
-          image={imageWrite}
-          imageAlignment="left"
-          title={
-            <>
-              Write and collaborate{" "}
-              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                in Notion
-              </span>
-            </>
-          }
-          content={
-            <>
-              <p>
-                We understand that you love the block-based editor and
-                collaboration features of Notion and may prefer it over the
-                content editing experience in Kontent.ai.
-              </p>
-              <p>With Cloudpress, you can keep using the tools you love ❤</p>
-            </>
-          }
-        />
+      <FeatureBlockWithImage
+        title="Preserves your formatting"
+        content={
+          <>
+            <p>
+              Cloudpress does a great job of preserving your formatting and
+              handles all common formatting styles, such as headings, bold,
+              italic, and underlined text, lists, tables, code blocks, and more…
+            </p>
+            <FeatureList
+              features={[
+                "Supports all the common formatting styles",
+                "Supports tables with headers and text formatting",
+              ]}
+            />
+          </>
+        }
+        image={PreservesFormattingImage}
+        imageAlignment="right"
+      />
 
-        {/* Export with one click */}
-        <FeatureBlockWithImage
-          image={imageExport}
-          imageAlignment="right"
-          title={
-            <>
-              Export with{" "}
-              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                one click
-              </span>
-            </>
-          }
-          content={
-            <>
-              <p>
-                Using the Cloudpress web app, you can export your content with
-                the click of a button.
-              </p>
-              <p>
-                If you make changes to the Notion document you can easily export
-                it again, and Cloudpress will update the content of the
-                previously exported item in Kontent.ai.
-              </p>
-            </>
-          }
-        />
+      <FeatureBlockWithImage
+        title="Exports your images"
+        content={
+          <>
+            <p>
+              Cloudpress uploads all the images in your document as assets to
+              Kontent.ai and will link those assets correctly in the exported
+              content.
+            </p>
+            <FeatureList
+              features={[
+                "Uploads images as assets in Kontent.ai",
+                "Preserves your image name for SEO purposes",
+                "Supports alt text for SEO purposes",
+              ]}
+            />
+          </>
+        }
+        image={ExportsImagesImage}
+        imageAlignment="left"
+      />
 
-        {/* Works with your Schema */}
-        <FeatureBlockWithImage
-          image={imageModelConfiguration}
-          imageAlignment="left"
-          title={
-            <>
-              Works with{" "}
-              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                your content model
-              </span>
-            </>
-          }
-          content={
-            <>
-              <p>
-                Cloudpress works with your Content Model. Simply connect your
-                Kontent.ai account, tell Cloudpress which elements to use for
-                the title and content of the exported document, and we’ll take
-                care of the rest.
-              </p>
-              <p>
-                <Link href="/docs/integrations/kontent/connect-account">
-                  Learn how
-                </Link>{" "}
-                to configure your Kontent.ai account.
-              </p>
-            </>
-          }
-        />
+      <FeatureBlockWithImage
+        title="Works with your content model"
+        content={
+          <>
+            <p>
+              Cloudpress works with the content models you create in Kontent.ai.
+            </p>
+            <FeatureList
+              features={[
+                "Works with your custom content model",
+                "Allows you to map content to any rich text field",
+              ]}
+            />
+          </>
+        }
+        image={ContentModelImage}
+        imageAlignment="right"
+      />
 
-        {/* Preserve your formatting */}
-        <FeatureBlockWithImage
-          image={imageFormatting}
-          imageAlignment="right"
-          title={
-            <>
-              We{" "}
-              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                understand
-              </span>{" "}
-              Notion blocks
-            </>
-          }
-          content={
-            <>
-              <p>
-                Cloudpress understands how to work with Notion blocks and
-                convert them to the correct format for Kontent.ai. It handles
-                all the common block types and formatting used in Notion, such
-                as
-              </p>
-              <ul className="space-y-4 mt-5">
-                <FeatureListItem text="Headings" />
-                <FeatureListItem text="Bold text" />
-                <FeatureListItem text="Italic text" />
-                <FeatureListItem text="Tables" />
-                <FeatureListItem text="Lists" />
-                <FeatureListItem text="And more..." />
-              </ul>
-            </>
-          }
-        />
+      <FeatureBlockWithImage
+        title="Bulk export documents"
+        content={
+          <>
+            <p>
+              If you have a lot of documents you want to export or update, you
+              can use our bulk export feature in the Cloudpress web application.
+            </p>
+            <FeatureList
+              features={[
+                "Export multiple documents at once",
+                "Specify how each document should be processed",
+              ]}
+            />
+          </>
+        }
+        image={BulkExportImage}
+        imageAlignment="left"
+      />
 
-        {/* Export your images too */}
-        <FeatureBlockWithImage
-          image={imageImages}
-          imageAlignment="left"
-          title={
-            <>
-              Export your{" "}
-              <span className="underline underline-offset-2 decoration-brand-500 decoration-4">
-                images
-              </span>{" "}
-              too
-            </>
-          }
-          content={
-            <>
-              <p>
-                Cloudpress does not just work with text - your images are taken
-                along for the ride as well. Images are exported as Assets to
-                Kontent.ai and linked correctly in the exported content.
-              </p>
-            </>
-          }
-        />
-      </div>
+      <FeatureBlockWithImage
+        title="Draft or published, your choice"
+        content={
+          <>
+            <p>
+              Cloudpress can export your content as drafts or publish the
+              content. In the case of content that is re-exported, Cloudpress
+              can preserve the current publication status of your content.
+            </p>
+            <FeatureList
+              features={[
+                "Exports new content as drafts or publish it",
+                "Preserve the state of existing content or explicitly set it to draft or published",
+              ]}
+            />
+          </>
+        }
+        image={DraftOrPublishedImage}
+        imageAlignment="right"
+      />
+
+      <FeatureBlockWithImage
+        title="Quickly navigate to exported content"
+        content={
+          <>
+            <p>
+              Once your export has been completed, you can easily navigate to
+              the exported content in Kontent.ai to review and publish the
+              content.
+            </p>
+            <FeatureList
+              features={[
+                "Navigate directly to the exported content in Kontent.ai",
+                "Navigate directly to Cloudpress to review the export logs",
+              ]}
+            />
+          </>
+        }
+        image={QuicklyNavigateImage}
+        imageAlignment="left"
+      />
+
       <IntegrationCta destination={destination} />
     </Layout>
   );
