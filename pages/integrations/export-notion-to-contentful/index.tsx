@@ -22,7 +22,10 @@ export default function Page() {
 
   return (
     <Layout>
-      <NextSeo title="Export content from Notion to Contentful" />
+      <NextSeo
+        title="Export perfectly formatted content from Notion to Contentful"
+        description="Automate the export of perfectly formatted content from Notion to Contentful, so you have more time for doing work that matters"
+      />
       <IntegrationHeroSection
         source={source}
         destination={destination}

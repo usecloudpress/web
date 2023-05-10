@@ -21,7 +21,10 @@ export default function Page() {
 
   return (
     <Layout>
-      <NextSeo title="Export from Google Docs to Kontent.ai" />
+      <NextSeo
+        title="Export perfectly formatted content from Google Docs to Kontent.ai"
+        description="Automate the export of perfectly formatted content from Google Docs to Kontent.ai, so you have more time for doing work that matters"
+      />
 
       <IntegrationHeroSection
         source={source}

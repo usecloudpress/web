@@ -17,7 +17,10 @@ export default function Page() {
 
   return (
     <Layout>
-      <NextSeo title="Export content from Notion to Sanity" />
+      <NextSeo
+        title="Export perfectly formatted content from Notion to Sanity"
+        description="Automate the export of perfectly formatted content from Notion to Sanity, so you have more time for doing work that matters"
+      />
       <IntegrationHeroSection
         source={source}
         destination={destination}

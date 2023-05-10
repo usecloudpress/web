@@ -24,7 +24,10 @@ export default function Page() {
 
   return (
     <>
-      <NextSeo title="Export content from Google Docs to Contentful" />
+      <NextSeo
+        title="Export perfectly formatted content from Google Docs to Contentful"
+        description="Automate the export of perfectly formatted content from Google Docs to Contentful, so you have more time for doing work that matters"
+      />
       <Layout>
         <IntegrationHeroSection
           source={source}

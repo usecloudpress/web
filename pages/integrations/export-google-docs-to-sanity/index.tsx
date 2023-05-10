@@ -20,7 +20,10 @@ export default function Page() {
 
   return (
     <Layout>
-      <NextSeo title="Export from Google Docs to Sanity" />
+      <NextSeo
+        title="Export perfectly formatted content from Google Docs to Sanity"
+        description="Automate the export of perfectly formatted content from Google Docs to Sanity, so you have more time for doing work that matters"
+      />
       <IntegrationHeroSection
         source={source}
         destination={destination}
