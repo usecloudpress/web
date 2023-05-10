@@ -21,7 +21,7 @@ export default function ImageComparison({
     <ReactCompareSlider
       itemOne={
         <div>
-          <Image src={image1} alt={image1Label} />
+          <Image src={image1} alt={image1Label} priority={true} />
           <span
             style={{
               position: "absolute",
@@ -39,7 +39,7 @@ export default function ImageComparison({
       }
       itemTwo={
         <div>
-          <Image src={image2} alt={image2Label} />
+          <Image src={image2} alt={image2Label} priority={true} />
           <span
             style={{
               position: "absolute",
