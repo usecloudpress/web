@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/legacy/image";
+import Image, { StaticImageData } from "next/image";
 import clsx from "clsx";
 
 type Props = {
@@ -54,7 +54,7 @@ export default function FeatureBlockWithImage({
             })}
           >
             <div>
-              <Image src={image} alt={imageAlt} className="mx-auto" />
+              <Image src={image} alt={imageAlt ?? ""} className="mx-auto" />
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import HeroSection from "./hero-section";
-import { StaticImageData } from "next/legacy/image";
+import { StaticImageData } from "next/image";
 import { thisIntegration } from "../lib/Integrations";
 import ImageComparison from "./image-comparison";
 import React from "react";
