@@ -41,6 +41,11 @@ const faqs = [
       "The exports you receive when you purchase a pay-as-you-go bundle never expire. Exports received as part of a subscription expire at the end of each calendar month and do not carry over to the next calendar month.",
   },
   {
+    question: "What are Google Docs conversions?",
+    answer:
+      "Allows you to convert a Google Doc to HTML or markdown via our API or Zapier and Make.com integrations. This is useful when you want to convert Google Docs into HTML or markdown for consumption by a CMS that is not currently supported by Cloudpress.",
+  },
+  {
     question: "Do you have a free trial?",
     answer:
       "Yes! You receive 5 free exports to try Cloudpress out when you sign up. Once your trial exports are used, you must buy an export bundle or subscription to export more documents.",
@@ -86,6 +91,7 @@ const tiers: {
       "For solo bloggers with a limited number of exports each month.",
     features: [
       "50 exports per month",
+      "Unlimited Google Docs conversions",
       "1 CMS connection",
       "Automation features",
       "1 user",
@@ -102,6 +108,7 @@ const tiers: {
       "For companies that want to export a lot of documents to multiple CMSs.",
     features: [
       "Unlimited exports",
+      "Unlimited Google Docs conversions",
       "10 CMS connections",
       "Automation features",
       "Unlimited users",
@@ -119,6 +126,7 @@ const tiers: {
       "For agencies that export to multiple CMSs on behalf of clients.",
     features: [
       "Unlimited exports",
+      "Unlimited Google Docs conversions",
       "Unlimited CMS connections",
       "Automation features",
       "Unlimited users",
@@ -250,7 +258,24 @@ const sections: {
         tiers: { Solo: true, Pro: true, Agency: true },
       },
       {
+        name: "Zapier integration",
+        tiers: { Solo: true, Pro: true, Agency: true },
+      },
+      {
         name: "Make.com integration",
+        tiers: { Solo: true, Pro: true, Agency: true },
+      },
+    ],
+  },
+  {
+    name: "Content Conversion (via API)",
+    features: [
+      {
+        name: "Convert Google Docs to Markdown",
+        tiers: { Solo: true, Pro: true, Agency: true },
+      },
+      {
+        name: "Convert Google Docs to HTML",
         tiers: { Solo: true, Pro: true, Agency: true },
       },
     ],
@@ -616,7 +641,7 @@ export default function PricingPage() {
                 </span>
                 , and{" "}
                 <span className="font-bold text-slate-900">
-                  excludes all our automation features
+                  excludes all our automation and content conversion features
                 </span>
                 . Pricing starts at{" "}
                 <span className="font-bold text-slate-900">$45 (USD)</span> for
