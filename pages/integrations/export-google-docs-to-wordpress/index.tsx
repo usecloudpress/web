@@ -17,6 +17,10 @@ import IntegrationCta from "../../../components/integration-cta";
 import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureBlockWithImage from "../../../components/feature-block-with-image";
 import FeatureList from "../../../components/feature-list";
+import React from "react";
+import { PencilIcon } from "@heroicons/react/24/solid";
+import { ConnectionIcon, ExportIcon } from "../../../components/icons";
+import IntegrationGettingStartedSection from "../../../components/integration-getting-started-section";
 
 export default function Page() {
   const source = "google-docs";
@@ -25,7 +29,7 @@ export default function Page() {
   return (
     <Layout>
       <NextSeo
-        title="Export perfectly formatted content from Google Docs to WordPress"
+        title="Export Google Docs to WordPress | Integrations"
         description="Automate the export of perfectly formatted content from Google Docs to WordPress, so you have more time for doing work that matters"
       />
       <IntegrationHeroSection
@@ -35,14 +39,36 @@ export default function Page() {
         imageCompare2={imageCompare2}
       />
 
+      <IntegrationGettingStartedSection
+        source={source}
+        destination={destination}
+        steps={[
+          {
+            description:
+              "Connect the WordPress account you wish to export your content to.",
+            icon: ConnectionIcon,
+          },
+          {
+            description:
+              "Write and collaborate on your content in Google Docs.",
+            icon: PencilIcon,
+          },
+          {
+            description:
+              "Export your content with one click using the Google Docs Add-on.",
+            icon: ExportIcon,
+          },
+        ]}
+      />
+
       <FeatureBlockWithImage
-        title="One-click exports"
+        title="Export content with one click"
         content={
           <>
             <p>
-              With our Google Docs Add-on, you can export your content from the
-              comfort of the Google Docs editor. No need to navigate to an
-              external application - simply open the Cloudpress Google Docs
+              With the Google Docs Add-on, you can export your content from the
+              comfort of the Google Docs editor. There is no need to navigate to
+              an external application - simply open the Cloudpress Google Docs
               Add-on and click the export button.
             </p>
             <FeatureList
@@ -60,7 +86,7 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
-        title="Preserves formatting"
+        title="Preserve all your formatting"
         content={
           <>
             <p>
@@ -83,7 +109,7 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
-        title="Exports your images"
+        title="Export your images"
         content={
           <>
             <p>
@@ -105,7 +131,7 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
-        title="Gutenberg or Classic, your choice"
+        title="Your choice of Gutenberg or Classic"
         content={
           <>
             <p>
@@ -129,7 +155,7 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
-        title="Automatically creates embeds"
+        title="Automatically create embeds"
         content={
           <>
             <p>
@@ -151,7 +177,7 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
-        title="Supports posts and pages"
+        title="Supports WordPress posts and pages"
         content={
           <>
             <p>
@@ -173,12 +199,12 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
-        title="Updates additional fields"
+        title="Updates additional fields in WordPress"
         content={
           <>
             <p>
               Cloudpress handles more than just your content. It will also
-              update additional fields in your CMS, such as the post category,
+              update additional fields in WordPress, such as the post category,
               author, featured image, etc.
             </p>
             <FeatureList
@@ -217,17 +243,18 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
-        title="Automate exports"
+        title="Automate exports with Zapier and Make"
         content={
           <>
             <p>
-              Using the Cloudpress API and no-code tools like Make.com, you can
-              create automated workflows that export your content without you
-              having to lift a finger.
+              Using the Cloudpress API and no-code tools like Zapier or
+              Make.com, you can create automated workflows that export your
+              content without you having to lift a finger.
             </p>
             <FeatureList
               features={[
                 "Cloudpress REST API allows integration from any programming language",
+                "Cloudpress actions allow quick integration with Zapier",
                 "Cloudpress modules allow quick integration with Make.com",
               ]}
             />
@@ -239,7 +266,7 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
-        title="Draft or published, your choice"
+        title="Export content as draft or published"
         content={
           <>
             <p>
@@ -266,12 +293,13 @@ export default function Page() {
           <>
             <p>
               Once your export has been completed, you can easily navigate to
-              the exported content in your CMS to review and publish the
-              content.
+              the exported content in WordPress to review, edit, and publish the
+              content. Or you can navigate to the preview or published version
+              to see how the content is displayed on your website.
             </p>
             <FeatureList
               features={[
-                "Navigate directly to edit the document in WordPress",
+                "Navigate directly to the WordPress admin panel to edit the exported content",
                 "Navigate directly to view the published or preview versions of the content",
                 "Navigate directly to view the export log",
               ]}

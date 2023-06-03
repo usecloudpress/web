@@ -17,6 +17,10 @@ import IntegrationCta from "../../../components/integration-cta";
 import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureBlockWithImage from "../../../components/feature-block-with-image";
 import FeatureList from "../../../components/feature-list";
+import IntegrationGettingStartedSection from "../../../components/integration-getting-started-section";
+import { ConnectionIcon, ExportIcon } from "../../../components/icons";
+import { PencilIcon } from "@heroicons/react/24/solid";
+import React from "react";
 
 export default function Page() {
   const source = "google-docs";
@@ -25,7 +29,7 @@ export default function Page() {
   return (
     <>
       <NextSeo
-        title="Export perfectly formatted content from Google Docs to Contentful"
+        title="Export Google Docs to Contentful | Integrations"
         description="Automate the export of perfectly formatted content from Google Docs to Contentful, so you have more time for doing work that matters"
       />
       <Layout>
@@ -36,8 +40,30 @@ export default function Page() {
           imageCompare2={imageCompare2}
         />
 
+        <IntegrationGettingStartedSection
+          source={source}
+          destination={destination}
+          steps={[
+            {
+              description:
+                "Connect the Contentful account you wish to export your content to.",
+              icon: ConnectionIcon,
+            },
+            {
+              description:
+                "Write and collaborate on your content in Google Docs.",
+              icon: PencilIcon,
+            },
+            {
+              description:
+                "Export your content with one click using the Google Docs Add-on.",
+              icon: ExportIcon,
+            },
+          ]}
+        />
+
         <FeatureBlockWithImage
-          title="One-click exports"
+          title="Export with one click"
           content={
             <>
               <p>
@@ -61,7 +87,7 @@ export default function Page() {
         />
 
         <FeatureBlockWithImage
-          title="Preserves your formatting"
+          title="Preserve all your formatting"
           content={
             <>
               <p>
@@ -85,7 +111,7 @@ export default function Page() {
         />
 
         <FeatureBlockWithImage
-          title="Exports your images"
+          title="Export your images"
           content={
             <>
               <p>
@@ -108,12 +134,13 @@ export default function Page() {
         />
 
         <FeatureBlockWithImage
-          title="Works with your content model"
+          title="Export to your own content model"
           content={
             <>
               <p>
-                Cloudpress works with the content models you create in
-                Contentful.
+                Cloudpress works with your own content models that you create in
+                Contentful. Tell Cloudpress which fields to use for the content,
+                author, slug, or whichever other fields your choose to export.
               </p>
               <FeatureList
                 features={[
@@ -152,7 +179,7 @@ export default function Page() {
         />
 
         <FeatureBlockWithImage
-          title="Automatically creates embeds"
+          title="Automatically create embeds"
           content={
             <>
               <p>
@@ -221,17 +248,18 @@ export default function Page() {
         />
 
         <FeatureBlockWithImage
-          title="Automate exports"
+          title="Automate exports with Zapier and Make.com"
           content={
             <>
               <p>
-                Using the Cloudpress API and no-code tools like Make.com, you
-                can create automated workflows that export your content without
-                you having to lift a finger.
+                Using the Cloudpress API and no-code tools like Zapier or
+                Make.com, you can create automated workflows that export your
+                content without you having to lift a finger.
               </p>
               <FeatureList
                 features={[
                   "Cloudpress REST API allows integration from any programming language",
+                  "Cloudpress actions allow quick integration with Zapier",
                   "Cloudpress modules allow quick integration with Make.com",
                 ]}
               />

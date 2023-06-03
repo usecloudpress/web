@@ -12,6 +12,11 @@ import IntegrationCta from "../../../components/integration-cta";
 import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureBlockWithImage from "../../../components/feature-block-with-image";
 import FeatureList from "../../../components/feature-list";
+import IntegrationGettingStartedSection from "../../../components/integration-getting-started-section";
+import { ConnectionIcon, ExportIcon } from "../../../components/icons";
+import { PencilIcon } from "@heroicons/react/24/solid";
+import React from "react";
+import AutomateExportsImage from "../export-google-docs-to-wordpress/automate-exports-from-google-docs-to-wordpress-with-trello.png";
 
 export default function Page() {
   const source = "notion";
@@ -20,9 +25,10 @@ export default function Page() {
   return (
     <Layout>
       <NextSeo
-        title="Export perfectly formatted content from Notion to Kontent.ai"
+        title="Export Notion to Kontent.ai | Integrations"
         description="Automate the export of perfectly formatted content from Notion to Kontent.ai, so you have more time for doing work that matters"
       />
+
       <IntegrationHeroSection
         source={source}
         destination={destination}
@@ -30,8 +36,29 @@ export default function Page() {
         imageCompare2={imageCompare2}
       />
 
+      <IntegrationGettingStartedSection
+        source={source}
+        destination={destination}
+        steps={[
+          {
+            description:
+              "Connect your Notion account and the Kontent.ai account you wish to export to.",
+            icon: ConnectionIcon,
+          },
+          {
+            description: "Write and collaborate on your content in Notion.",
+            icon: PencilIcon,
+          },
+          {
+            description:
+              "Export your content with the click of a button, or automate the entire process.",
+            icon: ExportIcon,
+          },
+        ]}
+      />
+
       <FeatureBlockWithImage
-        title="Preserves your formatting"
+        title="Preserve your formatting"
         content={
           <>
             <p>
@@ -53,7 +80,7 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
-        title="Exports your images"
+        title="Export your images"
         content={
           <>
             <p>
@@ -117,6 +144,29 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
+        title="Automate exports with Zapier and Make"
+        content={
+          <>
+            <p>
+              Using the Cloudpress API and no-code tools like Zapier or
+              Make.com, you can create automated workflows that export your
+              content without you having to lift a finger.
+            </p>
+            <FeatureList
+              features={[
+                "Cloudpress REST API allows integration from any programming language",
+                "Cloudpress actions allow quick integration with Zapier",
+                "Cloudpress modules allow quick integration with Make.com",
+              ]}
+            />
+          </>
+        }
+        image={AutomateExportsImage}
+        imageAlt="Automate exports from Notion to Kontent.ai"
+        imageAlignment="right"
+      />
+
+      <FeatureBlockWithImage
         title="Draft or published, your choice"
         content={
           <>
@@ -135,7 +185,7 @@ export default function Page() {
         }
         image={DraftOrPublishedImage}
         imageAlt="Export your content in Kontent.ai as draft or published"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <FeatureBlockWithImage
@@ -157,7 +207,7 @@ export default function Page() {
         }
         image={QuicklyNavigateImage}
         imageAlt="Quickly navigate to exported Notion content in Kontent.ai"
-        imageAlignment="left"
+        imageAlignment="right"
       />
 
       <IntegrationCta destination={destination} />

@@ -13,6 +13,10 @@ import IntegrationCta from "../../../components/integration-cta";
 import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureList from "../../../components/feature-list";
 import FeatureBlockWithImage from "../../../components/feature-block-with-image";
+import IntegrationGettingStartedSection from "../../../components/integration-getting-started-section";
+import { ConnectionIcon, ExportIcon } from "../../../components/icons";
+import { PencilIcon } from "@heroicons/react/24/solid";
+import React from "react";
 
 export default function Page() {
   const source = "google-docs";
@@ -21,17 +25,41 @@ export default function Page() {
   return (
     <Layout>
       <NextSeo
-        title="Export perfectly formatted content from Google Docs to Sanity"
+        title="Export from Google Docs to Sanity | Integrations"
         description="Automate the export of perfectly formatted content from Google Docs to Sanity, so you have more time for doing work that matters"
       />
+
       <IntegrationHeroSection
         source={source}
         destination={destination}
         imageCompare1={imageCompare1}
         imageCompare2={imageCompare2}
       />
+
+      <IntegrationGettingStartedSection
+        source={source}
+        destination={destination}
+        steps={[
+          {
+            description:
+              "Connect the Sanity account you wish to export your content to.",
+            icon: ConnectionIcon,
+          },
+          {
+            description:
+              "Write and collaborate on your content in Google Docs.",
+            icon: PencilIcon,
+          },
+          {
+            description:
+              "Export your content with one click using the Google Docs Add-on.",
+            icon: ExportIcon,
+          },
+        ]}
+      />
+
       <FeatureBlockWithImage
-        title="One-click exports"
+        title="Export with one click"
         content={
           <>
             <p>
@@ -54,7 +82,7 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
-        title="Preserves your formatting"
+        title="Preserve your formatting"
         content={
           <>
             <p>
@@ -77,7 +105,7 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
-        title="Exports your images"
+        title="Export your images"
         content={
           <>
             <p>
@@ -103,7 +131,11 @@ export default function Page() {
         title="Works with your schema"
         content={
           <>
-            <p>Cloudpress works with the schemas you create in Sanity</p>
+            <p>
+              Cloudpress works with the schemas you create in Sanity. Tell
+              Cloudpress which fields to use for the title, content, author,
+              slug, or whichever other fields your choose to export.
+            </p>
             <FeatureList
               features={[
                 "Works with your custom document types",
@@ -123,7 +155,9 @@ export default function Page() {
           <>
             <p>
               When the power of the Cloudpress API, you can also update
-              additional fields in Sanity.
+              additional fields in Sanity. This is useful when you want
+              Cloudpress to updates fields like the slug, author, or category
+              when exporting content.
             </p>
             <FeatureList
               features={[
@@ -160,17 +194,18 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
-        title="Automate exports"
+        title="Automate exports with Zapier and Make.com"
         content={
           <>
             <p>
-              Using the Cloudpress API and no-code tools like Make.com, you can
-              create automated workflows that export your content without you
-              having to lift a finger.
+              Using the Cloudpress API and no-code tools like Zapier or
+              Make.com, you can create automated workflows that export your
+              content without you having to lift a finger.
             </p>
             <FeatureList
               features={[
                 "Cloudpress REST API allows integration from any programming language",
+                "Cloudpress actions allow quick integration with Zapier",
                 "Cloudpress modules allow quick integration with Make.com",
                 "Allows updating additional advanced field types",
               ]}
