@@ -29,7 +29,7 @@ export default function Page() {
     <Layout>
       <NextSeo
         title="Export Notion to Contentful | Integrations"
-        description="Automate the export of perfectly formatted content from Notion to Contentful, so you have more time for doing work that matters"
+        description="Export from Notion to Contentful with the click of a button or automate it with our Zapier and Make.com integration."
         openGraph={{
           type: "website",
           images: [

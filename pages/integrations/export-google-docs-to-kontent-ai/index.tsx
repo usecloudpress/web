@@ -27,7 +27,7 @@ export default function Page() {
     <Layout>
       <NextSeo
         title="Export Google Docs to Kontent.ai | Integrations"
-        description="Automate the export of perfectly formatted content from Google Docs to Kontent.ai, so you have more time for doing work that matters"
+        description="Export from Google Docs to Kontent.ai with our Google Docs Add-on or automate it with our Zapier and Make.com integration."
         openGraph={{
           type: "website",
           images: [
