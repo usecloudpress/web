@@ -28,6 +28,14 @@ export default function Page() {
       <NextSeo
         title="Export Google Docs to Kontent.ai | Integrations"
         description="Automate the export of perfectly formatted content from Google Docs to Kontent.ai, so you have more time for doing work that matters"
+        openGraph={{
+          type: "website",
+          images: [
+            {
+              url: "https://www.usecloudpress.com/images/social/export-google-docs-to-kontent.png",
+            },
+          ],
+        }}
       />
 
       <IntegrationHeroSection

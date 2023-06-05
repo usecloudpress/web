@@ -25,6 +25,14 @@ export default function Page() {
       <NextSeo
         title="Export Notion to Sanity.io | Integrations"
         description="Automate the export of perfectly formatted content from Notion to Sanity, so you have more time for doing work that matters"
+        openGraph={{
+          type: "website",
+          images: [
+            {
+              url: "https://www.usecloudpress.com/images/social/export-notion-to-sanity.png",
+            },
+          ],
+        }}
       />
 
       <IntegrationHeroSection
