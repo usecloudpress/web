@@ -12,7 +12,6 @@ import ImageBulkExport from "./bulk-export-images-from-google-docs-to-your-cms.p
 import ImageAutomateExports from "./automate-exports-with-cloudpress-and-make.png";
 import ImageExportDraftOrPublished from "./export-documents-as-draft-or-published.png";
 import ImageQuicklyNavigate from "./quickly-navigate-to-exported-content.png";
-import { NextSeo } from "next-seo";
 import FeatureList from "../../components/feature-list";
 
 export default function Page() {
