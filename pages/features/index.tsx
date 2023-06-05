@@ -19,11 +19,6 @@ export default function Page() {
   return (
     <>
       <Layout>
-        <NextSeo
-          title="Cloudpress has lots of time-saving features"
-          description="Cloudpress will help you export perfectly formatted content faster, giving you more time to do the work that matters"
-        />
-
         {/* Heading */}
         <PageHeaderSection
           heading="Overflowing with time-saving features"

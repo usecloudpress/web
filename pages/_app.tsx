@@ -23,9 +23,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <DefaultSeo
-        title="Export content from Google Docs and Notion to your website"
-        description="Export your content from Google Docs and Notion to your blog or website with the click of a button with images and formatting perfectly preserved"
-        titleTemplate="%s | Cloudpress"
+        title="Export from Google Docs and Notion to your CMS - Cloudpress"
+        description="Export from Google Docs and Notion to your Content Management System with the click of a button, or automate the entire process."
         canonical={canonicalURL}
         openGraph={{
           type: "website",
