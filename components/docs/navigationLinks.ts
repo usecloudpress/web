@@ -204,6 +204,10 @@ const navigationItems: DocsSection[] = [
             href: "/docs/integrations/google-docs/additional-fields",
           },
           {
+            title: "Security",
+            href: "/docs/integrations/google-docs/security",
+          },
+          {
             title: "Troubleshoot",
             href: "/docs/integrations/google-docs/troubleshoot",
           },
