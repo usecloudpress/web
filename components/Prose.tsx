@@ -13,9 +13,7 @@ export function Prose({ as: Component = "div", className, ...props }: any) {
         // links
         "prose-a:font-semibold prose-a:underline prose-a:underline-offset-4",
         // pre
-        "prose-pre:rounded-lg prose-pre:bg-slate-900 prose-pre:shadow-lg",
-        // code
-        "prose-code:bg-slate-200 prose-code:px-1 prose-code:py-0.5 prose-code:rounded"
+        "prose-pre:rounded-lg prose-pre:bg-slate-900 prose-pre:shadow-lg"
       )}
       {...props}
     />
