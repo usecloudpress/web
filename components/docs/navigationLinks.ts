@@ -97,6 +97,10 @@ const navigationItems: DocsSection[] = [
             href: "/docs/reference/export/additional-fields",
           },
           {
+            title: "Export custom (unsupported) content",
+            href: "/docs/reference/export/export-unsupported-content",
+          },
+          {
             title: "View job history",
             href: "/docs/reference/export/view-job-history",
           },
@@ -250,6 +254,10 @@ const navigationItems: DocsSection[] = [
             href: "/docs/integrations/wordpress/additional-fields",
           },
           {
+            title: "Export custom Gutenberg blocks",
+            href: "/docs/integrations/wordpress/export-custom-gutenberg-blocks",
+          },
+          {
             title: "Troubleshooting",
             href: "/docs/integrations/wordpress/troubleshooting",
           },
@@ -270,6 +278,14 @@ const navigationItems: DocsSection[] = [
             title: "Set additional field values",
             href: "/docs/integrations/contentful/additional-fields",
           },
+          {
+            title: "Export custom Rich Text",
+            href: "/docs/integrations/contentful/export-custom-rich-text",
+          },
+          {
+            title: "Export custom Markdown",
+            href: "/docs/integrations/contentful/export-custom-markdown",
+          },
         ],
       },
       {
@@ -286,6 +302,10 @@ const navigationItems: DocsSection[] = [
           {
             title: "Set additional field values",
             href: "/docs/integrations/webflow/additional-fields",
+          },
+          {
+            title: "Export Custom HTML",
+            href: "/docs/integrations/webflow/export-custom-html",
           },
           {
             title: "Known issues",
@@ -307,6 +327,10 @@ const navigationItems: DocsSection[] = [
           {
             title: "Set additional field values",
             href: "/docs/integrations/sanity/additional-fields",
+          },
+          {
+            title: "Export custom Portable Text",
+            href: "/docs/integrations/sanity/export-custom-portable-text",
           },
         ],
       },
