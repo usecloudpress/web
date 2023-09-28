@@ -13,6 +13,7 @@ import QuicklyNavigateImage from "./quickly-navigate-from-google-docs-to-exporte
 import SetsAdditionalFieldsImage from "./sets-additional-fields-in-wordpress.png";
 import GutenbergOrClassicImage from "./wordpress-gutenberg-or-classic.png";
 import PostOrPageImage from "./wordpress-post-or-page.png";
+import ExportCustomGutenbergBlocksImage from "./export-custom-gutenberg-blocks.png";
 import IntegrationCta from "../../../components/integration-cta";
 import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureBlockWithImage from "../../../components/feature-block-with-image";
@@ -21,6 +22,8 @@ import React from "react";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import { ConnectionIcon, ExportIcon } from "../../../components/icons";
 import IntegrationGettingStartedSection from "../../../components/integration-getting-started-section";
+import { LinkButton } from "../../../components/buttons";
+import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
 
 export default function Page() {
   const source = "google-docs";
@@ -189,8 +192,7 @@ export default function Page() {
         content={
           <>
             <p>
-              Cloudpress supports exporting to both WordPress posts, as well as
-              pages.
+              Cloudpress supports exporting to both WordPress posts and pages.
             </p>
             <FeatureList
               features={[
@@ -230,6 +232,54 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
+        title="Export custom Gutenberg blocks"
+        content={
+          <>
+            <p>
+              Sometimes, you want to add a custom Gutenberg block like an email
+              sign-up form, call to action, or countdown timer inside your
+              content. For these occasions, our Raw Content Block feature will
+              save the day.
+            </p>
+            <FeatureList
+              features={[
+                "Allows you to export any Gutenberg block with your content",
+                "Ideal for things like calls to action and email signup forms",
+              ]}
+            />
+            <div className="flex gap-x-4">
+              <LinkButton
+                href="https://www.youtube.com/watch?v=1zPb0-acQoU"
+                rel="noopener noreferrer"
+                target="_blank"
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <PlayCircleIcon className="w-6 h-6" />
+                  See it in action
+                </div>
+              </LinkButton>
+              <LinkButton
+                href="https://www.usecloudpress.com/docs/integrations/wordpress/export-custom-gutenberg-blocks"
+                target="_blank"
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <BookOpenIcon className="w-6 h-6" />
+                  Read the docs
+                </div>
+              </LinkButton>
+            </div>
+          </>
+        }
+        image={ExportCustomGutenbergBlocksImage}
+        imageAlt="Export custom Gutenberg blocks"
+        imageAlignment="left"
+      />
+
+      <FeatureBlockWithImage
         title="Bulk export documents"
         content={
           <>
@@ -247,7 +297,7 @@ export default function Page() {
         }
         image={BulkExportsImage}
         imageAlt="Bulk export documents from Google Docs to WordPress"
-        imageAlignment="left"
+        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -270,7 +320,7 @@ export default function Page() {
         }
         image={AutomateExportsImage}
         imageAlt="Automate exports from Google Docs to WordPress"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <FeatureBlockWithImage
@@ -292,7 +342,7 @@ export default function Page() {
         }
         image={DraftOrPublishedImage}
         imageAlt="Export content in WordPress as drafts or published content"
-        imageAlignment="left"
+        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -316,7 +366,7 @@ export default function Page() {
         }
         image={QuicklyNavigateImage}
         imageAlt="Quickly navigate from Google Docs to exported content in WordPress"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <IntegrationCta destination={destination} />

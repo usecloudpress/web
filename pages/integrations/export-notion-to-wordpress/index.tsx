@@ -11,6 +11,7 @@ import ExportImagesImage from "./export-images-from-notion-to-wordpress.png";
 import DraftOrPublishedImage from "./export-wordpress-posts-as-draft-or-published.png";
 import MapPropertiesImage from "./map-notion-database-properties-to-wordpress-fields.png";
 import QuicklyNavigateImage from "./quickly-navigate-to-exported-content-in-wordpress.png";
+import ExportCustomGutenbergBlocksImage from "./export-custom-gutenberg-blocks.png";
 import IntegrationCta from "../../../components/integration-cta";
 import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureBlockWithImage from "../../../components/feature-block-with-image";
@@ -20,6 +21,8 @@ import { ConnectionIcon, ExportIcon } from "../../../components/icons";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import AutomateExportsImage from "../export-google-docs-to-wordpress/automate-exports-from-google-docs-to-wordpress-with-trello.png";
+import { LinkButton } from "../../../components/buttons";
+import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
 
 export default function Page() {
   const source = "notion";
@@ -160,6 +163,54 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
+        title="Export custom Gutenberg blocks"
+        content={
+          <>
+            <p>
+              Sometimes, you want to add a custom Gutenberg block like an email
+              sign-up form, call to action, or countdown timer inside your
+              content. For these occasions, our Raw Content Block feature will
+              save the day.
+            </p>
+            <FeatureList
+              features={[
+                "Allows you to export any Gutenberg block with your content",
+                "Ideal for things like calls to action and email signup forms",
+              ]}
+            />
+            <div className="flex gap-x-4">
+              <LinkButton
+                href="https://www.youtube.com/watch?v=wRKfUtsp0iM"
+                rel="noopener noreferrer"
+                target="_blank"
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <PlayCircleIcon className="w-6 h-6" />
+                  See it in action
+                </div>
+              </LinkButton>
+              <LinkButton
+                href="https://www.usecloudpress.com/docs/integrations/wordpress/export-custom-gutenberg-blocks"
+                target="_blank"
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <BookOpenIcon className="w-6 h-6" />
+                  Read the docs
+                </div>
+              </LinkButton>
+            </div>
+          </>
+        }
+        image={ExportCustomGutenbergBlocksImage}
+        imageAlt="Export custom Gutenberg blocks"
+        imageAlignment="right"
+      />
+
+      <FeatureBlockWithImage
         title="Supports posts and pages"
         content={
           <>
@@ -178,7 +229,7 @@ export default function Page() {
         }
         image={PostOrPageImage}
         imageAlt="Exports content in WordPress as posts or pages"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <FeatureBlockWithImage
@@ -199,7 +250,7 @@ export default function Page() {
         }
         image={BulkExportImage}
         imageAlt="Bulk export documents from Notion to WordPress"
-        imageAlignment="left"
+        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -222,7 +273,7 @@ export default function Page() {
         }
         image={AutomateExportsImage}
         imageAlt="Automate exports Notion to WordPress"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <FeatureBlockWithImage
@@ -245,7 +296,7 @@ export default function Page() {
         }
         image={MapPropertiesImage}
         imageAlt="Export Notion database to WordPress"
-        imageAlignment="left"
+        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -267,7 +318,7 @@ export default function Page() {
         }
         image={DraftOrPublishedImage}
         imageAlt="Export content as draft or published in WordPress"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <FeatureBlockWithImage
@@ -290,7 +341,7 @@ export default function Page() {
         }
         image={QuicklyNavigateImage}
         imageAlt="Quickly navigate to exported Notion content in WordPress"
-        imageAlignment="left"
+        imageAlignment="right"
       />
 
       <IntegrationCta destination={destination} />

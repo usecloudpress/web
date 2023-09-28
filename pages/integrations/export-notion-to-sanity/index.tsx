@@ -6,6 +6,7 @@ import BulkExportImage from "./bulk-export.png";
 import ExportsImagesImage from "./exports-images.png";
 import PreservesFormattingImage from "./preserves-formatting.png";
 import SanitySchemaImage from "./sanity-schema.png";
+import ExportCustomPortableTextImage from "./export-custom-portable-text.png";
 import IntegrationCta from "../../../components/integration-cta";
 import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureList from "../../../components/feature-list";
@@ -15,6 +16,8 @@ import { ConnectionIcon, ExportIcon } from "../../../components/icons";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import AutomateExportsImage from "../export-google-docs-to-wordpress/automate-exports-from-google-docs-to-wordpress-with-trello.png";
+import { LinkButton } from "../../../components/buttons";
+import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
 
 export default function Page() {
   const source = "notion";
@@ -128,6 +131,52 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
+        title="Export custom Portable Text"
+        content={
+          <>
+            <p>
+              Sometimes, you want to export custom Portable Text blocks. For
+              these occasions, our Raw Content Block feature will save the day.
+            </p>
+            <FeatureList
+              features={[
+                "Allows you to export any valid custom Portable Text",
+                "Ideal for including blocks like geopoint, file, or other custom blocks",
+              ]}
+            />
+            <div className="flex gap-x-4">
+              <LinkButton
+                href="https://www.youtube.com/watch?v=rgdiAny03FE"
+                rel="noopener noreferrer"
+                target="_blank"
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <PlayCircleIcon className="w-6 h-6" />
+                  See it in action
+                </div>
+              </LinkButton>
+              <LinkButton
+                href="https://www.usecloudpress.com/docs/integrations/sanity/export-custom-portable-text"
+                target="_blank"
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <BookOpenIcon className="w-6 h-6" />
+                  Read the docs
+                </div>
+              </LinkButton>
+            </div>
+          </>
+        }
+        image={ExportCustomPortableTextImage}
+        imageAlt="Export custom Portable Text"
+        imageAlignment="left"
+      />
+
+      <FeatureBlockWithImage
         title="Bulk export documents"
         content={
           <>
@@ -145,7 +194,7 @@ export default function Page() {
         }
         image={BulkExportImage}
         imageAlt="Bulk export documents from Notion to Sanity.io"
-        imageAlignment="left"
+        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -168,7 +217,7 @@ export default function Page() {
         }
         image={AutomateExportsImage}
         imageAlt="Automate exports from Notion to Sanity"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <IntegrationCta destination={destination} />

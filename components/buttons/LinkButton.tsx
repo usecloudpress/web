@@ -11,7 +11,7 @@ interface LinkButtonProps
 
 const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
   (props, ref) => {
-    const { children, href, isDisabled } = props;
+    const { children, href, isDisabled, rel, target } = props;
     const allClassNames = calculateButtonClasses(props);
 
     if (isDisabled) {
@@ -23,7 +23,13 @@ const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
     }
 
     return (
-      <a ref={ref} href={href} className={allClassNames}>
+      <a
+        ref={ref}
+        href={href}
+        className={allClassNames}
+        rel={rel}
+        target={target}
+      >
         {children}
       </a>
     );

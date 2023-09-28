@@ -12,6 +12,7 @@ import ExportImagesImage from "./exports-images-from-google-docs-to-webflow.png"
 import NavigateToWebflowImage from "./navigate-from-google-docs-to-webflow.png";
 import OneClickExportImage from "./one-click-export-from-google-docs-to-webflow.png";
 import PreserveFormattingImage from "./preserves-formatting.png";
+import ExportCustomHtmlImage from "./export-custom-html.png";
 import IntegrationCta from "../../../components/integration-cta";
 import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureBlockWithImage from "../../../components/feature-block-with-image";
@@ -20,6 +21,8 @@ import IntegrationGettingStartedSection from "../../../components/integration-ge
 import { ConnectionIcon, ExportIcon } from "../../../components/icons";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import { LinkButton } from "../../../components/buttons";
+import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
 
 export default function Page() {
   const source = "google-docs";
@@ -207,6 +210,53 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
+        title="Export custom HTML"
+        content={
+          <>
+            <p>
+              Sometimes, you want to add a custom HTML for content not supported
+              by Cloudpress. For these occasions, our Raw Content Block feature
+              will save the day.
+            </p>
+            <FeatureList
+              features={[
+                "Allows you to export any custom HTML with your content",
+                "Ideal for embedding things like calls to action, email signup forms, and notices",
+              ]}
+            />
+            <div className="flex gap-x-4">
+              <LinkButton
+                href="https://www.youtube.com/watch?v=wcehapJJBog"
+                rel="noopener noreferrer"
+                target="_blank"
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <PlayCircleIcon className="w-6 h-6" />
+                  See it in action
+                </div>
+              </LinkButton>
+              <LinkButton
+                href="https://www.usecloudpress.com/docs/integrations/webflow/export-custom-html"
+                target="_blank"
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <BookOpenIcon className="w-6 h-6" />
+                  Read the docs
+                </div>
+              </LinkButton>
+            </div>
+          </>
+        }
+        image={ExportCustomHtmlImage}
+        imageAlt="Export custom Gutenberg blocks"
+        imageAlignment="right"
+      />
+
+      <FeatureBlockWithImage
         title="Bulk export documents"
         content={
           <>
@@ -224,7 +274,7 @@ export default function Page() {
         }
         image={BulkExportImage}
         imageAlt="Bulk export documents from Google Docs to Webflow"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <FeatureBlockWithImage
@@ -247,7 +297,7 @@ export default function Page() {
         }
         image={AutomateExportsImage}
         imageAlt="Automate exports from Google Docs to Webflow"
-        imageAlignment="left"
+        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -269,7 +319,7 @@ export default function Page() {
         }
         image={DraftOrPublishedImage}
         imageAlt="Export your content as draft or published in Webflow"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <FeatureBlockWithImage
@@ -291,7 +341,7 @@ export default function Page() {
         }
         image={NavigateToWebflowImage}
         imageAlt="Quickly navigate from Google Docs to exported content in Webflow"
-        imageAlignment="left"
+        imageAlignment="right"
       />
 
       <IntegrationCta destination={destination} />

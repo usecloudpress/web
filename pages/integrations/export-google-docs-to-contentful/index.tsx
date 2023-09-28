@@ -13,6 +13,8 @@ import OneClickExportImage from "./one-click-export-from-google-docs-to-contentf
 import QuicklyNavigateImage from "./quickly-navigate-to-exported-content-in-contentful.png";
 import RichTextOrLongTextImage from "./supports-contentful-rich-text-or-long-text.png";
 import ContentModelImage from "./works-with-your-content-model.png";
+import ExportCustomRichTextImage from "./export-custom-rich-text.png";
+import ExportCustomMarkdownImage from "./export-custom-markdown.png";
 import IntegrationCta from "../../../components/integration-cta";
 import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureBlockWithImage from "../../../components/feature-block-with-image";
@@ -21,6 +23,8 @@ import IntegrationGettingStartedSection from "../../../components/integration-ge
 import { ConnectionIcon, ExportIcon } from "../../../components/icons";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import { LinkButton } from "../../../components/buttons";
+import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
 
 export default function Page() {
   const source = "google-docs";
@@ -230,6 +234,100 @@ export default function Page() {
           }
           image={AdditionalFieldsImage}
           imageAlt="Updates additional fields in Contentful"
+          imageAlignment="right"
+        />
+
+        <FeatureBlockWithImage
+          title="Export custom Rich Text"
+          content={
+            <>
+              <p>
+                Sometimes, you want to add custom Rich Text blocks. For these
+                occasions, our Raw Content Block feature will save the day.
+              </p>
+              <FeatureList
+                features={[
+                  "Allows you to export any valid custom Rich Text",
+                  "Ideal for adding embedded entries and assets to your content",
+                ]}
+              />
+              <div className="flex gap-x-4">
+                <LinkButton
+                  href="https://www.youtube.com/watch?v=ztroFNWP2w8"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  variant="default"
+                  size="xl"
+                >
+                  <div className="flex gap-x-2">
+                    <PlayCircleIcon className="w-6 h-6" />
+                    See it in action
+                  </div>
+                </LinkButton>
+                <LinkButton
+                  href="https://www.usecloudpress.com/docs/integrations/contentful/export-custom-rich-text"
+                  target="_blank"
+                  variant="default"
+                  size="xl"
+                >
+                  <div className="flex gap-x-2">
+                    <BookOpenIcon className="w-6 h-6" />
+                    Read the docs
+                  </div>
+                </LinkButton>
+              </div>
+            </>
+          }
+          image={ExportCustomRichTextImage}
+          imageAlt="Export custom Rich Text"
+          imageAlignment="left"
+        />
+
+        <FeatureBlockWithImage
+          title="Export custom markdown, HTML, or JSX"
+          content={
+            <>
+              <p>
+                Sometimes, you want to add a custom markdown to your Long Text
+                fields for content not supported by Cloudpress. For these
+                occasions, our Raw Content Block feature will save the day.
+              </p>
+              <FeatureList
+                features={[
+                  "Allows you to export any custom markdown/HTML/JSX with your content",
+                  "Ideal for embedding things like calls to action, email signup forms, and notices",
+                  "Perfect when using MDX and custom JSX components",
+                ]}
+              />
+              <div className="flex gap-x-4">
+                <LinkButton
+                  href="https://www.youtube.com/watch?v=sWH8jaMlXLE"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  variant="default"
+                  size="xl"
+                >
+                  <div className="flex gap-x-2">
+                    <PlayCircleIcon className="w-6 h-6" />
+                    See it in action
+                  </div>
+                </LinkButton>
+                <LinkButton
+                  href="https://www.usecloudpress.com/docs/integrations/contentful/export-custom-markdown"
+                  target="_blank"
+                  variant="default"
+                  size="xl"
+                >
+                  <div className="flex gap-x-2">
+                    <BookOpenIcon className="w-6 h-6" />
+                    Read the docs
+                  </div>
+                </LinkButton>
+              </div>
+            </>
+          }
+          image={ExportCustomMarkdownImage}
+          imageAlt="Export custom markdown, HTML, or JSX"
           imageAlignment="right"
         />
 

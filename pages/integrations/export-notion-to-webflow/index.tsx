@@ -10,6 +10,7 @@ import ExportImagesImage from "./export-images-from-notion-to-webflow.png";
 import MapPropertiesImage from "./map-notion-properties-to-webflow-fields.png";
 import PreserveFormattingImage from "./preserves-formatting.png";
 import QuicklyNavigateImage from "./quickly-navigate-to-exported-content-in-webflow.png";
+import ExportCustomHtmlImage from "./export-custom-html.png";
 import IntegrationCta from "../../../components/integration-cta";
 import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureBlockWithImage from "../../../components/feature-block-with-image";
@@ -19,6 +20,8 @@ import { ConnectionIcon, ExportIcon } from "../../../components/icons";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import AutomateExportsImage from "../export-google-docs-to-wordpress/automate-exports-from-google-docs-to-wordpress-with-trello.png";
+import { LinkButton } from "../../../components/buttons";
+import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
 
 export default function Page() {
   const source = "notion";
@@ -156,6 +159,53 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
+        title="Export custom HTML"
+        content={
+          <>
+            <p>
+              Sometimes, you want to add a custom HTML for content not supported
+              by Cloudpress. For these occasions, our Raw Content Block feature
+              will save the day.
+            </p>
+            <FeatureList
+              features={[
+                "Allows you to export any custom HTML with your content",
+                "Ideal for embedding things like calls to action, email signup forms, and notices",
+              ]}
+            />
+            <div className="flex gap-x-4">
+              <LinkButton
+                href="https://www.youtube.com/watch?v=ALTLUtXrcYk"
+                rel="noopener noreferrer"
+                target="_blank"
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <PlayCircleIcon className="w-6 h-6" />
+                  See it in action
+                </div>
+              </LinkButton>
+              <LinkButton
+                href="https://www.usecloudpress.com/docs/integrations/webflow/export-custom-html"
+                target="_blank"
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <BookOpenIcon className="w-6 h-6" />
+                  Read the docs
+                </div>
+              </LinkButton>
+            </div>
+          </>
+        }
+        image={ExportCustomHtmlImage}
+        imageAlt="Export custom Gutenberg blocks"
+        imageAlignment="right"
+      />
+
+      <FeatureBlockWithImage
         title="Export Notion databases"
         content={
           <>
@@ -175,7 +225,7 @@ export default function Page() {
         }
         image={MapPropertiesImage}
         imageAlt="Export Notion database to Webflow"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <FeatureBlockWithImage
@@ -196,7 +246,7 @@ export default function Page() {
         }
         image={BulkExportImage}
         imageAlt="Bulk export documents from Notion to Webflow"
-        imageAlignment="left"
+        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -219,7 +269,7 @@ export default function Page() {
         }
         image={AutomateExportsImage}
         imageAlt="Automate exports from Notion to WordPress"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <FeatureBlockWithImage
@@ -241,7 +291,7 @@ export default function Page() {
         }
         image={DraftOrPublishedImage}
         imageAlt="Export content in Webflow as draft or published"
-        imageAlignment="left"
+        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -263,7 +313,7 @@ export default function Page() {
         }
         image={QuicklyNavigateImage}
         imageAlt="Quickly navigate to exported Notion documents in Webflow"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <IntegrationCta destination={destination} />

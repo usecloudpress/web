@@ -9,6 +9,7 @@ import ExportsImagesImage from "./exports-images.png";
 import OneClickExportImage from "./one-click-export.png";
 import PreservesFormattingImage from "./preserves-formatting.png";
 import SanitySchemaImage from "./sanity-schema.png";
+import ExportCustomPortableTextImage from "./export-custom-portable-text.png";
 import IntegrationCta from "../../../components/integration-cta";
 import IntegrationHeroSection from "../../../components/integration-hero-section";
 import FeatureList from "../../../components/feature-list";
@@ -17,6 +18,8 @@ import IntegrationGettingStartedSection from "../../../components/integration-ge
 import { ConnectionIcon, ExportIcon } from "../../../components/icons";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import { LinkButton } from "../../../components/buttons";
+import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
 
 export default function Page() {
   const source = "google-docs";
@@ -181,6 +184,52 @@ export default function Page() {
       />
 
       <FeatureBlockWithImage
+        title="Export custom Portable Text"
+        content={
+          <>
+            <p>
+              Sometimes, you want to export custom Portable Text blocks. For
+              these occasions, our Raw Content Block feature will save the day.
+            </p>
+            <FeatureList
+              features={[
+                "Allows you to export any valid custom Portable Text",
+                "Ideal for including blocks like geopoint, file, or other custom blocks",
+              ]}
+            />
+            <div className="flex gap-x-4">
+              <LinkButton
+                href="https://www.youtube.com/watch?v=EnzgqmSgTlM"
+                rel="noopener noreferrer"
+                target="_blank"
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <PlayCircleIcon className="w-6 h-6" />
+                  See it in action
+                </div>
+              </LinkButton>
+              <LinkButton
+                href="https://www.usecloudpress.com/docs/integrations/sanity/export-custom-portable-text"
+                target="_blank"
+                variant="default"
+                size="xl"
+              >
+                <div className="flex gap-x-2">
+                  <BookOpenIcon className="w-6 h-6" />
+                  Read the docs
+                </div>
+              </LinkButton>
+            </div>
+          </>
+        }
+        image={ExportCustomPortableTextImage}
+        imageAlt="Export custom Portable Text"
+        imageAlignment="left"
+      />
+
+      <FeatureBlockWithImage
         title="Bulk export documents"
         content={
           <>
@@ -198,7 +247,7 @@ export default function Page() {
         }
         image={BulkExportImage}
         imageAlt="Bulk export content from Google Docs to Sanity"
-        imageAlignment="left"
+        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -222,7 +271,7 @@ export default function Page() {
         }
         image={AutomateExportsImage}
         imageAlt="Automate exports from Google Docs to Sanity.io"
-        imageAlignment="right"
+        imageAlignment="left"
       />
 
       <IntegrationCta destination={destination} />

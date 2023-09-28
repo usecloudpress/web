@@ -12,7 +12,11 @@ import ImageBulkExport from "./bulk-export-images-from-google-docs-to-your-cms.p
 import ImageAutomateExports from "./automate-exports-with-cloudpress-and-make.png";
 import ImageExportDraftOrPublished from "./export-documents-as-draft-or-published.png";
 import ImageQuicklyNavigate from "./quickly-navigate-to-exported-content.png";
+import ImageRawContentBlock from "./raw-content-blocks.png";
 import FeatureList from "../../components/feature-list";
+import React from "react";
+import { LinkButton } from "../../components/buttons";
+import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
 
 export default function Page() {
   return (
@@ -147,6 +151,57 @@ export default function Page() {
           imageAlignment="right"
         />
 
+        {/* Updates additional fields */}
+        <FeatureBlockWithImage
+          title="Handles unsupported content"
+          content={
+            <>
+              <p>
+                Sometimes, you want to export content that Cloudpress does not
+                support. For example, you may want to export a custom Gutenberg
+                block to your WordPress site. For these occasions, our Raw
+                Content Block feature will save the day.
+              </p>
+              <FeatureList
+                features={[
+                  "Add content in your CMS’s native format",
+                  "Works with Notion and Google Docs",
+                  "Works with all supported CMSs",
+                  "Allows you to break out of the limitations of Notion, Google Docs, and Cloudpress",
+                ]}
+              />
+              <div className="flex gap-x-4">
+                <LinkButton
+                  href="https://www.youtube.com/watch?v=1zPb0-acQoU"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  variant="default"
+                  size="xl"
+                >
+                  <div className="flex gap-x-2">
+                    <PlayCircleIcon className="w-6 h-6" />
+                    See it in action
+                  </div>
+                </LinkButton>
+                <LinkButton
+                  href="https://www.usecloudpress.com/docs/reference/export/export-unsupported-content"
+                  target="_blank"
+                  variant="default"
+                  size="xl"
+                >
+                  <div className="flex gap-x-2">
+                    <BookOpenIcon className="w-6 h-6" />
+                    Read the docs
+                  </div>
+                </LinkButton>
+              </div>
+            </>
+          }
+          image={ImageRawContentBlock}
+          imageAlt="Exports raw content to your CMS"
+          imageAlignment="left"
+        />
+
         {/* Bulk export documents */}
         <FeatureBlockWithImage
           title="Bulk export documents"
@@ -168,7 +223,7 @@ export default function Page() {
           }
           image={ImageBulkExport}
           imageAlt="Bulk export documents to your CMS"
-          imageAlignment="left"
+          imageAlignment="right"
         />
 
         {/* Automate exports */}
@@ -191,7 +246,7 @@ export default function Page() {
           }
           image={ImageAutomateExports}
           imageAlt="Automate export of content from Google Docs to your CMS"
-          imageAlignment="right"
+          imageAlignment="left"
         />
 
         {/* Draft or published, your choice */}
@@ -214,7 +269,7 @@ export default function Page() {
           }
           image={ImageExportDraftOrPublished}
           imageAlt="Export your content as draft or published"
-          imageAlignment="left"
+          imageAlignment="right"
         />
 
         {/* Quick navigation to exported content */}
@@ -237,7 +292,7 @@ export default function Page() {
           }
           image={ImageQuicklyNavigate}
           imageAlt="Quickly navigate to the exported content in your CMS"
-          imageAlignment="right"
+          imageAlignment="left"
         />
 
         {/* secure */}
