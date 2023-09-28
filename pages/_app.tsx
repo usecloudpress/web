@@ -64,6 +64,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <Script async defer src="https://sa.usecloudpress.com/latest.js" />
       <Script
+        async
+        src="https://cdn.tolt.io/tolt.js"
+        data-tolt="3ab9ca2e-cfab-48f0-926a-8dc4485fb894"
+      />
+      <Script
         id="clarity-script"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
