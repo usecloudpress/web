@@ -32,7 +32,7 @@ const allIntegrations: Integration[] = [
   {
     slug: "webflow",
     name: "Webflow",
-    logo: "webflow.png",
+    logo: "webflow.svg",
     kind: "destination",
   },
   {

@@ -2,7 +2,7 @@ import Link from "next/link";
 import contentfulLogo from "../public/images/logos/contentful.png";
 import kontentLogo from "../public/images/logos/kontent.png";
 import sanityLogo from "../public/images/logos/sanity.png";
-import webflowLogo from "../public/images/logos/webflow.png";
+import webflowLogo from "../public/images/logos/webflow.svg";
 import wordPressLogo from "../public/images/logos/wordpress.png";
 import Image from "next/image";
 

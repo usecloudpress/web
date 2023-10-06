@@ -9,7 +9,7 @@ import CloudpressLogo from "../public/cloudpress-text-logo.svg";
 import ContentfulLogo from "../public/images/logos/square/contentful.png";
 import KontentLogo from "../public/images/logos/square/kontent.png";
 import SanityLogo from "../public/images/logos/square/sanity.png";
-import WebflowLogo from "../public/images/logos/square/webflow.png";
+import WebflowLogo from "../public/images/logos/square/webflow.svg";
 import WordPressLogo from "../public/images/logos/square/wordpress.png";
 import { LinkButton } from "./buttons";
 
