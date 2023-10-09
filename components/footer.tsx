@@ -80,6 +80,19 @@ export default function Footer() {
                   </Link>
                 </li>
               </ul>
+              <h4 className="text-sm leading-5 font-semibold tracking-wider text-gray-400 uppercase mt-8">
+                Other
+              </h4>
+              <ul className="mt-2 space-y-2">
+                <li>
+                  <Link
+                    href="/affiliates"
+                    className="text-base leading-6 text-gray-300 hover:text-white"
+                  >
+                    Affiliate Program
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
           <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">

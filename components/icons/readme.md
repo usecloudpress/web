@@ -8,7 +8,7 @@ These icons are generated from https://tabler-icons.io/. The process is as follo
    ```
     import * as React from 'react';
     
-    const IconNameIcon = (props: React.ComponentProps<'svg'>) => {
+    const IconNameIcon = (props: React.ComponentProps<'svg'>) : JSX.Element => {
       return (
       );
     };
