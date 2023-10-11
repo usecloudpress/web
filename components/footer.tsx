@@ -34,7 +34,7 @@ export default function Footer() {
               <ul className="mt-2 space-y-2">
                 <li>
                   <Link
-                    href="/docs/"
+                    href="/docs"
                     className="text-base leading-6 text-gray-300 hover:text-white"
                   >
                     Documentation
@@ -42,7 +42,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/blog/"
+                    href="/blog"
                     className="text-base leading-6 text-gray-300 hover:text-white"
                   >
                     Blog
@@ -50,7 +50,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/changelog/"
+                    href="/changelog"
                     className="text-base leading-6 text-gray-300 hover:text-white"
                   >
                     Changelog
@@ -210,7 +210,7 @@ export default function Footer() {
               <ul className="mt-2 space-y-2">
                 <li>
                   <Link
-                    href="/privacy/"
+                    href="/privacy"
                     className="text-base leading-6 text-gray-300 hover:text-white"
                   >
                     Privacy
@@ -218,7 +218,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/terms/"
+                    href="/terms"
                     className="text-base leading-6 text-gray-300 hover:text-white"
                   >
                     Terms
