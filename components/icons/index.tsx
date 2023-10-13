@@ -7,6 +7,9 @@ import AffiliateStep3Icon from "./affiliate-step3-icon";
 import AffiliateStep4Icon from "./affiliate-step4-icon";
 import AffiliateSupportIcon from "./affiliate-support-icon";
 import ConnectionIcon from "./ConnectionIcon";
+import ConvertClickButtonIcon from "./convert-click-button-icon";
+import ConvertSelectDocumentIcon from "./convert-select-document-icon";
+import ConvertSettingsIcon from "./convert-settings-icon";
 import ExportIcon from "./ExportIcon";
 import HandDrawnArrowIcon from "./HandDrawnArrowIcon";
 import IntegrationsIcon from "./IntegrationsIcon";
@@ -21,6 +24,9 @@ export {
   AffiliateStep4Icon,
   AffiliateSupportIcon,
   ConnectionIcon,
+  ConvertClickButtonIcon,
+  ConvertSelectDocumentIcon,
+  ConvertSettingsIcon,
   ExportIcon,
   HandDrawnArrowIcon,
   IntegrationsIcon,
