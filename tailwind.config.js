@@ -12,7 +12,7 @@ module.exports = {
         brand: brandColor,
       },
       fontFamily: {
-        'script': ['Nanum Pen Script', 'sans-serif']
+        script: ["Nanum Pen Script", "sans-serif"],
       },
       typography: {
         DEFAULT: {
@@ -38,5 +38,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };
