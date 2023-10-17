@@ -13,6 +13,10 @@ import ConvertSettingsIcon from "./convert-settings-icon";
 import ExportIcon from "./ExportIcon";
 import HandDrawnArrowIcon from "./HandDrawnArrowIcon";
 import IntegrationsIcon from "./IntegrationsIcon";
+import SocialGitHubIcon from "./social-github-icon";
+import SocialLinkedInIcon from "./social-linkedin-icon";
+import SocialXIcon from "./social-x-icon";
+import SocialYoutubeIcon from "./social-youtube-icon";
 
 export {
   AffiliateCmsSupportIcon,
@@ -30,4 +34,8 @@ export {
   ExportIcon,
   HandDrawnArrowIcon,
   IntegrationsIcon,
+  SocialGitHubIcon,
+  SocialLinkedInIcon,
+  SocialXIcon,
+  SocialYoutubeIcon,
 };
