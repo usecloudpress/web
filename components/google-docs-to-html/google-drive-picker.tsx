@@ -23,7 +23,12 @@ type progress =
   | "exporting"
   | "exported";
 
-export default function GoogleDrivePicker() {
+interface GoogleDrivePickerProps {
+  csrfToken: string;
+}
+export default function GoogleDrivePicker({
+  csrfToken,
+}: GoogleDrivePickerProps) {
   const apiScriptStatus = useScript("https://apis.google.com/js/api.js");
   const clientScriptStatus = useScript(
     "https://accounts.google.com/gsi/client"
@@ -63,10 +68,11 @@ export default function GoogleDrivePicker() {
       });
       const documentContents = JSON.stringify(documentResponse.result);
 
-      await fetch("/api/google-docs-to-html", {
+      const response = await fetch("/api/google-docs-to-html", {
         method: "POST", // or 'PUT'
         headers: {
           "Content-Type": "application/json",
+          "X-CSRF-Token": csrfToken,
         },
         body: JSON.stringify({
           emailAddress: emailAddress,
@@ -76,6 +82,9 @@ export default function GoogleDrivePicker() {
           convertSingleCellTableToCodeBlock: convertSingleCellTableToCodeBlock,
         }),
       });
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
 
       setCurrentProgress("exported");
     } catch {
@@ -350,7 +359,11 @@ export default function GoogleDrivePicker() {
                 </div>
               </fieldset>
             </div>
-            <Button variant="primary" size="lg" onClick={exportDocument}>
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={async () => exportDocument()}
+            >
               Export document
             </Button>
             <div className="text-gray-600 italic mt-8">
