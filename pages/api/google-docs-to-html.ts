@@ -53,15 +53,18 @@ export default async function handler(
       })
     );
 
-    await fetch("https://api.usecloudpress.com/v2/convert/google-docs/html", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.CLOUDPRESS_INTERNAL_API_KEY}`,
-      },
-      body: formData,
-    });
+    const response = await fetch(
+      "https://api.usecloudpress.com/v2/convert/google-docs/html",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.CLOUDPRESS_INTERNAL_API_KEY}`,
+        },
+        body: formData,
+      }
+    );
 
-    res.status(200).json({ message: "Hello from Next.js!" });
+    res.status(response.status).json(await response.json());
     return;
   }
 
