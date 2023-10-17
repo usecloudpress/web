@@ -65,11 +65,11 @@ export default function Why(): JSX.Element {
             <li>
               Want to generate the proper embed code for a YouTube video? Add a
               paragraph containing just the link to the video to your document
-              and enable the “???” option when exporting the content. With this
-              option enabled, Cloudpress will automatically generate the correct
-              embed code. This not only works for YouTube, but also for X
-              (Twitter), TikTok, Facebook, Instagram, and hundreds of other
-              applications.
+              and enable the “Auto-detect embeds” option when exporting the
+              content. With this option enabled, Cloudpress will automatically
+              generate the correct embed code. This not only works for YouTube,
+              but also for X (Twitter), TikTok, Facebook, Instagram, and
+              hundreds of other applications.
             </li>
             <li>
               If you’re a software developer, add a single-cell table to your
