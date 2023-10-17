@@ -105,7 +105,7 @@ export default function GoogleDrivePicker() {
     const client = google.accounts.oauth2.initTokenClient({
       client_id: process.env.NEXT_PUBLIC_GOOGLE_DRIVE_PICKER_CLIENT_ID ?? "",
       scope:
-        "https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/documents.readonly",
+        "https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/documents.readonly https://www.googleapis.com/auth/userinfo.email",
       callback: tokenClientCallback,
     });
 
