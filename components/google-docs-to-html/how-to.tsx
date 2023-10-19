@@ -2,7 +2,7 @@ import {
   ConvertClickButtonIcon,
   ConvertSelectDocumentIcon,
   ConvertSettingsIcon,
-} from "../../../../components/icons";
+} from "../icons";
 import React from "react";
 
 const howToSteps = [
