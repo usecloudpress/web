@@ -120,6 +120,10 @@ export default function Footer(): JSX.Element {
                     name="Export Google Docs to HTML"
                     href="/tools/convert/google-docs-to-html"
                   />
+                  <NavItem
+                    name="Export Google Docs to Markdown"
+                    href="/tools/convert/google-docs-to-markdown"
+                  />
                 </ul>
               </div>
               <div>

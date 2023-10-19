@@ -1,9 +1,9 @@
+import React from "react";
 import {
   ConvertClickButtonIcon,
   ConvertSelectDocumentIcon,
   ConvertSettingsIcon,
-} from "../icons";
-import React from "react";
+} from "../../../../components/icons";
 
 const howToSteps = [
   {
@@ -21,7 +21,7 @@ const howToSteps = [
   {
     name: "Click the Export button",
     description:
-      "We will download your document’s content and convert it to HTML. We will also download and include any images in your document. Once we’re done, we’ll email you a link to download a ZIP file with the content.",
+      "We will download your document’s content and convert it to Markdown. We will also download and include any images in your document. Once we’re done, we’ll email you a link to download a ZIP file with the content.",
     icon: ConvertClickButtonIcon,
   },
 ];
@@ -32,13 +32,12 @@ export default function HowTo(): JSX.Element {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
-            How to export a Google Doc
+            How to export a
             <br />
-            to clean HTML
+            Google Doc to Markdown
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Export your document to clean HTML following these three simple
-            steps.
+          <p className="mt-6 text-lg leading-8 text-gray-600 text-center">
+            Export your document to Markdown following these three simple steps.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
