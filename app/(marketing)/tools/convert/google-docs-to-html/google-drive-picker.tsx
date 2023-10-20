@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "../../../../../components/buttons";
-import React, { useEffect, useState } from "react";
-import { useScript, useToggle } from "usehooks-ts";
+import React, { useState } from "react";
+import { useToggle } from "usehooks-ts";
 import googleDocsLogo from "../../../../../public/images/logos/square/google-docs.png";
 import Image from "next/image";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
@@ -14,15 +14,7 @@ import {
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
 import autoEmbedsImage from "./convert-standalone-link-to-embed.png";
 import singleCellTableImage from "./convert-single-cell-table-to-code-block.png";
-
-declare let google: any;
-
-type progress =
-  | "load-scripts"
-  | "select-document"
-  | "specify-options"
-  | "exporting"
-  | "exported";
+import useGoogleDocsPicker from "../use-google-docs-picker";
 
 interface GoogleDrivePickerProps {
   csrfToken: string;
@@ -30,15 +22,12 @@ interface GoogleDrivePickerProps {
 export default function GoogleDrivePicker({
   csrfToken,
 }: GoogleDrivePickerProps) {
-  const apiScriptStatus = useScript("https://apis.google.com/js/api.js");
-  const clientScriptStatus = useScript(
-    "https://accounts.google.com/gsi/client"
-  );
-  const [currentProgress, setCurrentProgress] =
-    useState<progress>("load-scripts");
-  const [isPickerApiLoaded, setIsPickerApiLoaded] = useState(false);
-  const [documentName, setDocumentName] = useState<string | null>(null);
+  const [progress, setProgress] = useState<
+    "select-document" | "specify-options" | "exporting" | "exported"
+  >("select-document");
+  const [exportError, setExportError] = useState<string | null>(null);
   const [documentId, setDocumentId] = useState<string | null>(null);
+  const [documentName, setDocumentName] = useState<string | null>(null);
   const [emailAddress, setEmailAddress] = useState<string | null>(null);
   const [asHtmlDocument, toggleAsHtmlDocument] = useToggle(false);
   const [autoDetectEmbeds, toggleAutoDetectEmbeds] = useToggle(false);
@@ -46,23 +35,17 @@ export default function GoogleDrivePicker({
     convertSingleCellTableToCodeBlock,
     toggleConvertSingleCellTableToCodeBlock,
   ] = useToggle(false);
-  const [exportError, setExportError] = useState<string | null>(null);
-  const hasScriptLoadingError =
-    apiScriptStatus === "error" || clientScriptStatus === "error";
-
-  useEffect(() => {
-    if (
-      apiScriptStatus === "ready" &&
-      clientScriptStatus === "ready" &&
-      !isPickerApiLoaded
-    ) {
-      loadApis();
-    }
-  }, [apiScriptStatus, clientScriptStatus, isPickerApiLoaded]);
+  const [status, openPicker] = useGoogleDocsPicker({
+    documentSelected: (document) => {
+      setDocumentId(document.id);
+      setDocumentName(document.name);
+      setEmailAddress(document.email);
+    },
+  });
 
   async function exportDocument(): Promise<void> {
     try {
-      setCurrentProgress("exporting");
+      setProgress("exporting");
 
       const documentResponse = await window.gapi.client.docs.documents.get({
         documentId: documentId,
@@ -87,7 +70,7 @@ export default function GoogleDrivePicker({
         throw new Error(response.statusText);
       }
 
-      setCurrentProgress("exported");
+      setProgress("exported");
     } catch {
       setExportError(
         "An error occurred while exporting your document. Please try again."
@@ -95,85 +78,12 @@ export default function GoogleDrivePicker({
     }
   }
 
-  function loadApis(): void {
-    window.gapi.load("client:auth:picker", {
-      callback: async () => {
-        await window.gapi.client.load(
-          "https://docs.googleapis.com/$discovery/rest?version=v1"
-        );
-        await window.gapi.client.load(
-          "https://www.googleapis.com/discovery/v1/apis/oauth2/v1/rest?version=v1"
-        );
-
-        setIsPickerApiLoaded(true);
-        setCurrentProgress("select-document");
-      },
-    });
-  }
-
-  function handleOpenPicker(): void {
-    const client = google.accounts.oauth2.initTokenClient({
-      client_id: process.env.NEXT_PUBLIC_GOOGLE_DRIVE_PICKER_CLIENT_ID ?? "",
-      scope:
-        "https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/documents.readonly https://www.googleapis.com/auth/userinfo.email",
-      callback: tokenClientCallback,
-    });
-
-    client.requestAccessToken();
-  }
-
   function resetDocument(): void {
-    setCurrentProgress("select-document");
+    setProgress("select-document");
     setDocumentId(null);
     setDocumentName(null);
     setEmailAddress(null);
     setExportError(null);
-  }
-
-  function tokenClientCallback(tokenResponse: any): void {
-    const recentDocsView = new google.picker.DocsView(
-      google.picker.ViewId.DOCUMENTS
-    )
-      .setMode(google.picker.DocsViewMode.LIST)
-      .setMimeTypes("application/vnd.google-apps.document");
-    const docsView = new google.picker.DocsView()
-      .setIncludeFolders(true)
-      .setMode(google.picker.DocsViewMode.LIST)
-      .setMimeTypes("application/vnd.google-apps.document");
-    const sharedDrivesView = new google.picker.DocsView()
-      .setIncludeFolders(true)
-      .setMode(google.picker.DocsViewMode.LIST)
-      .setMimeTypes("application/vnd.google-apps.document")
-      .setEnableDrives(true);
-    const picker = new google.picker.PickerBuilder()
-      .setTitle("Select the document you want to export")
-      .enableFeature(google.picker.Feature.SUPPORT_TEAM_DRIVES)
-      .setDeveloperKey(
-        process.env.NEXT_PUBLIC_GOOGLE_DRIVE_PICKER_DEVELOPER_KEY ?? ""
-      )
-      .setAppId(process.env.NEXT_PUBLIC_GOOGLE_DRIVE_PICKER_APP_ID ?? "")
-      .setOAuthToken(tokenResponse.access_token)
-      .addView(recentDocsView)
-      .addView(docsView)
-      .addView(sharedDrivesView)
-      .setCallback(pickerCallback)
-      .build();
-    picker.setVisible(true);
-  }
-
-  async function pickerCallback(data: any): Promise<void> {
-    if (
-      data.action === google.picker.Action.PICKED &&
-      data[google.picker.Response.DOCUMENTS] &&
-      data[google.picker.Response.DOCUMENTS].length > 0
-    ) {
-      const document = data[google.picker.Response.DOCUMENTS][0];
-      setDocumentId(document[google.picker.Document.ID] as string);
-      setDocumentName(document[google.picker.Document.NAME] as string);
-
-      const userInfoResponse = await window.gapi.client.oauth2.userinfo.get();
-      setEmailAddress(userInfoResponse.result.email);
-    }
   }
 
   if (documentId) {
@@ -189,7 +99,7 @@ export default function GoogleDrivePicker({
             <div className="font-bold">{documentName}</div>
           </div>
         </div>
-        {currentProgress === "exported" && (
+        {progress === "exported" && (
           <div>
             <div>
               Thank you for using our HTML export tool. We are exporting the
@@ -208,10 +118,10 @@ export default function GoogleDrivePicker({
             </div>
           </div>
         )}
-        {currentProgress === "exporting" && (
+        {progress === "exporting" && (
           <div>Downloading document, please wait...</div>
         )}
-        {currentProgress === "select-document" && (
+        {progress === "select-document" && (
           <div>
             <div className="mb-8">
               <button className="text-gray-600 text-sm" onClick={resetDocument}>
@@ -386,11 +296,11 @@ export default function GoogleDrivePicker({
     <div>
       <Button
         variant="primary"
-        onClick={handleOpenPicker}
-        isDisabled={!isPickerApiLoaded}
+        isDisabled={status !== "ready"}
+        onClick={openPicker}
       >
         <div className="flex items-center">
-          {!isPickerApiLoaded && !hasScriptLoadingError ? (
+          {status === "loading" ? (
             <svg
               className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
               xmlns="http://www.w3.org/2000/svg"
@@ -413,23 +323,21 @@ export default function GoogleDrivePicker({
             </svg>
           ) : null}
           <span>
-            {!isPickerApiLoaded && !hasScriptLoadingError
-              ? "Please wait..."
-              : "Select document"}
+            {status === "loading" ? "Please wait..." : "Select Document"}
           </span>
         </div>
       </Button>
+      {status === "error" ? (
+        <div className="mt-8 text-red-600">
+          An error occurred while loading the Google scripts. Perhaps you have a
+          blocker installed?
+        </div>
+      ) : null}
       <div className="italic text-gray-600 mt-8">
         Clicking the button above will prompt you to give Cloudpress access to
         your Google account. We will then display the Google Drive picker that
         allows you to select the file you want to export.
       </div>
-      {hasScriptLoadingError ? (
-        <div className="mt-2 text-red-600">
-          An error occurred while loading the Google scripts. Perhaps you have a
-          blocker installed?
-        </div>
-      ) : null}
     </div>
   );
 }
