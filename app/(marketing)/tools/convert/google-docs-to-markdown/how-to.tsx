@@ -3,7 +3,7 @@ import {
   ConvertClickButtonIcon,
   ConvertSelectDocumentIcon,
   ConvertSettingsIcon,
-} from "../../../../components/icons";
+} from "../../../../../components/icons";
 
 const howToSteps = [
   {
