@@ -1,10 +1,10 @@
 "use client";
 
 import useGoogleDocsPicker from "../use-google-docs-picker";
-import { Button } from "../../../../components/buttons";
+import { Button } from "../../../../../components/buttons";
 import React, { useState } from "react";
 import Image from "next/image";
-import googleDocsLogo from "../../../../public/images/logos/square/google-docs.png";
+import googleDocsLogo from "../../../../../public/images/logos/square/google-docs.png";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import {
   Button as MyButton,
@@ -14,8 +14,8 @@ import {
 } from "react-aria-components";
 import { useToggle } from "usehooks-ts";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
-import autoEmbedsImage from "../../../../components/google-docs-to-html/convert-standalone-link-to-embed.png";
-import singleCellTableImage from "../../../../components/google-docs-to-html/convert-single-cell-table-to-code-block.png";
+import autoEmbedsImage from "../../../../../components/google-docs-to-html/convert-standalone-link-to-embed.png";
+import singleCellTableImage from "../../../../../components/google-docs-to-html/convert-single-cell-table-to-code-block.png";
 
 interface GoogleDrivePickerProps {
   csrfToken: string;
