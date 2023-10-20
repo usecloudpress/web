@@ -1,14 +1,15 @@
+import React from "react";
+import Faq from "./faq";
 import Header from "./header";
 import HowTo from "./how-to";
 import Why from "./why";
-import Faq from "./faq";
 import ExportComponent from "./export-component";
 import { headers } from "next/headers";
 
 export const metadata = {
-  title: "Export Google Docs to Markdown",
+  title: "Export Google Docs to HTML",
   description:
-    "Export a Google Doc to markdown with support for images, code blocks, embeds, and more",
+    "Export a Google Doc to clean HTML without unnecessary HTML markup and CSS",
 };
 
 export default function Page() {

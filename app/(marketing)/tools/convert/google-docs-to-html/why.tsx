@@ -5,7 +5,7 @@ import xml from "highlight.js/lib/languages/xml";
 import {
   cloudpressCode,
   googleDocsCode,
-} from "../../lib/google-docs-to-html-code-samples";
+} from "../../../../../lib/google-docs-to-html-code-samples";
 
 hljs.registerLanguage("xml", xml);
 

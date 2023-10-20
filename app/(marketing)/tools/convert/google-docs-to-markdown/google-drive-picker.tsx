@@ -14,8 +14,8 @@ import {
 } from "react-aria-components";
 import { useToggle } from "usehooks-ts";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
-import autoEmbedsImage from "../../../../../components/google-docs-to-html/convert-standalone-link-to-embed.png";
-import singleCellTableImage from "../../../../../components/google-docs-to-html/convert-single-cell-table-to-code-block.png";
+import autoEmbedsImage from "../google-docs-to-html/convert-standalone-link-to-embed.png";
+import singleCellTableImage from "../google-docs-to-html/convert-single-cell-table-to-code-block.png";
 
 interface GoogleDrivePickerProps {
   csrfToken: string;

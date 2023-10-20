@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Disclosure } from "@headlessui/react";
 import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";

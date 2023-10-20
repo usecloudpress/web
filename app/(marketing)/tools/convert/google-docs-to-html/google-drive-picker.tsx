@@ -1,7 +1,8 @@
-import { Button } from "../buttons";
+"use client";
+import { Button } from "../../../../../components/buttons";
 import React, { useEffect, useState } from "react";
 import { useScript, useToggle } from "usehooks-ts";
-import googleDocsLogo from "../../public/images/logos/square/google-docs.png";
+import googleDocsLogo from "../../../../../public/images/logos/square/google-docs.png";
 import Image from "next/image";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import {
