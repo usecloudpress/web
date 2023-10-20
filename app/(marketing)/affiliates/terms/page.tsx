@@ -1,10 +1,12 @@
-import Layout from "../../components/layouts/Layout";
-import { NextSeo } from "next-seo";
+export const metadata = {
+  title: "Cloudpress Affiliate Program Terms of Service",
+  description:
+    "You can earn a commission of 30% for every customer you refer to us. Here are our terms.",
+};
 
-export default function AffiliateTerms() {
+export default function Page() {
   return (
-    <Layout>
-      <NextSeo title="Cloudpress Affiliate Program Terms of Service" />
+    <>
       <div className="bg-white pt-8 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-20 lg:px-8">
         <div className="max-w-lg mx-auto lg:max-w-4xl">
           <div>
@@ -81,6 +83,6 @@ export default function AffiliateTerms() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
