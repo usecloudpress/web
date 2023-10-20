@@ -1,12 +1,5 @@
-// See https://stackoverflow.com/a/71799369
-// and https://github.com/pillarjs/multiparty
-
-import type { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
-
-type ResponseData = {
-  message: string;
-};
+import { NextResponse } from "next/server";
 
 const schema = z.object({
   emailAddress: z.string().email(),
@@ -23,15 +16,8 @@ function isValidBody(body: any): body is Body {
   return success;
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
-): Promise<void> {
-  if (req.method !== "POST") {
-    res.status(405).send({ message: "Only POST requests allowed" });
-    return;
-  }
-  const { body } = req;
+export async function POST(request: Request) {
+  const body = await request.json();
 
   if (isValidBody(body)) {
     const formData = new FormData();
@@ -64,9 +50,13 @@ export default async function handler(
       }
     );
 
-    res.status(response.status).json(await response.json());
-    return;
+    return NextResponse.json(await response.json());
   }
 
-  res.status(422).json({ message: "Invalid payload" });
+  return NextResponse.json(
+    { message: "Invalid payload" },
+    {
+      status: 422,
+    }
+  );
 }

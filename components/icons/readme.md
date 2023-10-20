@@ -18,4 +18,4 @@ These icons are generated from https://tabler-icons.io/. The process is as follo
    * Remove the `className`, `width`, and `height` attributes
    * Fix any attributes that do not follow React naming conventions. For example, `strokeWidth` is copied as `stroke-width`
    * Add the `{...props}` spread to the end of the existing attribute
-6. Add the icon to the exports of the `index.tsx` file
+6. Add the icon to the exports of the `page.tsx` file
