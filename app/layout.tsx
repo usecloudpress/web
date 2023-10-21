@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   },
   description:
     "Export from Google Docs and Notion to your Content Management System with the click of a button, or automate the entire process.",
+  metadataBase: new URL("https://www.usecloudpress.com"),
   openGraph: {
     type: "website",
     images: [
