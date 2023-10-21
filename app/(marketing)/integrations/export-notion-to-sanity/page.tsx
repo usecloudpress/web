@@ -1,43 +1,43 @@
-import Layout from "../../../components/layouts/Layout";
-import { NextSeo } from "next-seo";
-import imageCompare1 from "../../../public/images/terracotta-army-notion.png";
-import imageCompare2 from "../../../public/images/terracotta-army-sanity.png";
+import imageCompare1 from "../../../../public/images/terracotta-army-notion.png";
+import imageCompare2 from "../../../../public/images/terracotta-army-sanity.png";
 import BulkExportImage from "./bulk-export.png";
 import ExportsImagesImage from "./exports-images.png";
 import PreservesFormattingImage from "./preserves-formatting.png";
 import SanitySchemaImage from "./sanity-schema.png";
 import ExportCustomPortableTextImage from "./export-custom-portable-text.png";
-import IntegrationCta from "../../../components/integration-cta";
-import IntegrationHeroSection from "../../../components/integration-hero-section";
-import FeatureList from "../../../components/feature-list";
-import FeatureBlockWithImage from "../../../components/feature-block-with-image";
-import IntegrationGettingStartedSection from "../../../components/integration-getting-started-section";
-import { ConnectionIcon, ExportIcon } from "../../../components/icons";
+import IntegrationCta from "../../../../components/integration-cta";
+import IntegrationHeroSection from "../../../../components/integration-hero-section";
+import FeatureList from "../../../../components/feature-list";
+import FeatureBlockWithImage from "../../../../components/feature-block-with-image";
+import IntegrationGettingStartedSection from "../../../../components/integration-getting-started-section";
+import { ConnectionIcon, ExportIcon } from "../../../../components/icons";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import AutomateExportsImage from "../export-google-docs-to-wordpress/automate-exports-from-google-docs-to-wordpress-with-trello.png";
-import { LinkButton } from "../../../components/buttons";
+import { LinkButton } from "../../../../components/buttons";
 import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Export Notion to Sanity.io | Integrations",
+  description:
+    "Export from Notion to Sanity with the click of a button or automate it with our Zapier and Make.com integration.",
+  openGraph: {
+    type: "website",
+    images: [
+      {
+        url: "https://www.usecloudpress.com/images/social/export-notion-to-sanity.png",
+      },
+    ],
+  },
+};
 
 export default function Page() {
   const source = "notion";
   const destination = "sanity";
 
   return (
-    <Layout>
-      <NextSeo
-        title="Export Notion to Sanity.io | Integrations"
-        description="Export from Notion to Sanity with the click of a button or automate it with our Zapier and Make.com integration."
-        openGraph={{
-          type: "website",
-          images: [
-            {
-              url: "https://www.usecloudpress.com/images/social/export-notion-to-sanity.png",
-            },
-          ],
-        }}
-      />
-
+    <>
       <IntegrationHeroSection
         source={source}
         destination={destination}
@@ -221,6 +221,6 @@ export default function Page() {
       />
 
       <IntegrationCta destination={destination} />
-    </Layout>
+    </>
   );
 }

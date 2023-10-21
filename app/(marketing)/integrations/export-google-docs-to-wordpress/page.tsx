@@ -1,7 +1,5 @@
-import Layout from "../../../components/layouts/Layout";
-import { NextSeo } from "next-seo";
-import imageCompare1 from "../../../public/images/terracotta-army-google-docs.png";
-import imageCompare2 from "../../../public/images/terracotta-army-wordpress.png";
+import imageCompare1 from "../../../../public/images/terracotta-army-google-docs.png";
+import imageCompare2 from "../../../../public/images/terracotta-army-wordpress.png";
 import AutomateExportsImage from "./automate-exports-from-google-docs-to-wordpress-with-trello.png";
 import BulkExportsImage from "./bulk-export-images-from-google-docs-to-wordpress.png";
 import EmbedsImage from "./convert-links-to-embeds.png";
@@ -14,35 +12,38 @@ import SetsAdditionalFieldsImage from "./sets-additional-fields-in-wordpress.png
 import GutenbergOrClassicImage from "./wordpress-gutenberg-or-classic.png";
 import PostOrPageImage from "./wordpress-post-or-page.png";
 import ExportCustomGutenbergBlocksImage from "./export-custom-gutenberg-blocks.png";
-import IntegrationCta from "../../../components/integration-cta";
-import IntegrationHeroSection from "../../../components/integration-hero-section";
-import FeatureBlockWithImage from "../../../components/feature-block-with-image";
-import FeatureList from "../../../components/feature-list";
+import IntegrationCta from "../../../../components/integration-cta";
+import IntegrationHeroSection from "../../../../components/integration-hero-section";
+import FeatureBlockWithImage from "../../../../components/feature-block-with-image";
+import FeatureList from "../../../../components/feature-list";
 import React from "react";
 import { PencilIcon } from "@heroicons/react/24/solid";
-import { ConnectionIcon, ExportIcon } from "../../../components/icons";
-import IntegrationGettingStartedSection from "../../../components/integration-getting-started-section";
-import { LinkButton } from "../../../components/buttons";
+import { ConnectionIcon, ExportIcon } from "../../../../components/icons";
+import IntegrationGettingStartedSection from "../../../../components/integration-getting-started-section";
+import { LinkButton } from "../../../../components/buttons";
 import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Export Google Docs to WordPress | Integrations",
+  description:
+    "Export from Google Docs to WordPress with our Google Docs Add-on or automate it with our Zapier and Make.com integration.",
+  openGraph: {
+    type: "website",
+    images: [
+      {
+        url: "https://www.usecloudpress.com/images/social/export-google-docs-to-wordpress.png",
+      },
+    ],
+  },
+};
 
 export default function Page() {
   const source = "google-docs";
   const destination = "wordpress";
 
   return (
-    <Layout>
-      <NextSeo
-        title="Export Google Docs to WordPress | Integrations"
-        description="Export from Google Docs to WordPress with our Google Docs Add-on or automate it with our Zapier and Make.com integration."
-        openGraph={{
-          type: "website",
-          images: [
-            {
-              url: "https://www.usecloudpress.com/images/social/export-google-docs-to-wordpress.png",
-            },
-          ],
-        }}
-      />
+    <>
       <IntegrationHeroSection
         source={source}
         destination={destination}
@@ -370,6 +371,6 @@ export default function Page() {
       />
 
       <IntegrationCta destination={destination} />
-    </Layout>
+    </>
   );
 }

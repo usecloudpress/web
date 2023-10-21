@@ -1,7 +1,5 @@
-import Layout from "../../../components/layouts/Layout";
-import { NextSeo } from "next-seo";
-import imageCompare1 from "../../../public/images/terracotta-army-notion.png";
-import imageCompare2 from "../../../public/images/terracotta-army-webflow.png";
+import imageCompare1 from "../../../../public/images/terracotta-army-notion.png";
+import imageCompare2 from "../../../../public/images/terracotta-army-webflow.png";
 import BulkExportImage from "./bulk-export-documents-from-notion-to-webflow.png";
 import CollectionSchemaImage from "./configure-your-cms-collection-schema.png";
 import EmbedsImage from "./converts-notion-embeds-to-webflow.png";
@@ -11,37 +9,39 @@ import MapPropertiesImage from "./map-notion-properties-to-webflow-fields.png";
 import PreserveFormattingImage from "./preserves-formatting.png";
 import QuicklyNavigateImage from "./quickly-navigate-to-exported-content-in-webflow.png";
 import ExportCustomHtmlImage from "./export-custom-html.png";
-import IntegrationCta from "../../../components/integration-cta";
-import IntegrationHeroSection from "../../../components/integration-hero-section";
-import FeatureBlockWithImage from "../../../components/feature-block-with-image";
-import FeatureList from "../../../components/feature-list";
-import IntegrationGettingStartedSection from "../../../components/integration-getting-started-section";
-import { ConnectionIcon, ExportIcon } from "../../../components/icons";
+import IntegrationCta from "../../../../components/integration-cta";
+import IntegrationHeroSection from "../../../../components/integration-hero-section";
+import FeatureBlockWithImage from "../../../../components/feature-block-with-image";
+import FeatureList from "../../../../components/feature-list";
+import IntegrationGettingStartedSection from "../../../../components/integration-getting-started-section";
+import { ConnectionIcon, ExportIcon } from "../../../../components/icons";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import AutomateExportsImage from "../export-google-docs-to-wordpress/automate-exports-from-google-docs-to-wordpress-with-trello.png";
-import { LinkButton } from "../../../components/buttons";
+import { LinkButton } from "../../../../components/buttons";
 import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Export Notion to Webflow | Integrations",
+  description:
+    "Export from Notion to Webflow with the click of a button or automate it with our Zapier and Make.com integration.",
+  openGraph: {
+    type: "website",
+    images: [
+      {
+        url: "https://www.usecloudpress.com/images/social/export-notion-to-webflow.png",
+      },
+    ],
+  },
+};
 
 export default function Page() {
   const source = "notion";
   const destination = "webflow";
 
   return (
-    <Layout>
-      <NextSeo
-        title="Export Notion to Webflow | Integrations"
-        description="Export from Notion to Webflow with the click of a button or automate it with our Zapier and Make.com integration."
-        openGraph={{
-          type: "website",
-          images: [
-            {
-              url: "https://www.usecloudpress.com/images/social/export-notion-to-webflow.png",
-            },
-          ],
-        }}
-      />
-
+    <>
       <IntegrationHeroSection
         source={source}
         destination={destination}
@@ -317,6 +317,6 @@ export default function Page() {
       />
 
       <IntegrationCta destination={destination} />
-    </Layout>
+    </>
   );
 }

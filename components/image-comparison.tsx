@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ReactCompareSlider,
   ReactCompareSliderHandle,

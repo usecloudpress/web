@@ -1,7 +1,5 @@
-import Layout from "../../../components/layouts/Layout";
-import { NextSeo } from "next-seo";
-import imageCompare1 from "../../../public/images/terracotta-army-google-docs.png";
-import imageCompare2 from "../../../public/images/terracotta-army-webflow.png";
+import imageCompare1 from "../../../../public/images/terracotta-army-google-docs.png";
+import imageCompare2 from "../../../../public/images/terracotta-army-webflow.png";
 import AutomateExportsImage from "./automate-exports-from-google-docs-to-wordpress-with-trello.png";
 import AutomaticEmbedsImage from "./automatically-creates-embeds-in-webflow.png";
 import BulkExportImage from "./bulk-export-from-google-docs-to-webflow.png";
@@ -13,36 +11,38 @@ import NavigateToWebflowImage from "./navigate-from-google-docs-to-webflow.png";
 import OneClickExportImage from "./one-click-export-from-google-docs-to-webflow.png";
 import PreserveFormattingImage from "./preserves-formatting.png";
 import ExportCustomHtmlImage from "./export-custom-html.png";
-import IntegrationCta from "../../../components/integration-cta";
-import IntegrationHeroSection from "../../../components/integration-hero-section";
-import FeatureBlockWithImage from "../../../components/feature-block-with-image";
-import FeatureList from "../../../components/feature-list";
-import IntegrationGettingStartedSection from "../../../components/integration-getting-started-section";
-import { ConnectionIcon, ExportIcon } from "../../../components/icons";
+import IntegrationCta from "../../../../components/integration-cta";
+import IntegrationHeroSection from "../../../../components/integration-hero-section";
+import FeatureBlockWithImage from "../../../../components/feature-block-with-image";
+import FeatureList from "../../../../components/feature-list";
+import IntegrationGettingStartedSection from "../../../../components/integration-getting-started-section";
+import { ConnectionIcon, ExportIcon } from "../../../../components/icons";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import React from "react";
-import { LinkButton } from "../../../components/buttons";
+import { LinkButton } from "../../../../components/buttons";
 import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Export Google Docs to Webflow | Integrations",
+  description:
+    "Export from Google Docs to Webflow with our Google Docs Add-on or automate it with our Zapier and Make.com integration.",
+  openGraph: {
+    type: "website",
+    images: [
+      {
+        url: "https://www.usecloudpress.com/images/social/export-google-docs-to-webflow.png",
+      },
+    ],
+  },
+};
 
 export default function Page() {
   const source = "google-docs";
   const destination = "webflow";
 
   return (
-    <Layout>
-      <NextSeo
-        title="Export Google Docs to Webflow | Integrations"
-        description="Export from Google Docs to Webflow with our Google Docs Add-on or automate it with our Zapier and Make.com integration."
-        openGraph={{
-          type: "website",
-          images: [
-            {
-              url: "https://www.usecloudpress.com/images/social/export-google-docs-to-webflow.png",
-            },
-          ],
-        }}
-      />
-
+    <>
       <IntegrationHeroSection
         source={source}
         destination={destination}
@@ -345,6 +345,6 @@ export default function Page() {
       />
 
       <IntegrationCta destination={destination} />
-    </Layout>
+    </>
   );
 }
