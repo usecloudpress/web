@@ -1,43 +1,42 @@
-import Layout from "../../../components/layouts/Layout";
-import { NextSeo } from "next-seo";
-import imageCompare1 from "../../../public/images/terracotta-army-google-docs.png";
-import imageCompare2 from "../../../public/images/terracotta-army-kontent-ai.png";
-import AutomateExportsImage from "./automate-exports-from-google-docs-to-wordpress-with-trello.png";
+import imageCompare1 from "../../../../public/images/terracotta-army-notion.png";
+import imageCompare2 from "../../../../public/images/terracotta-army-kontent-ai.png";
 import BulkExportImage from "./bulk-export.png";
 import ContentModelImage from "./content-model.png";
-import ConvertsFormattingImage from "./converts-google-docs-formatting-to-contentful.png";
+import PreservesFormattingImage from "./converts-google-docs-formatting-to-contentful.png";
 import DraftOrPublishedImage from "./draft-or-published.png";
 import ExportsImagesImage from "./exports-images.png";
-import OneClickExportImage from "./one-click-export.png";
-import QuickNavigationImage from "./quick-navigation.png";
-import IntegrationCta from "../../../components/integration-cta";
-import IntegrationHeroSection from "../../../components/integration-hero-section";
-import FeatureBlockWithImage from "../../../components/feature-block-with-image";
-import FeatureList from "../../../components/feature-list";
-import IntegrationGettingStartedSection from "../../../components/integration-getting-started-section";
-import { ConnectionIcon, ExportIcon } from "../../../components/icons";
+import QuicklyNavigateImage from "./quickly-navigate.png";
+import IntegrationCta from "../../../../components/integration-cta";
+import IntegrationHeroSection from "../../../../components/integration-hero-section";
+import FeatureBlockWithImage from "../../../../components/feature-block-with-image";
+import FeatureList from "../../../../components/feature-list";
+import IntegrationGettingStartedSection from "../../../../components/integration-getting-started-section";
+import { ConnectionIcon, ExportIcon } from "../../../../components/icons";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import AutomateExportsImage from "../export-google-docs-to-wordpress/automate-exports-from-google-docs-to-wordpress-with-trello.png";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Export Notion to Kontent.ai | Integrations",
+  description:
+    "Export from Notion to Kontent.ai with the click of a button or automate it with our Zapier and Make.com integration.",
+  openGraph: {
+    type: "website",
+    images: [
+      {
+        url: "https://www.usecloudpress.com/images/social/export-notion-to-kontent.png",
+      },
+    ],
+  },
+};
 
 export default function Page() {
-  const source = "google-docs";
+  const source = "notion";
   const destination = "kontent-ai";
 
   return (
-    <Layout>
-      <NextSeo
-        title="Export Google Docs to Kontent.ai | Integrations"
-        description="Export from Google Docs to Kontent.ai with our Google Docs Add-on or automate it with our Zapier and Make.com integration."
-        openGraph={{
-          type: "website",
-          images: [
-            {
-              url: "https://www.usecloudpress.com/images/social/export-google-docs-to-kontent.png",
-            },
-          ],
-        }}
-      />
-
+    <>
       <IntegrationHeroSection
         source={source}
         destination={destination}
@@ -51,44 +50,19 @@ export default function Page() {
         steps={[
           {
             description:
-              "Connect the Kontent.ai account you wish to export your content to.",
+              "Connect your Notion account and the Kontent.ai account you wish to export to.",
             icon: ConnectionIcon,
           },
           {
-            description:
-              "Write and collaborate on your content in Google Docs.",
+            description: "Write and collaborate on your content in Notion.",
             icon: PencilIcon,
           },
           {
             description:
-              "Export your content with one click using the Google Docs Add-on.",
+              "Export your content with the click of a button, or automate the entire process.",
             icon: ExportIcon,
           },
         ]}
-      />
-
-      <FeatureBlockWithImage
-        title="Export with one click"
-        content={
-          <>
-            <p>
-              With our Google Docs Add-on, you can export your content from the
-              comfort of the Google Docs editor. No need to navigate to an
-              external application - simply open the Cloudpress Google Docs
-              Add-on and click the export button.
-            </p>
-            <FeatureList
-              features={[
-                "Save time by not leaving the Google Docs editor",
-                "Get updates on the export progress from inside the Google Docs editor",
-                "Navigate directly to your content in Kontent.ai when the export is done",
-              ]}
-            />
-          </>
-        }
-        image={OneClickExportImage}
-        imageAlt="One click exports from Google Docs to Kontent.ai"
-        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -108,9 +82,9 @@ export default function Page() {
             />
           </>
         }
-        image={ConvertsFormattingImage}
-        imageAlt="Preserves formatting from Google Docs to Kontent.ai"
-        imageAlignment="left"
+        image={PreservesFormattingImage}
+        imageAlt="Convert formatting from Notion to Kontent.ai"
+        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -132,8 +106,8 @@ export default function Page() {
           </>
         }
         image={ExportsImagesImage}
-        imageAlt="Exports images from Google Docs to assets in Kontent.ai"
-        imageAlignment="right"
+        imageAlt="Export images from Notion to asstes in Kontent.ai"
+        imageAlignment="left"
       />
 
       <FeatureBlockWithImage
@@ -142,8 +116,6 @@ export default function Page() {
           <>
             <p>
               Cloudpress works with the content models you create in Kontent.ai.
-              Tell Cloudpress which fields to use for the title, content,
-              author, slug, or whichever other fields your choose to export.
             </p>
             <FeatureList
               features={[
@@ -154,8 +126,8 @@ export default function Page() {
           </>
         }
         image={ContentModelImage}
-        imageAlt="Works with your Kontent.ai content model"
-        imageAlignment="left"
+        imageAlt="Works with your content model in Kontent.ai"
+        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -175,16 +147,16 @@ export default function Page() {
           </>
         }
         image={BulkExportImage}
-        imageAlt="Bulk export content from Google Docs to Kontent.ai"
-        imageAlignment="right"
+        imageAlt="Bulk export documents from Notion to Kontent.ai"
+        imageAlignment="left"
       />
 
       <FeatureBlockWithImage
-        title="Automate exports with Zapier and Make.com"
+        title="Automate exports with Zapier and Make"
         content={
           <>
             <p>
-              Using the Cloudpress API and no-code tools like Zapier and
+              Using the Cloudpress API and no-code tools like Zapier or
               Make.com, you can create automated workflows that export your
               content without you having to lift a finger.
             </p>
@@ -198,8 +170,8 @@ export default function Page() {
           </>
         }
         image={AutomateExportsImage}
-        imageAlt="Automate exports from Google Docs to Kontent.ai"
-        imageAlignment="left"
+        imageAlt="Automate exports from Notion to Kontent.ai"
+        imageAlignment="right"
       />
 
       <FeatureBlockWithImage
@@ -220,8 +192,8 @@ export default function Page() {
           </>
         }
         image={DraftOrPublishedImage}
-        imageAlt="Export content as draft or published"
-        imageAlignment="right"
+        imageAlt="Export your content in Kontent.ai as draft or published"
+        imageAlignment="left"
       />
 
       <FeatureBlockWithImage
@@ -241,12 +213,12 @@ export default function Page() {
             />
           </>
         }
-        image={QuickNavigationImage}
-        imageAlt="Quickly navigate from Google Docs to exported content in Kontent.ai"
-        imageAlignment="left"
+        image={QuicklyNavigateImage}
+        imageAlt="Quickly navigate to exported Notion content in Kontent.ai"
+        imageAlignment="right"
       />
 
       <IntegrationCta destination={destination} />
-    </Layout>
+    </>
   );
 }
