@@ -1,10 +1,12 @@
-import Layout from "../components/layouts/Layout";
-import { NextSeo } from "next-seo";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms and conditions",
+};
 
 export default function TermsPage() {
   return (
-    <Layout>
-      <NextSeo title="Privacy Policy" />
+    <>
       <div className="bg-white pt-8 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-20 lg:px-8">
         <div className="max-w-lg mx-auto lg:max-w-4xl">
           <div>
@@ -279,6 +281,6 @@ export default function TermsPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

@@ -1,10 +1,12 @@
-import Layout from "../components/layouts/Layout";
-import { NextSeo } from "next-seo";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy policy",
+};
 
 export default function PrivacyPage() {
   return (
-    <Layout>
-      <NextSeo title="Privacy Policy" />
+    <>
       <div className="bg-white pt-8 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-20 lg:px-8">
         <div className="max-w-lg mx-auto lg:max-w-4xl">
           <div>
@@ -255,6 +257,6 @@ export default function PrivacyPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
