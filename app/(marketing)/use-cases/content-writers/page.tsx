@@ -1,17 +1,16 @@
-import Layout from "../../components/layouts/Layout";
-import { NextSeo } from "next-seo";
-import GenericCta from "../../components/generic-cta";
-import PageHeaderSection from "../../components/page-header-section";
+import GenericCta from "../../../../components/generic-cta";
+import PageHeaderSection from "../../../../components/page-header-section";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cloudpress for Content Managers",
+  description:
+    "Learn how using Cloudpress in combination with Google Docs can help content managers stay on top of things",
+};
 
 export default function ContentWritersPage() {
   return (
-    <Layout>
-      <NextSeo
-        title="Cloudpress for Content Managers"
-        description="Learn how using Cloudpress in combination with Google Docs can
-              help content managers stay on top of things"
-      />
-
+    <>
       <PageHeaderSection
         heading="Cloudpress for Content Writers"
         subHeading="Use cases"
@@ -262,6 +261,6 @@ export default function ContentWritersPage() {
       </div>
 
       <GenericCta />
-    </Layout>
+    </>
   );
 }
