@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { Metadata } from "next";
 import Hero from "./hero";
 import Integrations from "../../components/integrations";
 import GenericCta from "../../components/generic-cta";
@@ -50,8 +49,6 @@ const gettingStartedSteps = [
     icon: ExportIcon,
   },
 ];
-
-export const metadata: Metadata = {};
 
 export default function Page() {
   return (

@@ -1,12 +1,12 @@
 import GenericCta from "../../../../components/generic-cta";
 import PageHeaderSection from "../../../../components/page-header-section";
-import { Metadata } from "next";
+import { mergeSeo } from "../../../../lib/merge-seo";
 
-export const metadata: Metadata = {
+export const metadata = mergeSeo({
   title: "Cloudpress for Content Managers",
   description:
     "Learn how using Cloudpress in combination with Google Docs can help content managers stay on top of things",
-};
+});
 
 export default function ContentManagersPage() {
   return (

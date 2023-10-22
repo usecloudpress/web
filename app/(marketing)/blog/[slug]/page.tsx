@@ -3,6 +3,7 @@ import Markdown from "../../../../components/markdown/Markdown";
 import DateFormatter from "../../../../components/date-formatter";
 import { generateContent } from "../../../../components/markdown/helpers";
 import { Metadata } from "next";
+import { mergeSeo } from "../../../../lib/merge-seo";
 
 type Props = {
   params: { slug: string };
@@ -11,11 +12,11 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getBlogPost(params.slug, true);
 
-  return {
+  return mergeSeo({
     title: post.metaTitle || post.title,
     description: post.metaDescription || post.excerpt,
     openGraph: { images: [{ url: post.featuredImage.url }] },
-  };
+  });
 }
 
 export async function generateStaticParams() {

@@ -21,9 +21,9 @@ import React from "react";
 import AutomateExportsImage from "../export-google-docs-to-wordpress/automate-exports-from-google-docs-to-wordpress-with-trello.png";
 import { LinkButton } from "../../../../components/buttons";
 import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
-import { Metadata } from "next";
+import { mergeSeo } from "../../../../lib/merge-seo";
 
-export const metadata: Metadata = {
+export const metadata = mergeSeo({
   title: "Export Notion to WordPress | Integrations",
   description:
     "Export from Notion to WordPress with the click of a button or automate it with our Zapier and Make.com integration.",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+});
 
 export default function Page() {
   const source = "notion";

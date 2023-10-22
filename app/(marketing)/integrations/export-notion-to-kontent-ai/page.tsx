@@ -16,8 +16,9 @@ import { PencilIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import AutomateExportsImage from "../export-google-docs-to-wordpress/automate-exports-from-google-docs-to-wordpress-with-trello.png";
 import { Metadata } from "next";
+import { mergeSeo } from "../../../../lib/merge-seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = mergeSeo({
   title: "Export Notion to Kontent.ai | Integrations",
   description:
     "Export from Notion to Kontent.ai with the click of a button or automate it with our Zapier and Make.com integration.",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+});
 
 export default function Page() {
   const source = "notion";

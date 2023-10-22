@@ -17,8 +17,9 @@ import { ConnectionIcon, ExportIcon } from "../../../../components/icons";
 import { PencilIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import { Metadata } from "next";
+import { mergeSeo } from "../../../../lib/merge-seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = mergeSeo({
   title: "Export Google Docs to Kontent.ai | Integrations",
   description:
     "Export from Google Docs to Kontent.ai with our Google Docs Add-on or automate it with our Zapier and Make.com integration.",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+});
 
 export default function Page() {
   const source = "google-docs";

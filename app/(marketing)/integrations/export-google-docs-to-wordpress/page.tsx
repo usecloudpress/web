@@ -23,8 +23,9 @@ import IntegrationGettingStartedSection from "../../../../components/integration
 import { LinkButton } from "../../../../components/buttons";
 import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
 import { Metadata } from "next";
+import { mergeSeo } from "../../../../lib/merge-seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = mergeSeo({
   title: "Export Google Docs to WordPress | Integrations",
   description:
     "Export from Google Docs to WordPress with our Google Docs Add-on or automate it with our Zapier and Make.com integration.",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+});
 
 export default function Page() {
   const source = "google-docs";

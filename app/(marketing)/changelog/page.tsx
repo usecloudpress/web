@@ -3,6 +3,7 @@ import DateFormatter from "../../../components/date-formatter";
 import Markdown from "../../../components/markdown/Markdown";
 import { generateContent } from "../../../components/markdown/helpers";
 import PageHeaderSection from "../../../components/page-header-section";
+import { mergeSeo } from "../../../lib/merge-seo";
 
 function ChangeLogEntry({ entry }: { entry: any }) {
   const { content } = generateContent(entry.description);
@@ -23,11 +24,11 @@ function ChangeLogEntry({ entry }: { entry: any }) {
   );
 }
 
-export const metadata = {
-  title: "Changelog",
+export const metadata = mergeSeo({
+  title: "Cloudpress Changelog",
   description:
     "Stay up to date with all of the latest additions and improvements we've made to Cloudpress",
-};
+});
 
 export default async function Page() {
   const entries = (await getChangelog(false)) ?? [];

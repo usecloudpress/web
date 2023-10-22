@@ -4,6 +4,7 @@ import Why from "./Why";
 import How from "./How";
 import Terms from "./Terms";
 import Faq from "./Faq";
+import { mergeSeo } from "../../../lib/merge-seo";
 
 function JoinButton() {
   return (
@@ -24,11 +25,11 @@ function JoinButton() {
   );
 }
 
-export const metadata = {
+export const metadata = mergeSeo({
   title: "Become an Affiliate and earn 30% commission",
   description:
     "You can earn a commission of 30% for every customer you refer to us.",
-};
+});
 
 export default function Page() {
   return (

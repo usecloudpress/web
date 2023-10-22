@@ -16,6 +16,13 @@ import ImageRawContentBlock from "./raw-content-blocks.png";
 import FeatureList from "../../../components/feature-list";
 import { LinkButton } from "../../../components/buttons";
 import { BookOpenIcon, PlayCircleIcon } from "@heroicons/react/24/outline";
+import { mergeSeo } from "../../../lib/merge-seo";
+
+export const metadata = mergeSeo({
+  title: "Cloudpress Features",
+  description:
+    "Cloudpress will help you export perfectly formatted content faster, giving you more time to do the work that matters",
+});
 
 export default function Page() {
   return (

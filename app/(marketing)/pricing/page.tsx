@@ -4,10 +4,13 @@ import PageHeaderSection from "../../../components/page-header-section";
 import FeatureComparison from "./feature-comparison";
 import PricingTable from "./pricing-table";
 import Faq from "./faq";
+import { mergeSeo } from "../../../lib/merge-seo";
 
-export const metadata: Metadata = {
-  title: "Pricing plans",
-};
+export const metadata: Metadata = mergeSeo({
+  title: "Cloudpress Pricing plans",
+  description:
+    "We offer three plans to cater for everyone from solo bloggers to large agencies managing exports of behalf of multiple clients.",
+});
 
 export default function PricingPage() {
   return (

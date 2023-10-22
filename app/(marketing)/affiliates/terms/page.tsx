@@ -1,8 +1,10 @@
-export const metadata = {
+import { mergeSeo } from "../../../../lib/merge-seo";
+
+export const metadata = mergeSeo({
   title: "Cloudpress Affiliate Program Terms of Service",
   description:
     "You can earn a commission of 30% for every customer you refer to us. Here are our terms.",
-};
+});
 
 export default function Page() {
   return (

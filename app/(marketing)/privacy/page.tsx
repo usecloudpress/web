@@ -1,8 +1,9 @@
 import { Metadata } from "next";
+import { mergeSeo } from "../../../lib/merge-seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = mergeSeo({
   title: "Privacy policy",
-};
+});
 
 export default function PrivacyPage() {
   return (

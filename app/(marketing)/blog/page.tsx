@@ -3,12 +3,13 @@ import { getAllBlogPosts } from "../../../lib/ContentfulApi";
 import DateFormatter from "../../../components/date-formatter";
 import PageHeaderSection from "../../../components/page-header-section";
 import { Metadata } from "next";
+import { mergeSeo } from "../../../lib/merge-seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = mergeSeo({
   title: "Latest blog posts",
   description:
     "All the latest Cloudpress and industry news, straight from the team",
-};
+});
 
 export default async function Page() {
   const posts = (await getAllBlogPosts(false)) ?? [];
