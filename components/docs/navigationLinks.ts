@@ -261,6 +261,10 @@ const navigationItems: DocsSection[] = [
             title: "Troubleshooting",
             href: "/docs/integrations/wordpress/troubleshooting",
           },
+          {
+            title: "Configure Wordfence",
+            href: "/docs/integrations/wordpress/plugins/wordfence",
+          },
         ],
       },
       {
