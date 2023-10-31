@@ -97,6 +97,10 @@ const navigationItems: DocsSection[] = [
             href: "/docs/reference/export/additional-fields",
           },
           {
+            title: "Optimize (compress) images",
+            href: "/docs/reference/export/image-optimization",
+          },
+          {
             title: "Export custom (unsupported) content",
             href: "/docs/reference/export/export-unsupported-content",
           },
