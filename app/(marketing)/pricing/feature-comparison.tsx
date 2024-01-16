@@ -118,19 +118,19 @@ const sections: {
     features: [
       {
         name: "Collections",
-        tiers: { Solo: true, Pro: true, Agency: true },
+        tiers: { Solo: false, Pro: true, Agency: true },
       },
       {
         name: "Cloudpress API",
-        tiers: { Solo: true, Pro: true, Agency: true },
+        tiers: { Solo: false, Pro: true, Agency: true },
       },
       {
         name: "Zapier integration",
-        tiers: { Solo: true, Pro: true, Agency: true },
+        tiers: { Solo: false, Pro: true, Agency: true },
       },
       {
         name: "Make.com integration",
-        tiers: { Solo: true, Pro: true, Agency: true },
+        tiers: { Solo: false, Pro: true, Agency: true },
       },
     ],
   },
@@ -139,11 +139,11 @@ const sections: {
     features: [
       {
         name: "Convert Google Docs to Markdown",
-        tiers: { Solo: true, Pro: true, Agency: true },
+        tiers: { Solo: false, Pro: true, Agency: true },
       },
       {
         name: "Convert Google Docs to HTML",
-        tiers: { Solo: true, Pro: true, Agency: true },
+        tiers: { Solo: false, Pro: true, Agency: true },
       },
     ],
   },

@@ -23,7 +23,6 @@ export const tiers: {
       "50 exports per month",
       "Unlimited Google Docs conversions",
       "1 CMS connection",
-      "Automation features",
       "1 user",
     ],
     mostPopular: false,
