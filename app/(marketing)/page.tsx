@@ -26,14 +26,14 @@ const gettingStartedSteps = [
     name: "Sign up",
     description:
       "Sign up for a free Cloudpress account. You just need a username and password and takes less than a minute.",
-    href: "/docs/quick-start/register-an-account",
+    href: "https://docs.usecloudpress.com/getting-started/quick-start",
     icon: CursorArrowRaysIcon,
   },
   {
     name: "Connect your accounts",
     description:
       "Connect your Content Management System account and, if you want to export from Notion, your Notion account as well.",
-    href: "/docs/reference/connections/add-connection",
+    href: "https://docs.usecloudpress.com/connections/add-connection",
     icon: ConnectionIcon,
   },
   {
@@ -45,7 +45,7 @@ const gettingStartedSteps = [
         <span className="font-bold">five free exports</span> to try it out.
       </>
     ),
-    href: "/docs/reference/export/introduction",
+    href: "https://docs.usecloudpress.com/export/introduction",
     icon: ExportIcon,
   },
 ];

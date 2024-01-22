@@ -108,7 +108,10 @@ export default function Footer(): JSX.Element {
               <div>
                 <NavHeader text="Resources" />
                 <ul role="list" className="mt-2 space-y-3">
-                  <NavItem name="Documentation" href="/docs" />
+                  <NavItem
+                    name="Documentation"
+                    href="https://docs.usecloudpress.com"
+                  />
                   <NavItem name="Blog" href="/blog" />
                   <NavItem name="Changelog" href="/changelog" />
                 </ul>

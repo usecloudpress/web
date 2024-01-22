@@ -263,7 +263,7 @@ export default function Page() {
                 </div>
               </LinkButton>
               <LinkButton
-                href="https://www.usecloudpress.com/docs/integrations/wordpress/export-custom-gutenberg-blocks"
+                href="https://docs.usecloudpress.com/integrations/wordpress/export-custom-gutenberg-blocks"
                 target="_blank"
                 variant="default"
                 size="xl"

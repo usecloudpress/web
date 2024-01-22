@@ -158,7 +158,7 @@ export default function Page() {
                 </div>
               </LinkButton>
               <LinkButton
-                href="https://www.usecloudpress.com/docs/integrations/sanity/export-custom-portable-text"
+                href="https://docs.usecloudpress.com/integrations/sanity/export-custom-portable-text"
                 target="_blank"
                 variant="default"
                 size="xl"

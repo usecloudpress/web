@@ -239,7 +239,7 @@ export default function Page() {
                 </div>
               </LinkButton>
               <LinkButton
-                href="https://www.usecloudpress.com/docs/integrations/webflow/export-custom-html"
+                href="https://docs.usecloudpress.com/integrations/webflow/export-custom-html"
                 target="_blank"
                 variant="default"
                 size="xl"

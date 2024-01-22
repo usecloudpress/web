@@ -188,7 +188,7 @@ export default function Page() {
                 </div>
               </LinkButton>
               <LinkButton
-                href="https://www.usecloudpress.com/docs/reference/export/export-unsupported-content"
+                href="https://docs.usecloudpress.com/export/export-unsupported-content"
                 target="_blank"
                 variant="default"
                 size="xl"
