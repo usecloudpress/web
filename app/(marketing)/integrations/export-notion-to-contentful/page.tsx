@@ -212,7 +212,7 @@ export default function Page() {
                 </div>
               </LinkButton>
               <LinkButton
-                href="https://www.usecloudpress.com/docs/integrations/contentful/export-custom-rich-text"
+                href="https://docs.usecloudpress.com/integrations/contentful/export-custom-rich-text"
                 target="_blank"
                 variant="default"
                 size="xl"
@@ -260,7 +260,7 @@ export default function Page() {
                 </div>
               </LinkButton>
               <LinkButton
-                href="https://www.usecloudpress.com/docs/integrations/contentful/export-custom-markdown"
+                href="https://docs.usecloudpress.com/integrations/contentful/export-custom-markdown"
                 target="_blank"
                 variant="default"
                 size="xl"

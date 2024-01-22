@@ -135,7 +135,7 @@ const Navbar = () => {
               Pricing
             </Link>
             <Link
-              href="/docs"
+              href="https://docs.usecloudpress.com"
               className="text-base font-medium text-gray-700 hover:text-gray-700 p-2 hover:text-gray-900 hover:bg-gray-100 rounded-md"
             >
               Documentation
@@ -216,7 +216,7 @@ const Navbar = () => {
                     </span>
                   </Link>
                   <Link
-                    href="/docs"
+                    href="https://docs.usecloudpress.com"
                     className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                   >
                     <span className="ml-3 text-base font-medium text-gray-900">
