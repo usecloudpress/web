@@ -50,25 +50,6 @@ export async function getBlogPost(slug: string, preview: boolean) {
   return extractBlogPost(entries);
 }
 
-export async function getAllDocumentation(preview: boolean) {
-  const entries = await fetchGraphQL(
-    /* GraphQL */
-    `
-      query {
-        documentationCollection {
-          items {
-            title
-            slug
-            content
-          }
-        }
-      }
-    `,
-    preview
-  );
-  return extractDocumentationEntries(entries);
-}
-
 export async function getChangelog(preview: boolean) {
   const entries = await fetchGraphQL(
     /* GraphQL */
@@ -86,52 +67,6 @@ export async function getChangelog(preview: boolean) {
     preview
   );
   return extractChangelogEntries(entries);
-}
-
-export async function getDocumentation(slug: string, preview: boolean) {
-  const entries = await fetchGraphQL(
-    /* GraphQL */
-    `query {
-            documentationCollection(where: { slug: "${slug}" }) {
-                items {
-                    title
-                    content
-                    slug
-                    metaTitle
-                    metaDescription
-                }
-            }
-        }
-        `,
-    preview
-  );
-  return extractDocumentation(entries);
-}
-
-export async function getDocumentationIndex(preview: boolean) {
-  const entries = await fetchGraphQL(
-    /* GraphQL */
-    `
-      query {
-        documentationCategoryCollection(order: order_ASC) {
-          items {
-            name
-            slug
-            linkedFrom {
-              documentationCollection {
-                items {
-                  title
-                  slug
-                }
-              }
-            }
-          }
-        }
-      }
-    `,
-    preview
-  );
-  return extractDocumentationCategoryEntries(entries);
 }
 
 export async function getRecentBlogPosts(preview: boolean) {
@@ -164,22 +99,8 @@ function extractBlogPostEntries(fetchResponse: any) {
   return fetchResponse?.data?.blogPostCollection?.items;
 }
 
-function extractDocumentation(fetchResponse: any) {
-  const collection = extractDocumentationEntries(fetchResponse);
-
-  return collection?.[0];
-}
-
 function extractChangelogEntries(fetchResponse: any) {
   return fetchResponse?.data?.changelogCollection?.items;
-}
-
-function extractDocumentationEntries(fetchResponse: any) {
-  return fetchResponse?.data?.documentationCollection?.items;
-}
-
-function extractDocumentationCategoryEntries(fetchResponse: any) {
-  return fetchResponse?.data?.documentationCategoryCollection?.items;
 }
 
 async function fetchGraphQL(query: string, preview = false) {
