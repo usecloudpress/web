@@ -8,7 +8,7 @@ import { Button, LinkButton } from "../../components/buttons";
 import { PlayCircleIcon } from "@heroicons/react/24/outline";
 import ModalVideo from "react-modal-video";
 import React, { useState } from "react";
-import "node_modules/react-modal-video/scss/modal-video.scss";
+import "/modal-video.css";
 
 export default function Hero() {
   const [isVideoOpen, setVideoOpen] = useState(false);
