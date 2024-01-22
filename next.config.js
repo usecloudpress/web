@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const oldDocsRedirects = require("./old-docs-redirects");
 module.exports = {
   images: {
     remotePatterns: [
@@ -12,22 +13,6 @@ module.exports = {
   },
   reactStrictMode: true,
   async redirects() {
-    return [
-      {
-        source: "/docs/quick-start",
-        destination: "/docs/quick-start/register-an-account",
-        permanent: false,
-      },
-      {
-        source: "/docs/reference",
-        destination: "/docs/reference/overview/how-cloudpress-works",
-        permanent: false,
-      },
-      {
-        source: "/docs/integrations",
-        destination: "/docs/integrations/google-docs/introduction",
-        permanent: false,
-      },
-    ];
+    return [...oldDocsRedirects];
   },
 };
