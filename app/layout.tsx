@@ -3,6 +3,7 @@ import "../global.css";
 import Script from "next/script";
 import Image from "next/image";
 import { mergeSeo } from "../lib/merge-seo";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata = mergeSeo({});
 
@@ -42,6 +43,7 @@ export default function RootLayout({
             referrerPolicy="no-referrer-when-downgrade"
           />
         </noscript>
+        <GoogleAnalytics gaId="G-DR99SXYCWL" />
       </body>
     </html>
   );
