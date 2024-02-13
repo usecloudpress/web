@@ -212,16 +212,6 @@ export default function Footer(): JSX.Element {
                   <NavItem name="Terms" href="/terms" />
                 </ul>
               </div>
-              <div>
-                <NavHeader text="Affiliates" />
-                <ul role="list" className="mt-2 space-y-3">
-                  <NavItem
-                    name="Cloudpress Affiliate Program"
-                    href="/affiliates"
-                  />
-                  <NavItem name="Affiliate Terms" href="/affiliates/terms" />
-                </ul>
-              </div>
             </div>
           </div>
         </div>
