@@ -210,6 +210,10 @@ export default function Footer(): JSX.Element {
                 <ul role="list" className="mt-2 space-y-3">
                   <NavItem name="Privacy" href="/privacy" />
                   <NavItem name="Terms" href="/terms" />
+                  <NavItem
+                    name="Google API Disclosure"
+                    href="/google-api-disclosure"
+                  />
                 </ul>
               </div>
             </div>
