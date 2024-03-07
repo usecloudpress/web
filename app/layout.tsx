@@ -18,10 +18,31 @@ export default function RootLayout({
         {children}
         <Script async defer src="https://sa.usecloudpress.com/latest.js" />
         <Script
-          async
-          src="https://cdn.tolt.io/tolt.js"
-          data-tolt="3ab9ca2e-cfab-48f0-926a-8dc4485fb894"
+          id="fb-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+          !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '429649826192788');
+            fbq('track', 'PageView');`,
+          }}
         />
+        <noscript>
+          <Image
+            src="https://www.facebook.com/tr?id=429649826192788&ev=PageView&noscript=1"
+            height={1}
+            width={1}
+            alt=""
+            style={{ display: "none" }}
+          />
+        </noscript>
         <Script
           id="clarity-script"
           strategy="afterInteractive"
