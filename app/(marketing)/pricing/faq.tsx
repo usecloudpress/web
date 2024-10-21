@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "Do export credits expire?",
     answer:
-      "The exports you receive when you purchase a pay-as-you-go bundle never expire. Exports received as part of a subscription expire at the end of each calendar month and do not carry over to the next calendar month.",
+      "Exports received as part of a subscription expire at the end of each calendar month and do not carry over to the next calendar month.",
   },
   {
     question: "What are Google Docs conversions?",
@@ -44,22 +44,6 @@ const faqs = [
     question: "Do you have a free trial?",
     answer:
       "Yes! You receive 5 free exports to try Cloudpress out when you sign up. Once your trial exports are used, you must buy an export bundle or subscription to export more documents.",
-  },
-  {
-    question:
-      "What's are the differences between the subscription and pay-as-you go bundles?",
-    answer: (
-      <>
-        The pay-as-you-go bundles target occasional users or users with a low
-        volume. A great example of this may be a solo blogger who posts 4 or 5
-        blog posts a month.
-        <br />
-        <br />
-        Therefore, features targeting users with a high export volume are only
-        available to users with subscriptions - for example, our automation
-        features like Collections, the Cloupress API, and Make.com integration.
-      </>
-    ),
   },
 ];
 export default function Faq() {
