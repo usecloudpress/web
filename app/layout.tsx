@@ -16,7 +16,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
-        <Script async defer src="https://sa.usecloudpress.com/latest.js" />
         <Script
           id="fb-pixel"
           strategy="afterInteractive"
@@ -55,15 +54,6 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "fz73hxh1ag");`,
           }}
         />
-        <noscript>
-          <Image
-            src="https://sa.usecloudpress.com/noscript.gif"
-            width={1}
-            height={1}
-            alt=""
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </noscript>
         <GoogleAnalytics gaId="G-DR99SXYCWL" />
       </body>
     </html>
